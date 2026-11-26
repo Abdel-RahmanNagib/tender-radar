@@ -26,6 +26,10 @@ SOURCES = {
     "oman_tenderboard": "مجلس المناقصات – سلطنة عمان",
     "bahrain_tb": "مجلس المناقصات والمزايدات – البحرين",
     "ebrd_ecepp": "البنك الأوروبي لإعادة الإعمار والتنمية (EBRD)",
+    "uae_mof": "المنصة الرقمية للمشتريات – الجهات الاتحادية (الإمارات)",
+    "dubai_esupply": "بوابة حكومة دبي للمشتريات (eSupply)",
+    "abudhabi_adgpg": "بوابة أبوظبي للمشتريات الحكومية (ADGPG)",
+    "dewa_tenders": "هيئة كهرباء ومياه دبي (ديوا)",
     "pc_relay": "مساعد كمبيوتر المكتب",
     "google_news": "أخبار الطروحات",
     "rss_feeds": "خلاصات RSS",
@@ -42,6 +46,7 @@ NOTICE_TYPES = [  # (contains, Arabic label) – first match wins
     ("invitation for bids", "دعوة لتقديم عطاءات"),
     ("request for bids", "دعوة لتقديم عطاءات"),
     ("request for quotation", "طلب أسعار (RFQ)"),
+    ("request for information", "طلب معلومات (RFI) – تسجيل اهتمام"),
     ("public tender", "مناقصة عامة"),
     ("limited tender", "مناقصة محدودة"),
     ("news lead", "خبر عن طرح – يحتاج تأكيد"),
@@ -83,6 +88,32 @@ SUPPORT = {
         "note": "التسجيل في ECEPP مجاني. الاستفسارات عن المهمة تُرسل من داخل صفحة الإعلان على ECEPP أو لجهة العميل المذكورة فيه.",
         "source": "صفحة الإعلانات على ECEPP",
     },
+    "dubai_esupply": {
+        "title": "الدعم الفني لبوابة eSupply – حكومة دبي",
+        "phones": ["+971 800 8363377"], "emails": ["sourcingsupport@tejari.com"],
+        "website": "https://esupply.dubai.gov.ae",
+        "note": "للتسجيل والمشاكل التقنية (800Tenders). أسئلة المناقصة نفسها تُرسل من داخل الفرصة على البوابة للجهة الطارحة.",
+        "source": "دليل الموردين المنشور على موقع الإدارة العامة للإقامة وشؤون الأجانب – دبي",
+    },
+    "abudhabi_adgpg": {
+        "title": "بوابة أبوظبي للمشتريات الحكومية (ADGPG) – الدعم",
+        "phones": ["800555", "+971 2 666 4442"], "emails": ["contact@tamm.abudhabi"],
+        "website": "https://supplier.adgpg.gov.ae",
+        "note": "800-555 مجاني من داخل الإمارات، و+971 2 666 4442 من خارجها. التسجيل كمورد مرة واحدة لكل جهات أبوظبي.",
+        "source": "الصفحة الرئيسية لبوابة الموردين ADGPG",
+    },
+    "dewa_tenders": {
+        "title": "إدارة العقود – هيئة كهرباء ومياه دبي (شراء المناقصات والتقديم)",
+        "phones": ["+971 4 515 1443", "+971 4 515 1441"], "emails": ["cd.support@dewa.gov.ae"],
+        "website": "https://www.dewa.gov.ae/en/supplier/services/list-of-tender-documents",
+        "note": "تسجيل مورد جديد: إدارة علاقات الموردين +971 4 515 1404 – SRM@dewa.gov.ae.",
+        "source": "صفحة «اتصل بنا» على موقع ديوا",
+    },
+    "uae_mof": {
+        "title": "المنصة الرقمية للمشتريات – وزارة المالية الإماراتية",
+        "website": "https://mof.gov.ae/en/public-finance/government-procurement/digital-procurement-platform/",
+        "note": "التقديم يتطلب التسجيل في سجل الموردين الاتحادي على موقع وزارة المالية. أسئلة المناقصة من داخل المنصة.",
+    },
     "Bahrain": {
         "title": "مجلس المناقصات والمزايدات – البحرين (الدعم الفني)",
         "phones": ["+973 1756 6666"], "emails": ["helpdesk@tenderboard.gov.bh", "info@tenderboard.gov.bh"],
@@ -114,8 +145,9 @@ SUPPORT = {
                "source": "موقع الجهاز المركزي للمناقصات العامة"},
     "Palestine": {"title": "بوابة الشراء العام – فلسطين", "website": "https://www.shiraa.gov.ps"},
     "UAE": {"title": "بوابات المشتريات الحكومية – الإمارات",
-            "website": "https://www.adgpg.gov.ae",
-            "note": "أبوظبي: ADGPG – دبي: esupply.dubai.gov.ae – الجهات الاتحادية والمحلية لها بوابات خاصة."},
+            "website": "https://supplier.adgpg.gov.ae",
+            "note": "أبوظبي: supplier.adgpg.gov.ae – دبي: esupply.dubai.gov.ae – الاتحادية: procurement.gov.ae – "
+                    "الشارقة وعجمان ورأس الخيمة لها بوابات موردين تتطلب التسجيل."},
 }
 
 # ------------------------------------------------------------------ required documents
@@ -231,13 +263,15 @@ def detect_kind(t):
         return "news"
     if "general procurement notice" in nt:
         return "gpn"
-    if "expression" in nt or "eoi" in nt or "اهتمام" in nt or "qualification" in nt or "تاهيل" in nt:
+    if ("expression" in nt or "eoi" in nt or "اهتمام" in nt or "qualification" in nt or "تاهيل" in nt
+            or "request for information" in nt):
         return "eoi"
     if any(k in nt for k in ("proposal", "rfp", "bid", "tender", "عطاء", "مناقص", "منافس", "quotation")):
         return "rfp"
     if src in ("worldbank", "ungm", "ebrd_ecepp"):
         return "eoi"
-    if src in ("oman_tenderboard", "bahrain_tb", "monaqasat", "kuwait_capt"):
+    if src in ("oman_tenderboard", "bahrain_tb", "monaqasat", "kuwait_capt", "uae_mof", "dubai_esupply",
+               "abudhabi_adgpg", "dewa_tenders"):
         return "rfp"
     return "portal"
 

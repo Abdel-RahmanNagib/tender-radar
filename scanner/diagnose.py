@@ -58,8 +58,8 @@ def matching():
     m_low = Matcher(profile, "low")
     w("## 1. Matching on real data")
     w(f"Date: {today} — min level in settings: `{settings.get('min_level')}`")
-    for name in ("worldbank", "etimad", "ungm", "oman_tenderboard", "bahrain_tb", "ebrd_ecepp", "google_news",
-                 "web_pages"):
+    for name in ("uae_mof", "dubai_esupply", "abudhabi_adgpg", "dewa_tenders", "oman_tenderboard", "bahrain_tb",
+                 "ebrd_ecepp", "ungm"):
         t0 = time.time()
         try:
             items = COLLECTORS[name](profile["sources"].get(name, {}), countries)
@@ -191,7 +191,16 @@ def reachability():
     bh = ("{'tenderNumber':'','ministry':'0','category':'0', 'tendertype':'0', 'closingDate_filter':'',"
           "'publicTenderOnly':'false','prequalificationOnly':'false','auctionOnly':'false','sortingType':'0',"
           "'listPage':'mainList', 'Page': '-1','smeTendersOnly':'false','sectionName':''}").encode()
+    mof = b"page=1&search=&ministry=&order=&order_by=&action=mof_dpp_fetch&language=en"
+    adgpg = b"status=OPEN&offset=0&limit=10&Category=&Entity=&Sorting=LAST_CREATED&DueDate=&Name="
+    form = {"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"}
     targets = [
+        ("UAE federal (MOF)", "https://mof.gov.ae/wp-admin/admin-ajax.php", mof,
+         {**form, "X-Requested-With": "XMLHttpRequest"}),
+        ("Dubai eSupply", "https://esupply.dubai.gov.ae/esop/guest/go/public/opportunity/current", None, None),
+        ("Abu Dhabi ADGPG", "https://www.adgpg.gov.ae/SCAPI/ADGEs/AlMaqtaa/Tender/List", adgpg,
+         {**form, "Origin": "https://supplier.adgpg.gov.ae"}),
+        ("DEWA", "https://www.dewa.gov.ae/en/supplier/services/list-of-tender-documents", None, None),
         ("Qatar Monaqasat", "https://monaqasat.mof.gov.qa/TendersOnlineServices/SearchTenders/1", None, None),
         ("Kuwait CAPT", "https://capt.gov.kw/en/tenders/opening-tenders/", None, None),
         ("Oman Tender Board", "https://etendering.tenderboard.gov.om/product/publicDash?viewFlag=NewTenders", None,

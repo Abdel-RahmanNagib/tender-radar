@@ -58,8 +58,9 @@ def test_full_run():
     r1 = run_once(settings, profile, tmp, fetchers=fx, notifier=n1, today=TODAY, log=lambda *a: None)
     titles = [r["title"] for r in r1["new"]]
     by = {r["source_key"] + ":" + r["kind"]: r for r in r1["new"]}
-    check(len(r1["new"]) == 11, f"11 suitable opportunities found (got {len(r1['new'])})")
-    for bad in ("vehicles", "حاسب", "سفلتة", "furniture", "road safety", "Hydrologist", "industrial area"):
+    check(len(r1["new"]) == 15, f"15 suitable opportunities found (got {len(r1['new'])})")
+    for bad in ("vehicles", "حاسب", "سفلتة", "furniture", "road safety", "Hydrologist", "industrial area",
+                "Hospitality", "Citrix", "UPVC"):
         check(not any(bad in t for t in titles), f"rejected: {bad}")
     check(r1["first_run"] and not n1.tenders and len(n1.summaries) == 1, "first run sends one summary, not a flood")
 
@@ -106,6 +107,19 @@ def test_full_run():
     news = by["google_news:news"]
     check(any(link["label"] == "ابحث عن الإعلان الرسمي" for link in news["links"]), "news lead gets a search link")
 
+    uae = {r["source_key"]: r for r in r1["new"] if r["country_ar"] == "الإمارات"}
+    check(set(uae) >= {"uae_mof", "dubai_esupply", "abudhabi_adgpg", "dewa_tenders"},
+          f"UAE: federal, Dubai, Abu Dhabi and DEWA tenders found ({sorted(uae)})")
+    dx = uae["dubai_esupply"]
+    check("stormwater drainage tunnels" in dx["summary"] and dx["reference"] == "tender_990101",
+          "Dubai eSupply: description and project code read from the opportunity page")
+    check(dx["links"][0]["url"].endswith("opportunityId=900101"), "Dubai eSupply: guest link to the opportunity")
+    ad = uae["abudhabi_adgpg"]
+    check(ad["deadline"] == (TODAY + timedelta(days=14)).isoformat() and "tenderid=7700001" in ad["links"][0]["url"],
+          "Abu Dhabi ADGPG: closing date and public tender link")
+    check(uae["dewa_tenders"]["booklet_price"].startswith("1050.00"), "DEWA tender fee read")
+    check(uae["uae_mof"]["deadline"] == (TODAY + timedelta(days=21)).isoformat(), "UAE federal tender closing date read")
+
     # second run: nothing new; a changed deadline is followed
     fx2 = demo.fetchers(TODAY)
     orig_wb = fx2["worldbank"]
@@ -130,7 +144,7 @@ def test_full_run():
     wbr = next(r for r in saved["tenders"] if r["uid"] == "wb:OP00999001")
     check(wbr["deadline"] == (TODAY + timedelta(days=60)).isoformat() and wbr["notes"], "deadline extension recorded")
     st = json.load(open(os.path.join(tmp, "status.json"), encoding="utf-8"))
-    check(st["open"] == 12 and all(s["ok"] for s in st["sources"]), "status file written")
+    check(st["open"] == 16 and all(s["ok"] for s in st["sources"]), f"status file written (open={st['open']})")
     check(os.path.exists(os.path.join(tmp, "profile.json")), "profile for the app written")
     shutil.rmtree(tmp)
 

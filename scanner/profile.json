@@ -589,6 +589,17 @@
     "ebrd_ecepp": {
       "general_notice_days": 60
     },
+    "uae_mof": {
+      "pages": 20
+    },
+    "dubai_esupply": {
+      "pages": 10
+    },
+    "abudhabi_adgpg": {
+      "page_size": 200,
+      "max_items": 1500
+    },
+    "dewa_tenders": {},
     "google_news": {
       "max_age_days": 7,
       "queries_ar": [

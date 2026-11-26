@@ -383,8 +383,8 @@ def oman_tenderboard(cfg, countries, fetch=None):
     m = re.search(r'name="hidMax"\s+value="(\d+)"', first)
     last = min(int(m.group(1)) if m else 1, int(cfg.get("pages", 60)))
     pages = [first]
-    first_ids = re.findall(r"getNit\('(\d+)'\)", first)
-    first_id = first_ids[0] if first_ids else ""
+    # Every page also carries a fixed getNit('1') outside the rows, so compare all ids, not the first one.
+    first_ids = set(re.findall(r"getNit\('(\d+)'\)", first))
     for page in range(2, last + 1):
         if g.down:
             break
@@ -394,8 +394,8 @@ def oman_tenderboard(cfg, countries, fetch=None):
         html_page = g.call(sess, _OMAN_DASH, data=body,
                            headers={"Content-Type": "application/x-www-form-urlencoded", "Origin": OMAN,
                                     "Referer": _OMAN_DASH})
-        ids = re.findall(r"getNit\('(\d+)'\)", html_page or "")
-        if html_page is not None and (not ids or ids[0] == first_id):
+        ids = set(re.findall(r"getNit\('(\d+)'\)", html_page or ""))
+        if html_page is not None and (not ids or ids <= first_ids):
             break  # the portal answers cloud servers with the first page only; the office PC reads the rest
         if html_page:
             pages.append(html_page)
@@ -688,6 +688,298 @@ def web_pages(cfg, countries, fetch=http):
     return out
 
 
+# ------------------------------------------------------------------ UAE – federal entities (MOF Digital Procurement Platform)
+UAE_MOF = "https://mof.gov.ae"
+_MOF_AJAX = f"{UAE_MOF}/wp-admin/admin-ajax.php"
+_MOF_PAGE = f"{UAE_MOF}/en/public-finance/government-procurement/current-business-opportunities/"
+
+
+def uae_mof(cfg, countries, fetch=http):
+    """Current business opportunities of all federal ministries and authorities (9 per page)."""
+    if "UAE" not in countries:
+        return []
+    g, out, seen = _Guard(), [], set()
+    hdr = {**XHR_HEADERS, "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8", "Origin": UAE_MOF,
+           "Referer": _MOF_PAGE}
+    for page in range(1, int(cfg.get("pages", 20)) + 1):
+        if g.down:
+            break
+        frag = g.call(fetch, _MOF_AJAX, headers=hdr,
+                      data=f"page={page}&search=&ministry=&order=&order_by=&action=mof_dpp_fetch&language=en")
+        if frag is None:
+            continue
+        rows = [t for t in parse_uae_mof(frag) if t["uid"] not in seen]
+        if not rows:
+            break  # past the last page the portal answers "No results were found"
+        for t in rows:
+            seen.add(t["uid"])
+            out.append(t)
+    return out + g.report()
+
+
+def parse_uae_mof(fragment):
+    """Rows: RFQ no. | entity (code) | title | opening date | closing date | link to procurement.gov.ae."""
+    out = []
+    for row in re.findall(r'<tr[^>]*class="[^"]*mof-table__row[^"]*"[^>]*>(.*?)</tr>', fragment, re.S | re.I):
+        cells = re.findall(r"<td[^>]*>(.*?)</td>", row, re.S | re.I)
+        link = re.search(r'href="(https?://[^"]+)"', row)
+        if len(cells) < 5 or not link:
+            continue
+        rfq, entity, title, opens, closes = (html_to_text(c) for c in cells[:5])
+        if not rfq or not title:
+            continue
+        entity = re.sub(r"\s*-\s*\(\d+/\d+\)\s*$", "", entity)
+        when = re.search(r"\d{1,2}:\d{2}(?::\d{2})?\s*[AP]M", closes, re.I)
+        out.append(_tender(
+            uid=f"uaefed:{rfq}", source_key="uae_mof", source="المنصة الرقمية للمشتريات – الجهات الاتحادية (الإمارات)",
+            title=title, country="UAE", client=entity, notice_type="Public Tender", reference=rfq,
+            published=parse_date(opens), deadline=parse_date(closes),
+            deadline_time=re.sub(r":00(?=\s*[AP]M)", "", when.group(0)) if when else "",
+            url=html.unescape(link.group(1)), raw_text=" | ".join(x for x in [title, entity] if x),
+            submission_line="عبر المنصة الرقمية للمشتريات الاتحادية (procurement.gov.ae) إلكترونياً – بعد التسجيل في سجل الموردين الاتحادي",
+            _detail_done=True,  # procurement.gov.ae shows a browser check to scripts; the link works for people
+            extra=dict(platform="Digital Procurement Platform (DPP)",
+                       links=[{"label": "قائمة الفرص الاتحادية – وزارة المالية", "url": _MOF_PAGE}])))
+    return out
+
+
+# ------------------------------------------------------------------ UAE – Dubai Government eSupply (Jaggaer)
+ESUPPLY = "https://esupply.dubai.gov.ae"
+_ESUPPLY_GUEST = f"{ESUPPLY}/esop/guest/go/public/opportunity/current"
+_ESUPPLY_LIST = f"{ESUPPLY}/esop/toolkit/opportunity/current/list.si"
+
+
+def esupply_url(opp_id):
+    return f"{ESUPPLY}/esop/guest/go/opportunity/detail?opportunityId={opp_id}"
+
+
+def dubai_esupply(cfg, countries, fetch=None):
+    """All current opportunities of the Dubai Government entities (100 per page, guest view)."""
+    if "UAE" not in countries:
+        return []
+    sess = fetch or Session()
+    g, out, seen = _Guard(), [], set()
+    first = g.call(sess, _ESUPPLY_GUEST)
+    if first is None:
+        return g.report()
+    m = re.search(r"Showing Result\s*\d+\s*-\s*(\d+)\s*of\s*(\d+)", html_to_text(first))
+    per, total = (int(m.group(1)), int(m.group(2))) if m else (100, 0)
+    last = min(-(-total // max(per, 1)) if total else 1, int(cfg.get("pages", 10)))
+    pages = [first]
+    for page in range(2, last + 1):
+        if g.down:
+            break
+        html_page = g.call(sess, f"{_ESUPPLY_LIST}?opportunityListManager.pagerComponent.page={page}&userAct=navigation")
+        if html_page:
+            pages.append(html_page)
+    for html_page in pages:
+        for t in parse_esupply(html_page):
+            if t["uid"] not in seen:
+                seen.add(t["uid"])
+                out.append(t)
+    return out + g.report()
+
+
+def parse_esupply(page):
+    """Rows: no. | currency | buyer | title (goToDetail(id)) | publication | supply category | closing date/time."""
+    out = []
+    for row in re.findall(r'<tr[^>]*class="[^"]*table_cnt_body[^"]*"[^>]*>(.*?)</tr>', page, re.S | re.I):
+        det = re.search(r"goToDetail\((?:&#39;|')(\d+)(?:&#39;|')", row)
+        cells = re.findall(r"<td[^>]*>(.*?)</td>", row, re.S | re.I)
+        if not det or len(cells) < 6:
+            continue
+        link = re.search(r'<a[^>]*class="detailLink"[^>]*>', cells[2]) or re.search(r"<a[^>]*>", cells[2])
+        full = re.search(r'title="(?:View Details:\s*)?([^"]*)"', link.group(0)) if link else None
+        title = html_to_text(full.group(1)) if full and full.group(1).strip() else html_to_text(cells[2])
+        closes = html_to_text(cells[5])
+        when = re.search(r"\d{1,2}:\d{2}", closes)
+        category = html_to_text(cells[4])
+        out.append(_tender(
+            uid=f"dxb:{det.group(1)}", source_key="dubai_esupply", source="بوابة حكومة دبي للمشتريات (eSupply)",
+            title=title, country="UAE", client=html_to_text(cells[1]), notice_type="Request for Proposal",
+            published=parse_date(html_to_text(cells[3])), deadline=parse_date(closes),
+            deadline_time=when.group(0) if when else "", url=esupply_url(det.group(1)),
+            raw_text=" | ".join(x for x in [title, html_to_text(cells[1])] if x),
+            submission_line="عبر بوابة eSupply لحكومة دبي إلكترونياً – بعد تسجيل الشركة كمورد",
+            extra=dict(currency=html_to_text(cells[0]), activity="" if category == "Other" else category,
+                       opportunity_id=det.group(1),
+                       links=[{"label": "كل الفرص الحالية على eSupply", "url": _ESUPPLY_GUEST}])))
+    return out
+
+
+_ESUPPLY_SESSION = []
+
+
+def _esupply_detail(t, fetch=None):
+    """Description, lots and buyer of one opportunity (needs the guest session cookie)."""
+    if not getattr(fetch, "keeps_cookies", False):
+        if not _ESUPPLY_SESSION:
+            sess = Session()
+            sess(_ESUPPLY_GUEST, timeout=20, retries=0)
+            _ESUPPLY_SESSION.append(sess)
+        fetch = _ESUPPLY_SESSION[0]
+    oid = t["extra"].get("opportunity_id") or t["uid"].split(":", 1)[1]
+    page = fetch(f"{ESUPPLY}/esop/toolkit/opportunity/current/{oid}/detail.si", timeout=20, retries=0)
+    _apply_esupply_detail(t, page)
+    return t
+
+
+def parse_esupply_detail(page):
+    fields = {}
+    for li in re.findall(r'<li[^>]*class="[^"]*FormField[^"]*"[^>]*>(.*?)</li>', page, re.S | re.I):
+        label = re.search(r'class="form_question_label"[^>]*>(.*?)</div>', li, re.S | re.I)
+        answer = re.search(r'class="form_answer"[^>]*>(.*)$', li, re.S | re.I)
+        k = html_to_text(label.group(1)) if label else ""
+        v = html_to_text(answer.group(1)) if answer else ""
+        if k and v and k not in fields:
+            fields[k] = v
+    code = re.search(r"<title>\s*Project:\s*([\w-]+)", page)
+    lots = [html_to_text(x) for x in re.findall(r'<td class="col__fixed_">(rfq_\d+|tender_\d+|itt_\d+)</td>', page)]
+    return {"fields": fields, "code": code.group(1) if code else "", "lots": lots}
+
+
+def _apply_esupply_detail(t, page):
+    d = parse_esupply_detail(page)
+    f = d["fields"]
+    desc = f.get("Description", "")
+    if desc and norm(desc) != norm(t.get("title", "")):
+        t["description"] = desc[:1500]
+    if f.get("Buyer Organisation"):
+        t["client"] = f["Buyer Organisation"]
+    if f.get("Closing date/time"):
+        t["deadline"] = parse_date(f["Closing date/time"]) or t.get("deadline")
+    t["reference"] = d["code"] or t.get("reference", "")
+    t["detail_text"] = "\n".join(f"{k}: {v}" for k, v in f.items())[:6000]
+    t["raw_text"] = " | ".join(x for x in [t.get("title", ""), desc, f.get("Notes", ""), t.get("client", "")] if x)
+    t["extra"].update({k: v for k, v in {"notes": f.get("Notes", "")[:600], "lots": "، ".join(d["lots"][:5]),
+                                         "activity": f.get("Supply Category", "") if f.get("Supply Category") != "Other"
+                                         else ""}.items() if v})
+
+
+# ------------------------------------------------------------------ UAE – Abu Dhabi Government Procurement Gate
+ADGPG_API = "https://www.adgpg.gov.ae/SCAPI/ADGEs/AlMaqtaa/Tender"
+ADGPG_WEB = "https://supplier.adgpg.gov.ae"
+_ADGPG_HDR = {"Accept": "application/json, */*", "Origin": ADGPG_WEB, "Referer": f"{ADGPG_WEB}/pages/tender-list.html",
+              "Sec-Fetch-Site": "same-site", "Sec-Fetch-Mode": "cors", "Sec-Fetch-Dest": "empty"}
+
+
+def abudhabi_adgpg(cfg, countries, fetch=http):
+    """Public tenders of all Abu Dhabi government entities (the portal's public list)."""
+    if "UAE" not in countries:
+        return []
+    g, out, seen = _Guard(), [], set()
+    limit, offset, cap = int(cfg.get("page_size", 200)), 0, int(cfg.get("max_items", 1500))
+    hdr = {**_ADGPG_HDR, "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"}
+    while offset < cap and not g.down:
+        raw = g.call(fetch, f"{ADGPG_API}/List", headers=hdr,
+                     data=f"status=OPEN&offset={offset}&limit={limit}&Category=&Entity=&Sorting=LAST_CREATED"
+                          f"&DueDate=&Name=")
+        if raw is None:
+            break
+        try:
+            data = json.loads(raw)
+        except ValueError:
+            break
+        items = data.get("TenderList") or []
+        for it in items:
+            t = adgpg_item(it)
+            if t and t["uid"] not in seen:
+                seen.add(t["uid"])
+                out.append(t)
+        offset += len(items)
+        if not items or offset >= int(data.get("TenderCount") or 0):
+            break
+    return out + g.report()
+
+
+def adgpg_item(it):
+    tid = it.get("TenderID")
+    name = (it.get("TenderName") or "").strip()
+    if not tid or not name:
+        return None
+    m = re.match(r"\s*(RFQ|RFI|RFP|EOI|RFX|ITT)\s*[-–:]\s*", name, re.I)
+    kind = m.group(1).upper() if m else ""
+    title = name[m.end():].strip() if m else name
+    desc = html_to_text(it.get("TenderDetails") or "")
+    ntype = {"RFI": "Request for Information", "EOI": "Expression of Interest", "RFQ": "Request for Quotation",
+             "RFP": "Request for Proposal"}.get(kind, "Public Tender")
+    return _tender(
+        uid=f"adgpg:{tid}", source_key="abudhabi_adgpg", source="بوابة أبوظبي للمشتريات الحكومية (ADGPG)",
+        title=title, description="" if norm(desc) == norm(title) else desc[:1500], country="UAE",
+        client=(it.get("EntityName") or "").strip(" -"), notice_type=ntype, reference=it.get("TenderNumber") or "",
+        published=parse_date(it.get("BiddingOpenDate")), deadline=parse_date(it.get("DueDate")),
+        url=f"{ADGPG_WEB}/pages/tender-detail.html?tenderid={tid}",
+        raw_text=" | ".join(x for x in [title, desc, it.get("EntityName") or ""] if x),
+        submission_line="عبر بوابة أبوظبي للمشتريات الحكومية (ADGPG) إلكترونياً – بعد تسجيل الشركة كمورد",
+        extra=dict(tender_id=str(tid), event=kind))
+
+
+def _adgpg_detail(t, fetch=http):
+    raw = fetch(f"{ADGPG_API}/Details/{t['extra'].get('tender_id')}?recommendedLimit=0", headers=_ADGPG_HDR,
+                timeout=20, retries=0)
+    d = (json.loads(raw) or {}).get("TenderDetails") or {}
+    cat_ar, cat_en = d.get("CategoryDescriptionAr") or "", d.get("CategoryDescriptionEn") or ""
+    if re.search(r"consult|engineer|architect|advisory|survey|design", cat_en, re.I) or "استشار" in cat_ar:
+        t["consulting_flag"] = True
+    value = d.get("EstimatedValue") or ""
+    if re.fullmatch(r"\D*0\s*-\s*0\D*", value):
+        value = ""
+    files = len(d.get("Attachments") or [])
+    t["extra"].update({k: v for k, v in {"activity": cat_ar or cat_en, "category_en": cat_en if cat_ar else "",
+                                         "estimated_value": value, "attachments": f"{files} ملف" if files else ""}.items()
+                       if v})
+    if d.get("DiscoveryUrl"):
+        t["extra"].setdefault("links", []).append({"label": "صفحة المناقصة على نظام أبوظبي (للموردين المسجلين)",
+                                                   "url": d["DiscoveryUrl"]})
+    if d.get("TenderDetails") and not t.get("description") and norm(d["TenderDetails"]) != norm(t["title"]):
+        t["description"] = html_to_text(d["TenderDetails"])[:1500]
+    t["detail_text"] = " | ".join(x for x in [t.get("title", ""), t.get("description", ""), cat_en, cat_ar, value] if x)
+    return t
+
+
+# ------------------------------------------------------------------ UAE – Dubai Electricity & Water Authority (DEWA)
+DEWA_LIST = "https://www.dewa.gov.ae/en/supplier/services/list-of-tender-documents"
+
+
+def dewa_tenders(cfg, countries, fetch=http):
+    """DEWA open tenders (one page with all floated tenders, fee and closing date)."""
+    if "UAE" not in countries:
+        return []
+    g = _Guard()
+    page = g.call(fetch, DEWA_LIST)
+    return (parse_dewa(page) if page else []) + g.report()
+
+
+def parse_dewa(page):
+    out = []
+    for block in re.split(r'<h2[^>]*class="tender-result__title"[^>]*>', page)[1:]:
+        pairs = re.findall(r'<dt[^>]*class="tender-result__key"[^>]*>(.*?)</dt>\s*<dd[^>]*class="tender-result__value"[^>]*>'
+                           r'(.*?)</dd>', block, re.S | re.I)
+        f = {}
+        for k, v in pairs:
+            key = re.sub(r"\s*\(.*?\)\s*", " ", html_to_text(k)).strip(" :")
+            f.setdefault(key, v)
+        number = re.search(r"\d{6,}", html_to_text(f.get("Tender No", "")))
+        title = html_to_text(f.get("Name of Tenderer", ""))
+        status = html_to_text(f.get("Tender Status", ""))
+        if not number or not title or re.search(r"cancel|closed|award", status, re.I):
+            continue
+        fee = html_to_text(f.get("Tender Fee", ""))
+        out.append(_tender(
+            uid=f"dewa:{number.group(0)}", source_key="dewa_tenders", source="هيئة كهرباء ومياه دبي (ديوا)",
+            title=title, country="UAE", client="Dubai Electricity & Water Authority (DEWA)",
+            notice_type="Public Tender", reference=number.group(0),
+            published=parse_date(html_to_text(f.get("Floating Date", ""))),
+            deadline=parse_date(html_to_text(f.get("Closing Date", ""))),
+            booklet_price=f"{fee} درهم إماراتي" if fee and fee not in ("0", "0.00") else "",
+            url=DEWA_LIST, raw_text=title,
+            submission_line="عبر نظام SRM الخاص بهيئة كهرباء ومياه دبي (srm.dewa.gov.ae) – بعد شراء وثائق المناقصة",
+            _detail_done=True,  # one page lists every tender; nothing more per tender without a supplier login
+            extra=dict(status=status, links=[{"label": "شراء الوثائق والتقديم – نظام SRM لديوا",
+                                              "url": "https://srm.dewa.gov.ae/irj/portal/anonymous"}])))
+    return out
+
+
 # ------------------------------------------------------------------ office-PC helper (relay)
 RELAY_INFO = {}
 
@@ -718,7 +1010,8 @@ def pc_relay(cfg, countries, fetch=http):
 
 
 COLLECTORS = {"worldbank": worldbank, "etimad": etimad, "ungm": ungm, "oman_tenderboard": oman_tenderboard,
-              "bahrain_tb": bahrain_tb, "ebrd_ecepp": ebrd_ecepp, "monaqasat": monaqasat,
+              "bahrain_tb": bahrain_tb, "ebrd_ecepp": ebrd_ecepp, "uae_mof": uae_mof, "dubai_esupply": dubai_esupply,
+              "abudhabi_adgpg": abudhabi_adgpg, "dewa_tenders": dewa_tenders, "monaqasat": monaqasat,
               "kuwait_capt": kuwait_capt, "pc_relay": pc_relay, "google_news": google_news,
               "rss_feeds": rss_feeds, "web_pages": web_pages}
 
@@ -740,6 +1033,15 @@ def fetch_detail(t, fetch=http):
     """Open the notice page and add text, deadline and Etimad fields. Never raises."""
     url = t.get("url", "")
     if not url.startswith("http") or "news.google." in url or t["source_key"] == "worldbank":
+        return t
+    if t["source_key"] in ("dubai_esupply", "abudhabi_adgpg"):
+        try:
+            if t["source_key"] == "dubai_esupply":
+                _esupply_detail(t, fetch)
+            else:
+                _adgpg_detail(t, fetch)
+        except Exception:  # noqa: BLE001
+            pass
         return t
     try:
         page = fetch(url, timeout=15, retries=0)

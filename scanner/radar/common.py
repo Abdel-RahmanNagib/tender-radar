@@ -67,6 +67,7 @@ def http(url, data=None, headers=None, method=None, retries=1, timeout=None):
 
 class Session:
     """Keeps cookies between requests (portals that issue an anti-forgery token with a cookie)."""
+    keeps_cookies = True
 
     def __init__(self):
         import http.cookiejar

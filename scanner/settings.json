@@ -29,6 +29,10 @@
     "oman_tenderboard": true,
     "bahrain_tb": true,
     "ebrd_ecepp": true,
+    "uae_mof": true,
+    "dubai_esupply": true,
+    "abudhabi_adgpg": true,
+    "dewa_tenders": true,
     "monaqasat": false,
     "kuwait_capt": false,
     "pc_relay": true,
@@ -51,5 +55,5 @@
       "to": []
     }
   },
-  "_sources_help": "monaqasat (قطر) يمنع السيرفرات السحابية، ومجلس المناقصات العُماني لا يعطيها إلا الصفحة الأولى، فيفحصهما مساعد كمبيوتر المكتب ويرسلهما عبر pc_relay. kuwait_capt مغلق لأن موقع الكويت يمنع الفحص الآلي."
+  "_sources_help": "monaqasat (قطر) يمنع السيرفرات السحابية، ومجلس المناقصات العُماني لا يعطيها إلا الصفحة الأولى، فيفحصهما مساعد كمبيوتر المكتب ويرسلهما عبر pc_relay. kuwait_capt مغلق لأن موقع الكويت يمنع الفحص الآلي. الإمارات: uae_mof (الجهات الاتحادية) و dubai_esupply (حكومة دبي) و abudhabi_adgpg (حكومة أبوظبي) و dewa_tenders (هيئة كهرباء ومياه دبي)."
 }

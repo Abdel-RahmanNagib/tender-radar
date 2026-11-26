@@ -40,7 +40,7 @@ from radar.sources import COLLECTORS, fetch_detail  # noqa: E402
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-OWN_SESSION = {"ungm", "oman_tenderboard"}
+OWN_SESSION = {"ungm", "oman_tenderboard", "dubai_esupply"}
 CURL = os.path.join(os.environ.get("SystemRoot", r"C:\Windows"), "System32", "curl.exe")
 
 

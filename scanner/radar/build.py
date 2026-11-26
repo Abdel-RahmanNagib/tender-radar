@@ -101,6 +101,7 @@ def build_record(t, info, today, now_iso):
     if ex.get("project_id"):
         links.append({"label": "صفحة المشروع الممول",
                       "url": f"https://projects.worldbank.org/en/projects-operations/project-detail/{ex['project_id']}"})
+    links += [x for x in ex.get("links") or [] if x.get("url") and x["url"] != t.get("url")]
     if kind == "news":
         links.append({"label": "ابحث عن الإعلان الرسمي",
                       "url": "https://www.google.com/search?q=" + quote_plus(title + " مناقصة")})

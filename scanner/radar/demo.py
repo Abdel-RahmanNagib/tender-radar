@@ -200,10 +200,96 @@ def fetchers(today):
 <td>Open</td><td>x</td><td>x</td><td></td>
 <td>[New Cairo Stormwater (Example), 59999, Egypt, Consultancy, Consultancy Two Stage Open, New Urban Communities Authority, Municipal and Environmental Infrastructure, Invitation For Expression Interest]</td></tr></table>"""
 
+    def uae_mof(url, data=None, **kw):
+        if "page=1&" not in (data or ""):
+            return ('<table><tbody><tr class="mof-table__row mof-table__row_error"><td colspan="6">'
+                    '<span class="mof-table__row_error__title">No results were found</span></td></tr></tbody></table>')
+        rows = [("13901", "Ministry of Energy &amp; Infrastructure (Example) - (101/10001)",
+                 "Consultancy services for design and supervision of internal roads and stormwater drainage – Fujairah (Example)"),
+                ("13902", "Federal Authority (Example) - (102/10002)", "توريد أجهزة حاسب آلي وطابعات")]
+        opens, closes = (today - timedelta(days=2)).strftime("%d/%m/%Y 9:00:00 AM"), \
+            (today + timedelta(days=21)).strftime("%d/%m/%Y 10:00:00 AM")
+        body = "".join(
+            f'<tr class="mof-table__row border-b"><td class="mof-table__cell">{n}</td><td id="{n}" class="mof-table__cell">'
+            f'{e}</td><td class="mof-table__cell">{t}</td><td class="mof-table__cell">{opens}</td>'
+            f'<td class="mof-table__cell">{closes}</td><td class="mof-table__cell"><a id="link-{n}" '
+            f'href="https://procurement.gov.ae/page.aspx/en/bpm/process_manage_extranet/{n}" target="_blank">Click here</a>'
+            f'</td></tr>' for n, e, t in rows)
+        return f'<div class="mof-dpp-table"><table><tbody>{body}</tbody></table></div>'
+
+    def esupply(url, **kw):
+        pub, close = (today - timedelta(days=1)).strftime("%d/%m/%Y 11:00"), \
+            (today + timedelta(days=18)).strftime("%d/%m/%Y 12:00")
+        rows = [("900101", "Dubai Municipality (Example)", "TF-99-S1 Supervision of Stormwater Drainage System Projects – Package 9 (Example)"),
+                ("900102", "Dubai Health Authority (Example)", "Supply and Delivery of Hospitality Equipment")]
+        body = "".join(
+            f'<tr class="table_cnt_body_{"a" if i % 2 == 0 else "b"}"><th scope="row" class="number">{i + 1}</th>'
+            f'<td class="col__fixed_">AED</td><td class="col__fixed_">{b}</td><td class="col__fixed_"><a href="#fh" '
+            f'class="detailLink" onclick="javascript:goToDetail(&#39;{n}&#39;, &#39;01040&#39;);stopEventPropagation(event);" '
+            f'title="View Details: {t}">{t[:60]}</a></td><td class="column-date col__fixed_">{pub}</td>'
+            f'<td class="col__fixed_">Other</td><td class="column-date col__fixed_">{close}</td></tr>'
+            for i, (n, b, t) in enumerate(rows))
+        return (f'<div>Showing Result <span>1</span> - <span>2</span> of <span>2</span></div>'
+                f'<table class="list-table"><tbody class="async-list-tbody">{body}</tbody></table>')
+
+    def adgpg(url, data=None, **kw):
+        import json
+        due = (today + timedelta(days=14)).isoformat() + "T00:00:00Z"
+        return json.dumps({"TenderCount": 2, "TenderList": [
+            {"TenderID": 7700001, "TenderName": "RFQ-Consultancy Services for Design Review of Roads and Utilities "
+                                                "Networks – Al Ain (Example)", "TenderNumber": "771105000001",
+             "EntityName": "Department of Municipalities and Transport (Example)", "DueDate": due,
+             "TenderDetails": "Design review and value engineering of road and utility networks (Example).",
+             "BiddingOpenDate": today.isoformat() + "T00:00:00Z", "DueDays": 14},
+            {"TenderID": 7700002, "TenderName": "RFQ-Citrix and ShareFile licenses renewal", "TenderNumber": "771102000002",
+             "EntityName": "Department (Example)", "DueDate": due, "TenderDetails": ""}]})
+
+    def dewa(url, **kw):
+        float_d, close = (today - timedelta(days=5)).strftime("%d-%b-%Y"), (today + timedelta(days=24)).strftime("%d-%b-%Y")
+        items = [("2129900001", "HIRING OF CONSULTANCY SERVICES FOR DESIGN AND SUPERVISION OF STORM WATER DRAINAGE "
+                                "NETWORK AT JEBEL ALI (EXAMPLE)", "Active", "1050.00"),
+                 ("2059900002", "SUPPLY OF UPVC PIPES & ACCESSORIES FOR UNDERGROUND CABLES", "Active", "315.00")]
+        return "".join(
+            f'<div class="tender-result"><h2 class="tender-result__title">Si No: {i + 1}</h2>'
+            f'<dl class="tender-result__details"><dt class="tender-result__key">Tender No:</dt>'
+            f'<dd class="tender-result__value">\r\n {n}\r\n <a href="javascript:void(0)" data-tender="{n}">View Advertisement</a></dd>'
+            f'<dt class="tender-result__key">Name of Tenderer :</dt><dd class="tender-result__value">{t}</dd>'
+            f'<dt class="tender-result__key">Tender Status:</dt><dd class="tender-result__value">{s}</dd></dl>'
+            f'<div class="m37-expander"><dl class="tender-result__details">'
+            f"<dt class=\"tender-result__key\">Tender Fee (<span class='dirham-symbol'>D</span>):</dt>"
+            f'<dd class="tender-result__value">{fee}</dd><dt class="tender-result__key">Floating Date:</dt>'
+            f'<dd class="tender-result__value">\r\n {float_d}\r\n </dd><dt class="tender-result__key">Closing Date:</dt>'
+            f'<dd class="tender-result__value">{close}</dd></dl></div></div>'
+            for i, (n, t, s, fee) in enumerate(items))
+
+    def uae_detail(url):
+        import json
+        if "esupply.dubai.gov.ae" in url:
+            return ('<title>Project: tender_990101 - TF-99-S1 Supervision (eSupply)</title><ul>'
+                    '<li class="FormField FormField-large"><div class="form_question"><div class="form_question_label"> '
+                    'Description </div></div> <div class="form_answer"> Construction supervision of stormwater drainage '
+                    'tunnels and pumping stations, package 9 (Example). </div> </li><li class="FormField"><div '
+                    'class="form_question"><div class="form_question_label"> Buyer Organisation </div></div> <div '
+                    'class="form_answer"> Dubai Municipality (Example) </div></li></ul>'
+                    '<table><tr><th scope="row">1</th><td class="status col__fixed_">RFQ/RFP</td>'
+                    '<td class="col__fixed_">rfq_990001</td></tr></table>')
+        if "/Details/" in url:
+            return json.dumps({"TenderDetails": {"EstimatedValue": "AED 0 - 0", "EventType": "RFQ",
+                                                 "CategoryDescriptionEn": "Engineering and Research Services - Civil engineering",
+                                                 "CategoryDescriptionAr": "خدمات هندسية - الهندسة المدنية",
+                                                 "DiscoveryUrl": "https://example.com/oracle-negotiation", "Attachments": [{}]}})
+        return None
+
+    def detail_all(url, **kw):
+        found = uae_detail(url)
+        return detail(url, **kw) if found is None else found
+    detail_all.keeps_cookies = True  # stands in for the eSupply guest session too
+
     return {"worldbank": wb, "etimad": etimad, "ungm": ungm, "monaqasat": monaqasat, "google_news": news,
-            "oman_tenderboard": oman, "bahrain_tb": bahrain, "ebrd_ecepp": ebrd,
+            "oman_tenderboard": oman, "bahrain_tb": bahrain, "ebrd_ecepp": ebrd, "uae_mof": uae_mof,
+            "dubai_esupply": esupply, "abudhabi_adgpg": adgpg, "dewa_tenders": dewa,
             "kuwait_capt": lambda url, **kw: "<html></html>", "pc_relay": lambda url, **kw: "",
-            "rss_feeds": lambda url, **kw: "", "web_pages": web, "detail": detail}
+            "rss_feeds": lambda url, **kw: "", "web_pages": web, "detail": detail_all}
 
 
 def all_sources_on(settings):

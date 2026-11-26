@@ -23,6 +23,8 @@ const STATUS = { '': 'لم أحدد', study: 'ندرسها', apply: 'سنقدّ�
 const SOURCE_AR = { worldbank: 'البنك الدولي', etimad: 'منصة اعتماد', etimad_prequal: 'اعتماد – التأهيل المسبق', monaqasat: 'منصة مناقصات قطر', ungm: 'الأمم المتحدة UNGM',
   kuwait_capt: 'جهاز المناقصات – الكويت', pc_relay: 'من كمبيوتر المكتب', oman_tenderboard: 'مجلس المناقصات – عُمان',
   bahrain_tb: 'مجلس المناقصات – البحرين', ebrd_ecepp: 'البنك الأوروبي EBRD',
+  uae_mof: 'الإمارات – الجهات الاتحادية', dubai_esupply: 'حكومة دبي – eSupply', abudhabi_adgpg: 'حكومة أبوظبي – ADGPG',
+  dewa_tenders: 'هيئة كهرباء ومياه دبي',
   google_news: 'أخبار الطروحات', rss_feeds: 'خلاصات RSS', web_pages: 'بوابات حكومية وبنوك تنمية' };
 const EN = { stormwater: 'stormwater drainage', hydrology: 'hydrology and hydraulic modelling', sewer: 'sewerage and wastewater',
   water: 'water networks', irrigation: 'irrigation networks', roads: 'roads and highway design', pavement: 'pavement design',
@@ -539,7 +541,7 @@ function renderSettings() {
         ${pcLine}
         <p class="small" style="margin-top:10px">قنوات الإشعار المفعّلة على الخادم: ${['ntfy', 'telegram', 'email'].filter((k) => s.channels && s.channels[k]).map((k) => ({ ntfy: 'ntfy', telegram: 'تيليجرام', email: 'الإيميل' })[k]).join('، ') || '<span class="bad">لا شيء بعد — أضف NTFY_TOPIC في GitHub</span>'}</p>`
         : '<p class="muted">لا توجد بيانات حالة بعد.</p>'}</section>
-    <section class="box"><h3>عن البيانات</h3><p class="small">المصادر: البنك الدولي، منصة اعتماد، بوابة الأمم المتحدة UNGM، مجلس المناقصات العُماني، مجلس المناقصات بالبحرين، البنك الأوروبي لإعادة الإعمار EBRD، منصة مناقصات قطر وكامل قائمة مجلس المناقصات العُماني (يفحصهما مساعد كمبيوتر المكتب لأنهما يمنعان السيرفرات السحابية؛ والجهاز المركزي للمناقصات بالكويت يمنع الفحص الآلي فيُراجع من رابطه)، البنك الإسلامي للتنمية، وأخبار الطروحات. الأرقام والإيميلات مأخوذة من نص الإعلان نفسه، وأرقام الدعم الفني للبوابات من مواقعها الرسمية. راجعوا الإعلان الرسمي دائماً قبل التقديم.</p></section>`;
+    <section class="box"><h3>عن البيانات</h3><p class="small">المصادر: البنك الدولي، منصة اعتماد، بوابة الأمم المتحدة UNGM، مجلس المناقصات العُماني، مجلس المناقصات بالبحرين، بوابات الإمارات (المنصة الاتحادية، eSupply دبي، ADGPG أبوظبي، وهيئة كهرباء ومياه دبي)، البنك الأوروبي لإعادة الإعمار EBRD، منصة مناقصات قطر وكامل قائمة مجلس المناقصات العُماني (يفحصهما مساعد كمبيوتر المكتب لأنهما يمنعان السيرفرات السحابية؛ والجهاز المركزي للمناقصات بالكويت يمنع الفحص الآلي فيُراجع من رابطه)، البنك الإسلامي للتنمية، وأخبار الطروحات. الأرقام والإيميلات مأخوذة من نص الإعلان نفسه، وأرقام الدعم الفني للبوابات من مواقعها الرسمية. راجعوا الإعلان الرسمي دائماً قبل التقديم.</p></section>`;
 }
 function randomTopic() {
   const a = new Uint8Array(6); (crypto || window.msCrypto).getRandomValues(a);
