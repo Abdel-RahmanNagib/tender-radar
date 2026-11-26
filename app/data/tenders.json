@@ -1,8 +1,3609 @@
 {
-"generated":"2026-11-26T17:57:28+00:00",
+"generated":"2026-11-26T18:56:48+00:00",
 "office":"CEC Egypt – Delta Office – Infrastructure",
-"count":21,
+"count":38,
 "tenders":[
+{
+"id":"dxb-955f5f1027",
+"uid":"dxb:247550",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"dubai_esupply",
+"source":"بوابة حكومة دبي للمشتريات (eSupply)",
+"kind":"rfp",
+"notice_type":"Request for Proposal",
+"notice_type_ar":"طلب عروض (RFP)",
+"title":"2028_DS317-S1_Supervision of Sewerage and stormwater system in New Al",
+"is_arabic":false,
+"summary":"3.1.1.7 (Stage 7): Payment for Construction Supervision\nProject (1): DS317-S1- Supervision of Sewerage & Stormwater System in New Al Awir 1st -\n-: For the supervision of the works as described in Stage 7 (Reference Clause 3.1.1.7) -\n-: Schedule of Payments: (Position Rates) -\nPosition: Resident Engineer -\nPosition: Assistant Project Manager -\nPosition: Civil Engineer -\nPosition: Planning and Reporting Engineer -\nPosition: NOC Engineer -\nPosition: MEP Engineer -\nPosition: Quantity Surveyor -\nPosition: Materials Inspector -\nPosition: Inspector (Civil) -\nPosition: Land Surveyor -\nPosition: Secretary & Document Controller -\nPosition: Health and Safety Engineer -\nPosition: Health and Safety Officer -\nPosition: Senior Environmental Engineer -\nPosition: Draftsman -\n*: All other services required to provide efficient supervision during construction stage & any required staff not mentioned in the Schedule will considered as office back –up(refer to clause 3.1.17 GCCSA)\nFull time – up to 08 hours per day : Part time : up to 4 hours per day -\n3.1.1.8 : Statement at Completion and Defects Liability Period for:\n-\n3.1.1.9: Defects Liability Certificate and Final Payment Certificate for below area\n-\n3.1.1.10: Records and Operating Instructions for below area\n-\nImportant Note: Please feed the mentioned Lines (From 2.11.3 to 2.11.10) as priced above. -\n3.1.1.7: Construction Supervision for the whole included works and duties -\n3.1.1.8 : Statement at Completion and Defects Liability Period -\n3",
+"country":"UAE",
+"country_ar":"الإمارات",
+"flag":"🇦🇪",
+"client":"Dubai Municipality",
+"reference":"tender_244618",
+"published":"2026-11-18",
+"deadline":"2026-12-10",
+"deadline_time":"08:00",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":12,
+"disciplines":[
+"تصريف مياه الأمطار والسيول",
+"الصرف الصحي ومحطات الرفع"
+],
+"ids":[
+"stormwater",
+"sewer"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-18",
+"date_ar":"الأربعاء 18 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-10",
+"date_ar":"الخميس 10 ديسمبر 2026",
+"kind":"deadline",
+"time":"08:00"
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Dubai Municipality",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"لم تُذكر أرقام أو إيميلات في البيانات المتاحة — افتح الإعلان الرسمي لمعرفة جهة التواصل."
+},
+{
+"title":"الدعم الفني لبوابة eSupply – حكومة دبي",
+"phones":[
+{
+"display":"+971 800 8363377",
+"tel":"+9718008363377",
+"whatsapp":""
+}
+],
+"emails":[
+"sourcingsupport@tejari.com"
+],
+"website":"https://esupply.dubai.gov.ae",
+"note":"للتسجيل والمشاكل التقنية (800Tenders). أسئلة المناقصة نفسها تُرسل من داخل الفرصة على البوابة للجهة الطارحة.",
+"source":"دليل الموردين المنشور على موقع الإدارة العامة للإقامة وشؤون الأجانب – دبي",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[
+"*: All other services required to provide efficient supervision during construction stage & any required staff not mentioned in the Schedule will considered as office back –up(refer to clause 3.1.17 GCCSA)",
+"Note: If there is any reimbursement for any expense (Translation, Insurance Premium, Instrument Purchase, etc.) under this Consultancy Services Agreement, it should be stated here with the definition, eligibility requirements, estimated amount, probable date of payment, and detailed requirements of proof of payment."
+],
+"doc_note":"",
+"submission_line":"عبر بوابة eSupply لحكومة دبي إلكترونياً – بعد تسجيل الشركة كمورد",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-30",
+"due_ar":"الاثنين 30 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-03",
+"due_ar":"الخميس 3 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-05",
+"due_ar":"السبت 5 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-06",
+"due_ar":"الأحد 6 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-08",
+"due_ar":"الثلاثاء 8 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"عبر بوابة eSupply لحكومة دبي إلكترونياً – بعد تسجيل الشركة كمورد.",
+"due":"2026-12-09",
+"due_ar":"الأربعاء 9 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://esupply.dubai.gov.ae/esop/guest/go/opportunity/detail?opportunityId=247550"
+},
+{
+"label":"كل الفرص الحالية على eSupply",
+"url":"https://esupply.dubai.gov.ae/esop/guest/go/public/opportunity/current"
+}
+],
+"excerpt":"2028_DS317-S1_Supervision of Sewerage and stormwater system in New Al | 3.1.1.7 (Stage 7): Payment for Construction Supervision\nProject (1): DS317-S1- Supervision of Sewerage & Stormwater System in New Al Awir 1st -\n-: For the supervision of the works as described in Stage 7 (Reference Clause 3.1.1.7) -\n-: Schedule of Payments: (Position Rates) -\nPosition: Resident Engineer -\nPosition: Assistant Project Manager -\nPosition: Civil Engineer -\nPosition: Planning and Reporting Engineer -\nPosition: NOC Engineer -\nPosition: MEP Engineer -\nPosition: Quantity Surveyor -\nPosition: Materials Inspector -\nPosition: Inspector (Civil) -\nPosition: Land Surveyor -\nPosition: Secretary & Document Controller -\nPosition: Health and Safety Engineer -\nPosition: Health and Safety Officer -\nPosition: Senior Environmental Engineer -\nPosition: Draftsman -\n*: All other services required to provide efficient supervision during construction stage & any required staff not mentioned in the Schedule will considered as office back –up(refer to clause 3.1.17 GCCSA)\nFull time – up to 08 hours per day : Part time : up to 4 hours per day -\n3.1.1.8 : Statement at Completion and Defects Liability Period for:\n-\n3.1.1.9: Defects Liability Certificate and Final Payment Certificate for below area\n-\n3.1.1.10: Records and Operating Instructions for below area\n-\nImportant Note: Please feed the mentioned Lines (From 2.11.3 to 2.11.10) as priced above. -\n3.1.1.7: Construction Supervision for the whole included works and duties -\n3.1.1.8 : Statement at Completion and Defects Liability Period -\n3.1.1.9 : Defects Liability Certificate and Final Payment Certificate -\n3.1.1.10 : Records and Operating Instructions -\nNote: If there is any reimbursement for any expense (Translation, Insurance Premium, Instrument Purchase, etc.) under this Consultancy Services Agreement, it should be stated here with the definition, eligibility requirements, estimated amount, probable date of payment, and detailed requirements of proof of payment. The absenc... | Dubai Municipality\nProject Code: tender_244618\nProject Title: 2028_DS317-S1_Supervision of Sewerage and stormwater system in New Al\nDescription: 3.1.1.7 (Stage 7): Payment for Construction Supervision\nProject (1): DS317-S1- Supervision of Sewerage & Stormwater System in New Al Awir 1st -\n-: For the supervision of the works as described in Stage 7 (Reference Clause 3.1.1.7) -\n-: Schedule of Payments: (Position Rates) -\nPosition: Resident Engineer -\nPosition: Assistant Pro",
+"notes":[]
+},
+{
+"id":"monaqasat-e2d9d5258e",
+"uid":"monaqasat:5767/2026",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"monaqasat",
+"source":"منصة مناقصات – قطر",
+"kind":"rfp",
+"notice_type":"Public Tender",
+"notice_type_ar":"مناقصة عامة",
+"title":"PROFESSIONAL SERVICES CONTRACT (PSC) FOR SUPERVISION OF CONSTRUCTION OF ROADS AND INFRASTRUCTURE IN WADI AL BANAT - ZONE 70\nPA 2026 S 006 S\nSERVICE PROVIDERS / CIVIL ENGINEERING - ELECTRICAL ENGINEERING AND MECHANICAL AND INDUSTRIAL EQUIPMENT CONTRACTS -ENGINEERING WORKS SERVICES/GRADE 1,2,3,4,5/COMPANY ALL\nFOR MORE INFORMATION VISIT ASHGHAL WEBSITE\nWWW.ASHGHAL.GOV.QA",
+"is_arabic":false,
+"summary":"PROFESSIONAL SERVICES CONTRACT (PSC) FOR SUPERVISION OF CONSTRUCTION OF ROADS AND INFRASTRUCTURE IN WADI AL BANAT – ZONE 70",
+"country":"Qatar",
+"country_ar":"قطر",
+"flag":"🇶🇦",
+"client":"Public Works Authority",
+"reference":"5767/2026",
+"published":null,
+"deadline":"2026-12-13",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"4,250.00 ريال قطري",
+"guarantee":"1,100,000.00 QAR",
+"contract_duration":"35",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":20,
+"disciplines":[
+"الهيدرولوجيا والنمذجة الهيدروليكية",
+"الطرق والتصميم الهندسي",
+"المرافق والبنية التحتية",
+"تصميم هندسي مدني عام"
+],
+"ids":[
+"hydrology",
+"roads",
+"utilities",
+"civil_general"
+]
+},
+"dates":[
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-13",
+"date_ar":"الأحد 13 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Public Works Authority",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"لم تُذكر أرقام أو إيميلات في البيانات المتاحة — افتح الإعلان الرسمي لمعرفة جهة التواصل."
+},
+{
+"title":"منصة مناقصات – وزارة المالية القطرية",
+"website":"https://monaqasat.mof.gov.qa",
+"note":"كثير من الإعلانات تذكر إيميل الجهة للاستفسار داخل وصف المناقصة نفسها.",
+"phones":[],
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":true
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":true
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[
+"Companies wishing to participate in government tenders must be classified.",
+"Updates will be announced on the website - The Ministry of Finance announces the postponement of the mandatory submission of the ICV certificate as a condition for participating in government tenders until the beginning of 2027.",
+"However, The Ministry of Finance encourages you to initiate the process to obtain ICV Certificate, and you can access the required information through the Monaqasat Portal",
+"Those wishing to submit their bids may obtain the offering documents from the unified website for state procurement using their login data ( the email registered in the classification program ) after paying the value of the prescribed documents by clicking on the (buy) icon.",
+"In the event that the conditions provide for the submission of an initial guarantee, a temporary security shall be attached to the bid, in the name of the government authority to the Committee, by an acceptable payable cheque (manager’s cheque) or by virtue of a bank guarantee letter issued by a local or accredaited bank, not accompanied by any restriction or condition, and valid for the"
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"قيمة الوثائق: 4,250.00 ريال قطري.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-12-03",
+"due_ar":"الخميس 3 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-06",
+"due_ar":"الأحد 6 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-08",
+"due_ar":"الثلاثاء 8 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-09",
+"due_ar":"الأربعاء 9 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-11",
+"due_ar":"الجمعة 11 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد).",
+"due":"2026-12-12",
+"due_ar":"السبت 12 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://monaqasat.mof.gov.qa/TendersOnlineServices/TenderDetails/662022"
+}
+],
+"excerpt":"PROFESSIONAL SERVICES CONTRACT (PSC) FOR SUPERVISION OF CONSTRUCTION OF ROADS AND INFRASTRUCTURE IN WADI AL BANAT - ZONE 70\nPA 2026 S 006 S\nSERVICE PROVIDERS / CIVIL ENGINEERING - ELECTRICAL ENGINEERING AND MECHANICAL AND INDUSTRIAL EQUIPMENT CONTRACTS -ENGINEERING WORKS SERVICES/GRADE 1,2,3,4,5/COMPANY ALL\nFOR MORE INFORMATION VISIT ASHGHAL WEBSITE\nWWW.ASHGHAL.GOV.QA | PROFESSIONAL SERVICES CONTRACT (PSC) FOR SUPERVISION OF CONSTRUCTION OF ROADS AND INFRASTRUCTURE IN WADI AL BANAT – ZONE 70 | Suppliers / Service Providers | Civil engineering offices، Engineering offices for electrical, excavation, security, safety and chemical projects\nTender Details - Monaqasat | The Unified Website of State Procurement\nThe Unified Website of State Procurement\nLogin\nFAQ\nContact Us\nCreate Support Ticket\nالعربية\nHome\nWho Are We\nQatar Vision 2030\nServices\nClassification services\nTenders Services\nDispute Resolution Service\nSearch Company\nRegulations and laws\nCompanies wishing to participate in government tenders must be classified. Please note that linking tender financial ceilings to company financial limits for suppliers and service providers has been postponed to allow more companies to meet the advanced classification requirements. Updates will be announced on the website - The Ministry of Finance announces the postponement of the mandatory submission of the ICV certificate as a condition for participating in government tenders until the beginning of 2027. You will be notified of the specific date. However, The Ministry of Finance encourages you to initiate the process to obtain ICV Certificate, and you can access the required information through the Monaqasat Portal\nHome\nTenders Online Services\nTender Details\nAnnouncement Number: 25243\nDate: 26/11/2026\nTender Announcement\nTime remaining till tender closure 16 Day, 15 Hour And 39 Minute\nTender number\nType\nSubject\nMinistry\nEntity's tender number\nRequest Types\nEnvelopes system\nTender Bond\nDocuments value (QR)\nClosing Date\n5767/2026\nPublic Tender\nPROFESSIONAL SERVICES CONTRACT (PSC) FOR SUPERVISION OF CONSTRUCTION OF ROADS AND INFRASTRUCTURE IN WADI AL BANAT - ZONE 70\nPA 2026 S 006 S\nSERVICE PROVIDERS / CIVIL ENGINEERING - ELECTRICAL ENGINEERING AND MECHANICAL AND INDUSTRIAL EQUIPMENT CONTRACTS -ENGINEERING WORKS SERVICES/GRADE 1,2,3,4,5/COMPANY ALL\nFOR MORE INFORMATION VISIT ASHGHAL WEBSITE\nWWW.ASHGHAL.GOV.QA\nPublic Works Authority\nPWA/STC/47/2026\nSuppliers / Service Providers\nTwo Envelopes\n1,100,000.00\n4,250.00\n13/12/2026",
+"notes":[]
+},
+{
+"id":"adgpg-70153784bb",
+"uid":"adgpg:1434355",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"abudhabi_adgpg",
+"source":"بوابة أبوظبي للمشتريات الحكومية (ADGPG)",
+"kind":"rfp",
+"notice_type":"Request for Quotation",
+"notice_type_ar":"طلب أسعار (RFQ)",
+"title":"DMT-RFP-26-033 Design of the New ICAD Road (Truck Road)",
+"is_arabic":false,
+"summary":"Design Consultancy Services for Design of New ICAD Road (Truck Road) project.",
+"country":"UAE",
+"country_ar":"الإمارات",
+"flag":"🇦🇪",
+"client":"ADPIC - Department of Municipalities and Transport (DMT)",
+"reference":"6650255",
+"published":null,
+"deadline":"2026-11-26",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"خدمات إنشاء المباني والمرافق والصيانة - خدمات الإنشاء الثقيلة",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":8,
+"disciplines":[
+"الطرق والتصميم الهندسي"
+],
+"ids":[
+"roads"
+]
+},
+"dates":[
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-11-26",
+"date_ar":"الخميس 26 نوفمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"ADPIC - Department of Municipalities and Transport (DMT)",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"لم تُذكر أرقام أو إيميلات في البيانات المتاحة — افتح الإعلان الرسمي لمعرفة جهة التواصل."
+},
+{
+"title":"بوابة أبوظبي للمشتريات الحكومية (ADGPG) – الدعم",
+"phones":[
+{
+"display":"800555",
+"tel":"800555",
+"whatsapp":""
+},
+{
+"display":"+971 2 666 4442",
+"tel":"+97126664442",
+"whatsapp":""
+}
+],
+"emails":[
+"contact@tamm.abudhabi"
+],
+"website":"https://supplier.adgpg.gov.ae",
+"note":"800-555 مجاني من داخل الإمارات، و+971 2 666 4442 من خارجها. التسجيل كمورد مرة واحدة لكل جهات أبوظبي.",
+"source":"الصفحة الرئيسية لبوابة الموردين ADGPG",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[],
+"doc_note":"",
+"submission_line":"عبر بوابة أبوظبي للمشتريات الحكومية (ADGPG) إلكترونياً – بعد تسجيل الشركة كمورد",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"عبر بوابة أبوظبي للمشتريات الحكومية (ADGPG) إلكترونياً – بعد تسجيل الشركة كمورد.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://supplier.adgpg.gov.ae/pages/tender-detail.html?tenderid=1434355"
+},
+{
+"label":"صفحة المناقصة على نظام أبوظبي (للموردين المسجلين)",
+"url":"https://eservice.addigital.gov.ae/"
+}
+],
+"excerpt":"DMT-RFP-26-033 Design of the New ICAD Road (Truck Road) | Design Consultancy Services for Design of New ICAD Road (Truck Road) project. | ADPIC - Department of Municipalities and Transport (DMT)\nDMT-RFP-26-033 Design of the New ICAD Road (Truck Road) | Design Consultancy Services for Design of New ICAD Road (Truck Road) project. | Building and Facility Construction and Maintenance Services - Heavy construction services | خدمات إنشاء المباني والمرافق والصيانة - خدمات الإنشاء الثقيلة",
+"notes":[]
+},
+{
+"id":"adgpg-4adca98936",
+"uid":"adgpg:1434376",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"abudhabi_adgpg",
+"source":"بوابة أبوظبي للمشتريات الحكومية (ADGPG)",
+"kind":"rfp",
+"notice_type":"Request for Quotation",
+"notice_type_ar":"طلب أسعار (RFQ)",
+"title":"DMT-RFP-26-051 Supervision & ICC Upgrade infra -roads and landscape MBZ",
+"is_arabic":false,
+"summary":"Upgrade infrastructure of roads and landscape work in MBZ - Package (31) Supervision & Independent Cost Consultancy Services",
+"country":"UAE",
+"country_ar":"الإمارات",
+"flag":"🇦🇪",
+"client":"ADPIC - Department of Municipalities and Transport (DMT)",
+"reference":"6650362",
+"published":null,
+"deadline":"2026-11-30",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"خدمات إنشاء المباني والمرافق والصيانة - خدمات الإنشاء الثقيلة",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":9,
+"disciplines":[
+"الطرق والتصميم الهندسي",
+"المرافق والبنية التحتية"
+],
+"ids":[
+"roads",
+"utilities"
+]
+},
+"dates":[
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-11-30",
+"date_ar":"الاثنين 30 نوفمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"ADPIC - Department of Municipalities and Transport (DMT)",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"لم تُذكر أرقام أو إيميلات في البيانات المتاحة — افتح الإعلان الرسمي لمعرفة جهة التواصل."
+},
+{
+"title":"بوابة أبوظبي للمشتريات الحكومية (ADGPG) – الدعم",
+"phones":[
+{
+"display":"800555",
+"tel":"800555",
+"whatsapp":""
+},
+{
+"display":"+971 2 666 4442",
+"tel":"+97126664442",
+"whatsapp":""
+}
+],
+"emails":[
+"contact@tamm.abudhabi"
+],
+"website":"https://supplier.adgpg.gov.ae",
+"note":"800-555 مجاني من داخل الإمارات، و+971 2 666 4442 من خارجها. التسجيل كمورد مرة واحدة لكل جهات أبوظبي.",
+"source":"الصفحة الرئيسية لبوابة الموردين ADGPG",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[],
+"doc_note":"",
+"submission_line":"عبر بوابة أبوظبي للمشتريات الحكومية (ADGPG) إلكترونياً – بعد تسجيل الشركة كمورد",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"عبر بوابة أبوظبي للمشتريات الحكومية (ADGPG) إلكترونياً – بعد تسجيل الشركة كمورد.",
+"due":"2026-11-29",
+"due_ar":"الأحد 29 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://supplier.adgpg.gov.ae/pages/tender-detail.html?tenderid=1434376"
+},
+{
+"label":"صفحة المناقصة على نظام أبوظبي (للموردين المسجلين)",
+"url":"https://eservice.addigital.gov.ae/"
+}
+],
+"excerpt":"DMT-RFP-26-051 Supervision & ICC Upgrade infra -roads and landscape MBZ | Upgrade infrastructure of roads and landscape work in MBZ - Package (31) Supervision & Independent Cost Consultancy Services | ADPIC - Department of Municipalities and Transport (DMT)\nDMT-RFP-26-051 Supervision & ICC Upgrade infra -roads and landscape MBZ | Upgrade infrastructure of roads and landscape work in MBZ - Package (31) Supervision & Independent Cost Consultancy Services | Building and Facility Construction and Maintenance Services - Heavy construction services | خدمات إنشاء المباني والمرافق والصيانة - خدمات الإنشاء الثقيلة",
+"notes":[]
+},
+{
+"id":"monaqasat-e91a8287a7",
+"uid":"monaqasat:5262/2026",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"monaqasat",
+"source":"منصة مناقصات – قطر",
+"kind":"rfp",
+"notice_type":"Public Tender",
+"notice_type_ar":"مناقصة عامة",
+"title":"THE DESIGN, SUPPLY, INSTALLATION AND COMMISSIONING OF SIGNAGE AND WAYFINDING SYSTEM\nHMC/MTCS/11080/2026",
+"is_arabic":false,
+"summary":"Attached",
+"country":"Qatar",
+"country_ar":"قطر",
+"flag":"🇶🇦",
+"client":"Hamad Medical Corporation",
+"reference":"5262/2026",
+"published":null,
+"deadline":"2026-12-01",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"500.00 ريال قطري",
+"guarantee":"20,000.00 QAR",
+"contract_duration":"6",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":8,
+"disciplines":[
+"الطرق والتصميم الهندسي"
+],
+"ids":[
+"roads"
+]
+},
+"dates":[
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-01",
+"date_ar":"الثلاثاء 1 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Hamad Medical Corporation",
+"emails":[],
+"phones":[
+{
+"display":"000.00 500.00 01/12/20",
+"tel":"+00050000011220",
+"whatsapp":""
+}
+],
+"address":"",
+"website":""
+},
+{
+"title":"منصة مناقصات – وزارة المالية القطرية",
+"website":"https://monaqasat.mof.gov.qa",
+"note":"كثير من الإعلانات تذكر إيميل الجهة للاستفسار داخل وصف المناقصة نفسها.",
+"phones":[],
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":true
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":true
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[
+"Companies wishing to participate in government tenders must be classified.",
+"Updates will be announced on the website - The Ministry of Finance announces the postponement of the mandatory submission of the ICV certificate as a condition for participating in government tenders until the beginning of 2027.",
+"However, The Ministry of Finance encourages you to initiate the process to obtain ICV Certificate, and you can access the required information through the Monaqasat Portal",
+"Those wishing to submit their bids may obtain the offering documents from the unified website for state procurement using their login data ( the email registered in the classification program ) after paying the value of the prescribed documents by clicking on the (buy) icon.",
+"In the event that the conditions provide for the submission of an initial guarantee, a temporary security shall be attached to the bid, in the name of the government authority to the Committee, by an acceptable payable cheque (manager’s cheque) or by virtue of a bank guarantee letter issu"
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"قيمة الوثائق: 500.00 ريال قطري.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-11-29",
+"due_ar":"الأحد 29 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد).",
+"due":"2026-11-30",
+"due_ar":"الاثنين 30 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://monaqasat.mof.gov.qa/TendersOnlineServices/TenderDetails/661516"
+}
+],
+"excerpt":"THE DESIGN, SUPPLY, INSTALLATION AND COMMISSIONING OF SIGNAGE AND WAYFINDING SYSTEM\nHMC/MTCS/11080/2026 | Attached | Suppliers / Service Providers | Manufacture of electrical warning signs and panels، Manufacture of metal signs, signs, banners, and directional boards (non-electrical)، Advertising institutions and agencies، Manufacture of scales and digital plate scales for various purposes، Manufacture of other metal tools for offices, car license plates, sewage manhole covers, air conditioning duct extensions, metal ceilings and their accessories, signs, information boards, and military ranks from metal, which are not mentioned.، Installation and assembly of neon signs\nTender Details - Monaqasat | The Unified Website of State Procurement\nThe Unified Website of State Procurement\nLogin\nFAQ\nContact Us\nCreate Support Ticket\nالعربية\nHome\nWho Are We\nQatar Vision 2030\nServices\nClassification services\nTenders Services\nDispute Resolution Service\nSearch Company\nRegulations and laws\nCompanies wishing to participate in government tenders must be classified. Please note that linking tender financial ceilings to company financial limits for suppliers and service providers has been postponed to allow more companies to meet the advanced classification requirements. Updates will be announced on the website - The Ministry of Finance announces the postponement of the mandatory submission of the ICV certificate as a condition for participating in government tenders until the beginning of 2027. You will be notified of the specific date. However, The Ministry of Finance encourages you to initiate the process to obtain ICV Certificate, and you can access the required information through the Monaqasat Portal\nHome\nTenders Online Services\nTender Details\nAnnouncement Number: 25029\nDate: 26/11/2026\nTender Announcement\nTime remaining till tender closure 4 Day, 14 Hour And 38 Minute\nTender number\nType\nSubject\nMinistry\nEntity's tender number\nRequest Types\nEnvelopes system\nTender Bond\nDocuments value (QR)\nClosing Date\n5262/2026\nPublic Tender\nTHE DESIGN, SUPPLY, INSTALLATION AND COMMISSIONING OF SIGNAGE AND WAYFINDING SYSTEM\nHMC/MTCS/11080/2026\nHamad Medical Corporation\n11080/2026\nSuppliers / Service Providers\nTwo Envelopes\n20,000.00\n500.00\n01/12/2026\nBrief Description\nTargeted Tenderer Type\nService Delivery Method\nAuction Type\nLocal Value System\nTender Validity Period\nEvaluation Basis\nAttached\nCompanies\nFully Compliant\nLocal Value Certificate\n90\nActivities list\nActivity code\nActivity na",
+"notes":[]
+},
+{
+"id":"monaqasat-6ce4b33bf5",
+"uid":"monaqasat:5424/2026",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"monaqasat",
+"source":"منصة مناقصات – قطر",
+"kind":"rfp",
+"notice_type":"Public Tender",
+"notice_type_ar":"مناقصة عامة",
+"title":"Security Assessment - LTC - 2435/2026 - Materials Department",
+"is_arabic":false,
+"summary":"KAHRAMAA seeks to engage a specialized company to provide professional cybersecurity assessment services to enhance the security posture of its cloud and on-premises infrastructure and related services. The objective is to identify and assess existing security vulnerabilities, misconfigurations, and compliance gaps within cloud and on-premises computing environments, and to support the implementation of remediation measures based on risk assessments. The project consists of three components to be performed annually over a period of three (3) years: - Part 1: Comprehensive security assessment and penetration testing (one assessment annually). - Part 2: Flexible assessments based on emerging requirements (two additional assessments annually). - Part 3: Verification of the remediation and closure of findings resulting from each assessment.",
+"country":"Qatar",
+"country_ar":"قطر",
+"flag":"🇶🇦",
+"client":"Qatar General Electicity & Water Corporation",
+"reference":"5424/2026",
+"published":null,
+"deadline":"2026-12-06",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"1,350.00 ريال قطري",
+"guarantee":"135,000.00 QAR",
+"contract_duration":"36",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":10,
+"disciplines":[
+"المرافق والبنية التحتية"
+],
+"ids":[
+"utilities"
+]
+},
+"dates":[
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-06",
+"date_ar":"الأحد 6 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Qatar General Electicity & Water Corporation",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"لم تُذكر أرقام أو إيميلات في البيانات المتاحة — افتح الإعلان الرسمي لمعرفة جهة التواصل."
+},
+{
+"title":"منصة مناقصات – وزارة المالية القطرية",
+"website":"https://monaqasat.mof.gov.qa",
+"note":"كثير من الإعلانات تذكر إيميل الجهة للاستفسار داخل وصف المناقصة نفسها.",
+"phones":[],
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":true
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":true
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[
+"The project consists of three components to be performed annually over a period of three (3) years: - Part 1: Comprehensive security assessment and penetration testing (one assessment annually). - Part 2: Flexible assessments based on emerging requirements (two additional assessments annually). - Part 3: Verification of the remediation and closure of findings resulting from each assessment. | Suppliers / Service Providers | Systems analysis، Computer consulting expertise and …",
+"Companies wishing to participate in government tenders must be classified.",
+"Updates will be announced on the website - The Ministry of Finance announces the postponement of the mandatory submission of the ICV certificate as a condition for participating in government tenders until the beginning of 2027.",
+"However, The Ministry of Finance encourages you to initiate the process to obtain ICV Certificate, and you can access the required information through the Monaqasat Portal"
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"قيمة الوثائق: 1,350.00 ريال قطري.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-11-29",
+"due_ar":"الأحد 29 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-01",
+"due_ar":"الثلاثاء 1 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-02",
+"due_ar":"الأربعاء 2 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-04",
+"due_ar":"الجمعة 4 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد).",
+"due":"2026-12-05",
+"due_ar":"السبت 5 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://monaqasat.mof.gov.qa/TendersOnlineServices/TenderDetails/661678"
+}
+],
+"excerpt":"Security Assessment - LTC - 2435/2026 - Materials Department | KAHRAMAA seeks to engage a specialized company to provide professional cybersecurity assessment services to enhance the security posture of its cloud and on-premises infrastructure and related services. The objective is to identify and assess existing security vulnerabilities, misconfigurations, and compliance gaps within cloud and on-premises computing environments, and to support the implementation of remediation measures based on risk assessments. The project consists of three components to be performed annually over a period of three (3) years: - Part 1: Comprehensive security assessment and penetration testing (one assessment annually). - Part 2: Flexible assessments based on emerging requirements (two additional assessments annually). - Part 3: Verification of the remediation and closure of findings resulting from each assessment. | Suppliers / Service Providers | Systems analysis، Computer consulting expertise and computer facility management activities، Training on using the computer and accompanying programs، Design and programming special software، Repair and maintain electronic devices related to computers other than those mentioned previously، Other computer programming activities\nTender Details - Monaqasat | The Unified Website of State Procurement\nThe Unified Website of State Procurement\nLogin\nFAQ\nContact Us\nCreate Support Ticket\nالعربية\nHome\nWho Are We\nQatar Vision 2030\nServices\nClassification services\nTenders Services\nDispute Resolution Service\nSearch Company\nRegulations and laws\nCompanies wishing to participate in government tenders must be classified. Please note that linking tender financial ceilings to company financial limits for suppliers and service providers has been postponed to allow more companies to meet the advanced classification requirements. Updates will be announced on the website - The Ministry of Finance announces the postponement of the mandatory submission of the ICV certificate as a condition for participating in government tenders until the beginning of 2027. You will be notified of the specific date. However, The Ministry of Finance encourages you to initiate the process to obtain ICV Certificate, and you can access the required information through the Monaqasat Portal\nHome\nTenders Online Services\nTender Details\nAnnouncement Number: 25108\nDate: 26/11/2026\nTender Announcement\nTime remaining till tender closure 9 Day, 14 Hour And 38 Minute\nTender number\nTyp",
+"notes":[]
+},
+{
+"id":"dxb-98943b645d",
+"uid":"dxb:246388",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"dubai_esupply",
+"source":"بوابة حكومة دبي للمشتريات (eSupply)",
+"kind":"rfp",
+"notice_type":"Request for Proposal",
+"notice_type_ar":"طلب عروض (RFP)",
+"title":"TF-12-S1 Supervision of Stormwater Drainage System Projects – Package 3",
+"is_arabic":false,
+"summary":"3.1.1.7 (Stage 7): Payment for Construction Supervision\nProject (1): TF-12-C1 - Al Awir Stormwater Pond and evacuation line -\n-: For the supervision of the works as described in Stage 7 (Reference Clause 3.1.1.7) -\n-: Schedule of Payments: (Position Rates) -\nPosition: Resident Engineer (*) -\nPosition: Civil Engineer (*) -\nPosition: Assistant Project Manager (*) -\nPosition: Mechanical Engineer(*) -\nPosition: Electrical/ICA Engineer (*) -\nPosition: Materials Inspector -\nPosition: Quantity Surveyor(*) -\nPosition: Land Surveyor -\nPosition: Inspector (Civil) (1) -\nPosition: Inspector (Civil) (2) -\nPosition: Inspector (Electrical/Mechanical) -\nPosition: Draftsman(*) -\nPosition: Secretary and Document Controller (*) -\nPosition: Health and Safety Engineer (*) -\nPosition: Safety Officer -\nPosition: Planning & Reporting Engineer (*) -\nPosition: Senior NOC Engineer (*) -\nPosition: Senior Environmental Engineer (*) -\n*: All other services required to provide efficient supervision during construction stage & any required staff not mentioned in the Schedule will considered as office back –up(refer to clause 3.1.17 GCCSA)\nFull time – up to 08 hours per day : Part time : up to 4 hours per day -\n3.1.1.7 (Stage 7): Payment for Construction Supervision\n-Project (2): TF-30-C1 - Construction of DXB Airport Stormwater Storage Tanks Projects. -\n-: For the supervision of the works as described in Stage 7 (Reference Clause 3.1.1.7) -\n-: Schedule of Payments: (Position Rates) -\nPosition: Resident Engi",
+"country":"UAE",
+"country_ar":"الإمارات",
+"flag":"🇦🇪",
+"client":"Dubai Municipality",
+"reference":"tender_243350",
+"published":"2026-10-22",
+"deadline":"2026-12-07",
+"deadline_time":"08:00",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":8,
+"disciplines":[
+"تصريف مياه الأمطار والسيول"
+],
+"ids":[
+"stormwater"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-10-22",
+"date_ar":"الخميس 22 أكتوبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-07",
+"date_ar":"الاثنين 7 ديسمبر 2026",
+"kind":"deadline",
+"time":"08:00"
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Dubai Municipality",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"لم تُذكر أرقام أو إيميلات في البيانات المتاحة — افتح الإعلان الرسمي لمعرفة جهة التواصل."
+},
+{
+"title":"الدعم الفني لبوابة eSupply – حكومة دبي",
+"phones":[
+{
+"display":"+971 800 8363377",
+"tel":"+9718008363377",
+"whatsapp":""
+}
+],
+"emails":[
+"sourcingsupport@tejari.com"
+],
+"website":"https://esupply.dubai.gov.ae",
+"note":"للتسجيل والمشاكل التقنية (800Tenders). أسئلة المناقصة نفسها تُرسل من داخل الفرصة على البوابة للجهة الطارحة.",
+"source":"دليل الموردين المنشور على موقع الإدارة العامة للإقامة وشؤون الأجانب – دبي",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[
+"*: All other services required to provide efficient supervision during construction stage & any required staff not mentioned in the Schedule will considered as office back –up(refer to clause 3.1.17 GCCSA)"
+],
+"doc_note":"",
+"submission_line":"عبر بوابة eSupply لحكومة دبي إلكترونياً – بعد تسجيل الشركة كمورد",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-11-30",
+"due_ar":"الاثنين 30 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-02",
+"due_ar":"الأربعاء 2 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-03",
+"due_ar":"الخميس 3 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-05",
+"due_ar":"السبت 5 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"عبر بوابة eSupply لحكومة دبي إلكترونياً – بعد تسجيل الشركة كمورد.",
+"due":"2026-12-06",
+"due_ar":"الأحد 6 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://esupply.dubai.gov.ae/esop/guest/go/opportunity/detail?opportunityId=246388"
+},
+{
+"label":"كل الفرص الحالية على eSupply",
+"url":"https://esupply.dubai.gov.ae/esop/guest/go/public/opportunity/current"
+}
+],
+"excerpt":"TF-12-S1 Supervision of Stormwater Drainage System Projects – Package 3 | 3.1.1.7 (Stage 7): Payment for Construction Supervision\nProject (1): TF-12-C1 - Al Awir Stormwater Pond and evacuation line -\n-: For the supervision of the works as described in Stage 7 (Reference Clause 3.1.1.7) -\n-: Schedule of Payments: (Position Rates) -\nPosition: Resident Engineer (*) -\nPosition: Civil Engineer (*) -\nPosition: Assistant Project Manager (*) -\nPosition: Mechanical Engineer(*) -\nPosition: Electrical/ICA Engineer (*) -\nPosition: Materials Inspector -\nPosition: Quantity Surveyor(*) -\nPosition: Land Surveyor -\nPosition: Inspector (Civil) (1) -\nPosition: Inspector (Civil) (2) -\nPosition: Inspector (Electrical/Mechanical) -\nPosition: Draftsman(*) -\nPosition: Secretary and Document Controller (*) -\nPosition: Health and Safety Engineer (*) -\nPosition: Safety Officer -\nPosition: Planning & Reporting Engineer (*) -\nPosition: Senior NOC Engineer (*) -\nPosition: Senior Environmental Engineer (*) -\n*: All other services required to provide efficient supervision during construction stage & any required staff not mentioned in the Schedule will considered as office back –up(refer to clause 3.1.17 GCCSA)\nFull time – up to 08 hours per day : Part time : up to 4 hours per day -\n3.1.1.7 (Stage 7): Payment for Construction Supervision\n-Project (2): TF-30-C1 - Construction of DXB Airport Stormwater Storage Tanks Projects. -\n-: For the supervision of the works as described in Stage 7 (Reference Clause 3.1.1.7) -\n-: Schedule of Payments: (Position Rates) -\nPosition: Resident Engineer (*) -\nPosition: Civil Engineer (*) -\nPosition: Mechanical Engineer(*) -\nPosition: Electrical/ICA Engineer (*) -\nPosition: Materials Inspector -\nPosition: Quantity Surveyor(*) -\nPosition: Land Surveyor -\nPosition: Inspector (Civil) -\nPosition: Inspector (Electrical/Mechanical) -\nPosition: Draftsman(*) -\nPosition: Secretary and Document Controller (*) -\nPosition: Health and Safety Engineer (*) -\nPosition: Health and Safety Engin... | Dubai Municipality\nProject Code: tender_243350\nProject Title: TF-12-S1 Supervision of Stormwater Drainage System Projects – Package 3\nDescription: 3.1.1.7 (Stage 7): Payment for Construction Supervision\nProject (1): TF-12-C1 - Al Awir Stormwater Pond and evacuation line -\n-: For the supervision of the works as described in Stage 7 (Reference Clause 3.1.1.7) -\n-: Schedule of Payments: (Position Rates) -\nPosition: Resident Engineer (*) -\nPosition: Civil Engineer (*) -\nPosition: Assi",
+"notes":[]
+},
+{
+"id":"dxb-b000a50c5e",
+"uid":"dxb:246832",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"dubai_esupply",
+"source":"بوابة حكومة دبي للمشتريات (eSupply)",
+"kind":"rfp",
+"notice_type":"Request for Proposal",
+"notice_type_ar":"طلب عروض (RFP)",
+"title":"Irrigation Pump Station Strategy & Efficiency Study - 2028",
+"is_arabic":false,
+"summary":": kindly input your total price without VAT in section 3.1.2 and in section 3.4 enter it as per the breakdown\n- please note that the prices for both sections should be the same\nDubai Municipality has the right to disqualify your offer if different prices are submitted -\n1: Irrigation Pump Station Strategy & Efficiency Study - 2027 - 1 Each\n2: Irrigation Pump Station Strategy & Efficiency Study - 2028 - 1 Each\n1: Stage 1 - Baseline Assessment & Benchmarking,\nData collection, assessment & benchmarking report. - 1 Each\n2: Stage 2 Demand Projection & Integration\nDemand projection and integration report. - 1 Each\n3: Stage 3 Strategic Clustering & Optimization\nAcceptance of Pump stations clustering analysis and strategic Infrastructure planning report. - 1 Each\n4: Stage 4 GIS Based Infrastructure Mapping, Authority Approvals\nAcceptance of comprehensive GIS-based planning, asset mapping and Plot approvals. - 1 Each\n5: Stage 5 Standardization & Implementation Framework\nComprehensive ﬁnal approval of all stages. - 1 Each\n6: Hydraulic Modelling Software training - Arc\ninfo (Duration 48 hrs) - 1 Each\n7: Any Miscellaneous Works\nNote: Any Miscellaneous quoted by the bidder to be detailed with the scope of works\nand associated documents. - 1 Each\n8: Provisional Sums\nNote:The amount to be as specified in RFP, Provisiona Sums (Page 29). This schedule will only be used for any additional work instructed by DM - 1 Each",
+"country":"UAE",
+"country_ar":"الإمارات",
+"flag":"🇦🇪",
+"client":"Dubai Municipality",
+"reference":"tender_244301",
+"published":"2026-11-03",
+"deadline":"2026-12-07",
+"deadline_time":"11:00",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":7,
+"disciplines":[
+"شبكات الري"
+],
+"ids":[
+"irrigation"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-03",
+"date_ar":"الثلاثاء 3 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-07",
+"date_ar":"الاثنين 7 ديسمبر 2026",
+"kind":"deadline",
+"time":"11:00"
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Dubai Municipality",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"لم تُذكر أرقام أو إيميلات في البيانات المتاحة — افتح الإعلان الرسمي لمعرفة جهة التواصل."
+},
+{
+"title":"الدعم الفني لبوابة eSupply – حكومة دبي",
+"phones":[
+{
+"display":"+971 800 8363377",
+"tel":"+9718008363377",
+"whatsapp":""
+}
+],
+"emails":[
+"sourcingsupport@tejari.com"
+],
+"website":"https://esupply.dubai.gov.ae",
+"note":"للتسجيل والمشاكل التقنية (800Tenders). أسئلة المناقصة نفسها تُرسل من داخل الفرصة على البوابة للجهة الطارحة.",
+"source":"دليل الموردين المنشور على موقع الإدارة العامة للإقامة وشؤون الأجانب – دبي",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[],
+"doc_note":"",
+"submission_line":"عبر بوابة eSupply لحكومة دبي إلكترونياً – بعد تسجيل الشركة كمورد",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-11-30",
+"due_ar":"الاثنين 30 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-02",
+"due_ar":"الأربعاء 2 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-03",
+"due_ar":"الخميس 3 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-05",
+"due_ar":"السبت 5 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"عبر بوابة eSupply لحكومة دبي إلكترونياً – بعد تسجيل الشركة كمورد.",
+"due":"2026-12-06",
+"due_ar":"الأحد 6 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://esupply.dubai.gov.ae/esop/guest/go/opportunity/detail?opportunityId=246832"
+},
+{
+"label":"كل الفرص الحالية على eSupply",
+"url":"https://esupply.dubai.gov.ae/esop/guest/go/public/opportunity/current"
+}
+],
+"excerpt":"Irrigation Pump Station Strategy & Efficiency Study - 2028 | : kindly input your total price without VAT in section 3.1.2 and in section 3.4 enter it as per the breakdown\n- please note that the prices for both sections should be the same\nDubai Municipality has the right to disqualify your offer if different prices are submitted -\n1: Irrigation Pump Station Strategy & Efficiency Study - 2027 - 1 Each\n2: Irrigation Pump Station Strategy & Efficiency Study - 2028 - 1 Each\n1: Stage 1 - Baseline Assessment & Benchmarking,\nData collection, assessment & benchmarking report. - 1 Each\n2: Stage 2 Demand Projection & Integration\nDemand projection and integration report. - 1 Each\n3: Stage 3 Strategic Clustering & Optimization\nAcceptance of Pump stations clustering analysis and strategic Infrastructure planning report. - 1 Each\n4: Stage 4 GIS Based Infrastructure Mapping, Authority Approvals\nAcceptance of comprehensive GIS-based planning, asset mapping and Plot approvals. - 1 Each\n5: Stage 5 Standardization & Implementation Framework\nComprehensive ﬁnal approval of all stages. - 1 Each\n6: Hydraulic Modelling Software training - Arc\ninfo (Duration 48 hrs) - 1 Each\n7: Any Miscellaneous Works\nNote: Any Miscellaneous quoted by the bidder to be detailed with the scope of works\nand associated documents. - 1 Each\n8: Provisional Sums\nNote:The amount to be as specified in RFP, Provisiona Sums (Page 29). This schedule will only be used for any additional work instructed by DM - 1 Each | Dubai Municipality\nProject Code: tender_244301\nProject Title: Irrigation Pump Station Strategy & Efficiency Study - 2028\nDescription: : kindly input your total price without VAT in section 3.1.2 and in section 3.4 enter it as per the breakdown\n- please note that the prices for both sections should be the same\nDubai Municipality has the right to disqualify your offer if different prices are submitted -\n1: Irrigation Pump Station Strategy & Efficiency Study - 2027 - 1 Each\n2: Irrigation Pump Station Strategy & Efficiency Study - 2028 - 1 Each\n1: Stage 1 - Baseline Assessment & Benchmarking,\nData collection, assessment & benchmarking report. - 1 Each\n2: Stage 2 Demand Projection & Integration\nDemand projection and integration report. - 1 Each\n3: Stage 3 Strategic Clustering & Optimization\nAcceptance of Pump stations clustering analysis and strategic Infrastructure planning report. - 1 Each\n4: Stage 4 GIS Based Infrastructure Mapping, Authority Approvals\nAcceptance of comprehensive GIS-based planning,",
+"notes":[]
+},
+{
+"id":"monaqasat-6e9fdc0a52",
+"uid":"monaqasat:5331/2026",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"monaqasat",
+"source":"منصة مناقصات – قطر",
+"kind":"rfp",
+"notice_type":"Public Tender",
+"notice_type_ar":"مناقصة عامة",
+"title":"Design, construction, completion, testing & commissioning and maintenance of Katara's new storage and laydown facility",
+"is_arabic":false,
+"summary":"DESIGN, CONSTRUCTION, COMPLETION, TESTING,\nCOMMISSIONING AND MAINTENANCE OF KATARA’S\nNEW STORAGE AND LAYDOWN FACILITY\nAT WADI AL JALTA",
+"country":"Qatar",
+"country_ar":"قطر",
+"flag":"🇶🇦",
+"client":"Culture Village Foundation - Katara",
+"reference":"5331/2026",
+"published":null,
+"deadline":"2026-12-07",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"3,500.00 ريال قطري",
+"guarantee":"350,000.00 QAR",
+"contract_duration":"5",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":8,
+"disciplines":[
+"الهيدرولوجيا والنمذجة الهيدروليكية"
+],
+"ids":[
+"hydrology"
+]
+},
+"dates":[
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-07",
+"date_ar":"الاثنين 7 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Culture Village Foundation - Katara",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"لم تُذكر أرقام أو إيميلات في البيانات المتاحة — افتح الإعلان الرسمي لمعرفة جهة التواصل."
+},
+{
+"title":"منصة مناقصات – وزارة المالية القطرية",
+"website":"https://monaqasat.mof.gov.qa",
+"note":"كثير من الإعلانات تذكر إيميل الجهة للاستفسار داخل وصف المناقصة نفسها.",
+"phones":[],
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":true
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":true
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[
+"Companies wishing to participate in government tenders must be classified.",
+"Updates will be announced on the website - The Ministry of Finance announces the postponement of the mandatory submission of the ICV certificate as a condition for participating in government tenders until the beginning of 2027.",
+"However, The Ministry of Finance encourages you to initiate the process to obtain ICV Certificate, and you can access the required information through the Monaqasat Portal",
+"Those wishing to submit their bids may obtain the offering documents from the unified website for state procurement using their login data ( the email registered in the classification program ) after paying the value of the prescribed documents by clicking on the (buy) icon.",
+"In the event that the conditions provide for the submission of an initial guarantee, a temporary security shall be attached to the bid, in the name of the government authority to the Committee, by an acceptable payable cheque (manager’s cheque) or by virtue of a bank guarantee letter issued by a local or accredaited bank, not accompanied by any restriction or condition, and valid for the entire performance, and it is irrevocable, provided"
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"قيمة الوثائق: 3,500.00 ريال قطري.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-11-30",
+"due_ar":"الاثنين 30 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-02",
+"due_ar":"الأربعاء 2 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-03",
+"due_ar":"الخميس 3 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-05",
+"due_ar":"السبت 5 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد).",
+"due":"2026-12-06",
+"due_ar":"الأحد 6 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://monaqasat.mof.gov.qa/TendersOnlineServices/TenderDetails/661585"
+}
+],
+"excerpt":"Design, construction, completion, testing & commissioning and maintenance of Katara's new storage and laydown facility | DESIGN, CONSTRUCTION, COMPLETION, TESTING,\nCOMMISSIONING AND MAINTENANCE OF KATARA’S\nNEW STORAGE AND LAYDOWN FACILITY\nAT WADI AL JALTA | Suppliers / Service Providers | Building maintenance services activities، Construction of commercial and tourist buildings (shopping centers, hotels, restaurants, shops, warehouses, and cold storage warehouses)، Restorations of residential and non-residential buildings and historical buildings\nTender Details - Monaqasat | The Unified Website of State Procurement\nThe Unified Website of State Procurement\nLogin\nFAQ\nContact Us\nCreate Support Ticket\nالعربية\nHome\nWho Are We\nQatar Vision 2030\nServices\nClassification services\nTenders Services\nDispute Resolution Service\nSearch Company\nRegulations and laws\nCompanies wishing to participate in government tenders must be classified. Please note that linking tender financial ceilings to company financial limits for suppliers and service providers has been postponed to allow more companies to meet the advanced classification requirements. Updates will be announced on the website - The Ministry of Finance announces the postponement of the mandatory submission of the ICV certificate as a condition for participating in government tenders until the beginning of 2027. You will be notified of the specific date. However, The Ministry of Finance encourages you to initiate the process to obtain ICV Certificate, and you can access the required information through the Monaqasat Portal\nHome\nTenders Online Services\nTender Details\nAnnouncement Number: 25084\nDate: 26/11/2026\nTender Announcement\nTime remaining till tender closure 10 Day, 14 Hour And 38 Minute\nTender number\nType\nSubject\nMinistry\nEntity's tender number\nRequest Types\nEnvelopes system\nTender Bond\nDocuments value (QR)\nClosing Date\n5331/2026\nPublic Tender\nDesign, construction, completion, testing & commissioning and maintenance of Katara's new storage and laydown facility\nCulture Village Foundation - Katara\nKP/X206/26\nSuppliers / Service Providers\nTwo Envelopes\n350,000.00\n3,500.00\n07/12/2026\nBrief Description\nTargeted Tenderer Type\nService Delivery Method\nAuction Type\nLocal Value System\nTender Validity Period\nEvaluation Basis\nDESIGN, CONSTRUCTION, COMPLETION, TESTING,\nCOMMISSIONING AND MAINTENANCE OF KATARA’S\nNEW STORAGE AND LAYDOWN FACILITY\nAT WADI AL JALTA\nCompanies\nFully Compliant\nLocal Value Certificate\n90\nActivities l",
+"notes":[]
+},
+{
+"id":"dewa-cd7c304269",
+"uid":"dewa:2122600152",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"dewa_tenders",
+"source":"هيئة كهرباء ومياه دبي (ديوا)",
+"kind":"rfp",
+"notice_type":"Public Tender",
+"notice_type_ar":"مناقصة عامة",
+"title":"HIRING OF CONSULTANCY SERVICES FOR DETAILED ENGINEERING DESIGN, TENDERDOCUMENTATION, CONSTRUCTION SUPERVISION, AND QUALITY ASSURANCE FOR HATTAPROJECT (INTRODUCTION OF 60 NEW 11KV FEEDERS FROM HATTA 132/11KV SUBSTATION)",
+"is_arabic":false,
+"summary":"",
+"country":"UAE",
+"country_ar":"الإمارات",
+"flag":"🇦🇪",
+"client":"Dubai Electricity & Water Authority (DEWA)",
+"reference":"2122600152",
+"published":"2026-11-10",
+"deadline":"2026-12-09",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"1050.00 درهم إماراتي",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":9,
+"disciplines":[
+"المرافق والبنية التحتية",
+"تصميم هندسي مدني عام"
+],
+"ids":[
+"utilities",
+"civil_general"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-10",
+"date_ar":"الثلاثاء 10 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-09",
+"date_ar":"الأربعاء 9 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Dubai Electricity & Water Authority (DEWA)",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"لم تُذكر أرقام أو إيميلات في البيانات المتاحة — افتح الإعلان الرسمي لمعرفة جهة التواصل."
+},
+{
+"title":"إدارة العقود – هيئة كهرباء ومياه دبي (شراء المناقصات والتقديم)",
+"phones":[
+{
+"display":"+971 4 515 1443",
+"tel":"+97145151443",
+"whatsapp":""
+},
+{
+"display":"+971 4 515 1441",
+"tel":"+97145151441",
+"whatsapp":""
+}
+],
+"emails":[
+"cd.support@dewa.gov.ae"
+],
+"website":"https://www.dewa.gov.ae/en/supplier/services/list-of-tender-documents",
+"note":"تسجيل مورد جديد: إدارة علاقات الموردين +971 4 515 1404 – SRM@dewa.gov.ae.",
+"source":"صفحة «اتصل بنا» على موقع ديوا",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[],
+"doc_note":"",
+"submission_line":"عبر نظام SRM الخاص بهيئة كهرباء ومياه دبي (srm.dewa.gov.ae) – بعد شراء وثائق المناقصة",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"قيمة الوثائق: 1050.00 درهم إماراتي.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-29",
+"due_ar":"الأحد 29 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-02",
+"due_ar":"الأربعاء 2 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-04",
+"due_ar":"الجمعة 4 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-05",
+"due_ar":"السبت 5 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-07",
+"due_ar":"الاثنين 7 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"عبر نظام SRM الخاص بهيئة كهرباء ومياه دبي (srm.dewa.gov.ae) – بعد شراء وثائق المناقصة.",
+"due":"2026-12-08",
+"due_ar":"الثلاثاء 8 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://www.dewa.gov.ae/en/supplier/services/list-of-tender-documents"
+},
+{
+"label":"شراء الوثائق والتقديم – نظام SRM لديوا",
+"url":"https://srm.dewa.gov.ae/irj/portal/anonymous"
+}
+],
+"excerpt":"HIRING OF CONSULTANCY SERVICES FOR DETAILED ENGINEERING DESIGN, TENDERDOCUMENTATION, CONSTRUCTION SUPERVISION, AND QUALITY ASSURANCE FOR HATTAPROJECT (INTRODUCTION OF 60 NEW 11KV FEEDERS FROM HATTA 132/11KV SUBSTATION)",
+"notes":[]
+},
+{
+"id":"dxb-df146e5b67",
+"uid":"dxb:247828",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"dubai_esupply",
+"source":"بوابة حكومة دبي للمشتريات (eSupply)",
+"kind":"rfp",
+"notice_type":"Request for Proposal",
+"notice_type_ar":"طلب عروض (RFP)",
+"title":"PJ/10165 Margham Central Livestock District Master plan",
+"is_arabic":false,
+"summary":": kindly input your total price without VAT in section 3.1.2 and in section 3.4 enter it as per the breakdown\n- please note that the prices for both sections should be the same\nDubai Municipality has the right to disqualify your offer if different prices are submitted -\n1: PJ/10165 Margham Central Livestock District\nMaster plan - 1 Each\n1: Data collection and stakeholder identification and Market Value proposition and financial feasibility - 1 Each\n2: Partner identification and Development operating and financing model - 1 Each\n3: Vision Masterplan - 1 Each\n4: Concept Masterplan - 1 Each",
+"country":"UAE",
+"country_ar":"الإمارات",
+"flag":"🇦🇪",
+"client":"Dubai Municipality",
+"reference":"tender_245487",
+"published":"2026-11-25",
+"deadline":"2026-12-16",
+"deadline_time":"12:00",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":7,
+"disciplines":[
+"المرافق والبنية التحتية"
+],
+"ids":[
+"utilities"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-25",
+"date_ar":"الأربعاء 25 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-16",
+"date_ar":"الأربعاء 16 ديسمبر 2026",
+"kind":"deadline",
+"time":"12:00"
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Dubai Municipality",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"لم تُذكر أرقام أو إيميلات في البيانات المتاحة — افتح الإعلان الرسمي لمعرفة جهة التواصل."
+},
+{
+"title":"الدعم الفني لبوابة eSupply – حكومة دبي",
+"phones":[
+{
+"display":"+971 800 8363377",
+"tel":"+9718008363377",
+"whatsapp":""
+}
+],
+"emails":[
+"sourcingsupport@tejari.com"
+],
+"website":"https://esupply.dubai.gov.ae",
+"note":"للتسجيل والمشاكل التقنية (800Tenders). أسئلة المناقصة نفسها تُرسل من داخل الفرصة على البوابة للجهة الطارحة.",
+"source":"دليل الموردين المنشور على موقع الإدارة العامة للإقامة وشؤون الأجانب – دبي",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[],
+"doc_note":"",
+"submission_line":"عبر بوابة eSupply لحكومة دبي إلكترونياً – بعد تسجيل الشركة كمورد",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-12-06",
+"due_ar":"الأحد 6 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-09",
+"due_ar":"الأربعاء 9 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-11",
+"due_ar":"الجمعة 11 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-12",
+"due_ar":"السبت 12 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-14",
+"due_ar":"الاثنين 14 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"عبر بوابة eSupply لحكومة دبي إلكترونياً – بعد تسجيل الشركة كمورد.",
+"due":"2026-12-15",
+"due_ar":"الثلاثاء 15 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://esupply.dubai.gov.ae/esop/guest/go/opportunity/detail?opportunityId=247828"
+},
+{
+"label":"كل الفرص الحالية على eSupply",
+"url":"https://esupply.dubai.gov.ae/esop/guest/go/public/opportunity/current"
+}
+],
+"excerpt":"PJ/10165 Margham Central Livestock District Master plan | : kindly input your total price without VAT in section 3.1.2 and in section 3.4 enter it as per the breakdown\n- please note that the prices for both sections should be the same\nDubai Municipality has the right to disqualify your offer if different prices are submitted -\n1: PJ/10165 Margham Central Livestock District\nMaster plan - 1 Each\n1: Data collection and stakeholder identification and Market Value proposition and financial feasibility - 1 Each\n2: Partner identification and Development operating and financing model - 1 Each\n3: Vision Masterplan - 1 Each\n4: Concept Masterplan - 1 Each | Dubai Municipality\nProject Code: tender_245487\nProject Title: PJ/10165 Margham Central Livestock District Master plan\nDescription: : kindly input your total price without VAT in section 3.1.2 and in section 3.4 enter it as per the breakdown\n- please note that the prices for both sections should be the same\nDubai Municipality has the right to disqualify your offer if different prices are submitted -\n1: PJ/10165 Margham Central Livestock District\nMaster plan - 1 Each\n1: Data collection and stakeholder identification and Market Value proposition and financial feasibility - 1 Each\n2: Partner identification and Development operating and financing model - 1 Each\n3: Vision Masterplan - 1 Each\n4: Concept Masterplan - 1 Each\nSupply Category: Other\nResponse Currency: AED\nOpportunity Publication Date: 25/11/2026 21:05\nClosing date/time: 16/12/2026 12:00\nBuyer Organisation: Dubai Municipality",
+"notes":[]
+},
+{
+"id":"dxb-fc4002dbd5",
+"uid":"dxb:247632",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"dubai_esupply",
+"source":"بوابة حكومة دبي للمشتريات (eSupply)",
+"kind":"rfp",
+"notice_type":"Request for Proposal",
+"notice_type_ar":"طلب عروض (RFP)",
+"title":"P116-D1_Professional Consultancy Support Services for Sewerage and Rec",
+"is_arabic":false,
+"summary":": kindly input your total price without VAT in section 3.1.2 and in section 3.4 enter it as per the breakdown\n- please note that the prices for both sections should be the same\nDubai Municipality has the right to disqualify your offer if different prices are submitted -\n1: P116-D1_Professional Consultancy Support Services for Sewerage and Recycled Water Projects - 1 Each\nGI-1: General Items - Insurances and Performance Securities - 1 Sum\nGI-2: General Items - Project Methodology & Management Plan - 1 Sum\nGI-3: General Items - Resource Coordinator - 36 Month\n2.1-01: Task 2.1 - Core Team Support - Design Management Delivery Manager (Staff Grade A) - 66 FTE-Month\n2.1-02: Task 2.1 - Core Team Support - Design Manager (Staff Grade B) - 66 FTE-Month\n2.1-03: Task 2.1 - Core Team Support - Construction / Operation Management Lead (Staff Grade B) - 99 FTE-Month\n2.1-04: Task 2.1 - Core Team Support - Handing Over Lead (Staff Grade B) - 66 FTE-Month\n2.1-05: Task 2.1 - Core Team Support - QHSE Lead (Staff Grade B) - 66 FTE-Month\n2.1-06: Task 2.1 - Core Team Support - Portfolio Manager (Staff Grade B) - 231 FTE-Month\n2.1-07: Task 2.1 - Core Team Support - Programme Management Lead (Staff Grade B) - 33 FTE-Month\n2.1-08: Task 2.1 - Core Team Support - Project Controls Manager (Staff Grade B) - 66 FTE-Month\n2.1-09: Task 2.1 - Core Team Support - Commercial Manager (Staff Grade B) - 33 FTE-Month\n2.1-10: Task 2.1 - Core Team Support - Senior Communication Specialist (Staff Grade B) - 33 FTE-Mo",
+"country":"UAE",
+"country_ar":"الإمارات",
+"flag":"🇦🇪",
+"client":"Dubai Municipality",
+"reference":"tender_245223",
+"published":"2026-11-20",
+"deadline":"2026-12-18",
+"deadline_time":"12:00",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":8,
+"disciplines":[
+"الصرف الصحي ومحطات الرفع"
+],
+"ids":[
+"sewer"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-20",
+"date_ar":"الجمعة 20 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-18",
+"date_ar":"الجمعة 18 ديسمبر 2026",
+"kind":"deadline",
+"time":"12:00"
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Dubai Municipality",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"لم تُذكر أرقام أو إيميلات في البيانات المتاحة — افتح الإعلان الرسمي لمعرفة جهة التواصل."
+},
+{
+"title":"الدعم الفني لبوابة eSupply – حكومة دبي",
+"phones":[
+{
+"display":"+971 800 8363377",
+"tel":"+9718008363377",
+"whatsapp":""
+}
+],
+"emails":[
+"sourcingsupport@tejari.com"
+],
+"website":"https://esupply.dubai.gov.ae",
+"note":"للتسجيل والمشاكل التقنية (800Tenders). أسئلة المناقصة نفسها تُرسل من داخل الفرصة على البوابة للجهة الطارحة.",
+"source":"دليل الموردين المنشور على موقع الإدارة العامة للإقامة وشؤون الأجانب – دبي",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[],
+"doc_note":"",
+"submission_line":"عبر بوابة eSupply لحكومة دبي إلكترونياً – بعد تسجيل الشركة كمورد",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-12-08",
+"due_ar":"الثلاثاء 8 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-11",
+"due_ar":"الجمعة 11 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-13",
+"due_ar":"الأحد 13 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-14",
+"due_ar":"الاثنين 14 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-16",
+"due_ar":"الأربعاء 16 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"عبر بوابة eSupply لحكومة دبي إلكترونياً – بعد تسجيل الشركة كمورد.",
+"due":"2026-12-17",
+"due_ar":"الخميس 17 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://esupply.dubai.gov.ae/esop/guest/go/opportunity/detail?opportunityId=247632"
+},
+{
+"label":"كل الفرص الحالية على eSupply",
+"url":"https://esupply.dubai.gov.ae/esop/guest/go/public/opportunity/current"
+}
+],
+"excerpt":"P116-D1_Professional Consultancy Support Services for Sewerage and Rec | : kindly input your total price without VAT in section 3.1.2 and in section 3.4 enter it as per the breakdown\n- please note that the prices for both sections should be the same\nDubai Municipality has the right to disqualify your offer if different prices are submitted -\n1: P116-D1_Professional Consultancy Support Services for Sewerage and Recycled Water Projects - 1 Each\nGI-1: General Items - Insurances and Performance Securities - 1 Sum\nGI-2: General Items - Project Methodology & Management Plan - 1 Sum\nGI-3: General Items - Resource Coordinator - 36 Month\n2.1-01: Task 2.1 - Core Team Support - Design Management Delivery Manager (Staff Grade A) - 66 FTE-Month\n2.1-02: Task 2.1 - Core Team Support - Design Manager (Staff Grade B) - 66 FTE-Month\n2.1-03: Task 2.1 - Core Team Support - Construction / Operation Management Lead (Staff Grade B) - 99 FTE-Month\n2.1-04: Task 2.1 - Core Team Support - Handing Over Lead (Staff Grade B) - 66 FTE-Month\n2.1-05: Task 2.1 - Core Team Support - QHSE Lead (Staff Grade B) - 66 FTE-Month\n2.1-06: Task 2.1 - Core Team Support - Portfolio Manager (Staff Grade B) - 231 FTE-Month\n2.1-07: Task 2.1 - Core Team Support - Programme Management Lead (Staff Grade B) - 33 FTE-Month\n2.1-08: Task 2.1 - Core Team Support - Project Controls Manager (Staff Grade B) - 66 FTE-Month\n2.1-09: Task 2.1 - Core Team Support - Commercial Manager (Staff Grade B) - 33 FTE-Month\n2.1-10: Task 2.1 - Core Team Support - Senior Communication Specialist (Staff Grade B) - 33 FTE-Month\n2.1-11: Task 2.1 - Core Team Support - Document Controlling Lead (Staff Grade B) - 99 FTE-Month\n2.2-01: Task 2.2 - Planning & Design Management - Senior Design Engineer (Staff Grade B) - 198 FTE-Month\n2.2-02: Task 2.2 - Planning & Design Management - Design Engineer (Staff Grade C) - 231 FTE-Month\n2.2-03: Task 2.2 - Planning & Design Management - Senior Hydraulic Modeler (Staff Grade B) - 66 FTE-Month\n2.2-04: Task 2.2 - Planning & Design Management - Hydraulic Modeler (Staff Grade ... | Dubai Municipality\nProject Code: tender_245223\nProject Title: P116-D1_Professional Consultancy Support Services for Sewerage and Rec\nDescription: : kindly input your total price without VAT in section 3.1.2 and in section 3.4 enter it as per the breakdown\n- please note that the prices for both sections should be the same\nDubai Municipality has the right to disqualify your offer if different prices are submitted -\n1: P116-D1_Pro",
+"notes":[]
+},
+{
+"id":"adgpg-48f1daf8a1",
+"uid":"adgpg:1449303",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"abudhabi_adgpg",
+"source":"بوابة أبوظبي للمشتريات الحكومية (ADGPG)",
+"kind":"rfp",
+"notice_type":"Request for Quotation",
+"notice_type_ar":"طلب أسعار (RFQ)",
+"title":"G592026 استشاري الاشراف على مشاريع ادارة صيانة البنية التحتية التخصصية",
+"is_arabic":true,
+"summary":"النشاط التجاري :\nللمشاركة في المناقصة على الشركات الالتزام بإرفاق نسخة من الرخصة التجارية في النظام (سارية المفعول)، علماً بأنه سيتم استبعاد أية شركة لا يوجد لديها النشاط والفئة التالية:\nاستشارات هندسية في الطرق\nاو\nاستشارات هندسية في الطرق الداخلية\nاو\nاستشارات فى الهندسة المدنية\nالفئة : الخاصة – الأولى – الثانية\nكفالات المناقصة (إن تطلب):\nيجب على المورد تقديم كفالة تأمين العطاء بقيمة (200,000) درهم قبل موعد إغلاق المناقصة، وكفالة حسن تنفيذ بنسبة 5% من قيمة العقد عند الترسية (إن تطلب)، وذلك وفقاً للشروط العامة للمناقصة.\n.......................\n:Tender Business Activity\nTo participate in this tender, bidders must upload a valid Trade License through the system. Bidders that do not hold the required business activity and classification category below will be disqualified.\nEngineering consulting in roads\nor\nEngineering consulting in internal roads\nor\nConsulting in civil engineering\nCategory: Private – First – Second\n:Tender Guarantees (If Required)\nThe supplier shall provide a Bid Bond in the amount of AED (200,000) prior to the tender closing date, and where applicable upon award, a Performance Bond amounting to 5% of the contract value, in accordance with the General Tender Conditions.",
+"country":"UAE",
+"country_ar":"الإمارات",
+"flag":"🇦🇪",
+"client":"Al Ain City Municipality",
+"reference":"632105000227",
+"published":null,
+"deadline":"2026-12-21",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"خدمات تعليم وتدريب - تدريب مهني",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":10,
+"disciplines":[
+"الطرق والتصميم الهندسي",
+"المرافق والبنية التحتية",
+"تصميم هندسي مدني عام"
+],
+"ids":[
+"roads",
+"utilities",
+"civil_general"
+]
+},
+"dates":[
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-21",
+"date_ar":"الاثنين 21 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Al Ain City Municipality",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"لم تُذكر أرقام أو إيميلات في البيانات المتاحة — افتح الإعلان الرسمي لمعرفة جهة التواصل."
+},
+{
+"title":"بوابة أبوظبي للمشتريات الحكومية (ADGPG) – الدعم",
+"phones":[
+{
+"display":"800555",
+"tel":"800555",
+"whatsapp":""
+},
+{
+"display":"+971 2 666 4442",
+"tel":"+97126664442",
+"whatsapp":""
+}
+],
+"emails":[
+"contact@tamm.abudhabi"
+],
+"website":"https://supplier.adgpg.gov.ae",
+"note":"800-555 مجاني من داخل الإمارات، و+971 2 666 4442 من خارجها. التسجيل كمورد مرة واحدة لكل جهات أبوظبي.",
+"source":"الصفحة الرئيسية لبوابة الموردين ADGPG",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":true
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[
+"يجب على المورد تقديم كفالة تأمين العطاء بقيمة (200,000) درهم قبل موعد إغلاق المناقصة، وكفالة حسن تنفيذ بنسبة 5% من قيمة العقد عند الترسية (إن تطلب)، وذلك وفقاً للشروط العامة للمناقصة.",
+"Bidders that do not hold the required business activity and classification category below will be disqualified."
+],
+"doc_note":"",
+"submission_line":"عبر بوابة أبوظبي للمشتريات الحكومية (ADGPG) إلكترونياً – بعد تسجيل الشركة كمورد",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-12-11",
+"due_ar":"الجمعة 11 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-14",
+"due_ar":"الاثنين 14 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-16",
+"due_ar":"الأربعاء 16 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-17",
+"due_ar":"الخميس 17 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-19",
+"due_ar":"السبت 19 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"عبر بوابة أبوظبي للمشتريات الحكومية (ADGPG) إلكترونياً – بعد تسجيل الشركة كمورد.",
+"due":"2026-12-20",
+"due_ar":"الأحد 20 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://supplier.adgpg.gov.ae/pages/tender-detail.html?tenderid=1449303"
+},
+{
+"label":"صفحة المناقصة على نظام أبوظبي (للموردين المسجلين)",
+"url":"https://iaaibv.fa.ocs.oraclecloud29.com/fscmUI/faces/deeplink?objType=NEGOTIATION_SUPPLIERUSER&action=VIEW&objKey=AuctionHeaderId=1214022"
+}
+],
+"excerpt":"G592026 استشاري الاشراف على مشاريع ادارة صيانة البنية التحتية التخصصية | النشاط التجاري :\nللمشاركة في المناقصة على الشركات الالتزام بإرفاق نسخة من الرخصة التجارية في النظام (سارية المفعول)، علماً بأنه سيتم استبعاد أية شركة لا يوجد لديها النشاط والفئة التالية:\nاستشارات هندسية في الطرق\nاو\nاستشارات هندسية في الطرق الداخلية\nاو\nاستشارات فى الهندسة المدنية\nالفئة : الخاصة – الأولى – الثانية\nكفالات المناقصة (إن تطلب):\nيجب على المورد تقديم كفالة تأمين العطاء بقيمة (200,000) درهم قبل موعد إغلاق المناقصة، وكفالة حسن تنفيذ بنسبة 5% من قيمة العقد عند الترسية (إن تطلب)، وذلك وفقاً للشروط العامة للمناقصة.\n.......................\n:Tender Business Activity\nTo participate in this tender, bidders must upload a valid Trade License through the system. Bidders that do not hold the required business activity and classification category below will be disqualified.\nEngineering consulting in roads\nor\nEngineering consulting in internal roads\nor\nConsulting in civil engineering\nCategory: Private – First – Second\n:Tender Guarantees (If Required)\nThe supplier shall provide a Bid Bond in the amount of AED (200,000) prior to the tender closing date, and where applicable upon award, a Performance Bond amounting to 5% of the contract value, in accordance with the General Tender Conditions. | Al Ain City Municipality\nG592026 استشاري الاشراف على مشاريع ادارة صيانة البنية التحتية التخصصية | النشاط التجاري :\nللمشاركة في المناقصة على الشركات الالتزام بإرفاق نسخة من الرخصة التجارية في النظام (سارية المفعول)، علماً بأنه سيتم استبعاد أية شركة لا يوجد لديها النشاط والفئة التالية:\nاستشارات هندسية في الطرق\nاو\nاستشارات هندسية في الطرق الداخلية\nاو\nاستشارات فى الهندسة المدنية\nالفئة : الخاصة – الأولى – الثانية\nكفالات المناقصة (إن تطلب):\nيجب على المورد تقديم كفالة تأمين العطاء بقيمة (200,000) درهم قبل موعد إغلاق المناقصة، وكفالة حسن تنفيذ بنسبة 5% من قيمة العقد عند الترسية (إن تطلب)، وذلك وفقاً للشروط العامة للمناقصة.\n.......................\n:Tender Business Activity\nTo participate in this tender, bidders must upload a valid Trade License through the system. Bidders that do not hold the required business activity and classification category below will be disqualified.\nEngineering consulting in roads\nor\nEngineering consulting in internal roads\nor\nConsulting in civil engineering\nCategory: Private – First – Second\n:Tender Guarantees (If Required)\nThe supplier shall provide a Bid Bond in the amount of AED (200,000) prior to the tender closing date, and where applicable upon award, a Performance Bond amounting ",
+"notes":[]
+},
+{
+"id":"adgpg-78311c8b69",
+"uid":"adgpg:1434373",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"abudhabi_adgpg",
+"source":"بوابة أبوظبي للمشتريات الحكومية (ADGPG)",
+"kind":"rfp",
+"notice_type":"Request for Quotation",
+"notice_type_ar":"طلب أسعار (RFQ)",
+"title":"DMT-RFP-26-048 Design and Build of Roads and Infrastructure in MBZ",
+"is_arabic":false,
+"summary":"Roads And Infrastructure in Mohamed Bin Zayed City for Sectors ME 3 To 7 (Zone E) - Design and Build",
+"country":"UAE",
+"country_ar":"الإمارات",
+"flag":"🇦🇪",
+"client":"ADPIC - Department of Municipalities and Transport (DMT)",
+"reference":"6650363",
+"published":null,
+"deadline":"2026-11-26",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"خدمات إنشاء المباني والمرافق والصيانة - خدمات الإنشاء الثقيلة",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"low",
+"level_ar":"محتمل",
+"score":5,
+"disciplines":[
+"الطرق والتصميم الهندسي",
+"المرافق والبنية التحتية"
+],
+"ids":[
+"roads",
+"utilities"
+]
+},
+"dates":[
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-11-26",
+"date_ar":"الخميس 26 نوفمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"ADPIC - Department of Municipalities and Transport (DMT)",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"لم تُذكر أرقام أو إيميلات في البيانات المتاحة — افتح الإعلان الرسمي لمعرفة جهة التواصل."
+},
+{
+"title":"بوابة أبوظبي للمشتريات الحكومية (ADGPG) – الدعم",
+"phones":[
+{
+"display":"800555",
+"tel":"800555",
+"whatsapp":""
+},
+{
+"display":"+971 2 666 4442",
+"tel":"+97126664442",
+"whatsapp":""
+}
+],
+"emails":[
+"contact@tamm.abudhabi"
+],
+"website":"https://supplier.adgpg.gov.ae",
+"note":"800-555 مجاني من داخل الإمارات، و+971 2 666 4442 من خارجها. التسجيل كمورد مرة واحدة لكل جهات أبوظبي.",
+"source":"الصفحة الرئيسية لبوابة الموردين ADGPG",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[],
+"doc_note":"",
+"submission_line":"عبر بوابة أبوظبي للمشتريات الحكومية (ADGPG) إلكترونياً – بعد تسجيل الشركة كمورد",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"عبر بوابة أبوظبي للمشتريات الحكومية (ADGPG) إلكترونياً – بعد تسجيل الشركة كمورد.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://supplier.adgpg.gov.ae/pages/tender-detail.html?tenderid=1434373"
+},
+{
+"label":"صفحة المناقصة على نظام أبوظبي (للموردين المسجلين)",
+"url":"https://eservice.addigital.gov.ae/"
+}
+],
+"excerpt":"DMT-RFP-26-048 Design and Build of Roads and Infrastructure in MBZ | Roads And Infrastructure in Mohamed Bin Zayed City for Sectors ME 3 To 7 (Zone E) - Design and Build | ADPIC - Department of Municipalities and Transport (DMT)\nDMT-RFP-26-048 Design and Build of Roads and Infrastructure in MBZ | Roads And Infrastructure in Mohamed Bin Zayed City for Sectors ME 3 To 7 (Zone E) - Design and Build | Building and Facility Construction and Maintenance Services - Heavy construction services | خدمات إنشاء المباني والمرافق والصيانة - خدمات الإنشاء الثقيلة",
+"notes":[]
+},
+{
+"id":"bh-cb5667f94c",
+"uid":"bh:233500072",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"bahrain_tb",
+"source":"مجلس المناقصات والمزايدات – البحرين",
+"kind":"rfp",
+"notice_type":"External",
+"notice_type_ar":"External",
+"title":"PRE & POST Contract Engineering Consultancy Services For The Renovation and Refurbishment of Staff Accommodation at University of Bahrain Sakhir Campus",
+"is_arabic":false,
+"summary":"Tender Board - Kingdom of Bahrain\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating …",
+"country":"Bahrain",
+"country_ar":"البحرين",
+"flag":"🇧🇭",
+"client":"University of Bahrain",
+"reference":"UOBP/8/2026",
+"published":"2026-11-24",
+"deadline":"2026-12-20",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"low",
+"level_ar":"محتمل",
+"score":6,
+"disciplines":[
+"تصميم هندسي مدني عام"
+],
+"ids":[
+"civil_general"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-24",
+"date_ar":"الثلاثاء 24 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-20",
+"date_ar":"الأحد 20 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"University of Bahrain",
+"emails":[
+"helpdesk@tenderboard.gov.bh",
+"info@tenderboard.gov.bh"
+],
+"phones":[
+{
+"display":"+97317566666",
+"tel":"+97317566666",
+"whatsapp":""
+},
+{
+"display":"+973 1758 7855",
+"tel":"+97317587855",
+"whatsapp":""
+}
+],
+"address":"",
+"website":"https://etendering.tenderboard.gov.bh"
+},
+{
+"title":"مجلس المناقصات والمزايدات – البحرين (الدعم الفني)",
+"phones":[
+{
+"display":"+973 1756 6666",
+"tel":"+97317566666",
+"whatsapp":""
+}
+],
+"emails":[
+"helpdesk@tenderboard.gov.bh",
+"info@tenderboard.gov.bh"
+],
+"website":"https://etendering.tenderboard.gov.bh",
+"hours":"الأحد–الأربعاء 7:00–14:15، الخميس 7:00–14:00",
+"source":"بوابة المناقصات الإلكترونية – البحرين",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":true
+}
+],
+"conditions":[
+".يجب ألا تتضمن العروض الفنية السعر أو أي شيء يتعلق به، وإلا سوف يتم استبعاد العطاء",
+"Firms that do not meet these minimum requirements will be disqualified:",
+"يجب أن تكون الشركة استشارية هندسية مؤهلة مسبقاً ومرخصة من قِبل \"مجلس تنظيم مزاولة المهن الهندسية\" (CRPEP) ضمن الفئة (أ) أو (ب) أو (ج).",
+"وتُعتبر الشركة مستوفية للشروط تماماً إذا كانت حاصلة على ترخيص تأهيل مسبق ضمن الفئة المذكورة في إعلان المناقصة، على أن يكون هذا الترخيص سارياً يوم نشر المناقصة",
+"For Two-envelope tenders, bidders, are requested to attach the initial bond as stated above and it must be included within the technical bid.",
+"The initial bond should be in the form of a Certified Cheque, Bank Guarantee, Insurance Policy or Bank Transfer (or as specified in the Tender Documents) valid for the duration specified above.",
+"If the bidder chooses to submit the initial bond in the form of a Bank transfer, the guarantee amount must be provided as a fixed amount mentioned and not as a percentage of the bid value.",
+"Small and Medium Enterprises (SMEs)are eligible to obtain 10% preference in the financial evaluation stage when participating in tenders, and in auctions related to service facilities within government entities premises, however this shall not apply to tenders of a special nature."
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-12-10",
+"due_ar":"الخميس 10 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-13",
+"due_ar":"الأحد 13 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-15",
+"due_ar":"الثلاثاء 15 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-16",
+"due_ar":"الأربعاء 16 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-18",
+"due_ar":"الجمعة 18 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد).",
+"due":"2026-12-19",
+"due_ar":"السبت 19 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://www.tenderboard.gov.bh/TenderDetails/?id=589%2f2026%2fBTB+(UOBP%2f8%2f2026)"
+}
+],
+"excerpt":"PRE & POST Contract Engineering Consultancy Services For The Renovation and Refurbishment of Staff Accommodation at University of Bahrain Sakhir Campus | University of Bahrain\nTender Board - Kingdom of Bahrain\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating Partnerships Between Public and Private Sectors\nTenders Published Tenders\nTo be Opened This Week\nTender Opening Results\nLive Opening\nAwarded Tenders\nPrequalified Vendors\nProcurement Plans\nArchived Tenders\nServices Process\neForms\nTraining Courses\nStandard Electronic Request Template\nStandard Electronic Report\nMedia News\nAnnual Reports\nFAQ Supplier FAQ\nGeneral FAQ\neTendering Login\nCreate an Account in eTendering\nعربي\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating Partnerships Between Public and Private Sectors\nTenders Published Tenders\nTo be Opened This Week\nTender Opening Results\nLive Opening\nAwarded Tenders\nPrequalified Vendors\nProcurement Plans\nArchived Tenders\nServices Process\neForms\nTraining Courses\nStandard Electronic Request Template\nStandard Electronic Report\nMedia News\nAnnual Reports\nFAQ Supplier FAQ\nGeneral FAQ\nSearch\nTender Details\nHome\nTender Details\nPRE & POST Contract Engineering Consultancy Services For The Renovation and Refurbishment of Staff Accommodation at University of Bahrain Sakhir Campus\nTender Number: 589/2026/BTB (UOBP/8/2026)\nPA Ref Number: UOBP/8/2026\nTender Description\nThe University of Bahrain invites proposals for comprehensive Pre and Post Contract Engineering Consultancy Services for the major renovation and refurbishment of staff accommodation facilities at the Sakhir Campus The scope covers condition assessment detailed technical specifications Bill of Quantities tender documentation as well as fulltime construction supervision and contract administration during the execution phase\nIssued by\nUniversity of Bahrain\nInternal/External\nExternal\nInvitation Method\nPublic (LOCAL GCC)\nClassification/CPV Codes\n-->\n45000000-7 - Construction work\n-->\nInitial Bond\nBD 100\nBid Validity / Initial Bond Validity Period (Days)\n18",
+"notes":[]
+},
+{
+"id":"monaqasat-1e002b512b",
+"uid":"monaqasat:5430/2026",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"monaqasat",
+"source":"منصة مناقصات – قطر",
+"kind":"rfp",
+"notice_type":"Public Tender",
+"notice_type_ar":"مناقصة عامة",
+"title":"DESIGN AND CONSTRUCTION OF MEKEINES TO UMM BAB LINK ROAD AND INFRASTRUCTURE\nPA 2026 C 006 G ( CONTRACTORS- GRADE 1 - ROADS - LOCAL AND FOREIGN COMPANIES)\nMORE INFORAMTION VISIT ASHGHAL WEBSITE.WWW.ASHGHAL.GOV.QA",
+"is_arabic":false,
+"summary":"Design and Construction of Mekeines to Umm Bab Link Road and Infrastructure",
+"country":"Qatar",
+"country_ar":"قطر",
+"flag":"🇶🇦",
+"client":"Public Works Authority",
+"reference":"5430/2026",
+"published":null,
+"deadline":"2026-12-22",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"50,000.00 ريال قطري",
+"guarantee":"12,300,000.00 QAR",
+"contract_duration":"42",
+"match":{
+"level":"low",
+"level_ar":"محتمل",
+"score":5,
+"disciplines":[
+"الطرق والتصميم الهندسي",
+"المرافق والبنية التحتية"
+],
+"ids":[
+"roads",
+"utilities"
+]
+},
+"dates":[
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-22",
+"date_ar":"الثلاثاء 22 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Public Works Authority",
+"emails":[],
+"phones":[
+{
+"display":"000.00 22/12/2026",
+"tel":"+00022122026",
+"whatsapp":""
+}
+],
+"address":"",
+"website":""
+},
+{
+"title":"منصة مناقصات – وزارة المالية القطرية",
+"website":"https://monaqasat.mof.gov.qa",
+"note":"كثير من الإعلانات تذكر إيميل الجهة للاستفسار داخل وصف المناقصة نفسها.",
+"phones":[],
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":true
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":true
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[
+"Companies wishing to participate in government tenders must be classified.",
+"Updates will be announced on the website - The Ministry of Finance announces the postponement of the mandatory submission of the ICV certificate as a condition for participating in government tenders until the beginning of 2027.",
+"However, The Ministry of Finance encourages you to initiate the process to obtain ICV Certificate, and you can access the required information through the Monaqasat Portal",
+"Those wishing to submit their bids may obtain the offering documents from the unified website for state procurement using their login data ( the email registered in the classification program ) after paying the value of the prescribed documents by clicking on the (buy) icon.",
+"In the event that the conditions provide for the submission of an initial guarantee, a temporary security shall be attached to the bid, in the name of the government authority to the Committee, by an acceptable payable cheque (manager’s cheque) or by virtue of a bank guarantee letter issued by a local or accredaited bank, not accompanied by any restriction or condition, and valid for the entire performance, and it is irrevocable, provided that its validity period shall not …"
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"قيمة الوثائق: 50,000.00 ريال قطري.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-12-12",
+"due_ar":"السبت 12 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-15",
+"due_ar":"الثلاثاء 15 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-17",
+"due_ar":"الخميس 17 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-18",
+"due_ar":"الجمعة 18 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-20",
+"due_ar":"الأحد 20 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد).",
+"due":"2026-12-21",
+"due_ar":"الاثنين 21 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://monaqasat.mof.gov.qa/TendersOnlineServices/TenderDetails/661684"
+}
+],
+"excerpt":"DESIGN AND CONSTRUCTION OF MEKEINES TO UMM BAB LINK ROAD AND INFRASTRUCTURE\nPA 2026 C 006 G ( CONTRACTORS- GRADE 1 - ROADS - LOCAL AND FOREIGN COMPANIES)\nMORE INFORAMTION VISIT ASHGHAL WEBSITE.WWW.ASHGHAL.GOV.QA | Design and Construction of Mekeines to Umm Bab Link Road and Infrastructure | Contractors\nTender Details - Monaqasat | The Unified Website of State Procurement\nThe Unified Website of State Procurement\nLogin\nFAQ\nContact Us\nCreate Support Ticket\nالعربية\nHome\nWho Are We\nQatar Vision 2030\nServices\nClassification services\nTenders Services\nDispute Resolution Service\nSearch Company\nRegulations and laws\nCompanies wishing to participate in government tenders must be classified. Please note that linking tender financial ceilings to company financial limits for suppliers and service providers has been postponed to allow more companies to meet the advanced classification requirements. Updates will be announced on the website - The Ministry of Finance announces the postponement of the mandatory submission of the ICV certificate as a condition for participating in government tenders until the beginning of 2027. You will be notified of the specific date. However, The Ministry of Finance encourages you to initiate the process to obtain ICV Certificate, and you can access the required information through the Monaqasat Portal\nHome\nTenders Online Services\nTender Details\nAnnouncement Number: 25105\nDate: 26/11/2026\nTender Announcement\nTime remaining till tender closure 25 Day, 15 Hour And 38 Minute\nTender number\nType\nSubject\nMinistry\nEntity's tender number\nRequest Types\nEnvelopes system\nTender Bond\nDocuments value (QR)\nClosing Date\n5430/2026\nPublic Tender\nDESIGN AND CONSTRUCTION OF MEKEINES TO UMM BAB LINK ROAD AND INFRASTRUCTURE\nPA 2026 C 006 G ( CONTRACTORS- GRADE 1 - ROADS - LOCAL AND FOREIGN COMPANIES)\nMORE INFORAMTION VISIT ASHGHAL WEBSITE.WWW.ASHGHAL.GOV.QA\nPublic Works Authority\nPWA/GTC/20/2026\nContractors\nTwo Envelopes\n12,300,000.00\n50,000.00\n22/12/2026\nBrief Description\nTargeted Tenderer Type\nService Delivery Method\nAuction Type\nLocal Value System\nTender Validity Period\nEvaluation Basis\nDesign and Construction of Mekeines to Umm Bab Link Road and Infrastructure\nCompanies\nLocal Value Plan\n90\nActivities list\nActivity name\nMaintenance of Roads\nSpecial Conditions\nName\nValue\nTechnical Evaluation Criteria\nThe Ordinary Method & Points\nFinal Insurance\n10\nExecution Delivery Location\nON SITE\nContract Preparation Period\n28\nDays from contract date\nContract Duration\n42\nW",
+"notes":[]
+},
+{
+"id":"bh-c692fe07d5",
+"uid":"bh:233499675",
+"first_seen":"2026-11-26T18:56:48+00:00",
+"updated":"2026-11-26T18:56:48+00:00",
+"source_key":"bahrain_tb",
+"source":"مجلس المناقصات والمزايدات – البحرين",
+"kind":"rfp",
+"notice_type":"External",
+"notice_type_ar":"External",
+"title":"Provision of Engineering Design and Drafting Services",
+"is_arabic":false,
+"summary":"Tender Board - Kingdom of Bahrain\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating …",
+"country":"Bahrain",
+"country_ar":"البحرين",
+"flag":"🇧🇭",
+"client":"Bapco Refining",
+"reference":"BE2630000506",
+"published":"2026-11-23",
+"deadline":"2027-01-06",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"low",
+"level_ar":"محتمل",
+"score":6,
+"disciplines":[
+"تصميم هندسي مدني عام"
+],
+"ids":[
+"civil_general"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-23",
+"date_ar":"الاثنين 23 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2027-01-06",
+"date_ar":"الأربعاء 6 يناير 2027",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Bapco Refining",
+"emails":[
+"helpdesk@tenderboard.gov.bh",
+"info@tenderboard.gov.bh"
+],
+"phones":[
+{
+"display":"+97317566666",
+"tel":"+97317566666",
+"whatsapp":""
+},
+{
+"display":"+973 1758 7855",
+"tel":"+97317587855",
+"whatsapp":""
+}
+],
+"address":"",
+"website":"https://etendering.tenderboard.gov.bh"
+},
+{
+"title":"مجلس المناقصات والمزايدات – البحرين (الدعم الفني)",
+"phones":[
+{
+"display":"+973 1756 6666",
+"tel":"+97317566666",
+"whatsapp":""
+}
+],
+"emails":[
+"helpdesk@tenderboard.gov.bh",
+"info@tenderboard.gov.bh"
+],
+"website":"https://etendering.tenderboard.gov.bh",
+"hours":"الأحد–الأربعاء 7:00–14:15، الخميس 7:00–14:00",
+"source":"بوابة المناقصات الإلكترونية – البحرين",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":true
+}
+],
+"conditions":[
+"The scope of services consists of the provision of Mechanical, Electrical, Civil and Structural Engineering Designer Services at Bapco Refining Offices and from the Contractor Office as and when required during the term of contract.",
+"KeyQualification and Evaluation criteria",
+"MandatoryCriteria: The Biddershall provide the following details along with documentary evidence.",
+"Only thebids complying with all Mandatory Criteria will be considered for technicaland commercial evaluation.",
+"The Bidder shall have a minimum offive (5) years of experience in providing Engineering Design & DraftingServices in Oil & Gas, Refining, Petrochemical, LNG, Power, or similarindustrial facilities.",
+"The Biddershall submit details of Engineering Design & Drafting Services executedduring the last five (5) years in Oil & Gas, Refining, Petrochemical,LNG, Power, or similar industrial facilities.",
+"The submitted information shalldemonstrate the Bidder's capability in providing Mechanical, Electrical,Civil & Structural Design & Drafting Services, SmartPlant 3D (S3D),SmartPlant P&ID (SPID), SmartPlant Electrical (SPEL), SmartPlantFoundation (SPF) support, Document Control Services, and As-BuiltDocumentation, for evaluation by the Company.",
+"TheBidder shall provide a Formal Commitment Letter confirming that the required manpower meeting thespecified qualification and experience requirements shall be made availableupon Contract Award as and when requested by the Company and/or submit details of currently available personnel in Appendix C ."
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-12-27",
+"due_ar":"الأحد 27 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-30",
+"due_ar":"الأربعاء 30 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2027-01-01",
+"due_ar":"الجمعة 1 يناير 2027",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2027-01-02",
+"due_ar":"السبت 2 يناير 2027",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2027-01-04",
+"due_ar":"الاثنين 4 يناير 2027",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد).",
+"due":"2027-01-05",
+"due_ar":"الثلاثاء 5 يناير 2027",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://www.tenderboard.gov.bh/TenderDetails/?id=580%2f2026%2fBTB+(BE2630000506)"
+}
+],
+"excerpt":"Provision of Engineering Design and Drafting Services | Bapco Refining\nTender Board - Kingdom of Bahrain\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating Partnerships Between Public and Private Sectors\nTenders Published Tenders\nTo be Opened This Week\nTender Opening Results\nLive Opening\nAwarded Tenders\nPrequalified Vendors\nProcurement Plans\nArchived Tenders\nServices Process\neForms\nTraining Courses\nStandard Electronic Request Template\nStandard Electronic Report\nMedia News\nAnnual Reports\nFAQ Supplier FAQ\nGeneral FAQ\neTendering Login\nCreate an Account in eTendering\nعربي\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating Partnerships Between Public and Private Sectors\nTenders Published Tenders\nTo be Opened This Week\nTender Opening Results\nLive Opening\nAwarded Tenders\nPrequalified Vendors\nProcurement Plans\nArchived Tenders\nServices Process\neForms\nTraining Courses\nStandard Electronic Request Template\nStandard Electronic Report\nMedia News\nAnnual Reports\nFAQ Supplier FAQ\nGeneral FAQ\nSearch\nTender Details\nHome\nTender Details\nProvision of Engineering Design and Drafting Services\nTender Number: 580/2026/BTB (BE2630000506)\nPA Ref Number: BE2630000506\nTender Description\nThe scope of services consists of the provision of Mechanical, Electrical, Civil and Structural Engineering Designer Services at Bapco Refining Offices and from the Contractor Office as and when required during the term of contract. The scope includes establishing drafting workspaces and coordination protocols between Bapco Refining and Contractors, organize drafting data sources, drawing templates and standards for Mechanical, Electrical and Civil and Structural engineering disciplines. Coordinate access to legacy drawings and documents for reference and updates. Ensure drafting software and tools are configured to meet project requirements.\nIssued by\nBapco Refining\nInternal/External\nExternal\nInvitation Method\nPublic (LOCAL GCC)\nClassification/CPV Codes\n-->\n76000000-3 - Services related to the oil and gas industry\n-->\nInitial Bond\nBD 5000\nBid Valid",
+"notes":[]
+},
 {
 "id":"ungm-ea06fba5d5",
 "uid":"ungm:321232",
