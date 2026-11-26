@@ -192,11 +192,16 @@ def fetchers(today):
         return ""
 
     def oman(url, data=None, **kw):
-        if data is not None:  # pages after the first
-            return ""
         close = (today + timedelta(days=15)).strftime("%d-%m-%Y")
         sale = (today + timedelta(days=10)).strftime("%d-%m-%Y")
-        return f"""<input type="hidden" name="hidMax" value="1"><table><tr class="odd gradeA"><th>رقم التسلسل</th></tr>
+        if data is not None:  # page 2 of 2 (the real portal has about 40)
+            return f"""<table><tr class="odd gradeA"><td>51.</td><td><span>2026/95/ت ج</span></td>
+<td onmouseover="Tip('توريد مستلزمات طبية')">توريد مستلزمات طبية</td><td>وزارة الصحة</td>
+<td onmouseover="Tip('التوريدات [الأولى]')">التوريدات [الأولى]</td><td>عامة</td>
+<td> Sales EndDate:{sale}-Bid Closing Date:{close} </td><td>N/A</td><td>N/A</td>
+<td><a onclick="javascript:getNit('103003')">x</a></td></tr></table>
+<input type='hidden' name='hidMax' value='2'><a onclick="javascript:getNit('1')">x</a>"""
+        return f"""<input type='hidden' name='hidMax' value='2'><table><tr class="odd gradeA"><th>رقم التسلسل</th></tr>
 <tr class="even gradeA"><td align="center" class=" tbl_td">1.</td>
 <td class=" tbl_td" nowrap=""><span onmouseover="showTndDesc('tendDesc','1')">2026/88/ب م/ق م-12</span></td>
 <input type="hidden" id="tendDesc1" name="tendDesc1" value="إعداد التصاميم التفصيلية ووثائق الطرح لشبكة تصريف مياه الأمطار والطرق الداخلية بولاية بوشر (مثال)">
@@ -336,12 +341,14 @@ def fetchers(today):
                  "message": "Your Ariba password has been changed."}]
         return "\n".join(json.dumps(m) for m in msgs)
 
-    def watch(url, **kw):
+    def watch(url, data=None, **kw):
         if "fujairah" in url:
             return ('<p>stay updated on opportunities to work with us.</p><table><tr><td>T-12/2026</td><td>'
                     'Consultancy services for design of internal roads and stormwater drainage in Dibba (Example)'
                     '</td></tr></table><h3>Quick Links</h3><a href="/en/about">About Us – Department of Public Works</a>')
-        return "<p>Sorry, there are no sourcing events available for you yet.</p>"
+        if "fetch_events" in url:  # Coupa's event list (the page loads it by script); none open, as usual
+            return '{"events":[],"empty_events":true}' if kw.get("headers", {}).get("X-CSRF-Token") == "t0k" else ""
+        return '<meta name="csrf-token" content="t0k" /><div id="public_events"></div>'
 
     def detail_all(url, **kw):
         found = uae_detail(url)

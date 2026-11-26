@@ -383,7 +383,7 @@ def oman_tenderboard(cfg, countries, fetch=None):
     first = g.call(sess, _OMAN_DASH)
     if first is None:
         return g.report()
-    m = re.search(r'name="hidMax"\s+value="(\d+)"', first)
+    m = re.search(r"""name=["']hidMax["']\s+value=["'](\d+)["']""", first)  # the portal writes value='41'
     last = min(int(m.group(1)) if m else 1, int(cfg.get("pages", 60)))
     pages = [first]
     first_ids = set(re.findall(r"getNit\('(\d+)'\)", first))
@@ -1132,12 +1132,16 @@ def parse_alert_email(subject, body, msg_id="", when=None):
 # ------------------------------------------------------------------ portal pages that are usually empty
 def page_watch(cfg, countries, fetch=http):
     """Tender pages that show "no open tenders" most of the time (Fujairah Public Works, RAK Coupa events).
-    When a page has tenders, its rows, headings and links become leads; the matcher keeps the consulting ones."""
+    When a page has tenders, its rows, headings and links become leads; the matcher keeps the consulting ones.
+    A page that loads its list by script (Coupa) is read from the list address the page itself calls."""
     out = []
     for p in cfg.get("pages", []):
         if p.get("country") and p["country"] not in countries:
             continue
         try:
+            if p.get("events_api"):
+                out += [_event_lead(p, ev) for ev in _coupa_events(p, fetch)]
+                continue
             page = fetch(p["url"], retries=0, timeout=25)
         except Exception as e:  # noqa: BLE001
             out.append({"_error": f"{p['name']}: {e}"[:220]})
@@ -1146,7 +1150,10 @@ def page_watch(cfg, countries, fetch=http):
         if any(m.lower() in low for m in p.get("empty", [])):
             continue
         part = page
-        if p.get("start") and p["start"] in part:
+        if p.get("start"):
+            if p["start"] not in part:  # an error page or a new design: report it instead of reading every link
+                out.append({"_error": f"{p['name']}: the tender list was not found on the page"})
+                continue
             part = part[part.index(p["start"]) + len(p["start"]):]
         if p.get("end") and p["end"] in part:
             part = part[:part.index(p["end"])]
@@ -1166,6 +1173,52 @@ def page_watch(cfg, countries, fetch=http):
                                client=p.get("client", ""), notice_type="Portal listing", url=link,
                                deadline=deadline_from_text(text) or None, raw_text=text))
     return out
+
+
+def _coupa_events(p, fetch):
+    """Coupa's public-events page fills its list by script: open the page for its cookie and token, then ask
+    for the list the same way the page does. Returns the list of events (empty when none are open)."""
+    sess = Session() if fetch is http else fetch
+    page = sess(p["url"], retries=0, timeout=25) or ""
+    tok = (re.search(r"""<meta[^>]+name=["']csrf-token["'][^>]+content=["']([^"']+)""", page)
+           or re.search(r"""<meta[^>]+content=["']([^"']+)["'][^>]+name=["']csrf-token""", page))
+    headers = {"Accept": "application/json", "X-Requested-With": "XMLHttpRequest", "Referer": p["url"]}
+    if tok:
+        headers["X-CSRF-Token"] = html.unescape(tok.group(1))
+    data = json.loads(sess(p["events_api"], data="", method="POST", headers=headers, retries=0, timeout=25) or "{}")
+    events = data.get("events") if isinstance(data, dict) else data
+    return [e for e in events or [] if isinstance(e, dict)]
+
+
+def _event_lead(p, ev):
+    """One public sourcing event as a lead. Coupa does not document the list's fields, so they are read loosely:
+    a name/title field for the title, end/close fields for the deadline, a url/link field for the link."""
+    flat = []
+
+    def walk(o, key=""):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                walk(v, str(k).lower())
+        elif isinstance(o, list):
+            for v in o:
+                walk(v, key)
+        elif isinstance(o, str) and o.strip():
+            flat.append((key, re.sub(r"\s+", " ", html_to_text(o)).strip()))
+        elif isinstance(o, (int, float)) and not isinstance(o, bool):
+            flat.append((key, str(o)))
+
+    walk(ev)
+    first = lambda pat: next((v for k, v in flat if re.search(pat, k)), "")  # noqa: E731
+    title = first(r"(^|_)(name|title|subject)$") or max(
+        (v for _, v in flat if 15 <= len(v) <= 300 and not v.startswith(("http", "/"))), key=len, default="")
+    deadline = next((d for d in (parse_date(v) for k, v in flat if re.search(r"end|clos|deadline|due", k)) if d), None)
+    link = first(r"url|link|href|path")
+    link = urljoin(p["url"], link) if link.startswith(("http", "/")) else p["url"]
+    eid = first(r"^(id|event_id|quote_request_id)$") or hashlib.sha1(norm(title).encode("utf-8")).hexdigest()[:12]
+    text = " | ".join(v for _, v in flat)[:1500]
+    return _tender(uid=f"watch:coupa:{eid}", source_key="page_watch", source=p["name"], title=title[:300],
+                   country=p.get("country", ""), client=p.get("client", ""), notice_type="Public sourcing event",
+                   url=link, deadline=deadline or deadline_from_text(text) or None, raw_text=text)
 
 
 # ------------------------------------------------------------------ office-PC helper (relay)

@@ -55,6 +55,7 @@ NOTICE_TYPES = [  # (contains, Arabic label) – first match wins
     ("limited tender", "مناقصة محدودة"),
     ("news lead", "خبر عن طرح – يحتاج تأكيد"),
     ("portal listing", "إعلان على بوابة رسمية"),
+    ("public sourcing event", "طرح عام على بوابة Coupa – اطلبوا المشاركة"),
 ]
 
 METHODS = {

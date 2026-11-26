@@ -634,11 +634,7 @@
           "country": "UAE",
           "client": "RAK Public Services Department",
           "url": "https://supplier.coupahost.com/quotes/public_events?customer=psd_rak",
-          "empty": [
-            "no sourcing events available"
-          ],
-          "start": "Past Public Events",
-          "end": "Terms of Use"
+          "events_api": "https://supplier.coupahost.com/quotes/public_events/psd_rak/fetch_events"
         }
       ]
     },

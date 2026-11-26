@@ -100,6 +100,10 @@ def test_full_run():
     check(om["country_ar"] == "عُمان" and "hashval=" in om["links"][0]["url"] and om["deadline"] == (TODAY + timedelta(days=15)).isoformat(),
           "Oman Tender Board: consulting tender with signed notice link and closing date")
     check(not any("حاسب" in r["title"] for r in r1["new"]), "Oman supplies tender rejected")
+    from radar import sources
+    om_all = sources.oman_tenderboard({"pages": 60}, ["Oman"], fetch=demo.fetchers(TODAY)["oman_tenderboard"])
+    check(sorted(t.get("uid", "") for t in om_all) == ["oman:103001", "oman:103002", "oman:103003"],
+          "Oman Tender Board: every page is read (page count written as value='2')")
     bh = next(r for r in r1["new"] if r["source_key"] == "bahrain_tb")
     check(bh["deadline"] == (TODAY + timedelta(days=20)).isoformat() and bh["kind"] == "rfp", "Bahrain tender read with closing date")
     eb = next(r for r in r1["new"] if r["source_key"] == "ebrd_ecepp")
@@ -203,9 +207,34 @@ def test_email_invitations():
     check(sources.email_alerts({}, ["UAE"], fetch=fx["email_alerts"]) == [], "no topic in the cloud: nothing read")
 
 
+def test_watched_pages():
+    print("watched portal pages")
+    from radar import sources
+    pages = load_json(os.path.join(SCANNER, "profile.json"))["sources"]["page_watch"]["pages"]
+    rak = {"pages": [p for p in pages if p.get("events_api")]}
+    fuj = {"pages": [p for p in pages if not p.get("events_api")]}
+    end = TODAY + timedelta(days=9)
+
+    def coupa(url, data=None, method=None, headers=None, **kw):
+        if "fetch_events" in url:
+            if method != "POST" or (headers or {}).get("X-CSRF-Token") != "abc":
+                raise RuntimeError("HTTP 422")
+            return json.dumps({"events": [{"id": 5501, "name": "Consultancy Services for Stormwater Master Plan – "
+                                           "Ras Al Khaimah (Example)", "end_date": end.isoformat() + "T12:00:00+04:00",
+                                           "event_url": "/quotes/public_events/psd_rak/5501"}], "empty_events": False})
+        return '<html><meta content="abc" name="csrf-token"></html>'
+
+    got = sources.page_watch(rak, ["UAE"], fetch=coupa)
+    check(len(got) == 1 and got[0]["uid"] == "watch:coupa:5501" and got[0]["deadline"] == end
+          and got[0]["url"].endswith("/psd_rak/5501"), "RAK Coupa: an open event is read from the page's event list")
+    odd = sources.page_watch(fuj, ["UAE"], fetch=lambda url, **kw: "<html><a href='/x'>Public Works Department home</a></html>")
+    check(len(odd) == 1 and "_error" in odd[0], "a page that does not look as expected is reported, not read link by link")
+
+
 if __name__ == "__main__":
     test_contacts()
     test_full_run()
     test_notification_payloads()
     test_email_invitations()
+    test_watched_pages()
     print("\nALL TESTS PASSED ✔")
