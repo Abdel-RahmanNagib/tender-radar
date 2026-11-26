@@ -53,17 +53,19 @@ def _send(url, body, method, headers=None):
         return r.read()
 
 
-def publish(server, topic, secret, snapshot, log=print, chunk=3600):
-    """PC side. Sends the signed snapshot as an ntfy attachment, or in signed text parts if attachments fail."""
+def publish(server, topic, secret, snapshot, log=print, chunk=3600, max_parts=6):
+    """PC side. Sends the signed snapshot as signed text parts (ntfy keeps messages 12 hours) when it is
+    small, otherwise as an attachment (kept only about 3 hours); falls back to parts if the upload fails."""
     data = pack(snapshot)
     sig = base64.b64encode(ed25519.sign(secret, data)).decode()
     sid = snapshot["id"]
     url = f"{server.rstrip('/')}/{topic}"
-    try:
-        _send(url, data, "PUT", {"Filename": f"snapshot-{sid}.bin", "Message": f"{MAGIC} snap={sid} sig={sig}"})
-        return f"attachment {len(data)} bytes"
-    except Exception as e:  # noqa: BLE001
-        log(f"  attachment upload failed ({e}); sending text parts")
+    if len(base64.b64encode(data)) > chunk * max_parts:
+        try:
+            _send(url, data, "PUT", {"Filename": f"snapshot-{sid}.bin", "Message": f"{MAGIC} snap={sid} sig={sig}"})
+            return f"attachment {len(data)} bytes"
+        except Exception as e:  # noqa: BLE001
+            log(f"  attachment upload failed ({e}); sending text parts")
     b64 = base64.b64encode(data).decode()
     parts = [b64[i:i + chunk] for i in range(0, len(b64), chunk)] or [""]
     for i, part in enumerate(parts, 1):
@@ -123,6 +125,8 @@ def fetch_snapshots(server, topic, public_key, since="12h", get_text=None, get_b
                 continue
             snaps.append(json.loads(zlib.decompress(data).decode("utf-8")))
         except Exception as e:  # noqa: BLE001  (expired attachment, network)
+            if "404" in str(e) and sid != order[-1]:
+                continue  # an older snapshot whose attachment expired; newer snapshots carry the same tenders
             errors.append(f"office PC relay: snapshot {sid}: {e}"[:220])
     snaps.sort(key=lambda s: s.get("ts", ""))
     return snaps, errors

@@ -6,7 +6,7 @@ import traceback
 from datetime import date, timedelta
 
 from .build import build_record, refresh_steps
-from .common import cairo_now, fmt_date_ar, http, utc_now_iso
+from .common import cairo_now, fmt_date_ar, http, utc_now_iso, norm
 from .notify import Notifier, count_ar, days_left
 from .scoring import Matcher
 from .sources import COLLECTORS, RELAY_INFO, fetch_detail
@@ -78,13 +78,22 @@ def run_once(settings, profile, data_dir, fetchers=None, notifier=None, today=No
             if os.environ.get("RADAR_DEBUG"):
                 traceback.print_exc()
 
-    matched, new, seen_now = [], [], set()
+    matched, new, seen_now, same = [], [], set(), set()
     for t in collected:
         if t["uid"] in seen_now:
             continue
         ok, info = matcher.evaluate(t, today)
         if not ok:
+            # still listed but no longer suitable under the current profile (e.g. keywords were tightened)
+            if t["uid"] in store.records and not (t.get("deadline") and t["deadline"] < today):
+                store.records.pop(t["uid"], None)
             continue
+        # some portals list the same tender twice (re-publication with a new id)
+        key = (t.get("source_key"), norm(t.get("title", ""))[:140], t["deadline"].isoformat() if t.get("deadline") else "")
+        if key in same:
+            store.records.pop(t["uid"], None)
+            continue
+        same.add(key)
         seen_now.add(t["uid"])
         matched.append(t)
         rec = store.records.get(t["uid"])
