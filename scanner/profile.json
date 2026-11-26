@@ -493,7 +493,9 @@
     "أعمال إنشاء",
     "مقاولة",
     "صيانة وتشغيل",
-    "تشغيل وصيانة"
+    "تشغيل وصيانة",
+    "contractor",
+    "construction"
   ],
   "negative_terms": [
     "supply of",
@@ -532,7 +534,17 @@
     "licenses",
     "licences",
     "license renewal",
-    "subscription"
+    "subscription",
+    "design and build",
+    "design & build",
+    "design-build",
+    "design build",
+    "design and construct",
+    "design and construction of",
+    "design & construction of",
+    "main contractor",
+    "تصميم وتنفيذ",
+    "تصميم وبناء"
   ],
   "excluded_notice_types": [
     "contract award",

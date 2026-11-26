@@ -903,9 +903,11 @@ def adgpg_item(it):
     desc = html_to_text(it.get("TenderDetails") or "")
     ntype = {"RFI": "Request for Information", "EOI": "Expression of Interest", "RFQ": "Request for Quotation",
              "RFP": "Request for Proposal"}.get(kind, "Public Tender")
+    # The description is kept out of the matching text: works tenders describe the consultant's role
+    # ("designed by ..., under the supervision of the consultant"), which made them look like consultancy.
     return _tender(
         uid=f"adgpg:{tid}", source_key="abudhabi_adgpg", source="بوابة أبوظبي للمشتريات الحكومية (ADGPG)",
-        title=title, description="" if norm(desc) == norm(title) else desc[:1500], country="UAE",
+        title=title, country="UAE",
         client=(it.get("EntityName") or "").strip(" -"), notice_type=ntype, reference=it.get("TenderNumber") or "",
         published=parse_date(it.get("BiddingOpenDate")), deadline=parse_date(it.get("DueDate")),
         url=f"{ADGPG_WEB}/pages/tender-detail.html?tenderid={tid}",
@@ -931,8 +933,9 @@ def _adgpg_detail(t, fetch=http):
     if d.get("DiscoveryUrl"):
         t["extra"].setdefault("links", []).append({"label": "صفحة المناقصة على نظام أبوظبي (للموردين المسجلين)",
                                                    "url": d["DiscoveryUrl"]})
-    if d.get("TenderDetails") and not t.get("description") and norm(d["TenderDetails"]) != norm(t["title"]):
-        t["description"] = html_to_text(d["TenderDetails"])[:1500]
+    desc = html_to_text(d.get("TenderDetails") or "")
+    if desc and not t.get("description") and norm(desc) != norm(t["title"]):
+        t["description"] = desc[:1500]
     t["detail_text"] = " | ".join(x for x in [t.get("title", ""), t.get("description", ""), cat_en, cat_ar, value] if x)
     return t
 
