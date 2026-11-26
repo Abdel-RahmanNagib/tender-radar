@@ -1,0 +1,77 @@
+{
+"last_run":"2026-11-26T09:29:50+00:00",
+"every_minutes":60,
+"collected":2098,
+"matched":2,
+"new":2,
+"open":2,
+"sources":[
+{
+"key":"worldbank",
+"count":1054,
+"ok":true,
+"failed_pages":0,
+"error":""
+},
+{
+"key":"etimad",
+"count":343,
+"ok":true,
+"failed_pages":0,
+"error":""
+},
+{
+"key":"monaqasat",
+"count":0,
+"ok":false,
+"failed_pages":2,
+"error":"https://monaqasat.mof.gov.qa/TendersOnlineServices/SearchTenders/1: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:1011)>"
+},
+{
+"key":"ungm",
+"count":0,
+"ok":false,
+"failed_pages":2,
+"error":"https://www.ungm.org/Public/Notice/Search: HTTP Error 403: Forbidden"
+},
+{
+"key":"google_news",
+"count":17,
+"ok":true,
+"failed_pages":0,
+"error":""
+},
+{
+"key":"rss_feeds",
+"count":0,
+"ok":true,
+"failed_pages":0,
+"error":""
+},
+{
+"key":"web_pages",
+"count":684,
+"ok":true,
+"failed_pages":6,
+"error":""
+}
+],
+"errors":[
+"https://monaqasat.mof.gov.qa/TendersOnlineServices/SearchTenders/1: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:1011)>",
+"https://monaqasat.mof.gov.qa/TendersOnlineServices/SearchTenders/2: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:1011)>",
+"https://www.ungm.org/Public/Notice/Search: HTTP Error 403: Forbidden",
+"https://www.ungm.org/Public/Notice/Search: HTTP Error 403: Forbidden",
+"AfDB - Procurement (Egypt/Libya): HTTP Error 403: Forbidden",
+"Egypt - بوابة التعاقدات العامة: <urlopen error timed out>",
+"Jordan - دائرة العطاءات الحكومية: <urlopen error timed out>",
+"Palestine - بوابة الشراء العام: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1011)>",
+"Kuwait - CAPT: HTTP Error 403: Forbidden",
+"Libya - UNDP Libya procurement: HTTP Error 403: Forbidden"
+],
+"notifications_sent":0,
+"channels":{
+"ntfy":true,
+"telegram":false,
+"email":false
+}
+}

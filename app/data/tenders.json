@@ -1,0 +1,425 @@
+{
+"generated":"2026-11-26T09:29:50+00:00",
+"office":"CEC Egypt – Delta Office – Infrastructure",
+"count":2,
+"tenders":[
+{
+"id":"wb-2ee4178a4e",
+"uid":"wb:OP00369259",
+"first_seen":"2026-11-26T09:29:50+00:00",
+"updated":"2026-11-26T09:29:50+00:00",
+"source_key":"worldbank",
+"source":"البنك الدولي",
+"kind":"eoi",
+"notice_type":"Request for Expression of Interest",
+"notice_type_ar":"طلب إبداء اهتمام (EOI)",
+"title":"CAPEX management agent",
+"is_arabic":false,
+"summary":"Iraq Railways Extension and Modernization Project",
+"country":"Iraq",
+"country_ar":"العراق",
+"flag":"🇮🇶",
+"client":"Ministry of Transport- Iraqi Republic Railways",
+"reference":"I REM-MOT-MA-CS01",
+"published":"2026-11-22",
+"deadline":"2026-12-07",
+"deadline_time":"14:00",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"Quality And Cost-Based Selection",
+"method_ar":"الاختيار على أساس الجودة والتكلفة (QCBS)",
+"activity":"",
+"funding":"البنك الدولي – مشروع P507282",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":8,
+"disciplines":[
+"الطرق والتصميم الهندسي",
+"المرافق والبنية التحتية"
+],
+"ids":[
+"roads",
+"utilities"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-22",
+"date_ar":"الأحد 22 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-07",
+"date_ar":"الاثنين 7 ديسمبر 2026",
+"kind":"deadline",
+"time":"14:00"
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"Wajdi Salih",
+"org":"Ministry of Transport- Iraqi Republic Railways",
+"emails":[
+"world-bank@scr.gov.iq"
+],
+"phones":[
+{
+"display":"+964(0)7730 135 309",
+"tel":"+96407730135309",
+"whatsapp":"9647730135309"
+}
+],
+"address":"Baghdad Railway Central Station Building, Damascus Square, 1st floor, Project\nManagement Team (PMT)",
+"website":""
+}
+],
+"inquiry_how":"أرسلوا الاستفسار كتابةً بالإيميل لجهة التواصل واذكروا الرقم المرجعي.",
+"documents":[
+{
+"title":"خطاب إبداء الاهتمام",
+"detail":"موقّع ومختوم من المفوَّض بالتوقيع، موجّه لجهة التواصل، ويذكر اسم المهمة ورقمها المرجعي.",
+"from_notice":false
+},
+{
+"title":"الملف التعريفي للمكتب",
+"detail":"سنة التأسيس، الفروع، عدد المهندسين، التخصصات، والبرامج المستخدمة.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة",
+"detail":"آخر 10 سنوات: اسم المشروع، العميل، الدولة، القيمة، المدة، ونطاق عملكم تحديداً.",
+"from_notice":false
+},
+{
+"title":"شهادات إنجاز أو خطابات العملاء",
+"detail":"لأهم المشاريع المماثلة إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية",
+"detail":"السجل التجاري أو ترخيص المكتب الاستشاري، وشهادة القيد بنقابة المهندسين أو الهيئة المختصة.",
+"from_notice":false
+},
+{
+"title":"القدرات الفنية والإدارية",
+"detail":"الهيكل التنظيمي، عدد الفنيين، البرامج (Civil 3D، InfoWorks/SWMM، HEC-RAS، WaterGEMS، BIM)، وشهادات ISO إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"خطاب التحالف أو الاستشاري الفرعي",
+"detail":"فقط إذا ستتقدمون مع شريك: يحدد الشريك ونوع الشراكة (JV أو Sub-consultant).",
+"from_notice":true
+},
+{
+"title":"إقرار الأهلية وعدم تعارض المصالح",
+"detail":"حسب قواعد الجهة الممولة.",
+"from_notice":false
+},
+{
+"title":"القوائم المالية المدققة / حجم الأعمال السنوي",
+"detail":"مطلوب حسب نص الإعلان.",
+"from_notice":true
+}
+],
+"conditions":[
+"Review and comment with dedicated project teams and submit to IRR management for approval of projects’ documentation at every stage in each project delivery value chain—procurement, construction, and commissioning.",
+"The Iraq Republic Railway Company (IRR) now invites eligible consulting firms (“Consultants”) to indicate their interest in providing the Services.",
+"Interested Consultants should provide information demonstrating that they have the required qualifications and relevant experience to perform the Services.",
+"General qualifications: Details of the company’s organization, core business, and years in business, relevant experience in railway infrastructure development, management of CAPEX projects, and technical and managerial capability of the firm to deliver the assignment.",
+"Experience in similar assignments: having substantially completed in the last 10 years at least one similar large assignment of value not less than US$7.5 million.",
+"The similarity of the assignment shall be based on the following criteria:",
+"Financial soundness: To demonstrate its financial soundness, the firm is required to submit audited financial statements for at last three years (2023-25).",
+"In the case of a Joint Venture, their combined capacity to demonstrate the requirements for Project Management of railway infrastructure development will be considered."
+],
+"doc_note":"حسب الإعلان: السير الذاتية للخبراء لا تُقيَّم في مرحلة القائمة المختصرة — تُطلب لاحقاً في مرحلة العروض.",
+"submission_line":"طريقة التسليم كما وردت في الإعلان: «Expressions of interest must be delivered in a written form in person, or by e-mail to the address below by Monday, December 07, 2026 » – الإيميل: world-bank@scr.gov.iq",
+"steps":[
+{
+"title":"اقرأ الإعلان وطابق شروط القائمة المختصرة مع خبراتكم",
+"detail":"الشروط مذكورة في تبويب «الأوراق». لو ينقصكم شرط خبرة، فكّروا في تحالف أو استشاري فرعي.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلب الشروط المرجعية (ToR) إن لم تكن مرفقة",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-27",
+"due_ar":"الجمعة 27 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قرّروا طريقة التقديم: منفردين أم بتحالف",
+"detail":"واطلبوا خطاب النوايا من الشريك مبكراً.",
+"due":"2026-11-27",
+"due_ar":"الجمعة 27 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"أرسلوا أي استفسار مكتوب",
+"detail":"يُفضّل قبل الموعد النهائي بـ 10 أيام على الأقل. استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-27",
+"due_ar":"الجمعة 27 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا ملف إبداء الاهتمام",
+"detail":"حسب قائمة «الأوراق المطلوبة».",
+"due":"2026-12-02",
+"due_ar":"الأربعاء 2 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية وتوقيع الخطاب",
+"detail":"تأكدوا من الرقم المرجعي واسم المهمة في الخطاب.",
+"due":"2026-12-04",
+"due_ar":"الجمعة 4 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الملف قبل الموعد بيوم على الأقل",
+"detail":"طريقة التسليم كما وردت في الإعلان: «Expressions of interest must be delivered in a written form in person, or by e-mail to the address below by Monday, December 07, 2026 » – الإيميل: world-bank@scr.gov.iq. احتفظوا بإثبات الإرسال (رد آلي أو إيصال).",
+"due":"2026-12-06",
+"due_ar":"الأحد 6 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"تابعوا إعلان القائمة المختصرة",
+"detail":"عند اختياركم تصلكم دعوة لتقديم العرض الفني والمالي (RFP).",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00369259"
+},
+{
+"label":"صفحة المشروع الممول",
+"url":"https://projects.worldbank.org/en/projects-operations/project-detail/P507282"
+}
+],
+"excerpt":"Re-lunch Request for Expressions of Interest\n(Consulting Services Firms selection)\nConsultancy Services of Management Agent CAPEX\nCountry Republic of Iraq\nProject Iraq Railways Extension and Modernization Project (P507282)\nAssignment Title Consultancy Services of Management Agent CAPEX\nReference No. IREM-MOT-MA-CS01\nThe Republic of Iraq has applied for financing from The World Bank toward the cost of the Iraq Railways Extension and Modernization Project (P507282 and intends to apply part of the proceeds toward Consulting Services.\nThe consulting services (“the Services”) include management support to IRR to carry out the Project, including:\n• Establish effective Project management and control procedures by establishing the cost and schedule baseline and the reporting pro-form as for all components under the IREM Project.\n• Review and comment with dedicated project teams and submit to IRR management for approval of projects’ documentation at every stage in each project delivery value chain—procurement, construction, and commissioning.\n• Collect progress-related data and report projects’ progress to IRR Management.\n• Develop, monitor, and manage IRR’s overall risk profile arising from the implementation of concurrent projects under the IREM Project.\n• Coordinate management of concurrent projects and resolve any resourcing conflict between different project teams.\n• Understand and interpret projects’ status and implications to determine whether the IRR Board requires authorization for any deviations from the agreed-upon project targets.\n• Support for the reviewing the outputs of component 2 of IREM Project (studies, transaction advisory for mobilizing private sector resources) and manage E&S risks in all phases of their implementation (elaboration of ToRs, procurement procedures, contracting, evaluation of interim and final reports of the various consultants, etc.).\n• Develop a training and development program for the IRR Projects’ staff in management of CAPEX projects.\n• It is foreseen that the duration of the overall service will last for 5 years.\nThe expected date for starting the assignment is May 2027.\nThe Terms of Reference (TOR) for the primary procurement stage for the assignment are attached to this request for expressions of interest.\nThe Iraq Republic Railway Company (IRR) now invites eligible consulting firms (“Consultants”) to indicate their interest in providing the Services. Interested Consultants should provide information demonstrating that t",
+"notes":[]
+},
+{
+"id":"etimad-eed6ce678b",
+"uid":"etimad:2a8tbFWWSjIHWwhPPJKcyw==",
+"first_seen":"2026-11-26T09:29:50+00:00",
+"updated":"2026-11-26T09:29:50+00:00",
+"source_key":"etimad",
+"source":"منصة اعتماد – السعودية",
+"kind":"etimad",
+"notice_type":"المنافسة على مرحلتين (المرحلة الاولى)",
+"notice_type_ar":"المنافسة على مرحلتين (المرحلة الاولى)",
+"title":"تقديم وتصميم لإنشاء مبنى مركز الاخصاب البيطري (IVF) للحفاظ على السلالات النادرة وتطوير البنية التحتية الفنية والهندسية للمنطقة المحيطة بالمركز بمحطة الأبحاث والتدريب - جامعة الملك فيصل",
+"is_arabic":true,
+"summary":"تقديم وتصميم لإنشاء مبنى مركز ...عرض المزيد...",
+"country":"Saudi Arabia",
+"country_ar":"السعودية",
+"flag":"🇸🇦",
+"client":"جامعة الملك فيصل – إدارة المنافسات",
+"reference":"261139010256",
+"published":"2026-11-24",
+"deadline":"2026-12-09",
+"deadline_time":"",
+"inquiry_deadline":"2026-12-04",
+"opening_date":null,
+"method":"\tمقاولات الإنشاءات العامة (التشييد و بناء المرافق العامة)- إنشاءات عامة\t",
+"method_ar":"",
+"activity":"\tمقاولات الإنشاءات العامة (التشييد و بناء المرافق العامة)- إنشاءات عامة\t",
+"funding":"",
+"booklet_price":"500.00",
+"guarantee":"لا يوجد ضمان",
+"contract_duration":"30 يوم",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":7,
+"disciplines":[
+"المرافق والبنية التحتية"
+],
+"ids":[
+"utilities"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-24",
+"date_ar":"الثلاثاء 24 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للاستفسارات",
+"date":"2026-12-04",
+"date_ar":"الجمعة 4 ديسمبر 2026",
+"kind":"inquiry",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-09",
+"date_ar":"الأربعاء 9 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"جامعة الملك فيصل – إدارة المنافسات",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"الاستفسارات تُرسل من تبويب «الاستفسارات» داخل صفحة المنافسة على منصة اعتماد."
+},
+{
+"title":"الدعم الفني لمنصة اعتماد (وزارة المالية السعودية)",
+"phones":[
+{
+"display":"19990",
+"tel":"19990",
+"whatsapp":""
+}
+],
+"emails":[
+"ccc@mof.gov.sa"
+],
+"website":"https://portal.etimad.sa/ar-sa/aboutetimad/contactuscrm",
+"hours":"24 ساعة طوال أيام الأسبوع",
+"note":"للتسجيل والمشاكل التقنية فقط. أسئلة المنافسة نفسها تُرسل من تبويب «الاستفسارات» داخل صفحة المنافسة.",
+"source":"دليل استقبال الشكاوى – اعتماد، وصفحة الدعم بوزارة المالية",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات إلكترونياً من تبويب «الاستفسارات» داخل صفحة المنافسة على اعتماد. للمشاكل التقنية: 19990.",
+"documents":[
+{
+"title":"حساب المنشأة على منصة اعتماد",
+"detail":"مفعّل ومحدّث: سجل تجاري سعودي أو ترخيص فرع أجنبي من وزارة الاستثمار.",
+"from_notice":false
+},
+{
+"title":"إيصال شراء كراسة الشروط",
+"detail":"من صفحة المنافسة على المنصة.",
+"from_notice":false
+},
+{
+"title":"تصنيف المكتب الهندسي",
+"detail":"اعتماد المكتب لدى الهيئة السعودية للمهندسين.",
+"from_notice":false
+},
+{
+"title":"الشهادات السارية",
+"detail":"الزكاة والضريبة، التأمينات الاجتماعية، الغرفة التجارية، نطاقات (السعودة)، وشهادة ضريبة القيمة المضافة.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"حسب متطلبات الكراسة ومعايير التقييم.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"غالباً في ملف منفصل عن العرض الفني (نظام المظروفين).",
+"from_notice":false
+},
+{
+"title":"الضمان الابتدائي",
+"detail":"إذا نصّت عليه الكراسة — قيمته وعنوانه في تفاصيل المنافسة.",
+"from_notice":false
+}
+],
+"conditions":[],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"تأكدوا من جاهزية حساب المنشأة على اعتماد",
+"detail":"سجل تجاري سعودي أو ترخيص فرع أجنبي، والشهادات سارية (زكاة، تأمينات، غرفة، نطاقات).",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اشتروا كراسة الشروط من صفحة المنافسة",
+"detail":"قيمة الكراسة: 500.00.",
+"due":"2026-11-27",
+"due_ar":"الجمعة 27 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"ادرسوا الكراسة: النطاق ومعايير التقييم والمتطلبات",
+"detail":"",
+"due":"2026-11-29",
+"due_ar":"الأحد 29 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"أرسلوا استفساراتكم من تبويب «الاستفسارات» في المنافسة",
+"detail":"آخر موعد للاستفسارات: الجمعة 4 ديسمبر 2026.",
+"due":"2026-12-04",
+"due_ar":"الجمعة 4 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"استخرجوا الضمان الابتدائي (إن طُلب)",
+"detail":"ابدؤوا مع البنك قبل الموعد بأسبوع على الأقل.",
+"due":"2026-12-04",
+"due_ar":"الجمعة 4 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني",
+"detail":"",
+"due":"2026-12-04",
+"due_ar":"الجمعة 4 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي",
+"detail":"",
+"due":"2026-12-05",
+"due_ar":"السبت 5 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"ارفعوا العرضين على المنصة",
+"detail":"لا تنتظروا آخر يوم — الضغط على المنصة يزيد قرب الموعد.",
+"due":"2026-12-08",
+"due_ar":"الثلاثاء 8 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"تابعوا فتح العروض والنتيجة",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://tenders.etimad.sa/Tender/DetailsForVisitor?STenderId=2a8tbFWWSjIHWwhPPJKcyw%3D%3D"
+}
+],
+"excerpt":"تقديم وتصميم لإنشاء مبنى مركز الاخصاب البيطري (IVF) للحفاظ على السلالات النادرة وتطوير البنية التحتية الفنية والهندسية للمنطقة المحيطة بالمركز بمحطة الأبحاث والتدريب - جامعة الملك فيصل   \tمقاولات الإنشاءات العامة (التشييد و بناء المرافق العامة)- إنشاءات عامة\t المنافسة على مرحلتين (المرحلة الاولى)\nتفاصيل المنافسة\nclear\nمعلومات المورد\nclear\nتحميل البيانات\nmenu\nclose\nsearch\nclose\nperson\nتسجيل الدخول\nالمنافسات\nدعوات التأهيل\nالإعلانات\nاعلانات قوائم الموردين\nمشاريع المنافسات المستقبلية\nالمنافسات\nدعوات التأهيل\nالإعلانات\nاعلانات قوائم الموردين\nمشاريع المنافسات المستقبلية\nلوحة المعلومات\nجميع المنافسات\nتفاصيل المنافسة\nتفاصيل المنافسة\nassignment تفاصيل المنافسة\ndashboard\nالمعلومات الأساسية\nschedule\nالعناوين والمواعيد المتعلقة بالمنافسة\nlist\nمجال التصنيف وموقع التنفيذ والتقديم\npeople_outline\nإعلان نتائج الترسية\nالمعلومات الأساسية\nاسم المنافسة\nتقديم وتصميم لإنشاء مبنى مركز الاخصاب البيطري (IVF) للحفاظ على السلالات النادرة وتطوير البنية التحتية الفنية والهندسية للمنطقة المحيطة بالمركز بمحطة الأبحاث والتدريب - جامعة الملك فيصل\nرقم المنافسة\n19335\nالرقم المرجعي\n261139010256\nالغرض من المنافسة\nتقديم وتصميم لإنشاء مبنى مركز ...عرض المزيد...\nتقديم وتصميم لإنشاء مبنى مركز الاخصاب البيطري (IVF) للحفاظ على السلالات النادرة وتطوير البنية التحتية الفنية والهندسية للمنطقة المحيطة بالمركز بمحطة الأبحاث والتدريب - جامعة الملك فيصل ...عرض الأقل...\nقيمة وثائق المنافسة\n500.00\nحالة المنافسة\nمعتمدة\nمدة العقد\n30 يوم\nهل التأمين من متطلبات المنافسة\nلا\nنوع المنافسة\nالمنافسة على مرحلتين (المرحلة الاولى)\nالجهة الحكوميه\nجامعة الملك فيصل\nالوقت المتبقى\n25\nدقائق\n:\n21\nساعة\n:\n12\nيوم\nمطلوب ضمان الإبتدائي\nلا يوجد ضمان\nالضمان النهائي\nلا يوجد ضمان نهائي\nالرجوع الى جميع المنافسات\nالرجوع إلى الصفحة السابقة\nالدعم و المساعدة\nتحتاج مساعدة؟ اتصل\n19990\nالبوابة الارشادية\nاتصل بنا\nتابعنا على\nحمل تطبيق اعتماد\nالدعم بلغة الإشارة\nجميع الحقوق محفوظة © 2024 - المركز الوطني لنظم الموارد الحكومية - المملكة العربية السعودية\nالإنتقال إلى نظام المنافسات القديم\nسياسة الاستخدام وإخلاء المسؤولية\nالإبلاغ عن حالات فساد\nسياسة الخصوصية\nتدعم منصة اعتماد المتصفحات التالية:\nتحت إشراف",
+"notes":[]
+}
+]
+}
