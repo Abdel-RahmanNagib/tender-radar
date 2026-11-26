@@ -1,10 +1,10 @@
 {
-"last_run":"2026-11-26T22:08:59+00:00",
+"last_run":"2026-11-26T23:11:42+00:00",
 "every_minutes":60,
-"collected":1475,
-"matched":31,
+"collected":1449,
+"matched":30,
 "new":2,
-"open":44,
+"open":46,
 "sources":[
 {
 "key":"worldbank",
@@ -71,7 +71,7 @@
 },
 {
 "key":"dewa_tenders",
-"count":25,
+"count":0,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -85,7 +85,7 @@
 },
 {
 "key":"google_news",
-"count":16,
+"count":15,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -110,7 +110,7 @@
 "pc_helper":{
 "linked":true,
 "label":"قطر وعُمان",
-"last_seen":"2026-11-26T21:20:21+00:00",
+"last_seen":"2026-11-26T22:23:11+00:00",
 "host":"DESKTOP-OVTV5PG",
 "sources":[
 {
@@ -130,7 +130,7 @@
 "error":""
 }
 ],
-"snapshots":4
+"snapshots":5
 },
 "channels":{
 "ntfy":true,
