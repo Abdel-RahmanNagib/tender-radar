@@ -20,7 +20,8 @@ const S = { data: null, status: null, profile: null, route: { view: 'list', tab:
   q: '', country: '', disc: '', sort: 'deadline', installEvt: null, mailLang: null, lastTab: 'all' };
 
 const STATUS = { '': 'لم أحدد', study: 'ندرسها', apply: 'سنقدّم', submitted: 'تم التقديم', skip: 'غير مناسبة' };
-const SOURCE_AR = { worldbank: 'البنك الدولي', etimad: 'منصة اعتماد', monaqasat: 'منصة مناقصات قطر', ungm: 'الأمم المتحدة UNGM',
+const SOURCE_AR = { worldbank: 'البنك الدولي', etimad: 'منصة اعتماد', etimad_prequal: 'اعتماد – التأهيل المسبق', monaqasat: 'منصة مناقصات قطر', ungm: 'الأمم المتحدة UNGM',
+  kuwait_capt: 'جهاز المناقصات – الكويت', pc_relay: 'من كمبيوتر المكتب',
   google_news: 'أخبار الطروحات', rss_feeds: 'خلاصات RSS', web_pages: 'بوابات حكومية وبنوك تنمية' };
 const EN = { stormwater: 'stormwater drainage', hydrology: 'hydrology and hydraulic modelling', sewer: 'sewerage and wastewater',
   water: 'water networks', irrigation: 'irrigation networks', roads: 'roads and highway design', pavement: 'pavement design',
@@ -481,7 +482,11 @@ function renderSettings() {
   const s = S.status;
   const topic = prefs.ntfyTopic || '';
   const stale = s && !(S.data && S.data.demo) && Date.now() - Date.parse(s.last_run) > 3 * (s.every_minutes || 60) * 6e4;
-  const srcRows = s ? s.sources.map((x) => `<tr><td>${h(SOURCE_AR[x.key] || x.key)}</td><td>${x.ok ? `<span class="ok">يعمل</span>` : `<span class="bad">تعذر الوصول</span>`}</td><td>${x.count}</td></tr>`).join('') : '';
+  const row = (x, tag) => `<tr><td>${h(SOURCE_AR[x.key] || x.key)}${tag ? ` <small class="muted">${tag}</small>` : ''}</td><td>${x.ok ? `<span class="ok">يعمل</span>` : `<span class="bad">تعذر الوصول</span>`}</td><td>${x.count}</td></tr>`;
+  const pc = (s && s.pc_helper) || {};
+  const srcRows = s ? s.sources.filter((x) => x.key !== 'pc_relay').map((x) => row(x)).join('') + (pc.sources || []).map((x) => row(x, 'كمبيوتر المكتب')).join('') : '';
+  const pcLine = !s ? '' : pc.linked === false ? '<p class="small">مساعد كمبيوتر المكتب (قطر والكويت): <span class="bad">لم يُربط بعد</span>.</p>'
+    : pc.linked ? `<p class="small">مساعد كمبيوتر المكتب (قطر والكويت): ${pc.last_seen ? `آخر إرسال <b>${ago(pc.last_seen)}</b>` : '<span class="bad">لم يرسل نتائج خلال آخر 12 ساعة — تأكد أن كمبيوتر المكتب يعمل</span>'}.</p>` : '';
   const perm = typeof Notification === 'undefined' ? 'unsupported' : Notification.permission;
   $('#detailPane').innerHTML = `
     <button class="back" data-act="back">${ICON.back} كل الفرص</button>
@@ -530,9 +535,10 @@ function renderSettings() {
         ${stale ? '<p class="bad">الفحص متأخر عن موعده. في التشغيل السحابي: افتح GitHub ← Actions وتأكد أن Tender Radar يعمل.</p>' : ''}
         <p class="small">في آخر فحص — الإعلانات المقروءة: ${s.collected}، المناسب لتخصصاتكم: ${s.matched}، الفرص المفتوحة الآن: ${s.open}.</p>
         <table class="src"><thead><tr><th>المصدر</th><th>الحالة</th><th>الإعلانات</th></tr></thead><tbody>${srcRows}</tbody></table>
+        ${pcLine}
         <p class="small" style="margin-top:10px">قنوات الإشعار المفعّلة على الخادم: ${['ntfy', 'telegram', 'email'].filter((k) => s.channels && s.channels[k]).map((k) => ({ ntfy: 'ntfy', telegram: 'تيليجرام', email: 'الإيميل' })[k]).join('، ') || '<span class="bad">لا شيء بعد — أضف NTFY_TOPIC في GitHub</span>'}</p>`
         : '<p class="muted">لا توجد بيانات حالة بعد.</p>'}</section>
-    <section class="box"><h3>عن البيانات</h3><p class="small">المصادر: البنك الدولي، منصة اعتماد، منصة مناقصات قطر، بوابة الأمم المتحدة، بوابات حكومية وبنوك تنمية، وأخبار الطروحات. الأرقام والإيميلات مأخوذة من نص الإعلان نفسه، وأرقام الدعم الفني للبوابات من مواقعها الرسمية. راجعوا الإعلان الرسمي دائماً قبل التقديم.</p></section>`;
+    <section class="box"><h3>عن البيانات</h3><p class="small">المصادر: البنك الدولي، منصة اعتماد، بوابة الأمم المتحدة UNGM، منصة مناقصات قطر والجهاز المركزي للمناقصات بالكويت (يفحصهما مساعد كمبيوتر المكتب لأنهما يمنعان السيرفرات السحابية)، البنك الإسلامي للتنمية، وأخبار الطروحات. الأرقام والإيميلات مأخوذة من نص الإعلان نفسه، وأرقام الدعم الفني للبوابات من مواقعها الرسمية. راجعوا الإعلان الرسمي دائماً قبل التقديم.</p></section>`;
 }
 function randomTopic() {
   const a = new Uint8Array(6); (crypto || window.msCrypto).getRandomValues(a);

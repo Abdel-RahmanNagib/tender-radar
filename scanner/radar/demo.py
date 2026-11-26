@@ -21,7 +21,7 @@ def fetchers(today):
 <p>Attn: Eng. Mona Example, Procurement Specialist. E-mail: pmu.procurement@example.org, Tel: +20 2 0000 1234, Mobile: +20 100 000 1234</p>"""
 
     def wb(url, **kw):
-        if "qterm=Egypt" in url:
+        if "project_ctry_name_exact=Egypt" in url:
             return {"procnotices": [
                 {"id": "OP00999001", "notice_type": "Request for Expression of Interest", "noticedate": "20-Nov-2026",
                  "submission_deadline_date": _d(today, 46) + "T00:00:00Z", "submission_deadline_time": "14:00",
@@ -45,7 +45,7 @@ def fetchers(today):
                  "bid_description": "Individual Consultant – Hydrologist", "procurement_group": "CS",
                  "procurement_method_code": "INDV", "procurement_method_name": "Individual Consultant Selection"},
             ]}
-        if "qterm=Jordan" in url:
+        if "project_ctry_name_exact=Jordan" in url:
             return {"procnotices": [
                 {"id": "OP00999010", "notice_type": "General Procurement Notice", "noticedate": "15-Nov-2026",
                  "project_ctry_name": "Jordan", "project_id": "P000010",
@@ -92,13 +92,21 @@ def fetchers(today):
         ]}
 
     def ungm(url, data=None, **kw):
-        if (data or {}).get("Title") != "drainage":
+        if data is None:  # the notices page, which carries the anti-forgery token
+            return '<input name="__RequestVerificationToken" type="hidden" value="demo-token" />'
+        if data.get("PageIndex") != 0:
             return ""
-        return f"""<div class="tableRow dataRow notice-table" data-noticeid="275001">
- <div class="tableCell resultTitle"><span>Consultancy services for design of stormwater drainage and road rehabilitation in Gaza (Example)</span></div>
- <div class="tableCell">{_d(today, 20)}</div><div class="tableCell">{_d(today, -6)}</div>
- <div class="tableCell">UNOPS</div><div class="tableCell">Request for proposal</div>
- <div class="tableCell">RFP/2026/00001</div><div class="tableCell">State of Palestine</div></div>"""
+        due = (today + timedelta(days=20)).strftime("%d-%b-%Y")
+        pub = (today - timedelta(days=6)).strftime("%d-%b-%Y")
+        return f"""<div role="row" tabindex="0" data-noticeid="275001" class="tableRow dataRow notice-table">
+ <div role="cell" class="tableCell resultOptions"><span class="info-tooltip__text">Subscribe to UNGM Pro</span></div>
+ <div role="cell" class="tableCell resultTitle"><span class="ungm-title">Consultancy services for design of stormwater drainage and road rehabilitation in Gaza (Example)</span></div>
+ <div role="cell" class="tableCell resultInfo1 deadline"><span> {due} 23:59 (GMT 2.00) </span></div>
+ <div role="cell" class="tableCell"><span> {pub}</span></div>
+ <div role="cell" class="tableCell resultAgency"><span>UNOPS</span></div>
+ <div role="cell" class="tableCell"><span>Request for proposal</span></div>
+ <div role="cell" class="tableCell resultInfo1"><span>RFP/2026/00001</span></div>
+ <div role="cell" class="tableCell"><span>State of Palestine</span></div></div>"""
 
     def monaqasat(url, **kw):
         if not url.endswith("/1"):
@@ -145,7 +153,13 @@ def fetchers(today):
         return ""
 
     return {"worldbank": wb, "etimad": etimad, "ungm": ungm, "monaqasat": monaqasat, "google_news": news,
+            "kuwait_capt": lambda url, **kw: "<html></html>", "pc_relay": lambda url, **kw: "",
             "rss_feeds": lambda url, **kw: "", "web_pages": web, "detail": detail}
+
+
+def all_sources_on(settings):
+    """Demo and tests show every source, including the ones the office PC scans in real use."""
+    return dict(settings, sources={k: True for k in settings.get("sources", {})})
 
 
 def demo_profile_overrides(profile):

@@ -9,7 +9,7 @@ from .build import build_record, refresh_steps
 from .common import cairo_now, fmt_date_ar, http, utc_now_iso
 from .notify import Notifier, count_ar, days_left
 from .scoring import Matcher
-from .sources import COLLECTORS, fetch_detail
+from .sources import COLLECTORS, RELAY_INFO, fetch_detail
 from .store import Store
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # project root
@@ -104,7 +104,7 @@ def run_once(settings, profile, data_dir, fetchers=None, notifier=None, today=No
     budget = time.monotonic() + int(settings.get("detail_time_budget_seconds", 180))
     records = []
     for i, (t, info) in enumerate(new):
-        if i < limit_detail and time.monotonic() < budget:
+        if not t.get("_detail_done") and i < limit_detail and time.monotonic() < budget:
             fetch_detail(t, detail_fetch)
             if t.get("deadline") and t["deadline"] < today:
                 store.mark_seen(t["uid"], today.isoformat())
@@ -136,6 +136,7 @@ def run_once(settings, profile, data_dir, fetchers=None, notifier=None, today=No
         "last_run": now_iso, "every_minutes": settings.get("check_every_minutes", 60),
         "collected": len(collected), "matched": len(matched), "new": len(records), "open": len(open_recs),
         "sources": per_source, "errors": errors[:20], "notifications_sent": notifier.sent,
+        "pc_helper": dict(RELAY_INFO),
         "channels": {"ntfy": bool(notifier.ch.get("ntfy_topic")), "telegram": bool(notifier.ch.get("telegram_token")),
                      "email": notifier._email_on()},
     }

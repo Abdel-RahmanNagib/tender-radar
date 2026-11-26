@@ -17,16 +17,18 @@
   "Iraq",
   "MENA (Regional)"
  ],
- "min_level": "medium",
- "_min_level_help": "high = المناسب جداً فقط | medium = المناسب (افتراضي) | low = يعرض فرصاً أكثر",
+ "min_level": "low",
+ "_min_level_help": "high = المناسب جداً فقط | medium = المناسب | low = يعرض كل ما قد يناسبكم (افتراضي)، مع تمييز درجة المناسبة",
  "check_every_minutes": 60,
  "max_notifications_per_run": 15,
  "daily_summary_hour_cairo": 8,
  "sources": {
   "worldbank": true,
   "etimad": true,
-  "monaqasat": true,
   "ungm": true,
+  "monaqasat": false,
+  "kuwait_capt": false,
+  "pc_relay": true,
   "google_news": true,
   "rss_feeds": true,
   "web_pages": true
@@ -45,5 +47,6 @@
    "from": "",
    "to": []
   }
- }
+ },
+ "_sources_help": "monaqasat (قطر) و kuwait_capt (الكويت) تمنع السيرفرات السحابية، فيفحصها مساعد كمبيوتر المكتب ويرسلها عبر pc_relay"
 }

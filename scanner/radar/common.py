@@ -10,14 +10,31 @@ import urllib.request
 from datetime import date, datetime, timedelta, timezone
 
 _CTX = ssl.create_default_context()
-USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36 TenderRadar/2.0"
+# Several portals (UNGM, AfDB, UNDP) refuse requests that do not look like a normal browser visit,
+# so every request carries the headers Chrome sends.
+USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+              "Chrome/131.0.0.0 Safari/537.36")
+BROWSER_HEADERS = {
+    "User-Agent": USER_AGENT,
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9,ar;q=0.8",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Ch-Ua": '"Chromium";v="131", "Not_A Brand";v="24", "Google Chrome";v="131"',
+    "Sec-Ch-Ua-Mobile": "?0",
+    "Sec-Ch-Ua-Platform": '"Windows"',
+    "Sec-Fetch-Dest": "document", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-Site": "none", "Sec-Fetch-User": "?1",
+}
+XHR_HEADERS = {"X-Requested-With": "XMLHttpRequest", "Sec-Fetch-Dest": "empty", "Sec-Fetch-Mode": "cors",
+               "Sec-Fetch-Site": "same-origin", "Accept": "*/*"}
 TIMEOUT = 25
 
 
-def http(url, data=None, headers=None, method=None, retries=1, timeout=None):
-    """GET/POST and return the body as text. `data` may be a dict (sent as JSON), str or bytes."""
-    hdrs = {"User-Agent": USER_AGENT, "Accept": "*/*", "Accept-Language": "ar,en;q=0.8"}
+def _send(opener, url, data=None, headers=None, method=None, retries=1, timeout=None):
+    hdrs = dict(BROWSER_HEADERS)
     if headers:
+        if headers.get("X-Requested-With"):
+            hdrs.pop("Upgrade-Insecure-Requests", None)
+            hdrs.pop("Sec-Fetch-User", None)
         hdrs.update(headers)
     body = None
     if isinstance(data, (dict, list)):
@@ -31,7 +48,7 @@ def http(url, data=None, headers=None, method=None, retries=1, timeout=None):
     for attempt in range(retries + 1):
         try:
             req = urllib.request.Request(url, data=body, headers=hdrs, method=method)
-            with urllib.request.urlopen(req, timeout=timeout or TIMEOUT, context=_CTX) as r:
+            with opener(req, timeout=timeout or TIMEOUT) as r:
                 raw = r.read()
                 cs = r.headers.get_content_charset() or "utf-8"
                 return raw.decode(cs, errors="replace")
@@ -40,6 +57,25 @@ def http(url, data=None, headers=None, method=None, retries=1, timeout=None):
             if attempt < retries:
                 time.sleep(2 * (attempt + 1))
     raise last
+
+
+def http(url, data=None, headers=None, method=None, retries=1, timeout=None):
+    """GET/POST and return the body as text. `data` may be a dict (sent as JSON), str or bytes."""
+    return _send(lambda req, timeout: urllib.request.urlopen(req, timeout=timeout, context=_CTX),
+                 url, data, headers, method, retries, timeout)
+
+
+class Session:
+    """Keeps cookies between requests (portals that issue an anti-forgery token with a cookie)."""
+
+    def __init__(self):
+        import http.cookiejar
+        self.jar = http.cookiejar.CookieJar()
+        self._opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.jar),
+                                                   urllib.request.HTTPSHandler(context=_CTX))
+
+    def __call__(self, url, data=None, headers=None, method=None, retries=1, timeout=None):
+        return _send(self._opener.open, url, data, headers, method, retries, timeout)
 
 
 def http_json(url, **kw):

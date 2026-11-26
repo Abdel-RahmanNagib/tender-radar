@@ -1,18 +1,23 @@
 """Tender sources. Every collector returns a list of raw tender dicts (see _tender)."""
+import os
 import re
 import xml.etree.ElementTree as ET
 from datetime import date, timedelta
-from urllib.parse import urljoin
+from urllib.parse import quote, urljoin
 
-from .common import html_to_text, http, http_json, parse_date, pick, q
+from .common import XHR_HEADERS, Session, html_to_text, http, http_json, parse_date, pick, q
 from .requirements import deadline_from_text, labeled_value
 
+SCANNER_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Exact country names used by the World Bank procurement API (project_ctry_name_exact).
 WB_COUNTRIES = {
-    "Egypt": "Egypt", "Libya": "Libya", "Syria": "Syrian Arab Republic", "Jordan": "Jordan",
+    "Egypt": "Egypt, Arab Republic of", "Libya": "Libya", "Syria": "Syrian Arab Republic", "Jordan": "Jordan",
     "Palestine": "West Bank and Gaza", "Saudi Arabia": "Saudi Arabia", "UAE": "United Arab Emirates",
-    "Qatar": "Qatar", "Kuwait": "Kuwait", "Bahrain": "Bahrain", "Oman": "Oman", "Yemen": "Yemen",
+    "Qatar": "Qatar", "Kuwait": "Kuwait", "Bahrain": "Bahrain", "Oman": "Oman", "Yemen": "Yemen, Republic of",
     "Iraq": "Iraq", "MENA (Regional)": "Middle East and North Africa",
 }
+WB_NOTICE_TYPES = ["Request for Expression of Interest"]
 
 
 def _tender(**kw):
@@ -54,17 +59,17 @@ class _Guard:
 # ------------------------------------------------------------------ World Bank (official API)
 def worldbank(cfg, countries, fetch=http_json):
     out, seen, g = [], set(), _Guard()
-    rows = int(cfg.get("rows_per_query", 100))
-    for name in countries:
-        wb_name = WB_COUNTRIES.get(name)
-        if not wb_name:
-            continue
+    rows = int(cfg.get("rows_per_query", 50))
+    queries = [(WB_COUNTRIES[c], nt) for c in countries if c in WB_COUNTRIES
+               for nt in cfg.get("notice_types", WB_NOTICE_TYPES)]
+    for wb_name, ntype in queries:
+        if g.down:
+            break
         url = ("https://search.worldbank.org/api/v2/procnotices?format=json"
-               f"&rows={rows}&os=0&srt=submission_date&order=desc&qterm={q(wb_name)}")
+               f"&rows={rows}&os=0&srt=submission_date&order=desc"
+               f"&notice_type_exact={quote(ntype, safe='')}&project_ctry_name_exact={quote(wb_name, safe='')}")
         data = g.call(fetch, url)
         if data is None:
-            if g.down:
-                break
             continue
         notices = data.get("procnotices") or []
         if isinstance(notices, dict):
@@ -100,7 +105,7 @@ def worldbank(cfg, countries, fetch=http_json):
 
 # ------------------------------------------------------------------ Etimad – Saudi Arabia
 ETIMAD = "https://tenders.etimad.sa"
-_ETIMAD_HDR = {"X-Requested-With": "XMLHttpRequest", "Referer": f"{ETIMAD}/Tender/AllTendersForVisitor"}
+_ETIMAD_HDR = {**XHR_HEADERS, "Referer": f"{ETIMAD}/Tender/AllTendersForVisitor"}
 
 
 def _etimad_item(it, kind):
@@ -140,13 +145,17 @@ def etimad(cfg, countries, fetch=http_json):
     if "Saudi Arabia" not in countries:
         return []
     out, seen, g = [], set(), _Guard()
-    for kw in cfg.get("keywords", [""]):
+    # TenderCategory=2 = tenders still accepting offers (the portal also lists closed ones).
+    # Activity 16 = "المهن الاستشارية" (all consulting tenders); keywords catch consulting work
+    # that agencies filed under another activity. The portal returns at most 24 rows per page.
+    queries = [f"&TenderActivityId={a}" for a in cfg.get("activity_ids", [16])]
+    queries += [f"&MultipleSearch={q(kw)}" for kw in cfg.get("keywords", [])]
+    for extra in queries:
         if g.down:
             break
-        for page in range(1, int(cfg.get("pages", 2)) + 1):
+        for page in range(1, int(cfg.get("pages", 3)) + 1):
             url = (f"{ETIMAD}/Tender/AllSupplierTendersForVisitorAsync?IsSearch=true&SortDirection=DESC"
-                   f"&Sort=SubmitionDate&PageSize={cfg.get('page_size', 24)}&PageNumber={page}"
-                   f"&MultipleSearch={q(kw)}")
+                   f"&Sort=SubmitionDate&TenderCategory=2&PageSize=24&PageNumber={page}{extra}")
             data = g.call(fetch, url, headers=_ETIMAD_HDR)
             items = data.get("data") if isinstance(data, dict) else data
             if not items:
@@ -156,6 +165,9 @@ def etimad(cfg, countries, fetch=http_json):
                 if t and t["uid"] not in seen:
                     seen.add(t["uid"])
                     out.append(t)
+            total = data.get("totalCount") if isinstance(data, dict) else None
+            if total is not None and page * 24 >= int(total or 0):
+                break
     if cfg.get("prequalifications", True) and not g.down:
         pg = _Guard()
         for kw in cfg.get("prequal_keywords", cfg.get("keywords", [])[:4]):
@@ -215,38 +227,127 @@ def parse_monaqasat(page, page_url):
 
 
 # ------------------------------------------------------------------ UNGM – UN agencies
-def ungm(cfg, countries, fetch=http):
-    out, seen, g = [], set(), _Guard()
-    for kw in cfg.get("keywords", [""]):
-        if g.down:
+UNGM = "https://www.ungm.org"
+# Country ids used by the UNGM search form.
+UNGM_COUNTRY_IDS = {"Bahrain": 2308, "Egypt": 2353, "Iraq": 2389, "Jordan": 2395, "Kuwait": 2401, "Libya": 2408,
+                    "Oman": 2446, "Qatar": 2458, "Saudi Arabia": 2471, "Syria": 2490, "UAE": 2505, "Yemen": 2518,
+                    "Palestine": 2522}
+
+
+def ungm(cfg, countries, fetch=None):
+    """All open notices in the target countries. The search needs the anti-forgery token that the
+    notices page issues together with a cookie, so one session does both requests."""
+    sess = fetch or Session()
+    g = _Guard()
+    page = g.call(sess, f"{UNGM}/Public/Notice")
+    if page is None:
+        return g.report()
+    m = re.search(r'name="__RequestVerificationToken"[^>]*value="([^"]+)"', page)
+    token = m.group(1) if m else ""
+    ids = [UNGM_COUNTRY_IDS[c] for c in countries if c in UNGM_COUNTRY_IDS]
+    as_text = bool(cfg.get("country_ids_as_text"))
+    today = date.today().strftime("%d-%b-%Y")
+    size = 15  # the portal rejects larger pages (HTTP 400)
+    hdr = {**XHR_HEADERS, "Content-Type": "application/json", "RequestVerificationToken": token,
+           "Referer": f"{UNGM}/Public/Notice", "Origin": UNGM}
+    out, seen = [], set()
+    for pi in range(int(cfg.get("pages", 20))):
+        body = {"PageIndex": pi, "PageSize": size, "Title": "", "Description": "", "Reference": "",
+                "PublishedFrom": "", "PublishedTo": today, "DeadlineFrom": today, "DeadlineTo": "",
+                "Countries": [str(i) for i in ids] if as_text else ids, "Agencies": [], "UNSPSCs": [],
+                "NoticeTypes": [], "SortField": "DatePublished", "SortAscending": False, "isPicker": False,
+                "IsSustainable": False, "IsActive": True, "NoticeDisplayType": None, "TypeOfCompetitions": []}
+        html_page = g.call(sess, f"{UNGM}/Public/Notice/Search", data=body, headers=hdr)
+        if html_page is None:
+            if g.down:
+                break
+            continue
+        rows = parse_ungm(html_page)
+        for t in rows:
+            if t["uid"] not in seen:
+                seen.add(t["uid"])
+                out.append(t)
+        if len(rows) < size:
             break
-        body = {"PageIndex": 0, "PageSize": int(cfg.get("page_size", 50)), "Title": kw, "Description": "",
-                "Reference": "", "PublishedFrom": "", "PublishedTo": "", "DeadlineFrom": "", "DeadlineTo": "",
-                "Countries": [], "Agencies": [], "UNSPSCs": [], "NoticeTypes": [], "SortField": "DatePublished",
-                "SortAscending": False, "isPicker": False, "IsSustainable": False, "IsActive": True,
-                "NoticeDisplayType": None, "NoticeSearchTotalLabelId": "noticeSearchTotal",
-                "TypeOfCompetitions": []}
-        page = g.call(fetch, "https://www.ungm.org/Public/Notice/Search", data=body,
-                      headers={"X-Requested-With": "XMLHttpRequest"})
-        for t in parse_ungm(page or ""):
+    return out + g.report()
+
+
+_UNGM_ROW = re.compile(r'<div[^>]*\bdata-noticeid="(\d+)"[^>]*class="[^"]*\bdataRow\b[^"]*"[^>]*>', re.I)
+
+
+def _cell_text(cell_html):
+    cell_html = re.sub(r"(?is)<svg.*?</svg>", " ", cell_html)
+    cell_html = re.sub(r'(?is)<span[^>]*info-tooltip__text[^>]*>.*?</span>', " ", cell_html)
+    return html_to_text(cell_html).replace("\n", " ").strip()
+
+
+def parse_ungm(page):
+    """Rows: options | title | deadline | published | agency | notice type | reference | country."""
+    out = []
+    marks = list(_UNGM_ROW.finditer(page))
+    for i, m in enumerate(marks):
+        nid = m.group(1)
+        row = page[m.end(): marks[i + 1].start() if i + 1 < len(marks) else len(page)]
+        cells = [_cell_text(c) for c in re.split(r'(?=<div[^>]*role="cell")', row)[1:]]
+        if len(cells) < 8:
+            continue
+        title, deadline, published, agency, ntype, ref, country = cells[1:8]
+        dl = re.match(r"(\d{1,2}-[A-Za-z]{3}-\d{4})\s*([0-9:]{4,5}\s*\([^)]*\))?", deadline)
+        out.append(_tender(
+            uid=f"ungm:{nid}", source_key="ungm", source=f"الأمم المتحدة – {agency}".strip(" –"), title=title,
+            deadline=parse_date(dl.group(1) if dl else deadline), deadline_time=(dl.group(2) or "") if dl else "",
+            published=parse_date(published), client=agency, notice_type=ntype, reference=ref, country=country,
+            consulting_flag=bool(re.search(r"expression of interest|request for proposal|\beoi\b|\brfp\b", ntype, re.I)),
+            url=f"{UNGM}/Public/Notice/{nid}", raw_text=" | ".join([title, ntype, agency, country])))
+    return out
+
+
+# ------------------------------------------------------------------ Kuwait – CAPT (office PC only: blocks cloud IPs)
+CAPT = "https://capt.gov.kw/en/tenders/opening-tenders/"
+
+
+def kuwait_capt(cfg, countries, fetch=http):
+    if "Kuwait" not in countries:
+        return []
+    out, seen, g = [], set(), _Guard()
+    for page in range(1, int(cfg.get("pages", 5)) + 1):
+        url = f"{CAPT}?page={page}"
+        html_page = g.call(fetch, url)
+        if html_page is None:
+            if g.down:
+                break
+            continue
+        items = parse_capt(html_page, url)
+        if not items:
+            break
+        for t in items:
             if t["uid"] not in seen:
                 seen.add(t["uid"])
                 out.append(t)
     return out + g.report()
 
 
-def parse_ungm(page):
+def parse_capt(page, page_url):
+    """Each tender is a block of <ul><li>Label</li><li>Value</li></ul> pairs starting with 'Tender no.'."""
     out = []
-    for m in re.finditer(r'data-noticeid="(\d+)"(.*?)(?=data-noticeid="|\Z)', page, re.S):
-        nid, block = m.group(1), m.group(2)
-        cells = [html_to_text(c) for c in re.findall(r'class="[^"]*tableCell[^"]*"[^>]*>(.*?)</div>', block, re.S)]
-        cells = [c for c in cells if c]
-        get = lambda i: cells[i] if len(cells) > i else ""  # noqa: E731
+    for chunk in re.split(r"<li>\s*Tender no\.?\s*</li>", page)[1:]:
+        first = re.match(r"\s*<li>(.*?)</li>", chunk, re.S)
+        number = html_to_text(first.group(1)) if first else ""
+        stop = chunk.find("</table>")
+        body = chunk[: stop if stop > 0 else 6000][:6000]
+        f = {html_to_text(a).lower().strip(" :"): html_to_text(b)
+             for a, b in re.findall(r"<ul>\s*<li>(.*?)</li>\s*<li>(.*?)</li>\s*</ul>", body, re.S)}
+        subject = f.get("tender subject", "")
+        if not number or not subject:
+            continue
         out.append(_tender(
-            uid=f"ungm:{nid}", source_key="ungm", source="بوابة مشتريات الأمم المتحدة UNGM", title=get(0),
-            deadline=parse_date(get(1)), published=parse_date(get(2)), client=get(3), notice_type=get(4),
-            reference=get(5), country=get(6), url=f"https://www.ungm.org/Public/Notice/{nid}",
-            raw_text=" | ".join(cells)))
+            uid=f"capt:{number}", source_key="kuwait_capt", source="الجهاز المركزي للمناقصات العامة – الكويت",
+            title=subject, country="Kuwait", client=f.get("organisation", f.get("organization", "")),
+            notice_type=f.get("bidding type", "") or "مناقصة عامة", reference=number,
+            published=parse_date(f.get("request date", "")), deadline=parse_date(f.get("last date", "")),
+            booklet_price=f.get("price", "").replace("KWD", "دينار كويتي").strip(),
+            url=page_url, raw_text=" | ".join(x for x in [subject, f.get("organisation", ""), number] if x),
+            extra=dict(temporary_insurance=f.get("insurance", ""))))
     return out
 
 
@@ -329,8 +430,38 @@ def web_pages(cfg, countries, fetch=http):
     return out
 
 
-COLLECTORS = {"worldbank": worldbank, "etimad": etimad, "monaqasat": monaqasat, "ungm": ungm,
-              "google_news": google_news, "rss_feeds": rss_feeds, "web_pages": web_pages}
+# ------------------------------------------------------------------ office-PC helper (relay)
+RELAY_INFO = {}
+
+
+def pc_relay(cfg, countries, fetch=http):
+    """Tenders the office-PC helper found on portals that refuse cloud servers (signed, via ntfy)."""
+    from .relay import fetch_snapshots, restore_item
+    RELAY_INFO.clear()
+    topic = cfg.get("topic")
+    keyfile = os.path.join(SCANNER_DIR, cfg.get("public_key_file", "pc_public_key.txt"))
+    if not topic:
+        return []
+    keys = re.findall(r"\b[0-9a-fA-F]{64}\b", open(keyfile, encoding="utf-8").read()) if os.path.exists(keyfile) else []
+    if not keys:
+        RELAY_INFO.update(linked=False)
+        return []
+    snaps, errors = fetch_snapshots(cfg.get("server", "https://ntfy.sh"), topic, bytes.fromhex(keys[0]),
+                                    cfg.get("window", "12h"), get_text=fetch)
+    items = {}
+    for snap in snaps:
+        for it in snap.get("items", []):
+            if it.get("uid"):
+                items[it["uid"]] = restore_item(it)
+    last = snaps[-1] if snaps else {}
+    RELAY_INFO.update(linked=True, last_seen=last.get("ts"), host=last.get("host", ""),
+                      sources=last.get("sources", []), snapshots=len(snaps))
+    return list(items.values()) + [{"_error": e} for e in errors]
+
+
+COLLECTORS = {"worldbank": worldbank, "etimad": etimad, "ungm": ungm, "monaqasat": monaqasat,
+              "kuwait_capt": kuwait_capt, "pc_relay": pc_relay, "google_news": google_news,
+              "rss_feeds": rss_feeds, "web_pages": web_pages}
 
 
 # ------------------------------------------------------------------ detail pages (only for matches)
@@ -359,6 +490,8 @@ def fetch_detail(t, fetch=http):
     t["detail_text"] = text
     if not t.get("deadline"):
         t["deadline"] = deadline_from_text(text)
+    if t["source_key"] == "monaqasat":
+        _apply_monaqasat_detail(t, page)
     if t["source_key"] in ("etimad", "etimad_prequal"):
         found = {k: labeled_value(text, labs) for k, labs in ETIMAD_LABELS.items()}
         t["extra"].update({k: v for k, v in found.items() if v})
@@ -369,3 +502,40 @@ def fetch_detail(t, fetch=http):
         if found.get("booklet_value") and not t.get("booklet_price"):
             t["booklet_price"] = found["booklet_value"]
     return t
+
+
+def parse_monaqasat_detail(page):
+    """Qatar tender page: header/value tables, the activity list and the special conditions."""
+    out = {"fields": {}, "activities": [], "conditions": {}}
+    for tb in re.findall(r"<table[^>]*>(.*?)</table>", page, re.S | re.I):
+        thead = re.search(r"<thead[^>]*>(.*?)</thead>", tb, re.S | re.I)
+        heads = [html_to_text(x) for x in re.findall(r"<th[^>]*>(.*?)</th>", thead.group(1), re.S | re.I)] if thead else []
+        tbody = re.search(r"<tbody[^>]*>(.*?)</tbody>", tb, re.S | re.I)
+        rows = re.findall(r"<tr[^>]*>(.*?)</tr>", tbody.group(1) if tbody else tb, re.S | re.I)
+        cells = [[html_to_text(c) for c in re.findall(r"<t[hd][^>]*>(.*?)</t[hd]>", r, re.S | re.I)] for r in rows]
+        low = [h.lower() for h in heads]
+        if low[:2] == ["activity code", "activity name"]:
+            out["activities"] += [(c[0], c[1]) for c in cells if len(c) >= 2]
+        elif low[:2] == ["name", "value"]:
+            out["conditions"].update({c[0]: c[1] for c in cells if len(c) >= 2})
+        elif heads and cells and len(cells[0]) == len(heads):
+            out["fields"].update({h: v for h, v in zip(heads, cells[0]) if v})
+    return out
+
+
+def _apply_monaqasat_detail(t, page):
+    d = parse_monaqasat_detail(page)
+    f = d["fields"]
+    t["deadline"] = parse_date(f.get("Closing Date")) or t.get("deadline")
+    if f.get("Brief Description"):
+        t["description"] = f["Brief Description"]
+    req = f.get("Request Types", "")
+    acts = d["activities"]
+    engineering = any(code.startswith("711") or re.search(r"engineer|architect|consult|survey|design", name, re.I)
+                      for code, name in acts)
+    t["consulting_flag"] = bool(t.get("consulting_flag") or re.search(r"consult", req, re.I) or engineering)
+    names = "، ".join(name for _, name in acts[:6])
+    t["extra"].update({k: v for k, v in {"activities": names, "request_types": req,
+                                         "target": f.get("Targeted Tenderer Type", ""),
+                                         "contract_duration": d["conditions"].get("Contract Duration", "")}.items() if v})
+    t["raw_text"] = " | ".join(x for x in [t.get("title", ""), f.get("Brief Description", ""), req, names] if x)

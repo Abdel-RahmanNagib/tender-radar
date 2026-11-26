@@ -14,7 +14,7 @@ from radar.notify import Notifier  # noqa: E402
 
 TODAY = date(2026, 11, 26)
 SCANNER = os.path.dirname(HERE)
-settings = load_json(os.path.join(SCANNER, "settings.json"))
+settings = demo.all_sources_on(load_json(os.path.join(SCANNER, "settings.json")))
 profile = demo.demo_profile_overrides(load_json(os.path.join(SCANNER, "profile.json")))
 
 
@@ -107,7 +107,7 @@ def test_full_run():
         for n in d["procnotices"]:
             if n["id"] == "OP00999001":
                 n["submission_deadline_date"] = (TODAY + timedelta(days=60)).isoformat() + "T00:00:00Z"
-        if "qterm=Libya" in url:
+        if "project_ctry_name_exact=Libya" in url:
             d["procnotices"].append({"id": "OP00999099", "notice_type": "Request for Expression of Interest",
                                      "noticedate": "25-Nov-2026", "project_ctry_name": "Libya",
                                      "submission_deadline_date": (TODAY + timedelta(days=9)).isoformat(),

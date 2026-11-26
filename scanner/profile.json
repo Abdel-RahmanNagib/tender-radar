@@ -496,25 +496,27 @@
  ],
  "sources": {
   "worldbank": {
-   "rows_per_query": 100
+   "rows_per_query": 50,
+   "notice_types": [
+    "Request for Expression of Interest"
+   ]
   },
   "etimad": {
-   "pages": 2,
-   "page_size": 24,
-   "prequalifications": true,
+   "activity_ids": [
+    16
+   ],
+   "pages": 3,
    "keywords": [
     "تصميم",
-    "استشاري",
     "إشراف",
     "دراسة",
-    "تصريف",
-    "سيول",
-    "صرف صحي",
-    "طرق",
-    "مياه",
-    "ري",
-    "بنية تحتية"
+    "استشار",
+    "مخطط",
+    "هيدرولوج",
+    "رفع مساحي",
+    "مراجعة"
    ],
+   "prequalifications": true,
    "prequal_keywords": [
     "استشاري",
     "تصميم",
@@ -526,18 +528,7 @@
    "pages": 5
   },
   "ungm": {
-   "page_size": 50,
-   "keywords": [
-    "drainage",
-    "road",
-    "water",
-    "sewer",
-    "wastewater",
-    "hydrology",
-    "infrastructure design",
-    "engineering design",
-    "supervision"
-   ]
+   "pages": 20
   },
   "google_news": {
    "max_age_days": 7,
@@ -567,80 +558,23 @@
   "web_pages": {
    "pages": [
     {
-     "name": "AfDB - Procurement (Egypt/Libya)",
-     "country": "",
-     "url": "https://www.afdb.org/en/projects-and-operations/procurement"
-    },
-    {
      "name": "IsDB - Tenders",
      "country": "",
      "url": "https://www.isdb.org/project-procurement/tenders"
-    },
-    {
-     "name": "UNDP Procurement Notices",
-     "country": "",
-     "url": "https://procurement-notices.undp.org/"
-    },
-    {
-     "name": "EBRD - Procurement notices",
-     "country": "",
-     "url": "https://www.ebrd.com/work-with-us/procurement/notices.html"
-    },
-    {
-     "name": "Egypt - بوابة التعاقدات العامة",
-     "country": "Egypt",
-     "url": "https://etenders.gov.eg/Tender/Index"
-    },
-    {
-     "name": "Jordan - JONEPS",
-     "country": "Jordan",
-     "url": "https://www.joneps.gov.jo/"
-    },
-    {
-     "name": "Jordan - دائرة العطاءات الحكومية",
-     "country": "Jordan",
-     "url": "https://www.gtd.gov.jo/"
-    },
-    {
-     "name": "Palestine - بوابة الشراء العام",
-     "country": "Palestine",
-     "url": "https://www.shiraa.gov.ps/"
-    },
-    {
-     "name": "Qatar - Ashghal Tenders",
-     "country": "Qatar",
-     "url": "https://www.ashghal.gov.qa/en/Tenders/Pages/default.aspx"
-    },
-    {
-     "name": "Oman - Tender Board",
-     "country": "Oman",
-     "url": "https://etendering.tenderboard.gov.om/"
-    },
-    {
-     "name": "Bahrain - Tender Board",
-     "country": "Bahrain",
-     "url": "https://www.tenderboard.gov.bh/"
-    },
-    {
-     "name": "Kuwait - CAPT",
-     "country": "Kuwait",
-     "url": "https://capt.gov.kw/en/tenders/"
-    },
-    {
-     "name": "Abu Dhabi - ADGPG",
-     "country": "UAE",
-     "url": "https://www.adgpg.gov.ae/"
-    },
-    {
-     "name": "Dubai - eSupply",
-     "country": "UAE",
-     "url": "https://esupply.dubai.gov.ae/"
-    },
-    {
-     "name": "Libya - UNDP Libya procurement",
-     "country": "Libya",
-     "url": "https://www.undp.org/libya/procurement"
     }
+   ]
+  },
+  "kuwait_capt": {
+   "pages": 5
+  },
+  "pc_relay": {
+   "server": "https://ntfy.sh",
+   "topic": "tender-radar-relay-9ac7e7c98cf8",
+   "public_key_file": "pc_public_key.txt",
+   "window": "12h",
+   "pc_sources": [
+    "monaqasat",
+    "kuwait_capt"
    ]
   }
  }

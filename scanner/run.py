@@ -50,7 +50,8 @@ def main():
     if a.demo:
         reset_data(DATA)
         today = date.today()
-        run_once(settings, demo.demo_profile_overrides(profile), DATA, fetchers=demo.fetchers(today), today=today,
+        run_once(demo.all_sources_on(settings), demo.demo_profile_overrides(profile), DATA,
+                 fetchers=demo.fetchers(today), today=today,
                  notifier=Notifier({"console": False}, {}), app_url="")
         demo.mark_demo(DATA)
         print("✔ تم تجهيز بيانات تجريبية في app/data — افتح التطبيق بالأمر: python scanner/run.py --app")
