@@ -383,6 +383,8 @@ def oman_tenderboard(cfg, countries, fetch=None):
     m = re.search(r'name="hidMax"\s+value="(\d+)"', first)
     last = min(int(m.group(1)) if m else 1, int(cfg.get("pages", 60)))
     pages = [first]
+    first_ids = re.findall(r"getNit\('(\d+)'\)", first)
+    first_id = first_ids[0] if first_ids else ""
     for page in range(2, last + 1):
         if g.down:
             break
@@ -392,6 +394,9 @@ def oman_tenderboard(cfg, countries, fetch=None):
         html_page = g.call(sess, _OMAN_DASH, data=body,
                            headers={"Content-Type": "application/x-www-form-urlencoded", "Origin": OMAN,
                                     "Referer": _OMAN_DASH})
+        ids = re.findall(r"getNit\('(\d+)'\)", html_page or "")
+        if html_page is not None and (not ids or ids[0] == first_id):
+            break  # the portal answers cloud servers with the first page only; the office PC reads the rest
         if html_page:
             pages.append(html_page)
     for html_page in pages:
@@ -471,6 +476,7 @@ def bahrain_tb(cfg, countries, fetch=http):
         total = int(json.loads(raw)["d"]) if raw else 0
     except (ValueError, KeyError, TypeError):
         total = 0
+    today, closed_pages = date.today(), 0
     for page in range(1, min(total or 1, int(cfg.get("pages", 60))) + 1):
         if g.down:
             break
@@ -488,6 +494,10 @@ def bahrain_tb(cfg, countries, fetch=http):
             if t["uid"] not in seen:
                 seen.add(t["uid"])
                 out.append(t)
+        # The list runs newest first and keeps closed tenders for months: stop after two closed pages.
+        closed_pages = closed_pages + 1 if all(t["deadline"] and t["deadline"] < today for t in rows) else 0
+        if closed_pages >= 2:
+            break
     return out + g.report()
 
 
@@ -624,12 +634,33 @@ def google_news(cfg, countries, fetch=http):
     return out + g.report()
 
 
+# Development-bank feeds start titles with the notice kind, e.g. "EOI - Egypt - Design of ..." (AfDB).
+_FEED_KINDS = [(r"(?:r?eoi|ami|smi)", "Request for Expression of Interest"),
+               (r"(?:spn|aoi|aon|ifb|ncb|icb)", "Invitation for Bids"), (r"gpn|avis g[ée]n[ée]ral", "General Procurement Notice"),
+               (r"contract awards?|attribution de contrat|avis d.attribution", "Contract Award"),
+               (r"ppm|procurement plan|plan de passation", "Procurement Plan")]
+
+
+def _feed_kind(t):
+    m = re.match(r"\s*([^-–]{2,40}?)\s*[-–]\s*([^-–]{2,40}?)\s*[-–]\s*(.+)", t["title"])
+    if not m:
+        return t
+    head = m.group(1).strip().lower()
+    for rx, label in _FEED_KINDS:
+        if re.fullmatch(rx, head):
+            t["notice_type"] = label
+            t["country"] = t["country"] or m.group(2).strip()
+            break
+    return t
+
+
 def rss_feeds(cfg, countries, fetch=http):
     out = []
     for f in cfg.get("feeds", []):
         url, name = (f, f) if isinstance(f, str) else (f.get("url"), f.get("name", f.get("url")))
         g = _Guard(limit=1)
-        out += parse_rss(g.call(fetch, url, retries=0, timeout=20) or "", name, "rss_feeds") + g.report()
+        out += [_feed_kind(t) for t in parse_rss(g.call(fetch, url, retries=0, timeout=20) or "", name, "rss_feeds")]
+        out += g.report()
     return out
 
 
@@ -671,7 +702,7 @@ def pc_relay(cfg, countries, fetch=http):
         return []
     keys = re.findall(r"\b[0-9a-fA-F]{64}\b", open(keyfile, encoding="utf-8").read()) if os.path.exists(keyfile) else []
     if not keys:
-        RELAY_INFO.update(linked=False)
+        RELAY_INFO.update(linked=False, label=cfg.get("label", ""))
         return []
     snaps, errors = fetch_snapshots(cfg.get("server", "https://ntfy.sh"), topic, bytes.fromhex(keys[0]),
                                     cfg.get("window", "12h"), get_text=fetch)
@@ -681,7 +712,7 @@ def pc_relay(cfg, countries, fetch=http):
             if it.get("uid"):
                 items[it["uid"]] = restore_item(it)
     last = snaps[-1] if snaps else {}
-    RELAY_INFO.update(linked=True, last_seen=last.get("ts"), host=last.get("host", ""),
+    RELAY_INFO.update(linked=True, label=cfg.get("label", ""), last_seen=last.get("ts"), host=last.get("host", ""),
                       sources=last.get("sources", []), snapshots=len(snaps))
     return list(items.values()) + [{"_error": e} for e in errors]
 

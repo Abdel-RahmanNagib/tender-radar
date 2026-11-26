@@ -10,7 +10,9 @@
       "alexandria",
       "الإسكندرية",
       "new administrative capital",
-      "العاصمة الإدارية"
+      "العاصمة الإدارية",
+      "egypte",
+      "égypte"
     ],
     "Libya": [
       "libya",
@@ -20,7 +22,8 @@
       "benghazi",
       "بنغازي",
       "derna",
-      "درنة"
+      "درنة",
+      "libye"
     ],
     "Syria": [
       "syria",
@@ -32,7 +35,8 @@
       "aleppo",
       "حلب",
       "hasakah",
-      "الحسكة"
+      "الحسكة",
+      "syrie"
     ],
     "Jordan": [
       "jordan",
@@ -43,7 +47,8 @@
       "aqaba",
       "العقبة",
       "zarqa",
-      "الزرقاء"
+      "الزرقاء",
+      "jordanie"
     ],
     "Palestine": [
       "palestine",
@@ -54,7 +59,8 @@
       "غزة",
       "الضفة الغربية",
       "ramallah",
-      "رام الله"
+      "رام الله",
+      "cisjordanie"
     ],
     "Saudi Arabia": [
       "saudi",
@@ -75,7 +81,8 @@
       "المدينة المنورة",
       "red sea global",
       "diriyah",
-      "الدرعية"
+      "الدرعية",
+      "arabie saoudite"
     ],
     "UAE": [
       "uae",
@@ -98,7 +105,8 @@
       "umm al quwain",
       "أم القيوين",
       "al ain",
-      "العين"
+      "العين",
+      "émirats arabes unis"
     ],
     "Qatar": [
       "qatar",
@@ -110,13 +118,15 @@
     ],
     "Kuwait": [
       "kuwait",
-      "الكويت"
+      "الكويت",
+      "koweït"
     ],
     "Bahrain": [
       "bahrain",
       "البحرين",
       "manama",
-      "المنامة"
+      "المنامة",
+      "bahreïn"
     ],
     "Oman": [
       "oman",
@@ -137,7 +147,8 @@
       "aden",
       "عدن",
       "sanaa",
-      "صنعاء"
+      "صنعاء",
+      "yémen"
     ],
     "Iraq": [
       "iraq",
@@ -149,7 +160,8 @@
       "al faw",
       "الفاو",
       "erbil",
-      "أربيل"
+      "أربيل",
+      "irak"
     ],
     "MENA (Regional)": [
       "middle east and north africa",
@@ -225,7 +237,11 @@
         "مياه الصرف",
         "محطة رفع",
         "محطات رفع",
-        "معالجة"
+        "معالجة",
+        "wash",
+        "water, sanitation and hygiene",
+        "water sanitation and hygiene",
+        "المياه والصرف الصحي والنظافة"
       ]
     },
     {
@@ -378,6 +394,33 @@
         "تقييم البنية التحتية",
         "مراجعة فنية"
       ]
+    },
+    {
+      "id": "civil_general",
+      "ar": "تصميم هندسي مدني عام",
+      "weight": 2,
+      "keywords": [
+        "civil engineering",
+        "civil works design",
+        "engineering design",
+        "engineering consultancy",
+        "engineering consultant",
+        "infrastructure design",
+        "design and drafting",
+        "drafting services",
+        "cad drafting",
+        "shop drawings",
+        "الهندسة المدنية",
+        "هندسة مدنية",
+        "الأعمال المدنية",
+        "التصميم الهندسي",
+        "الاستشارات الهندسية",
+        "استشارات هندسية",
+        "مكتب هندسي",
+        "المكاتب الهندسية",
+        "الرسومات الهندسية",
+        "المخططات الهندسية"
+      ]
     }
   ],
   "consultancy_terms": [
@@ -483,7 +526,13 @@
     "أثاث",
     "قرطاسية",
     "طباعة",
-    "وقود"
+    "وقود",
+    "software licenses",
+    "software licences",
+    "licenses",
+    "licences",
+    "license renewal",
+    "subscription"
   ],
   "excluded_notice_types": [
     "contract award",
@@ -492,7 +541,8 @@
     "cancellation",
     "ترسية",
     "إلغاء",
-    "الغاء"
+    "الغاء",
+    "procurement plan"
   ],
   "sources": {
     "worldbank": {
@@ -525,7 +575,7 @@
       ]
     },
     "monaqasat": {
-      "pages": 5
+      "pages": 25
     },
     "ungm": {
       "pages": 20
@@ -562,7 +612,12 @@
       ]
     },
     "rss_feeds": {
-      "feeds": []
+      "feeds": [
+        {
+          "url": "https://www.afdb.org/en/projects-and-operations/procurement.xml",
+          "name": "بنك التنمية الأفريقي AfDB"
+        }
+      ]
     },
     "web_pages": {
       "pages": [
@@ -583,8 +638,9 @@
       "window": "12h",
       "pc_sources": [
         "monaqasat",
-        "kuwait_capt"
-      ]
+        "oman_tenderboard"
+      ],
+      "label": "قطر وعُمان"
     }
   }
 }

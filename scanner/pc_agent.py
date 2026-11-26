@@ -39,6 +39,7 @@ from radar.sources import COLLECTORS, fetch_detail  # noqa: E402
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
+OWN_SESSION = {"ungm", "oman_tenderboard"}
 CURL = os.path.join(os.environ.get("SystemRoot", r"C:\Windows"), "System32", "curl.exe")
 
 
@@ -112,13 +113,14 @@ def main(home=None):
     log(f"[{utc_now_iso()}] office-PC scan — key {public[:12]}…")
 
     items, status = [], []
-    for name in rcfg.get("pc_sources", ["monaqasat", "kuwait_capt"]):
+    for name in rcfg.get("pc_sources", ["monaqasat", "oman_tenderboard"]):
         fn = COLLECTORS.get(name)
         if not fn:
             continue
         t0 = time.time()
         try:
-            got = fn(profile["sources"].get(name, {}), countries, fetch=pc_fetch)
+            kw = {} if name in OWN_SESSION else {"fetch": pc_fetch}  # these keep cookies between pages
+            got = fn(profile["sources"].get(name, {}), countries, **kw)
         except Exception as e:  # noqa: BLE001
             status.append({"key": name, "count": 0, "ok": False, "error": str(e)[:200]})
             log(f"  {name}: failed ({e})")

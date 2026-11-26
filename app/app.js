@@ -486,8 +486,8 @@ function renderSettings() {
   const row = (x, tag) => `<tr><td>${h(SOURCE_AR[x.key] || x.key)}${tag ? ` <small class="muted">${tag}</small>` : ''}</td><td>${x.ok ? `<span class="ok">يعمل</span>` : `<span class="bad">تعذر الوصول</span>`}</td><td>${x.count}</td></tr>`;
   const pc = (s && s.pc_helper) || {};
   const srcRows = s ? s.sources.filter((x) => x.key !== 'pc_relay').map((x) => row(x)).join('') + (pc.sources || []).map((x) => row(x, 'كمبيوتر المكتب')).join('') : '';
-  const pcLine = !s ? '' : pc.linked === false ? '<p class="small">مساعد كمبيوتر المكتب (قطر والكويت): <span class="bad">لم يُربط بعد</span>.</p>'
-    : pc.linked ? `<p class="small">مساعد كمبيوتر المكتب (قطر والكويت): ${pc.last_seen ? `آخر إرسال <b>${ago(pc.last_seen)}</b>` : '<span class="bad">لم يرسل نتائج خلال آخر 12 ساعة — تأكد أن كمبيوتر المكتب يعمل</span>'}.</p>` : '';
+  const pcLine = !s ? '' : pc.linked === false ? `<p class="small">مساعد كمبيوتر المكتب${pc.label ? ` (${h(pc.label)})` : ''}: <span class="bad">لم يُربط بعد</span>.</p>`
+    : pc.linked ? `<p class="small">مساعد كمبيوتر المكتب${pc.label ? ` (${h(pc.label)})` : ''}: ${pc.last_seen ? `آخر إرسال <b>${ago(pc.last_seen)}</b>` : '<span class="bad">لم يرسل نتائج خلال آخر 12 ساعة — تأكد أن كمبيوتر المكتب يعمل</span>'}.</p>` : '';
   const perm = typeof Notification === 'undefined' ? 'unsupported' : Notification.permission;
   $('#detailPane').innerHTML = `
     <button class="back" data-act="back">${ICON.back} كل الفرص</button>
@@ -539,7 +539,7 @@ function renderSettings() {
         ${pcLine}
         <p class="small" style="margin-top:10px">قنوات الإشعار المفعّلة على الخادم: ${['ntfy', 'telegram', 'email'].filter((k) => s.channels && s.channels[k]).map((k) => ({ ntfy: 'ntfy', telegram: 'تيليجرام', email: 'الإيميل' })[k]).join('، ') || '<span class="bad">لا شيء بعد — أضف NTFY_TOPIC في GitHub</span>'}</p>`
         : '<p class="muted">لا توجد بيانات حالة بعد.</p>'}</section>
-    <section class="box"><h3>عن البيانات</h3><p class="small">المصادر: البنك الدولي، منصة اعتماد، بوابة الأمم المتحدة UNGM، مجلس المناقصات العُماني، مجلس المناقصات بالبحرين، البنك الأوروبي لإعادة الإعمار EBRD، منصة مناقصات قطر والجهاز المركزي للمناقصات بالكويت (يفحصهما مساعد كمبيوتر المكتب لأنهما يمنعان السيرفرات السحابية)، البنك الإسلامي للتنمية، وأخبار الطروحات. الأرقام والإيميلات مأخوذة من نص الإعلان نفسه، وأرقام الدعم الفني للبوابات من مواقعها الرسمية. راجعوا الإعلان الرسمي دائماً قبل التقديم.</p></section>`;
+    <section class="box"><h3>عن البيانات</h3><p class="small">المصادر: البنك الدولي، منصة اعتماد، بوابة الأمم المتحدة UNGM، مجلس المناقصات العُماني، مجلس المناقصات بالبحرين، البنك الأوروبي لإعادة الإعمار EBRD، منصة مناقصات قطر وكامل قائمة مجلس المناقصات العُماني (يفحصهما مساعد كمبيوتر المكتب لأنهما يمنعان السيرفرات السحابية؛ والجهاز المركزي للمناقصات بالكويت يمنع الفحص الآلي فيُراجع من رابطه)، البنك الإسلامي للتنمية، وأخبار الطروحات. الأرقام والإيميلات مأخوذة من نص الإعلان نفسه، وأرقام الدعم الفني للبوابات من مواقعها الرسمية. راجعوا الإعلان الرسمي دائماً قبل التقديم.</p></section>`;
 }
 function randomTopic() {
   const a = new Uint8Array(6); (crypto || window.msCrypto).getRandomValues(a);
