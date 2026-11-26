@@ -1,9 +1,9 @@
 {
-"last_run":"2026-11-26T09:29:50+00:00",
+"last_run":"2026-11-26T11:10:32+00:00",
 "every_minutes":60,
-"collected":2098,
+"collected":2100,
 "matched":2,
-"new":2,
+"new":0,
 "open":2,
 "sources":[
 {
@@ -15,7 +15,7 @@
 },
 {
 "key":"etimad",
-"count":343,
+"count":341,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -36,7 +36,7 @@
 },
 {
 "key":"google_news",
-"count":17,
+"count":19,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -50,7 +50,7 @@
 },
 {
 "key":"web_pages",
-"count":684,
+"count":686,
 "ok":true,
 "failed_pages":6,
 "error":""

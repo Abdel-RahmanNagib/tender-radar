@@ -5,5 +5,6 @@
 },
 "telegram_chats":[],
 "telegram_offset":0,
-"initialized":true
+"initialized":true,
+"last_summary":"2026-11-26"
 }
