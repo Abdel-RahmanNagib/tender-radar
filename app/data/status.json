@@ -1,10 +1,10 @@
 {
-"last_run":"2026-11-26T20:19:48+00:00",
+"last_run":"2026-11-26T22:08:59+00:00",
 "every_minutes":60,
-"collected":1453,
-"matched":30,
+"collected":1475,
+"matched":31,
 "new":2,
-"open":42,
+"open":44,
 "sources":[
 {
 "key":"worldbank",
@@ -22,7 +22,7 @@
 },
 {
 "key":"ungm",
-"count":156,
+"count":155,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -57,7 +57,7 @@
 },
 {
 "key":"dubai_esupply",
-"count":241,
+"count":240,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -71,7 +71,7 @@
 },
 {
 "key":"dewa_tenders",
-"count":0,
+"count":25,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -85,7 +85,7 @@
 },
 {
 "key":"google_news",
-"count":17,
+"count":16,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -110,7 +110,7 @@
 "pc_helper":{
 "linked":true,
 "label":"قطر وعُمان",
-"last_seen":"2026-11-26T20:19:32+00:00",
+"last_seen":"2026-11-26T21:20:21+00:00",
 "host":"DESKTOP-OVTV5PG",
 "sources":[
 {
