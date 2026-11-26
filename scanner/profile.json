@@ -612,6 +612,36 @@
       "max_items": 1500
     },
     "dewa_tenders": {},
+    "etihadwe_tenders": {},
+    "email_alerts": {
+      "_note": "يقرأها مساعد كمبيوتر المكتب من موضوع خاص به (العنوان في EMAIL-FORWARD-ADDRESS.txt على الكمبيوتر)"
+    },
+    "page_watch": {
+      "pages": [
+        {
+          "name": "دائرة الأشغال العامة والزراعة – الفجيرة",
+          "country": "UAE",
+          "client": "Fujairah Public Works & Agriculture Department",
+          "url": "https://pwad.fujairah.ae/en/tenders",
+          "empty": [
+            "No open tenders"
+          ],
+          "start": "stay updated on opportunities to work with us",
+          "end": "Quick Links"
+        },
+        {
+          "name": "دائرة الخدمات العامة – رأس الخيمة (Coupa)",
+          "country": "UAE",
+          "client": "RAK Public Services Department",
+          "url": "https://supplier.coupahost.com/quotes/public_events?customer=psd_rak",
+          "empty": [
+            "no sourcing events available"
+          ],
+          "start": "Past Public Events",
+          "end": "Terms of Use"
+        }
+      ]
+    },
     "google_news": {
       "max_age_days": 7,
       "queries_ar": [
@@ -621,7 +651,14 @@
         "دعوة مكاتب استشارية لتقديم عروض بنية تحتية",
         "إبداء اهتمام خدمات استشارية مياه",
         "مناقصة دراسة هيدرولوجية سيول",
-        "مناقصة إشراف هندسي طرق"
+        "مناقصة إشراف هندسي طرق",
+        "مناقصة استشارية الشارقة",
+        "مناقصة استشارية عجمان",
+        "مناقصة رأس الخيمة استشاري",
+        "مناقصة الفجيرة استشارية",
+        "مناقصة أم القيوين",
+        "أدنوك مناقصة خدمات استشارية",
+        "قطار الاتحاد مناقصة"
       ],
       "queries_en": [
         "consultancy tender stormwater drainage UAE",
@@ -631,7 +668,15 @@
         "consultancy contract tender sewerage Oman",
         "infrastructure consultant tender Kuwait",
         "consultancy services tender Jordan water",
-        "design consultant tender Iraq roads"
+        "design consultant tender Iraq roads",
+        "Sharjah consultancy tender",
+        "Ajman consultancy tender",
+        "Ras Al Khaimah consultancy tender",
+        "Fujairah consultancy tender",
+        "Umm Al Quwain tender consultant",
+        "ADNOC consultancy tender",
+        "Etihad Rail tender consultancy",
+        "Etihad Water and Electricity tender"
       ]
     },
     "rss_feeds": {

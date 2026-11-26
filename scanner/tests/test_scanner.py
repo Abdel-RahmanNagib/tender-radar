@@ -58,9 +58,9 @@ def test_full_run():
     r1 = run_once(settings, profile, tmp, fetchers=fx, notifier=n1, today=TODAY, log=lambda *a: None)
     titles = [r["title"] for r in r1["new"]]
     by = {r["source_key"] + ":" + r["kind"]: r for r in r1["new"]}
-    check(len(r1["new"]) == 15, f"15 suitable opportunities found (got {len(r1['new'])})")
+    check(len(r1["new"]) == 17, f"17 suitable opportunities found (got {len(r1['new'])})")
     for bad in ("vehicles", "حاسب", "سفلتة", "furniture", "road safety", "Hydrologist", "industrial area",
-                "Hospitality", "Citrix", "UPVC"):
+                "Hospitality", "Citrix", "UPVC", "Cleaners", "About Us"):
         check(not any(bad in t for t in titles), f"rejected: {bad}")
     check(r1["first_run"] and not n1.tenders and len(n1.summaries) == 1, "first run sends one summary, not a flood")
 
@@ -119,6 +119,10 @@ def test_full_run():
           "Abu Dhabi ADGPG: closing date and public tender link")
     check(uae["dewa_tenders"]["booklet_price"].startswith("1050.00"), "DEWA tender fee read")
     check(uae["uae_mof"]["deadline"] == (TODAY + timedelta(days=21)).isoformat(), "UAE federal tender closing date read")
+    ew = uae["etihadwe_tenders"]
+    check(ew["deadline"] == (TODAY + timedelta(days=20)).isoformat() and ew["reference"] == "Doc399000001",
+          "EtihadWE: tender read from the portal's .xls list (title, Ariba event id, closing date)")
+    check("Dibba" in uae["page_watch"]["title"], "watched page: a new consulting tender on the Fujairah page is caught")
 
     # second run: nothing new; a changed deadline is followed
     fx2 = demo.fetchers(TODAY)
@@ -144,8 +148,11 @@ def test_full_run():
     wbr = next(r for r in saved["tenders"] if r["uid"] == "wb:OP00999001")
     check(wbr["deadline"] == (TODAY + timedelta(days=60)).isoformat() and wbr["notes"], "deadline extension recorded")
     st = json.load(open(os.path.join(tmp, "status.json"), encoding="utf-8"))
-    check(st["open"] == 16 and all(s["ok"] for s in st["sources"]), f"status file written (open={st['open']})")
+    check(st["open"] == 18 and all(s["ok"] for s in st["sources"]), f"status file written (open={st['open']})")
     check(os.path.exists(os.path.join(tmp, "profile.json")), "profile for the app written")
+    feed = json.load(open(os.path.join(tmp, "feed.json"), encoding="utf-8"))
+    check(feed["count"] == st["open"] and len(feed["items"]) == st["open"] and all(i["uid"] and i["id"] for i in feed["items"]),
+          "small feed for the Android app written")
     shutil.rmtree(tmp)
 
 
@@ -179,8 +186,26 @@ def test_notification_payloads():
     shutil.rmtree(tmp)
 
 
+def test_email_invitations():
+    print("invitations forwarded by e-mail")
+    from radar import demo, sources
+    from radar.scoring import Matcher
+    fx = demo.fetchers(TODAY)
+    got = sources.email_alerts({"topic": "test"}, ["UAE"], fetch=fx["email_alerts"])
+    check(len(got) == 1 and got[0]["reference"] == "Doc777000111", "invitation e-mail read; password e-mail ignored")
+    t = got[0]
+    check(t["title"].startswith("Consultancy Services for Detailed Design"), f"invitation title cleaned ({t['title'][:50]})")
+    check(t["url"] == "https://supplier.ariba.com" and "token" not in t["url"], "personal invitation link not published")
+    check("cec_supplier" not in t["description"], "user name lines removed from the e-mail text")
+    check(t["deadline"] == TODAY + timedelta(days=16), "invitation due date read")
+    ok, info = Matcher(load_json(os.path.join(SCANNER, "profile.json")), "low").evaluate({**t, "title": "Event Doc1 - Package 7 (Example)", "raw_text": ""}, TODAY)
+    check(ok and info["level"] in ("medium", "high"), "an invitation to the office is shown even with a bare title")
+    check(sources.email_alerts({}, ["UAE"], fetch=fx["email_alerts"]) == [], "no topic in the cloud: nothing read")
+
+
 if __name__ == "__main__":
     test_contacts()
     test_full_run()
     test_notification_payloads()
+    test_email_invitations()
     print("\nALL TESTS PASSED ✔")

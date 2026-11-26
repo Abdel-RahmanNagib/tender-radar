@@ -1,13 +1,16 @@
 """Tender sources. Every collector returns a list of raw tender dicts (see _tender)."""
+import hashlib
 import html
 import json
 import os
 import re
+import struct
 import xml.etree.ElementTree as ET
 from datetime import date, timedelta
 from urllib.parse import quote, urljoin
 
-from .common import XHR_HEADERS, Session, html_to_text, http, http_json, norm, parse_date, pick, q
+from . import xls
+from .common import XHR_HEADERS, Session, html_to_text, http, http_bytes, http_json, norm, parse_date, pick, q
 from .requirements import deadline_from_text, labeled_value
 
 SCANNER_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -383,7 +386,6 @@ def oman_tenderboard(cfg, countries, fetch=None):
     m = re.search(r'name="hidMax"\s+value="(\d+)"', first)
     last = min(int(m.group(1)) if m else 1, int(cfg.get("pages", 60)))
     pages = [first]
-    # Every page also carries a fixed getNit('1') outside the rows, so compare all ids, not the first one.
     first_ids = set(re.findall(r"getNit\('(\d+)'\)", first))
     for page in range(2, last + 1):
         if g.down:
@@ -396,7 +398,13 @@ def oman_tenderboard(cfg, countries, fetch=None):
                                     "Referer": _OMAN_DASH})
         ids = set(re.findall(r"getNit\('(\d+)'\)", html_page or ""))
         if html_page is not None and (not ids or ids <= first_ids):
-            break  # the portal answers cloud servers with the first page only; the office PC reads the rest
+            # The portal answers cloud servers with the first page only; the office PC should read the rest.
+            # On the PC (Windows) say what came back, so the helper's log shows why paging stopped.
+            if os.name == "nt":
+                g.errors.append(f"Oman paging stopped at page {page} of {last}: {len(html_page)} chars, "
+                                f"{len(ids)} tenders {sorted(ids)[:2]} (page 1: {sorted(first_ids)[:2]}) – "
+                                f"{html_to_text(html_page)[:100]}")
+            break
         if html_page:
             pages.append(html_page)
     for html_page in pages:
@@ -983,6 +991,183 @@ def parse_dewa(page):
     return out
 
 
+# ------------------------------------------------------------------ UAE – Etihad Water & Electricity (northern emirates)
+ETIHADWE = "https://etihadwe.ae"
+ETIHADWE_PAGE = f"{ETIHADWE}/en/TenderAndRegistration/Pages/Tender.aspx"
+# The tenders page draws its table from this Excel export of the SAP Ariba events (updated daily).
+ETIHADWE_XLS = f"{ETIHADWE}/Documents/rfpexcel/Event%20Status%20Report%20for%20Digital%20team.xls"
+
+
+def etihadwe_tenders(cfg, countries, fetch=http_bytes):
+    """Open RFPs/RFIs of EtihadWE (power and water for Sharjah, Ajman, Umm Al Quwain, RAK and Fujairah)."""
+    if "UAE" not in countries:
+        return []
+    g = _Guard()
+    data = g.call(fetch, cfg.get("xls") or ETIHADWE_XLS)
+    if not data:
+        return g.report()
+    try:
+        rows, datemode = xls.read_book(data if isinstance(data, bytes) else data.encode("latin-1"))
+    except (ValueError, IndexError, struct.error) as e:
+        return [{"_error": f"EtihadWE tender list could not be read: {e}"[:220]}]
+    return parse_etihadwe(rows, datemode) + g.report()
+
+
+def parse_etihadwe(rows, datemode=0):
+    if not rows:
+        return []
+    head = [norm(str(h or "")) for h in rows[0]]
+
+    def col(*words, default):
+        return next((i for i, h in enumerate(head) for w in words if w in h), default)
+
+    ti, ii, di = col("title", default=0), col("event id", default=1), col("end date", "date", default=2)
+    out = []
+    for r in rows[1:]:
+        cell = (lambda i: r[i] if i < len(r) else None)
+        title, doc, due = str(cell(ti) or "").strip(), str(cell(ii) or "").strip(), cell(di)
+        if not title:
+            continue
+        deadline = xls.excel_date(due, datemode) if isinstance(due, float) else parse_date(str(due or ""))
+        rfi = bool(re.search(r"\bRFI\b|request for information", title, re.I))
+        out.append(_tender(
+            uid=f"etwe:{doc or norm(title)[:60]}", source_key="etihadwe_tenders",
+            source="الاتحاد للماء والكهرباء (EtihadWE)", title=title, country="UAE",
+            client="Etihad Water & Electricity (EtihadWE)",
+            notice_type="Request for Information" if rfi else "Request for Proposal", reference=doc,
+            deadline=deadline, url=ETIHADWE_PAGE, raw_text=title,
+            submission_line="عبر بوابة SAP Ariba للموردين (supplier.ariba.com) – بعد التسجيل كمورد لدى "
+                            "الاتحاد للماء والكهرباء، والدعوة تصل على إيميل الشركة المسجّل",
+            _detail_done=True,
+            extra=dict(links=[{"label": "المشاركة عبر SAP Ariba", "url": "https://supplier.ariba.com"}])))
+    return out
+
+
+# ------------------------------------------------------------------ invitations e-mailed to registered suppliers
+# ADNOC, Etihad Rail, SEWA, Sharjah Finance, Ajman Tawreed, RAK (Coupa), MOEI ... publish many tenders only to
+# registered suppliers, by e-mail. A mailbox rule forwards those e-mails to ntfy-<topic>@ntfy.sh; ntfy keeps
+# them on the topic (subject = title, text = message) and each scan reads them back as tenders.
+_INVITE = re.compile(r"invit|event|rfq|rfp|rfi|rfx|tender|bid\b|bidding|eoi|expression of interest|prequalif|"
+                     r"sourcing|quotation|مناقص|دعوة|عطاء|طلب عرض|طلب عروض|طلب تسعير|ممارسة|تأهيل", re.I)
+_PORTALS = [(r"\badnoc\b|أدنوك", "ADNOC – أدنوك (SAP Ariba)"), (r"etihad ?rail|قطار الاتحاد", "قطار الاتحاد"),
+            (r"etihadwe|etihad water|الاتحاد للماء", "الاتحاد للماء والكهرباء"),
+            (r"\bsewa\b|sharjah electricity|كهرباء ومياه وغاز الشارقة", "هيئة كهرباء ومياه وغاز الشارقة"),
+            (r"sfd\.gov|sharjah finance|مالية الشارقة|دائرة المالية المركزية", "دائرة المالية المركزية – الشارقة"),
+            (r"tawreed|توريد|ajman|عجمان", "منصة توريد – عجمان"), (r"coupa|ras al khaimah|\brak\b|رأس الخيمة",
+                                                               "رأس الخيمة (Coupa)"),
+            (r"moei|energy and infrastructure|الطاقة والبنية التحتية", "وزارة الطاقة والبنية التحتية"),
+            (r"fujairah|الفجيرة", "الفجيرة"), (r"umm al quwain|أم القيوين", "أم القيوين"),
+            (r"esupply", "eSupply – دبي"), (r"adgpg|tamm", "بوابة أبوظبي ADGPG"), (r"ariba", "SAP Ariba")]
+
+
+def email_alerts(cfg, countries, fetch=http):
+    topic = cfg.get("topic")
+    if not topic:
+        return []
+    g = _Guard()
+    raw = g.call(fetch, f"{cfg.get('server', 'https://ntfy.sh')}/{topic}/json?poll=1&since={cfg.get('window', '24h')}",
+                 headers={"Accept": "application/x-ndjson"}, timeout=30)
+    out, seen = [], set()
+    for line in (raw or "").splitlines():
+        try:
+            m = json.loads(line)
+        except ValueError:
+            continue
+        if m.get("event") != "message":
+            continue
+        t = parse_alert_email(m.get("title") or "", m.get("message") or "", m.get("id") or "", m.get("time"))
+        if t and t["uid"] not in seen:
+            seen.add(t["uid"])
+            out.append(t)
+    return out + g.report()
+
+
+def _safe_link(url):
+    """Invitation links often carry a personal token; the app is public, so keep only the portal page."""
+    from urllib.parse import urlsplit
+    u = urlsplit(url)
+    if not u.scheme.startswith("http") or not u.netloc:
+        return ""
+    if "ariba" in u.netloc.lower():
+        return "https://supplier.ariba.com"
+    return f"{u.scheme}://{u.netloc}{u.path}"
+
+
+def parse_alert_email(subject, body, msg_id="", when=None):
+    subject = re.sub(r"^\s*((fwd?|fw|re|tr|إعادة توجيه|تحويل|رد)\s*[:：]\s*)+", "", subject or "", flags=re.I).strip()
+    body = "\n".join(ln for ln in (body or "").replace("\r", "").split("\n")
+                     if not re.search(r"password|user ?name|login id|passcode|otp|كلمة (المرور|السر)|اسم المستخدم", ln, re.I))
+    text = f"{subject}\n{body}"
+    if not _INVITE.search(text):
+        return None  # account, password, order or invoice e-mails are not tenders
+    line = re.search(r"^\s*(?:event(?: name| title)?|title|tender(?: name| title)?|project(?: name)?|rf[pqix] (?:title|name)"
+                     r"|subject|عنوان(?: المناقصة)?|اسم (?:المناقصة|المشروع)|المشروع)\s*[:：\-]\s*(.{8,200})$", body,
+                     re.I | re.M)
+    title = (line.group(1).strip() if line else "") or subject
+    title = re.sub(r"^(you have been invited to (participate in|respond to)|invitation to (participate in|bid)"
+                   r"|new (sourcing )?event( published)?|(event )?invitation|دعوة)\s*[:：\-–]?\s*", "", title,
+                   flags=re.I).strip() or subject
+    title = re.sub(r"^(event\s+)?Doc\d{6,}\s*[:\-–]\s*", "", title, flags=re.I).strip() or subject
+    ref = re.search(r"\b(Doc\d{6,}|(?:RFQ|RFP|RFI|ITT|EOI|PQ)[\s#:./-]*\d[\w/.-]{2,})\b", text, re.I)
+    link = re.search(r"https?://[^\s<>\"')\]]+", body)
+    portal = next((label for rx, label in _PORTALS if re.search(rx, text, re.I)), "إيميل دعوة")
+    deadline = deadline_from_text(body) or None
+    key = (ref.group(1) if ref else "") or hashlib.sha1(norm(title).encode("utf-8")).hexdigest()[:12]
+    published = None
+    if when:
+        try:
+            published = date.fromtimestamp(int(when))
+        except (TypeError, ValueError, OverflowError, OSError):
+            published = None
+    return _tender(
+        uid=f"mail:{key}", source_key="email_alerts", source=f"دعوة بالإيميل – {portal}", title=title[:300],
+        description=body[:800], country="UAE", client=portal, notice_type="Invitation to registered suppliers",
+        reference=ref.group(1) if ref else "", published=published, deadline=deadline,
+        url=_safe_link(link.group(0).rstrip(".,;")) if link else "", raw_text=text[:6000], detail_text=body[:6000],
+        consulting_flag=True, direct_invite=True, _detail_done=True,
+        submission_line=f"عبر بوابة {portal} بحساب الشركة المسجّل – الدعوة وصلت على إيميل المكتب",
+        extra=dict(mail_id=msg_id))
+
+
+# ------------------------------------------------------------------ portal pages that are usually empty
+def page_watch(cfg, countries, fetch=http):
+    """Tender pages that show "no open tenders" most of the time (Fujairah Public Works, RAK Coupa events).
+    When a page has tenders, its rows, headings and links become leads; the matcher keeps the consulting ones."""
+    out = []
+    for p in cfg.get("pages", []):
+        if p.get("country") and p["country"] not in countries:
+            continue
+        try:
+            page = fetch(p["url"], retries=0, timeout=25)
+        except Exception as e:  # noqa: BLE001
+            out.append({"_error": f"{p['name']}: {e}"[:220]})
+            continue
+        low = html_to_text(page).lower()
+        if any(m.lower() in low for m in p.get("empty", [])):
+            continue
+        part = page
+        if p.get("start") and p["start"] in part:
+            part = part[part.index(p["start"]) + len(p["start"]):]
+        if p.get("end") and p["end"] in part:
+            part = part[:part.index(p["end"])]
+        seen = set()
+        for row in re.findall(r"<tr[^>]*>.*?</tr>|<h[2-5][^>]*>.*?</h[2-5]>|<li[^>]*>.*?</li>|<a\s[^>]*>.*?</a>",
+                              part, re.S | re.I):
+            text = re.sub(r"\s+", " ", html_to_text(row)).strip()
+            if not 15 <= len(text) <= 400 or norm(text) in seen:
+                continue
+            seen.add(norm(text))
+            href = re.search(r'href="([^"#][^"]*)"', row)
+            link = urljoin(p["url"], html.unescape(href.group(1))) if href else p["url"]
+            if link.startswith(("javascript:", "mailto:", "tel:")):
+                link = p["url"]
+            out.append(_tender(uid=f"watch:{hashlib.sha1((p['url'] + norm(text)).encode('utf-8')).hexdigest()[:14]}",
+                               source_key="page_watch", source=p["name"], title=text, country=p.get("country", ""),
+                               client=p.get("client", ""), notice_type="Portal listing", url=link,
+                               deadline=deadline_from_text(text) or None, raw_text=text))
+    return out
+
+
 # ------------------------------------------------------------------ office-PC helper (relay)
 RELAY_INFO = {}
 
@@ -1014,7 +1199,8 @@ def pc_relay(cfg, countries, fetch=http):
 
 COLLECTORS = {"worldbank": worldbank, "etimad": etimad, "ungm": ungm, "oman_tenderboard": oman_tenderboard,
               "bahrain_tb": bahrain_tb, "ebrd_ecepp": ebrd_ecepp, "uae_mof": uae_mof, "dubai_esupply": dubai_esupply,
-              "abudhabi_adgpg": abudhabi_adgpg, "dewa_tenders": dewa_tenders, "monaqasat": monaqasat,
+              "abudhabi_adgpg": abudhabi_adgpg, "dewa_tenders": dewa_tenders, "etihadwe_tenders": etihadwe_tenders,
+              "email_alerts": email_alerts, "page_watch": page_watch, "monaqasat": monaqasat,
               "kuwait_capt": kuwait_capt, "pc_relay": pc_relay, "google_news": google_news,
               "rss_feeds": rss_feeds, "web_pages": web_pages}
 

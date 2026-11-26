@@ -151,6 +151,7 @@ def run_once(settings, profile, data_dir, fetchers=None, notifier=None, today=No
     }
     store.save(status, now_iso, settings.get("office_name", ""), reached_sources=bool(collected))
     _publish_profile(profile, data_dir)
+    _publish_feed(open_recs, data_dir, now_iso)
     log(f"\n✔ تم الفحص: {len(collected)} إعلان، {len(matched)} مناسب، {len(records)} جديد، "
         f"{len(open_recs)} فرصة مفتوحة" + (" (أول تشغيل)" if first_run else ""))
     return {"collected": len(collected), "matched": len(matched), "new": records, "errors": errors,
@@ -183,8 +184,20 @@ def _publish_profile(profile, data_dir):
         json.dump(slim, f, ensure_ascii=False)
 
 
+def _publish_feed(open_recs, data_dir, now_iso):
+    """Small list of the newest open tenders, read every hour by the Android app (tenders.json is much bigger)."""
+    newest = sorted(open_recs, key=lambda r: r.get("first_seen") or "", reverse=True)[:80]
+    feed = {"generated": now_iso, "count": len(open_recs), "items": [
+        {"uid": r.get("uid", ""), "id": r.get("id", ""), "title": (r.get("title") or "")[:220],
+         "country": r.get("country_ar", ""), "client": (r.get("client") or "")[:120],
+         "deadline": r.get("deadline") or "", "level": (r.get("match") or {}).get("level_ar", ""),
+         "first_seen": r.get("first_seen", "")} for r in newest]}
+    with open(os.path.join(data_dir, "feed.json"), "w", encoding="utf-8") as f:
+        json.dump(feed, f, ensure_ascii=False, separators=(",", ":"))
+
+
 def reset_data(data_dir):
-    for n in ("tenders.json", "state.json", "status.json"):
+    for n in ("tenders.json", "state.json", "status.json", "feed.json"):
         p = os.path.join(data_dir, n)
         if os.path.exists(p):
             os.remove(p)

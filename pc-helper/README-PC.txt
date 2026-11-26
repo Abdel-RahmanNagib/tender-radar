@@ -14,6 +14,8 @@
 • في كل تشغيل يحدّث كود الفحص من مستودعكم على GitHub (Abdel-RahmanNagib/tender-radar).
 • data\pc_key.json هو المفتاح الخاص لهذا الجهاز: لا ترسله لأحد. PUBLIC-KEY.txt مفتاح عام وليس سرياً.
 • سجل التشغيل: data\pc-helper.log
+• دعوات البوابات للموردين المسجّلين (أدنوك، قطار الاتحاد، الشارقة، عجمان، رأس الخيمة...): حوّلوها من إيميل المكتب
+  إلى العنوان المكتوب في EMAIL-FORWARD-ADDRESS.txt، فيقرأها المساعد كل ساعة ويضيفها للتطبيق. لا تنشروا هذا العنوان.
 
 Office PC helper (English): scans Qatar Monaqasat and the full Oman Tender Board list every hour from the office
 network and sends signed results to the cloud scan. Install: double-click INSTALL-PC-HELPER.bat.

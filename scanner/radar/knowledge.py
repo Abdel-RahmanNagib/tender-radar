@@ -30,6 +30,9 @@ SOURCES = {
     "dubai_esupply": "بوابة حكومة دبي للمشتريات (eSupply)",
     "abudhabi_adgpg": "بوابة أبوظبي للمشتريات الحكومية (ADGPG)",
     "dewa_tenders": "هيئة كهرباء ومياه دبي (ديوا)",
+    "etihadwe_tenders": "الاتحاد للماء والكهرباء (EtihadWE)",
+    "email_alerts": "دعوات الإيميل من بوابات الموردين",
+    "page_watch": "صفحات مناقصات تحت المراقبة",
     "pc_relay": "مساعد كمبيوتر المكتب",
     "google_news": "أخبار الطروحات",
     "rss_feeds": "خلاصات RSS",
@@ -47,6 +50,7 @@ NOTICE_TYPES = [  # (contains, Arabic label) – first match wins
     ("request for bids", "دعوة لتقديم عطاءات"),
     ("request for quotation", "طلب أسعار (RFQ)"),
     ("request for information", "طلب معلومات (RFI) – تسجيل اهتمام"),
+    ("invitation to registered suppliers", "دعوة للموردين المسجّلين"),
     ("public tender", "مناقصة عامة"),
     ("limited tender", "مناقصة محدودة"),
     ("news lead", "خبر عن طرح – يحتاج تأكيد"),
@@ -108,6 +112,13 @@ SUPPORT = {
         "website": "https://www.dewa.gov.ae/en/supplier/services/list-of-tender-documents",
         "note": "تسجيل مورد جديد: إدارة علاقات الموردين +971 4 515 1404 – SRM@dewa.gov.ae.",
         "source": "صفحة «اتصل بنا» على موقع ديوا",
+    },
+    "etihadwe_tenders": {
+        "title": "الاتحاد للماء والكهرباء – EtihadWE",
+        "phones": ["8003392"], "emails": ["cs@etihadwe.ae"],
+        "website": "https://etihadwe.ae/en/TenderAndRegistration/Pages/Tender.aspx",
+        "note": "التقديم على SAP Ariba بعد التسجيل كمورد (Vendor Registration في موقعهم)، والدعوة تصل للإيميل المسجّل.",
+        "source": "صفحة المناقصات على موقع الاتحاد للماء والكهرباء",
     },
     "uae_mof": {
         "title": "المنصة الرقمية للمشتريات – وزارة المالية الإماراتية",
@@ -271,7 +282,7 @@ def detect_kind(t):
     if src in ("worldbank", "ungm", "ebrd_ecepp"):
         return "eoi"
     if src in ("oman_tenderboard", "bahrain_tb", "monaqasat", "kuwait_capt", "uae_mof", "dubai_esupply",
-               "abudhabi_adgpg", "dewa_tenders"):
+               "abudhabi_adgpg", "dewa_tenders", "etihadwe_tenders", "email_alerts"):
         return "rfp"
     return "portal"
 

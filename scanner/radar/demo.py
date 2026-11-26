@@ -1,7 +1,46 @@
 """Sample (fictional) data – used by the tests and by `run.py --demo` to try the app without internet.
 Every entity, e-mail and phone number below is an example, not a real tender."""
-from datetime import timedelta
+import json
+import struct
+from datetime import date, timedelta
 from urllib.parse import unquote_plus
+
+
+def tiny_xls(rows):
+    """A minimal real .xls (BIFF8 in an OLE2 file) holding `rows` – strings, numbers or dates (stored as
+    Excel serial numbers). Used to test the .xls reader without shipping a binary fixture."""
+    strings = sorted({v for r in rows for v in r if isinstance(v, str)})
+    index = {v: i for i, v in enumerate(strings)}
+    rec = lambda t, d: struct.pack("<HH", t, len(d)) + d  # noqa: E731
+    sst = struct.pack("<II", len(strings), len(strings)) + b"".join(
+        struct.pack("<HB", len(v), 1) + v.encode("utf-16-le") for v in strings)
+    cells = b""
+    for r, row in enumerate(rows):
+        for c, v in enumerate(row):
+            if isinstance(v, str):
+                cells += rec(0x00FD, struct.pack("<HHHI", r, c, 15, index[v]))
+            elif isinstance(v, date):
+                cells += rec(0x0203, struct.pack("<HHHd", r, c, 15, float((v - date(1899, 12, 30)).days)))
+            elif isinstance(v, (int, float)):
+                cells += rec(0x0203, struct.pack("<HHHd", r, c, 15, float(v)))
+    bof = lambda kind: rec(0x0809, struct.pack("<HHHHII", 0x0600, kind, 0x0DBB, 0x07CC, 0, 6))  # noqa: E731
+    stream = (bof(0x0005) + rec(0x0022, struct.pack("<H", 0)) + rec(0x00FC, sst) + rec(0x7FFE, bytes(4200))
+              + rec(0x000A, b"") + bof(0x0010) + cells + rec(0x000A, b""))  # padding keeps it out of the mini stream
+    stream += bytes(-len(stream) % 512)
+    n = len(stream) // 512
+    end, free = 0xFFFFFFFE, 0xFFFFFFFF
+    fat = [0xFFFFFFFD, end] + [3 + i if i < n - 1 else end for i in range(n)]
+    fat += [free] * (128 - len(fat))
+
+    def entry(name, kind, child, start, size):
+        nm = name.encode("utf-16-le") + b"\0\0"
+        return (nm.ljust(64, b"\0") + struct.pack("<HBB", len(nm), kind, 1) + struct.pack("<III", free, free, child)
+                + bytes(16 + 4 + 16) + struct.pack("<III", start, size, 0))
+    directory = (entry("Root Entry", 5, 1, end, 0) + entry("Workbook", 2, free, 2, len(stream))).ljust(512, b"\0")
+    header = (b"\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1" + bytes(16) + struct.pack("<HHHHH", 0x3E, 3, 0xFFFE, 9, 6)
+              + bytes(6) + struct.pack("<IIIIIIIII", 0, 1, 1, 0, 4096, end, 0, end, 0)
+              + struct.pack("<109I", 0, *([free] * 108)))
+    return header + struct.pack("<128I", *fat) + directory + stream
 
 
 def _d(today, n):
@@ -280,6 +319,30 @@ def fetchers(today):
                                                  "DiscoveryUrl": "https://example.com/oracle-negotiation", "Attachments": [{}]}})
         return None
 
+    def etihadwe(url, **kw):
+        return tiny_xls([["Event Information - Event Title", "Event Information - Event Id", "Bidding End Date - Date"],
+                         ["Tender 399E-2026 Consultancy Services for Design and Supervision of Water Transmission "
+                          "Pipelines in Fujairah (Example)", "Doc399000001", today + timedelta(days=20)],
+                         ["PR 1500009999 - Cleaners and Office Boys_EtihadWE", "Doc399000002", today + timedelta(days=9)]])
+
+    def mail(url, **kw):
+        msgs = [{"id": "m1", "time": 1795700000, "event": "message",
+                 "title": "FW: Invitation: Event Doc777000111 - Consultancy Services for Detailed Design of Roads "
+                          "and Infrastructure – Al Dhaid (Example)",
+                 "message": "You have been invited to participate in an event.\nEvent ID: Doc777000111\n"
+                            "Buyer: Etihad Rail\nResponse Due Date: " + (today + timedelta(days=16)).strftime("%d %b %Y")
+                            + "\nUsername: cec_supplier\nhttps://service.ariba.com/Supplier.aw/ad/invite?token=SECRET"},
+                {"id": "m2", "time": 1795700100, "event": "message", "title": "Your password was reset",
+                 "message": "Your Ariba password has been changed."}]
+        return "\n".join(json.dumps(m) for m in msgs)
+
+    def watch(url, **kw):
+        if "fujairah" in url:
+            return ('<p>stay updated on opportunities to work with us.</p><table><tr><td>T-12/2026</td><td>'
+                    'Consultancy services for design of internal roads and stormwater drainage in Dibba (Example)'
+                    '</td></tr></table><h3>Quick Links</h3><a href="/en/about">About Us – Department of Public Works</a>')
+        return "<p>Sorry, there are no sourcing events available for you yet.</p>"
+
     def detail_all(url, **kw):
         found = uae_detail(url)
         return detail(url, **kw) if found is None else found
@@ -287,7 +350,8 @@ def fetchers(today):
 
     return {"worldbank": wb, "etimad": etimad, "ungm": ungm, "monaqasat": monaqasat, "google_news": news,
             "oman_tenderboard": oman, "bahrain_tb": bahrain, "ebrd_ecepp": ebrd, "uae_mof": uae_mof,
-            "dubai_esupply": esupply, "abudhabi_adgpg": adgpg, "dewa_tenders": dewa,
+            "dubai_esupply": esupply, "abudhabi_adgpg": adgpg, "dewa_tenders": dewa, "etihadwe_tenders": etihadwe,
+            "email_alerts": mail, "page_watch": watch,
             "kuwait_capt": lambda url, **kw: "<html></html>", "pc_relay": lambda url, **kw: "",
             "rss_feeds": lambda url, **kw: "", "web_pages": web, "detail": detail_all}
 

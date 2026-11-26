@@ -82,6 +82,12 @@ class Matcher:
                 in_title += 1 if th else 0
                 in_body += 0 if th else 1
                 info["disciplines"].append((did, ar))
+        if t.get("direct_invite"):
+            # An invitation e-mailed to the office's registered supplier account is always shown:
+            # the portal already filtered it by the categories the office registered for.
+            info["score"] = score = max(score + 4, 9)
+            info["level"], info["level_ar"] = next((k, lab) for thr, k, lab in LEVELS if score >= thr)
+            return True, info
         if not info["disciplines"] or (in_title == 0 and in_body < 2):
             info["reason"] = "لا يطابق تخصصات المكتب"
             return False, info

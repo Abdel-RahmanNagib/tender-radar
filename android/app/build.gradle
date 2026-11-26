@@ -1,0 +1,45 @@
+plugins {
+    id 'com.android.application'
+}
+
+// Built by .github/workflows/android.yml. Version and signing come from the workflow.
+android {
+    namespace 'com.cecegypt.tenderradar'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.cecegypt.tenderradar'
+        minSdk 26
+        targetSdk 34
+        versionCode Integer.parseInt(System.getenv('VERSION_CODE') ?: '1')
+        versionName System.getenv('VERSION_NAME') ?: '1.0'
+    }
+
+    signingConfigs {
+        release {
+            if (System.getenv('SIGNING_STORE')) {
+                storeFile file(System.getenv('SIGNING_STORE'))
+                storePassword System.getenv('SIGNING_PASS')
+                keyAlias 'tender-radar'
+                keyPassword System.getenv('SIGNING_PASS')
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig System.getenv('SIGNING_STORE') ? signingConfigs.release : signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}

@@ -24,7 +24,8 @@ const SOURCE_AR = { worldbank: 'البنك الدولي', etimad: 'منصة اع
   kuwait_capt: 'جهاز المناقصات – الكويت', pc_relay: 'من كمبيوتر المكتب', oman_tenderboard: 'مجلس المناقصات – عُمان',
   bahrain_tb: 'مجلس المناقصات – البحرين', ebrd_ecepp: 'البنك الأوروبي EBRD',
   uae_mof: 'الإمارات – الجهات الاتحادية', dubai_esupply: 'حكومة دبي – eSupply', abudhabi_adgpg: 'حكومة أبوظبي – ADGPG',
-  dewa_tenders: 'هيئة كهرباء ومياه دبي',
+  dewa_tenders: 'هيئة كهرباء ومياه دبي', etihadwe_tenders: 'الاتحاد للماء والكهرباء', email_alerts: 'دعوات الإيميل',
+  page_watch: 'صفحات تحت المراقبة',
   google_news: 'أخبار الطروحات', rss_feeds: 'خلاصات RSS', web_pages: 'بوابات حكومية وبنوك تنمية' };
 const EN = { stormwater: 'stormwater drainage', hydrology: 'hydrology and hydraulic modelling', sewer: 'sewerage and wastewater',
   water: 'water networks', irrigation: 'irrigation networks', roads: 'roads and highway design', pavement: 'pavement design',
@@ -480,6 +481,9 @@ function toast(msg) {
 /* ------------------------------------------------------------------ settings */
 const isStandalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
 const isIOS = () => /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const inApp = /TenderRadarAndroid/.test(navigator.userAgent);   // inside the Android app (it notifies by itself)
+const isAndroid = () => /android/i.test(navigator.userAgent);
+const APK_URL = 'https://github.com/Abdel-RahmanNagib/tender-radar/releases/latest/download/TenderRadar.apk';
 function renderSettings() {
   const o = prefs.office || {};
   const s = S.status;
@@ -496,7 +500,9 @@ function renderSettings() {
     <h1 class="d-title">الإعدادات</h1>
     <p><a class="btn btn--ghost btn--sm" href="guide.html">دليل التشغيل الكامل خطوة بخطوة</a></p>
     <section class="box" id="notify"><h3>الإشعارات على الموبايل والكمبيوتر</h3>
-      <p>ليصلك إشعار لكل فرصة جديدة حتى والتطبيق مغلق، نستخدم تطبيق <b>ntfy</b> المجاني (بدون حساب):</p>
+      ${inApp ? '<p class="ok"><b>الإشعارات تعمل من تطبيق أندرويد نفسه ✓</b> — يفحص كل ساعة ويرسل إشعاراً بكل فرصة جديدة. لو لم يصلك شيء: إعدادات الموبايل ← التطبيقات ← رادار المناقصات ← الإشعارات ← مسموح.</p><p class="small muted">لا تحتاج ntfy على هذا الموبايل. ما يلي للكمبيوتر أو الآيفون.</p>' : ''}
+      ${!inApp && isAndroid() ? `<p><a class="btn btn--sm" href="${APK_URL}">تحميل تطبيق أندرويد (APK)</a> <span class="small muted">— يصلك الإشعار مباشرة بدون ntfy.</span></p>` : ''}
+      <p>ليصلك إشعار لكل فرصة جديدة حتى والتطبيق مغلق${inApp || isAndroid() ? ' على الآيفون والكمبيوتر' : ''}، نستخدم تطبيق <b>ntfy</b> المجاني (بدون حساب):</p>
       <ol class="steps-mini">
         <li>ثبّت ntfy: <a href="https://play.google.com/store/apps/details?id=io.heckel.ntfy" target="_blank" rel="noopener">أندرويد</a> أو <a href="https://apps.apple.com/app/id1625396347" target="_blank" rel="noopener">آيفون</a>. على الكمبيوتر يكفي المتصفح.</li>
         <li>اكتب اسم قناة مكتبكم — نفس الاسم المحفوظ في GitHub باسم NTFY_TOPIC.</li>
@@ -513,11 +519,12 @@ function renderSettings() {
       ${perm === 'denied' ? '<p class="small bad">الإشعارات محظورة لهذا الموقع من إعدادات المتصفح.</p>' : ''}</section>
     <section class="box" id="install"><h3>تثبيت التطبيق على جهازك</h3>
       ${framed ? '<p class="note note--info">هذه نسخة عرض داخل صفحة أخرى، فلا يمكن تثبيتها. بعد التشغيل على GitHub افتحوا رابط تطبيقكم مباشرة وثبّتوه بالطريقة التالية.</p>' : ''}
-      ${isStandalone() ? '<p class="ok">التطبيق مثبّت على هذا الجهاز.</p>' : `
+      ${inApp ? '<p class="ok">أنت داخل تطبيق أندرويد ✓</p>' : isStandalone() ? '<p class="ok">التطبيق مثبّت على هذا الجهاز.</p>' : `
       ${S.installEvt ? `<p><button class="btn" data-act="install">تثبيت الآن</button></p>` : ''}
       <ul class="steps-mini">
-        <li><b>آيفون:</b> افتح الرابط من Safari ← زر المشاركة ⬆︎ ← «إضافة إلى الشاشة الرئيسية».</li>
-        <li><b>أندرويد:</b> افتح الرابط من Chrome ← القائمة ⋮ ← «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية».</li>
+        <li><b>أندرويد (تطبيق كامل بإشعارات):</b> <a href="${APK_URL}">حمّل TenderRadar.apk</a> ← افتح الملف بعد التحميل ← «تثبيت». لو طلب الموبايل إذناً: «السماح من هذا المصدر» للمتصفح ثم ارجع واضغط «تثبيت».</li>
+        <li><b>آيفون:</b> افتح الرابط من Safari ← زر المشاركة ⬆︎ ← «إضافة إلى الشاشة الرئيسية». يفتح كتطبيق مستقل بأيقونته، والإشعارات عبر تطبيق ntfy من App Store (الخطوات في قسم الإشعارات أعلاه).</li>
+        <li><b>أندرويد بدون تحميل ملفات:</b> افتح الرابط من Chrome ← القائمة ⋮ ← «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية».</li>
         <li><b>الكمبيوتر:</b> افتح الرابط من Chrome أو Edge ← أيقونة التثبيت في آخر شريط العنوان، أو القائمة ← «تثبيت رادار المناقصات».</li>
       </ul>`}</section>
     <section class="box"><h3>بيانات مكتبكم</h3><p class="small muted">تظهر كتوقيع في إيميلات الاستفسار الجاهزة. تُحفظ على هذا الجهاز فقط.</p>
@@ -541,7 +548,7 @@ function renderSettings() {
         ${pcLine}
         <p class="small" style="margin-top:10px">قنوات الإشعار المفعّلة على الخادم: ${['ntfy', 'telegram', 'email'].filter((k) => s.channels && s.channels[k]).map((k) => ({ ntfy: 'ntfy', telegram: 'تيليجرام', email: 'الإيميل' })[k]).join('، ') || '<span class="bad">لا شيء بعد — أضف NTFY_TOPIC في GitHub</span>'}</p>`
         : '<p class="muted">لا توجد بيانات حالة بعد.</p>'}</section>
-    <section class="box"><h3>عن البيانات</h3><p class="small">المصادر: البنك الدولي، منصة اعتماد، بوابة الأمم المتحدة UNGM، مجلس المناقصات العُماني، مجلس المناقصات بالبحرين، بوابات الإمارات (المنصة الاتحادية، eSupply دبي، ADGPG أبوظبي، وهيئة كهرباء ومياه دبي)، البنك الأوروبي لإعادة الإعمار EBRD، منصة مناقصات قطر وكامل قائمة مجلس المناقصات العُماني (يفحصهما مساعد كمبيوتر المكتب لأنهما يمنعان السيرفرات السحابية؛ والجهاز المركزي للمناقصات بالكويت يمنع الفحص الآلي فيُراجع من رابطه)، البنك الإسلامي للتنمية، وأخبار الطروحات. الأرقام والإيميلات مأخوذة من نص الإعلان نفسه، وأرقام الدعم الفني للبوابات من مواقعها الرسمية. راجعوا الإعلان الرسمي دائماً قبل التقديم.</p></section>`;
+    <section class="box"><h3>عن البيانات</h3><p class="small">المصادر: البنك الدولي، منصة اعتماد، بوابة الأمم المتحدة UNGM، مجلس المناقصات العُماني، مجلس المناقصات بالبحرين، بوابات الإمارات (المنصة الاتحادية، eSupply دبي، ADGPG أبوظبي، هيئة كهرباء ومياه دبي، الاتحاد للماء والكهرباء للإمارات الشمالية، وصفحات أشغال الفجيرة ورأس الخيمة)، ودعوات بوابات الموردين (أدنوك، قطار الاتحاد، الشارقة، عجمان...) المحوّلة من إيميل المكتب، البنك الأوروبي لإعادة الإعمار EBRD، منصة مناقصات قطر وكامل قائمة مجلس المناقصات العُماني (يفحصهما مساعد كمبيوتر المكتب لأنهما يمنعان السيرفرات السحابية؛ والجهاز المركزي للمناقصات بالكويت يمنع الفحص الآلي فيُراجع من رابطه)، البنك الإسلامي للتنمية، وأخبار الطروحات. الأرقام والإيميلات مأخوذة من نص الإعلان نفسه، وأرقام الدعم الفني للبوابات من مواقعها الرسمية. راجعوا الإعلان الرسمي دائماً قبل التقديم.</p></section>`;
 }
 function randomTopic() {
   const a = new Uint8Array(6); (crypto || window.msCrypto).getRandomValues(a);
@@ -683,9 +690,9 @@ async function toggleLocalNotify() {
 function renderBanner() {
   const b = [];
   if (S.data && S.data.demo) b.push('<div class="banner banner--demo"><span><b>نسخة عرض ببيانات تجريبية.</b> كل الجهات والأرقام والإيميلات هنا أمثلة وليست مناقصات حقيقية.</span></div>');
-  if (!framed && !isStandalone() && !prefs.dismiss.install && (S.installEvt || isIOS())) {
-    b.push(`<div class="banner banner--install"><span>ثبّت «رادار المناقصات» على جهازك ليفتح كبرنامج مستقل.</span>
-      <span>${S.installEvt ? '<button class="btn btn--sm" data-act="install">تثبيت</button>' : '<a class="btn btn--sm" href="#prefs">الطريقة</a>'}
+  if (!framed && !inApp && !isStandalone() && !prefs.dismiss.install && (S.installEvt || isIOS() || isAndroid())) {
+    b.push(`<div class="banner banner--install"><span>${isAndroid() ? 'حمّل تطبيق «رادار المناقصات» لأندرويد: يفتح كبرنامج ويرسل إشعاراً بكل فرصة جديدة.' : 'ثبّت «رادار المناقصات» على جهازك ليفتح كبرنامج مستقل.'}</span>
+      <span>${isAndroid() ? `<a class="btn btn--sm" href="${APK_URL}">تحميل التطبيق</a>` : S.installEvt ? '<button class="btn btn--sm" data-act="install">تثبيت</button>' : '<a class="btn btn--sm" href="#prefs">الطريقة</a>'}
       <button class="btn btn--ghost btn--sm" data-act="dismiss" data-k="install">لاحقاً</button></span></div>`);
   }
   $('#banner').innerHTML = b.join('');

@@ -29,7 +29,7 @@ XHR_HEADERS = {"X-Requested-With": "XMLHttpRequest", "Sec-Fetch-Dest": "empty", 
 TIMEOUT = 25
 
 
-def _send(opener, url, data=None, headers=None, method=None, retries=1, timeout=None):
+def _send(opener, url, data=None, headers=None, method=None, retries=1, timeout=None, binary=False):
     hdrs = dict(BROWSER_HEADERS)
     if headers:
         if headers.get("X-Requested-With"):
@@ -50,6 +50,8 @@ def _send(opener, url, data=None, headers=None, method=None, retries=1, timeout=
             req = urllib.request.Request(url, data=body, headers=hdrs, method=method)
             with opener(req, timeout=timeout or TIMEOUT) as r:
                 raw = r.read()
+                if binary:
+                    return raw
                 cs = r.headers.get_content_charset() or "utf-8"
                 return raw.decode(cs, errors="replace")
         except Exception as e:  # noqa: BLE001
@@ -63,6 +65,12 @@ def http(url, data=None, headers=None, method=None, retries=1, timeout=None):
     """GET/POST and return the body as text. `data` may be a dict (sent as JSON), str or bytes."""
     return _send(lambda req, timeout: urllib.request.urlopen(req, timeout=timeout, context=_CTX),
                  url, data, headers, method, retries, timeout)
+
+
+def http_bytes(url, headers=None, retries=1, timeout=None):
+    """GET a binary file (e.g. an .xls tender list) and return its bytes."""
+    return _send(lambda req, timeout: urllib.request.urlopen(req, timeout=timeout, context=_CTX),
+                 url, None, headers, None, retries, timeout, binary=True)
 
 
 class Session:

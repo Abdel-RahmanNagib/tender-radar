@@ -58,8 +58,8 @@ def matching():
     m_low = Matcher(profile, "low")
     w("## 1. Matching on real data")
     w(f"Date: {today} — min level in settings: `{settings.get('min_level')}`")
-    for name in ("uae_mof", "dubai_esupply", "abudhabi_adgpg", "dewa_tenders", "oman_tenderboard", "bahrain_tb",
-                 "ebrd_ecepp", "ungm"):
+    for name in ("etihadwe_tenders", "page_watch", "uae_mof", "dubai_esupply", "abudhabi_adgpg", "dewa_tenders",
+                 "oman_tenderboard", "bahrain_tb", "ebrd_ecepp", "ungm"):
         t0 = time.time()
         try:
             items = COLLECTORS[name](profile["sources"].get(name, {}), countries)
@@ -180,6 +180,30 @@ def probe(url, headers, ctx, data=None, extra=None):
         return f"ERR {esc(e, 80)} ({time.time() - t0:.1f}s)"
 
 
+AJMAN_TAWREED = "https://tawreed.ajman.ae/ords/r/tawreed_fusion/isupplier-dof109109/tender-details"
+MOEI_PAGE = "https://www.moei.gov.ae/en/services/participate-in-engineering-project-tenders"
+
+
+def excerpts():
+    """Text of portals the office PC cannot open (geo-blocked from Egypt), to see whether a public list exists."""
+    w("\n## 3. What some portals show to GitHub")
+    for name, url in (("Ajman Tawreed", AJMAN_TAWREED), ("Sharjah SFD eProcurement", "https://eprocurement.sfd.gov.ae/"),
+                      ("MOEI engineering tenders", MOEI_PAGE)):
+        try:
+            req = urllib.request.Request(url, headers=CHROME)
+            with urllib.request.urlopen(req, timeout=25, context=ctx_default()) as r:
+                body = r.read(600000).decode("utf-8", "replace")
+                final = r.geturl()
+        except Exception as e:  # noqa: BLE001
+            w(f"\n**{name}**: {esc(e, 120)}")
+            continue
+        text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", re.sub(r"<(script|style)[\s\S]*?</\1>", " ", body, flags=re.I)))
+        links = re.findall(r'<a[^>]+href="([^"]+)"[^>]*>([^<]{3,80})</a>', body)
+        w(f"\n**{name}** → {esc(final, 120)} ({len(body)} chars, {len(re.findall('<tr', body, re.I))} rows)\n")
+        w("```\n" + text[:1500].replace("`", "'") + "\n```")
+        w("links: " + " · ".join(esc(f"{t.strip()} ({u})", 90) for u, t in links[:25]))
+
+
 def reachability():
     w("\n## 2. Reachability of blocked portals from GitHub")
     ungm_body = json.dumps({"PageIndex": 0, "PageSize": 15, "Title": "", "Description": "", "Reference": "",
@@ -201,6 +225,14 @@ def reachability():
         ("Abu Dhabi ADGPG", "https://www.adgpg.gov.ae/SCAPI/ADGEs/AlMaqtaa/Tender/List", adgpg,
          {**form, "Origin": "https://supplier.adgpg.gov.ae"}),
         ("DEWA", "https://www.dewa.gov.ae/en/supplier/services/list-of-tender-documents", None, None),
+        ("EtihadWE list (.xls)", "https://etihadwe.ae/Documents/rfpexcel/Event%20Status%20Report%20for%20Digital%20team.xls",
+         None, None),
+        ("Ajman Tawreed", AJMAN_TAWREED, None, None),
+        ("Sharjah SFD eProcurement", "https://eprocurement.sfd.gov.ae/", None, None),
+        ("MOEI engineering tenders", MOEI_PAGE, None, None),
+        ("Fujairah Public Works", "https://pwad.fujairah.ae/en/tenders", None, None),
+        ("RAK Coupa events", "https://supplier.coupahost.com/quotes/public_events?customer=psd_rak", None, None),
+        ("ADNOC suppliers", "https://www.adnoc.ae/en/suppliers", None, None),
         ("Qatar Monaqasat", "https://monaqasat.mof.gov.qa/TendersOnlineServices/SearchTenders/1", None, None),
         ("Kuwait CAPT", "https://capt.gov.kw/en/tenders/opening-tenders/", None, None),
         ("Oman Tender Board", "https://etendering.tenderboard.gov.om/product/publicDash?viewFlag=NewTenders", None,
@@ -227,6 +259,10 @@ def main():
         reachability()
     except Exception as e:  # noqa: BLE001
         w(f"reachability failed: {e}")
+    try:
+        excerpts()
+    except Exception as e:  # noqa: BLE001
+        w(f"excerpts failed: {e}")
     try:
         matching()
     except Exception as e:  # noqa: BLE001

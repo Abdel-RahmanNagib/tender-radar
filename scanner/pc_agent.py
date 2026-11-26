@@ -19,6 +19,7 @@ if os.name == "nt":  # QGIS/ArcGIS Python: SSL libraries live in the program's b
             except OSError:
                 pass
 
+import hashlib  # noqa: E402
 import json  # noqa: E402
 import platform  # noqa: E402
 import subprocess  # noqa: E402
@@ -104,6 +105,32 @@ def load_key(home):
     return secret, public
 
 
+def mail_topic(secret):
+    """Private ntfy topic for forwarded tender e-mails. It comes from this PC's private key, so it is
+    known only here and never appears in the public repository."""
+    return "trmail-" + hashlib.sha256(secret + b"/tender-mail").hexdigest()[:24]
+
+
+def write_mail_address(home, topic, server):
+    host = urllib.parse.urlparse(server).netloc or "ntfy.sh"
+    text = ("عنوان تحويل إيميلات المناقصات\r\n"
+            "==============================\r\n\r\n"
+            f"ntfy-{topic}@{host}\r\n\r\n"
+            "اعمل قاعدة (Rule / Filter) في إيميل الشركة تحوّل لهذا العنوان رسائل بوابات الموردين\r\n"
+            "(أدنوك/SAP Ariba، قطار الاتحاد، الشارقة، عجمان توريد، رأس الخيمة Coupa، وزارة الطاقة...).\r\n"
+            "مساعد الكمبيوتر يقرأها كل ساعة ويحوّل الدعوات لإشعارات في التطبيق.\r\n"
+            "لا تنشر هذا العنوان: أي شخص يعرفه يقدر يقرأ الرسائل المحوّلة إليه خلال 12 ساعة.\r\n")
+    path = os.path.join(home, "EMAIL-FORWARD-ADDRESS.txt")
+    try:
+        with open(path, encoding="utf-8-sig", newline="") as f:
+            if f.read() == text:
+                return
+    except OSError:
+        pass
+    with open(path, "w", encoding="utf-8-sig", newline="") as f:
+        f.write(text)
+
+
 def worth_opening(m, t):
     """Open a Qatar notice page only if the title hints at consulting work or one of the disciplines."""
     title = norm(t.get("title", "") + " " + t.get("description", ""))
@@ -121,15 +148,21 @@ def main(home=None):
     today = date.today()
     log(f"[{utc_now_iso()}] office-PC scan — key {public[:12]}…")
 
+    server = rcfg.get("server", "https://ntfy.sh")
+    topic = mail_topic(secret)
+    write_mail_address(home, topic, server)
     items, status = [], []
-    for name in rcfg.get("pc_sources", ["monaqasat", "oman_tenderboard"]):
+    for name in list(rcfg.get("pc_sources", ["monaqasat", "oman_tenderboard"])) + ["email_alerts"]:
         fn = COLLECTORS.get(name)
         if not fn:
             continue
+        cfg = profile["sources"].get(name, {})
+        if name == "email_alerts":  # forwarded supplier-portal e-mails, on this PC's private topic
+            cfg = {**cfg, "server": server, "topic": topic, "window": "12h"}
         t0 = time.time()
         try:
             kw = {} if name in OWN_SESSION else {"fetch": pc_fetch}  # these keep cookies between pages
-            got = fn(profile["sources"].get(name, {}), countries, **kw)
+            got = fn(cfg, countries, **kw)
         except Exception as e:  # noqa: BLE001
             status.append({"key": name, "count": 0, "ok": False, "error": str(e)[:200]})
             log(f"  {name}: failed ({e})")

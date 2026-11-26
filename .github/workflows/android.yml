@@ -1,0 +1,90 @@
+# تطبيق أندرويد لرادار المناقصات – يُبنى هنا وينزل كملف APK في Releases:
+#   https://github.com/<owner>/<repo>/releases/latest/download/TenderRadar.apk
+# التطبيق يعرض نفس صفحات الرادار، ويفحص كل ساعة ويرسل إشعاراً بكل فرصة جديدة (بدون ntfy).
+# مفتاح التوقيع يُنشأ مرة واحدة ويُحفظ في Release من نوع Draft (خاص بأصحاب المستودع فقط) حتى تُثبَّت التحديثات فوق
+# النسخة القديمة. لا تنشر هذا الـ Release.
+name: Android app
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "android/**"
+      - ".github/workflows/android.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-app
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.10.2"
+
+      - name: App icons from the web app
+        run: |
+          mkdir -p android/app/src/main/res/drawable-nodpi
+          cp app/icons/maskable-512.png android/app/src/main/res/drawable-nodpi/ic_launcher_fg.png
+
+      - name: Signing key (private draft release)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          dir="$RUNNER_TEMP/signing"; mkdir -p "$dir"
+          rel=$(gh api "repos/$GITHUB_REPOSITORY/releases?per_page=100" --jq '[.[] | select(.tag_name == "app-signing-key")][0].id // empty')
+          if [ -n "$rel" ]; then
+            for name in tender-radar.jks tender-radar.pass; do
+              aid=$(gh api "repos/$GITHUB_REPOSITORY/releases/$rel/assets" --jq ".[] | select(.name == \"$name\") | .id")
+              gh api -H "Accept: application/octet-stream" "repos/$GITHUB_REPOSITORY/releases/assets/$aid" > "$dir/$name"
+            done
+            echo "Using the saved signing key"
+          else
+            pass=$(openssl rand -hex 16)
+            keytool -genkeypair -keystore "$dir/tender-radar.jks" -storepass "$pass" -keypass "$pass" \
+              -alias tender-radar -keyalg RSA -keysize 2048 -validity 10950 \
+              -dname "CN=Tender Radar, O=CEC Egypt - Delta Office, C=EG"
+            printf '%s' "$pass" > "$dir/tender-radar.pass"
+            gh release create app-signing-key --draft --title "Android signing key - private, never publish" \
+              --notes "Used by the Android build so that every update installs over the previous version. Keep it a draft." \
+              "$dir/tender-radar.jks" "$dir/tender-radar.pass"
+            echo "Created a new signing key"
+          fi
+          pass=$(cat "$dir/tender-radar.pass")
+          echo "::add-mask::$pass"
+          echo "SIGNING_STORE=$dir/tender-radar.jks" >> "$GITHUB_ENV"
+          echo "SIGNING_PASS=$pass" >> "$GITHUB_ENV"
+
+      - name: Build the APK
+        working-directory: android
+        env:
+          VERSION_CODE: ${{ github.run_number }}
+          VERSION_NAME: 1.0.${{ github.run_number }}
+        run: gradle --no-daemon --stacktrace assembleRelease
+
+      - name: Publish the APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cp android/app/build/outputs/apk/release/app-release.apk TenderRadar.apk
+          tag="android-v1.0.${{ github.run_number }}"
+          gh release create "$tag" TenderRadar.apk --latest \
+            --title "تطبيق أندرويد – الإصدار 1.0.${{ github.run_number }}" \
+            --notes "حمّل TenderRadar.apk على الموبايل وافتحه للتثبيت (اسمح بالتثبيت من المتصفح عند السؤال). التحديثات تُثبّت فوق النسخة القديمة."
+          echo "### APK: https://github.com/$GITHUB_REPOSITORY/releases/latest/download/TenderRadar.apk" >> "$GITHUB_STEP_SUMMARY"
