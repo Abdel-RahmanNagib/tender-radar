@@ -1,8 +1,642 @@
 {
-"generated":"2026-11-26T13:42:03+00:00",
+"generated":"2026-11-26T15:18:07+00:00",
 "office":"CEC Egypt – Delta Office – Infrastructure",
-"count":13,
+"count":16,
 "tenders":[
+{
+"id":"monaqasat-d114b99f2a",
+"uid":"monaqasat:5822/2026",
+"first_seen":"2026-11-26T15:18:07+00:00",
+"updated":"2026-11-26T15:18:07+00:00",
+"source_key":"monaqasat",
+"source":"منصة مناقصات – قطر",
+"kind":"rfp",
+"notice_type":"Public Tender",
+"notice_type_ar":"مناقصة عامة",
+"title":"PROFESSIONAL SERVICES CONTRACT (PSC) FOR SUPERVISION OF ROADS AND INFRASTRUCTURE IN AL KHEESA NORTH& EAST (RAWDAT AL HAMAMA DISTRICT) P03\nPA 2026 S 005 S\n(SERVICE PROVIDERS/CIVIL ENGINEERING-ELECTRICAL ENGINEERING-ENGINEERING WORKS SERVICES/GRADE 1,2,3,4,5/COMPANY ALL)\nFOR MORE INFORMATION VISIT ASHGHAL WEBSITE\nWWW.ASHGHAL.GOV.QA",
+"is_arabic":false,
+"summary":"PROFESSIONAL SERVICES CONTRACT (PSC) FOR SUPERVISION OF ROADS AND INFRASTRUCTURE IN AL KHEESA NORTH & EAST (RAWDAT AL HAMAMA DISTRICT) – P03",
+"country":"Qatar",
+"country_ar":"قطر",
+"flag":"🇶🇦",
+"client":"Public Works Authority",
+"reference":"5822/2026",
+"published":null,
+"deadline":"2026-12-13",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"11,000.00 ريال قطري",
+"guarantee":"2,100,000.00 QAR",
+"contract_duration":"54",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":14,
+"disciplines":[
+"الطرق والتصميم الهندسي",
+"المرافق والبنية التحتية"
+],
+"ids":[
+"roads",
+"utilities"
+]
+},
+"dates":[
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-13",
+"date_ar":"الأحد 13 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Public Works Authority",
+"emails":[],
+"phones":[
+{
+"display":"000.00 13/12/2026",
+"tel":"+00013122026",
+"whatsapp":""
+}
+],
+"address":"",
+"website":""
+},
+{
+"title":"منصة مناقصات – وزارة المالية القطرية",
+"website":"https://monaqasat.mof.gov.qa",
+"note":"كثير من الإعلانات تذكر إيميل الجهة للاستفسار داخل وصف المناقصة نفسها.",
+"phones":[],
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":true
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":true
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[
+"Companies wishing to participate in government tenders must be classified.",
+"Updates will be announced on the website - The Ministry of Finance announces the postponement of the mandatory submission of the ICV certificate as a condition for participating in government tenders until the beginning of 2027.",
+"However, The Ministry of Finance encourages you to initiate the process to obtain ICV Certificate, and you can access the required information through the Monaqasat Portal",
+"Those wishing to submit their bids may obtain the offering documents from the unified website for state procurement using their login data ( the email registered in the classification program ) after paying the value of the prescribed documents by clicking on the (buy) icon.",
+"In the event that the conditions provide for the submission of an initial guarantee, a temporary security shall be attached to the bid, in the name of the government authority to the Committee, by an acceptable payable cheque (manager’s cheque) or by virtue of a bank guarantee letter issued by a local or accredaited bank, not accompanied by any restriction or condition, and valid for the entire performance,"
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"قيمة الوثائق: 11,000.00 ريال قطري.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-12-03",
+"due_ar":"الخميس 3 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-06",
+"due_ar":"الأحد 6 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-08",
+"due_ar":"الثلاثاء 8 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-09",
+"due_ar":"الأربعاء 9 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-11",
+"due_ar":"الجمعة 11 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد).",
+"due":"2026-12-12",
+"due_ar":"السبت 12 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://monaqasat.mof.gov.qa/TendersOnlineServices/TenderDetails/662077"
+}
+],
+"excerpt":"PROFESSIONAL SERVICES CONTRACT (PSC) FOR SUPERVISION OF ROADS AND INFRASTRUCTURE IN AL KHEESA NORTH& EAST (RAWDAT AL HAMAMA DISTRICT) P03\nPA 2026 S 005 S\n(SERVICE PROVIDERS/CIVIL ENGINEERING-ELECTRICAL ENGINEERING-ENGINEERING WORKS SERVICES/GRADE 1,2,3,4,5/COMPANY ALL)\nFOR MORE INFORMATION VISIT ASHGHAL WEBSITE\nWWW.ASHGHAL.GOV.QA | PROFESSIONAL SERVICES CONTRACT (PSC) FOR SUPERVISION OF ROADS AND INFRASTRUCTURE IN AL KHEESA NORTH & EAST (RAWDAT AL HAMAMA DISTRICT) – P03 | Suppliers / Service Providers | Civil engineering offices، Engineering offices for electrical, excavation, security, safety and chemical projects\nTender Details - Monaqasat | The Unified Website of State Procurement\nThe Unified Website of State Procurement\nLogin\nFAQ\nContact Us\nCreate Support Ticket\nالعربية\nHome\nWho Are We\nQatar Vision 2030\nServices\nClassification services\nTenders Services\nDispute Resolution Service\nSearch Company\nRegulations and laws\nCompanies wishing to participate in government tenders must be classified. Please note that linking tender financial ceilings to company financial limits for suppliers and service providers has been postponed to allow more companies to meet the advanced classification requirements. Updates will be announced on the website - The Ministry of Finance announces the postponement of the mandatory submission of the ICV certificate as a condition for participating in government tenders until the beginning of 2027. You will be notified of the specific date. However, The Ministry of Finance encourages you to initiate the process to obtain ICV Certificate, and you can access the required information through the Monaqasat Portal\nHome\nTenders Online Services\nTender Details\nAnnouncement Number: 25282\nDate: 26/11/2026\nTender Announcement\nTime remaining till tender closure 16 Day, 18 Hour And 41 Minute\nTender number\nType\nSubject\nMinistry\nEntity's tender number\nRequest Types\nEnvelopes system\nTender Bond\nDocuments value (QR)\nClosing Date\n5822/2026\nPublic Tender\nPROFESSIONAL SERVICES CONTRACT (PSC) FOR SUPERVISION OF ROADS AND INFRASTRUCTURE IN AL KHEESA NORTH& EAST (RAWDAT AL HAMAMA DISTRICT) P03\nPA 2026 S 005 S\n(SERVICE PROVIDERS/CIVIL ENGINEERING-ELECTRICAL ENGINEERING-ENGINEERING WORKS SERVICES/GRADE 1,2,3,4,5/COMPANY ALL)\nFOR MORE INFORMATION VISIT ASHGHAL WEBSITE\nWWW.ASHGHAL.GOV.QA\nPublic Works Authority\nPWA/STC/49/2026\nSuppliers / Service Providers\nTwo Envelopes\n2,100,000.00\n11,000.00\n13/12/2026\nBrief Description\nTargeted Tenderer Type\nService Delivery M",
+"notes":[]
+},
+{
+"id":"monaqasat-2e3793a1d2",
+"uid":"monaqasat:5945/2026",
+"first_seen":"2026-11-26T15:18:07+00:00",
+"updated":"2026-11-26T15:18:07+00:00",
+"source_key":"monaqasat",
+"source":"منصة مناقصات – قطر",
+"kind":"rfp",
+"notice_type":"Public Tender",
+"notice_type_ar":"مناقصة عامة",
+"title":"NEW CONSULTANCY SUPERVISION SERVICES 15C FOR ROADS AND INFRASTRUCTURE IN AL KHEESA (PA/2026/S/008/S)\n(SERVICES PROVIDERS-GRADE 1-2-3-4-5-LOCAL AND FOREIGN COMPANIES)\nMORE INFORMATION VISIT ASHGHAL WEBSITE.WWW.ASHGHAL.GOV.QA",
+"is_arabic":false,
+"summary":"New Consultancy Supervision Services-15C For Roads and Infrastructure in Al Kheesa",
+"country":"Qatar",
+"country_ar":"قطر",
+"flag":"🇶🇦",
+"client":"Public Works Authority",
+"reference":"5945/2026",
+"published":null,
+"deadline":"2026-12-20",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"5,500.00 ريال قطري",
+"guarantee":"1,200,000.00 QAR",
+"contract_duration":"55",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":14,
+"disciplines":[
+"الطرق والتصميم الهندسي",
+"المرافق والبنية التحتية"
+],
+"ids":[
+"roads",
+"utilities"
+]
+},
+"dates":[
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-20",
+"date_ar":"الأحد 20 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Public Works Authority",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"لم تُذكر أرقام أو إيميلات في البيانات المتاحة — افتح الإعلان الرسمي لمعرفة جهة التواصل."
+},
+{
+"title":"منصة مناقصات – وزارة المالية القطرية",
+"website":"https://monaqasat.mof.gov.qa",
+"note":"كثير من الإعلانات تذكر إيميل الجهة للاستفسار داخل وصف المناقصة نفسها.",
+"phones":[],
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":true
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":true
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":false
+}
+],
+"conditions":[
+"Companies wishing to participate in government tenders must be classified.",
+"Updates will be announced on the website - The Ministry of Finance announces the postponement of the mandatory submission of the ICV certificate as a condition for participating in government tenders until the beginning of 2027.",
+"However, The Ministry of Finance encourages you to initiate the process to obtain ICV Certificate, and you can access the required information through the Monaqasat Portal",
+"Those wishing to submit their bids may obtain the offering documents from the unified website for state procurement using their login data ( the email registered in the classification program ) after paying the value of the prescribed documents by clicking on the (buy) icon.",
+"In the event that the conditions provide for the submission of an initial guarantee, a temporary security shall be attached to the bid, in the name of the government authority to the Committee, by an acceptable payable cheque (manager’s cheque) or by virtue of a bank guarantee letter issued by a local or accredaited bank, not accompanied by any restriction or condition, and valid for the entire performance,"
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"قيمة الوثائق: 5,500.00 ريال قطري.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-12-10",
+"due_ar":"الخميس 10 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-13",
+"due_ar":"الأحد 13 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-15",
+"due_ar":"الثلاثاء 15 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-16",
+"due_ar":"الأربعاء 16 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-18",
+"due_ar":"الجمعة 18 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد).",
+"due":"2026-12-19",
+"due_ar":"السبت 19 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://monaqasat.mof.gov.qa/TendersOnlineServices/TenderDetails/662200"
+}
+],
+"excerpt":"NEW CONSULTANCY SUPERVISION SERVICES 15C FOR ROADS AND INFRASTRUCTURE IN AL KHEESA (PA/2026/S/008/S)\n(SERVICES PROVIDERS-GRADE 1-2-3-4-5-LOCAL AND FOREIGN COMPANIES)\nMORE INFORMATION VISIT ASHGHAL WEBSITE.WWW.ASHGHAL.GOV.QA | New Consultancy Supervision Services-15C For Roads and Infrastructure in Al Kheesa | Suppliers / Service Providers | Other metal processing and plating activities and metal mechanical engineering processes، Engineering offices for electrical, excavation, security, safety and chemical projects، Civil engineering offices، Engineering and architectural consulting offices\nTender Details - Monaqasat | The Unified Website of State Procurement\nThe Unified Website of State Procurement\nLogin\nFAQ\nContact Us\nCreate Support Ticket\nالعربية\nHome\nWho Are We\nQatar Vision 2030\nServices\nClassification services\nTenders Services\nDispute Resolution Service\nSearch Company\nRegulations and laws\nCompanies wishing to participate in government tenders must be classified. Please note that linking tender financial ceilings to company financial limits for suppliers and service providers has been postponed to allow more companies to meet the advanced classification requirements. Updates will be announced on the website - The Ministry of Finance announces the postponement of the mandatory submission of the ICV certificate as a condition for participating in government tenders until the beginning of 2027. You will be notified of the specific date. However, The Ministry of Finance encourages you to initiate the process to obtain ICV Certificate, and you can access the required information through the Monaqasat Portal\nHome\nTenders Online Services\nTender Details\nAnnouncement Number: 25332\nDate: 26/11/2026\nTender Announcement\nTime remaining till tender closure 23 Day, 18 Hour And 41 Minute\nTender number\nType\nSubject\nMinistry\nEntity's tender number\nRequest Types\nEnvelopes system\nTender Bond\nDocuments value (QR)\nClosing Date\n5945/2026\nPublic Tender\nNEW CONSULTANCY SUPERVISION SERVICES 15C FOR ROADS AND INFRASTRUCTURE IN AL KHEESA (PA/2026/S/008/S)\n(SERVICES PROVIDERS-GRADE 1-2-3-4-5-LOCAL AND FOREIGN COMPANIES)\nMORE INFORMATION VISIT ASHGHAL WEBSITE.WWW.ASHGHAL.GOV.QA\nPublic Works Authority\nPWA/STC/52/2026\nSuppliers / Service Providers\nTwo Envelopes\n1,200,000.00\n5,500.00\n20/12/2026\nBrief Description\nTargeted Tenderer Type\nService Delivery Method\nAuction Type\nLocal Value System\nTender Validity Period\nEvaluation Basis\nNew Consultancy Supervision Services-15C For Roads and In",
+"notes":[]
+},
+{
+"id":"bh-8bc382c426",
+"uid":"bh:233470306",
+"first_seen":"2026-11-26T15:18:07+00:00",
+"updated":"2026-11-26T15:18:07+00:00",
+"source_key":"bahrain_tb",
+"source":"مجلس المناقصات والمزايدات – البحرين",
+"kind":"rfp",
+"notice_type":"Internal",
+"notice_type_ar":"Internal",
+"title":"Provision of Hydraulic Modelling Software Licenses, Training and Technical Support",
+"is_arabic":false,
+"summary":"Tender Board - Kingdom of Bahrain\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating …",
+"country":"Bahrain",
+"country_ar":"البحرين",
+"flag":"🇧🇭",
+"client":"Electricity and Water Authority",
+"reference":"2026-195-RPI-WDD",
+"published":"2026-11-18",
+"deadline":"2026-12-22",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":8,
+"disciplines":[
+"الهيدرولوجيا والنمذجة الهيدروليكية"
+],
+"ids":[
+"hydrology"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-18",
+"date_ar":"الأربعاء 18 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-22",
+"date_ar":"الثلاثاء 22 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Electricity and Water Authority",
+"emails":[
+"helpdesk@tenderboard.gov.bh",
+"info@tenderboard.gov.bh"
+],
+"phones":[
+{
+"display":"+97317566666",
+"tel":"+97317566666",
+"whatsapp":""
+},
+{
+"display":"+973 1758 7855",
+"tel":"+97317587855",
+"whatsapp":""
+}
+],
+"address":"",
+"website":"https://etendering.tenderboard.gov.bh"
+},
+{
+"title":"مجلس المناقصات والمزايدات – البحرين (الدعم الفني)",
+"phones":[
+{
+"display":"+973 1756 6666",
+"tel":"+97317566666",
+"whatsapp":""
+}
+],
+"emails":[
+"helpdesk@tenderboard.gov.bh",
+"info@tenderboard.gov.bh"
+],
+"website":"https://etendering.tenderboard.gov.bh",
+"hours":"الأحد–الأربعاء 7:00–14:15، الخميس 7:00–14:00",
+"source":"بوابة المناقصات الإلكترونية – البحرين",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":true
+}
+],
+"conditions":[
+"The purpose of this tender is to obtain the most competitive offer for the supply and maintain an additional five InfoWater Basic Licenses for Two years in accordance with the scope of work, terms and conditions, and specifications mentioned in the tender documents.",
+", تهدف هذه المنافسة للحصول على أفضل العروض التنافسية لتوريد 5 تراخيص إضافية مع الصيانة السنوية لمدة سنتين وفقاً لنطاق العمل، الشروط، والأحكام والمواصفات المذكورة في وثائق المنافسة",
+"For Two-envelope tenders, bidders, are requested to attach the initial bond as stated above and it must be included within the technical bid.",
+"The initial bond should be in the form of a Certified Cheque, Bank Guarantee, Insurance Policy or Bank Transfer (or as specified in the Tender Documents) valid for the duration specified above.",
+"If the bidder chooses to submit the initial bond in the form of a Bank transfer, the guarantee amount must be provided as a fixed amount mentioned and not as a percentage of the bid value.",
+"Small and Medium Enterprises (SMEs)are eligible to obtain 10% preference in the financial evaluation stage when participating in tenders, and in auctions related to service facilities within government entities premises, however this shall not apply to tenders of a special nature.",
+"SMEs bidders shall submit along with their bids the valid SMEs Certificate issued by the Ministry of Industry and Commerce, which can be obtained through the following link ( https://www.moic.gov.bh/index.php/en/sme_services )",
+"Vendors who are not registered in the Tender Board's e-tendering system shall be required to register through the link (Supplier Registration) , and for assistance please contact the Tender Board through email helpdesk@tenderboard.gov.bh or call on Tel No. +97317566666 ."
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-12-12",
+"due_ar":"السبت 12 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-15",
+"due_ar":"الثلاثاء 15 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-17",
+"due_ar":"الخميس 17 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-18",
+"due_ar":"الجمعة 18 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-20",
+"due_ar":"الأحد 20 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد).",
+"due":"2026-12-21",
+"due_ar":"الاثنين 21 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://www.tenderboard.gov.bh/TenderDetails/?id=31%2f2026%2fEWA+(2026-195-RPI-WDD)"
+}
+],
+"excerpt":"Provision of Hydraulic Modelling Software Licenses, Training and Technical Support | Electricity and Water Authority\nTender Board - Kingdom of Bahrain\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating Partnerships Between Public and Private Sectors\nTenders Published Tenders\nTo be Opened This Week\nTender Opening Results\nLive Opening\nAwarded Tenders\nPrequalified Vendors\nProcurement Plans\nArchived Tenders\nServices Process\neForms\nTraining Courses\nStandard Electronic Request Template\nStandard Electronic Report\nMedia News\nAnnual Reports\nFAQ Supplier FAQ\nGeneral FAQ\neTendering Login\nCreate an Account in eTendering\nعربي\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating Partnerships Between Public and Private Sectors\nTenders Published Tenders\nTo be Opened This Week\nTender Opening Results\nLive Opening\nAwarded Tenders\nPrequalified Vendors\nProcurement Plans\nArchived Tenders\nServices Process\neForms\nTraining Courses\nStandard Electronic Request Template\nStandard Electronic Report\nMedia News\nAnnual Reports\nFAQ Supplier FAQ\nGeneral FAQ\nSearch\nTender Details\nHome\nTender Details\nProvision of Hydraulic Modelling Software Licenses, Training and Technical Support\nTender Number: 31/2026/EWA (2026-195-RPI-WDD)\nPA Ref Number: 2026-195-RPI-WDD\nTender Description\nThe purpose of this tender is to obtain the most competitive offer for the supply and maintain an additional five InfoWater Basic Licenses for Two years in accordance with the scope of work, terms and conditions, and specifications mentioned in the tender documents.\nIssued by\nElectricity and Water Authority\nInternal/External\nInternal\nInvitation Method\nPublic (LOCAL GCC)\nClassification/CPV Codes\n-->\n72000000-5 - IT services: consulting, software development, Internet and support\n-->\nInitial Bond\nBD 500\nBid Validity / Initial Bond Validity Period (Days)\n180 days\nTender Fees\nBD 15\nContract Duration\n2 Year\nIs Alternate Bid Allowed\nNo\nPublish Date\nWednesday, 18 November 2026\nPurchase Before\nSunday, 06 December 2026\nClosing Date\nTuesday, 22 December 2026\nOpening Date\nWednesd",
+"notes":[]
+},
 {
 "id":"wb-25a2f3869c",
 "uid":"wb:OP00030811",
