@@ -1,8 +1,2182 @@
 {
-"generated":"2026-11-26T12:15:05+00:00",
+"generated":"2026-11-26T13:09:49+00:00",
 "office":"CEC Egypt – Delta Office – Infrastructure",
-"count":2,
+"count":13,
 "tenders":[
+{
+"id":"wb-25a2f3869c",
+"uid":"wb:OP00030811",
+"first_seen":"2026-11-26T13:09:49+00:00",
+"updated":"2026-11-26T13:09:49+00:00",
+"source_key":"worldbank",
+"source":"البنك الدولي",
+"kind":"eoi",
+"notice_type":"Request for Expression of Interest",
+"notice_type_ar":"طلب إبداء اهتمام (EOI)",
+"title":"Preparing Master Plan for Aden Water Supply and Sanitation Local Corporation",
+"is_arabic":false,
+"summary":"Yemen-Water Sector Support",
+"country":"Yemen",
+"country_ar":"اليمن",
+"flag":"🇾🇪",
+"client":"WSSP/UWSS Sub- Sector",
+"reference":"ADNMPCS-1",
+"published":"2015-01-06",
+"deadline":null,
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"Quality And Cost-Based Selection",
+"method_ar":"الاختيار على أساس الجودة والتكلفة (QCBS)",
+"activity":"",
+"funding":"البنك الدولي – مشروع P107037",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":19,
+"disciplines":[
+"الصرف الصحي ومحطات الرفع",
+"شبكات مياه الشرب",
+"الطرق والتصميم الهندسي",
+"المرافق والبنية التحتية"
+],
+"ids":[
+"sewer",
+"water",
+"roads",
+"utilities"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2015-01-06",
+"date_ar":"الثلاثاء 6 يناير 2015",
+"kind":"published",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"Engineer Jamal Al Sayadi",
+"org":"WSSP/UWSS Sub- Sector",
+"emails":[
+"uwsspmu@gmail.com"
+],
+"phones":[
+{
+"display":"+ 967 1 425253",
+"tel":"+9671425253",
+"whatsapp":""
+},
+{
+"display":"+ 967 1 425253/4",
+"tel":"+96714252534",
+"whatsapp":""
+}
+],
+"address":"Villa, No.33-AlSermi Street, \n\nNorth Al-Dewan Restaurant,\n\nHadda,Sana’a,\n\nRepublic of Yemen",
+"website":""
+}
+],
+"inquiry_how":"أرسلوا الاستفسار كتابةً بالإيميل لجهة التواصل واذكروا الرقم المرجعي.",
+"documents":[
+{
+"title":"خطاب إبداء الاهتمام",
+"detail":"موقّع ومختوم من المفوَّض بالتوقيع، موجّه لجهة التواصل، ويذكر اسم المهمة ورقمها المرجعي.",
+"from_notice":false
+},
+{
+"title":"الملف التعريفي للمكتب",
+"detail":"سنة التأسيس، الفروع، عدد المهندسين، التخصصات، والبرامج المستخدمة.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة",
+"detail":"آخر 10 سنوات: اسم المشروع، العميل، الدولة، القيمة، المدة، ونطاق عملكم تحديداً.",
+"from_notice":false
+},
+{
+"title":"شهادات إنجاز أو خطابات العملاء",
+"detail":"لأهم المشاريع المماثلة إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية",
+"detail":"السجل التجاري أو ترخيص المكتب الاستشاري، وشهادة القيد بنقابة المهندسين أو الهيئة المختصة.",
+"from_notice":false
+},
+{
+"title":"القدرات الفنية والإدارية",
+"detail":"الهيكل التنظيمي، عدد الفنيين، البرامج (Civil 3D، InfoWorks/SWMM، HEC-RAS، WaterGEMS، BIM)، وشهادات ISO إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"خطاب التحالف أو الاستشاري الفرعي",
+"detail":"فقط إذا ستتقدمون مع شريك: يحدد الشريك ونوع الشراكة (JV أو Sub-consultant).",
+"from_notice":false
+},
+{
+"title":"إقرار الأهلية وعدم تعارض المصالح",
+"detail":"حسب قواعد الجهة الممولة.",
+"from_notice":false
+}
+],
+"conditions":[
+"The Project Management Unit of Urban Water Supply and Sanitation Sub-Sector, the Ministry of Water and Environment now invite eligible consultants firm to indicate their interest in providing the services.",
+"Interested consultants must provide information indicating that they are qualified and have the relevant qualifications and experience to perform the services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc.).",
+"The Shortlisting criteria are as follows:",
+"Demonstrate a successful experience as a consultingfirm over the last five years in handling similar projects (Master Plans for water and Sanitation Local Corporations).",
+"Expressions of interest must be delivered in a written form to the address below not later than January 25, 2015.",
+"The EOI is preferred to be delivered in one original and two hard copies in addition to one soft copy"
+],
+"doc_note":"",
+"submission_line":"طريقة التسليم كما وردت في الإعلان: «Expressions of interest must be delivered in a written form to the address below not later than January 25, 2015» – الإيميل: uwsspmu@gmail.com",
+"steps":[
+{
+"title":"اقرأ الإعلان وطابق شروط القائمة المختصرة مع خبراتكم",
+"detail":"الشروط مذكورة في تبويب «الأوراق». لو ينقصكم شرط خبرة، فكّروا في تحالف أو استشاري فرعي.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلب الشروط المرجعية (ToR) إن لم تكن مرفقة",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قرّروا طريقة التقديم: منفردين أم بتحالف",
+"detail":"واطلبوا خطاب النوايا من الشريك مبكراً.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا أي استفسار مكتوب",
+"detail":"يُفضّل قبل الموعد النهائي بـ 10 أيام على الأقل. استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"جهّزوا ملف إبداء الاهتمام",
+"detail":"حسب قائمة «الأوراق المطلوبة».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية وتوقيع الخطاب",
+"detail":"تأكدوا من الرقم المرجعي واسم المهمة في الخطاب.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الملف قبل الموعد بيوم على الأقل",
+"detail":"طريقة التسليم كما وردت في الإعلان: «Expressions of interest must be delivered in a written form to the address below not later than January 25, 2015» – الإيميل: uwsspmu@gmail.com. احتفظوا بإثبات الإرسال (رد آلي أو إيصال).",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"تابعوا إعلان القائمة المختصرة",
+"detail":"عند اختياركم تصلكم دعوة لتقديم العرض الفني والمالي (RFP).",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00030811"
+},
+{
+"label":"صفحة المشروع الممول",
+"url":"https://projects.worldbank.org/en/projects-operations/project-detail/P107037"
+}
+],
+"excerpt":"Republic of Yemen\nMinistry of Water and Environment\nWater Sector Support Project (WSSP)\nUrban Water Supply and Sanitation Sub-Sector\nProject Management Unite (PMU)\nGrant No.:H449-RY\nEXPRESSION OF INTEREST\n(CONSULTING SERVICES FIRMS SELECTION)\nAssignment Title:\nPreparing Master Plan for Aden Water Supply and Sanitation Local Corporation Reference No .: ADNMPCS-1\nThis request for expression of interest follows the General procurementNotice for this project that appeared in UNDB online on September 21, 2010.\nThe Republic of Yemen has received financing from the World Bank toward the cost of the Water Sector Support Project - Urban Water Supply and Sanitation Sub-Sector , and intends to apply part of the proceeds for consulting services.\nThe consulting services (\"the Services\") include Preparing Master Plan for Aden Water Supply and Sanitation Local Corporation. (The estimated assignment period is 12 months and expected to be started in May 2015).\nThe Project Management Unit of Urban Water Supply and Sanitation Sub-Sector, the Ministry of Water and Environment now invite eligible consultants firm to indicate their interest in providing the services. Interested consultants must provide information indicating that they are qualified and have the relevant qualifications and experience to perform the services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc.). Consultants may associate to enhance their qualifications.\nThe Shortlisting criteria are as follows:\n- Demonstrate a successful experience as a consultingfirm over the last five years in handling similar projects (Master Plans for water and Sanitation Local Corporations).\n-Evidence of relevant experience gained by consultants during the past\n10 years (experience of the firm).\n-Availability of technical expertise specific to this activity.\nA consultant will be selectedin accordance with the procedures set out in the World Bank's Guidelines: Selection and Employment of Consultants by WorldBank Borrowers ( May 2004 and revised in October 2006 ).\nAConsultant will be selected in accordance with the QCBS method set out in the Consultant Guidelines.\nInterested consultants may obtain further information at the address below during office hours between 9:00 am and 14:30 pm (Yemen Local Time).\nExpressions of interest must be delivered in a written form to the address below not later than January 25, 2015.\nThe EOI is preferred to be de",
+"notes":[]
+},
+{
+"id":"wb-06ecc9d37f",
+"uid":"wb:OP00030808",
+"first_seen":"2026-11-26T13:09:49+00:00",
+"updated":"2026-11-26T13:09:49+00:00",
+"source_key":"worldbank",
+"source":"البنك الدولي",
+"kind":"eoi",
+"notice_type":"Request for Expression of Interest",
+"notice_type_ar":"طلب إبداء اهتمام (EOI)",
+"title":"Preparing Master Plan for Sana'a Water Supply and Sanitation Local Corporation",
+"is_arabic":false,
+"summary":"Yemen-Water Sector Support",
+"country":"Yemen",
+"country_ar":"اليمن",
+"flag":"🇾🇪",
+"client":"WSSP/UWSS Sub-Sector",
+"reference":"SANMPCS-1",
+"published":"2015-01-06",
+"deadline":null,
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"Quality And Cost-Based Selection",
+"method_ar":"الاختيار على أساس الجودة والتكلفة (QCBS)",
+"activity":"",
+"funding":"البنك الدولي – مشروع P107037",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":19,
+"disciplines":[
+"الصرف الصحي ومحطات الرفع",
+"شبكات مياه الشرب",
+"الطرق والتصميم الهندسي",
+"المرافق والبنية التحتية"
+],
+"ids":[
+"sewer",
+"water",
+"roads",
+"utilities"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2015-01-06",
+"date_ar":"الثلاثاء 6 يناير 2015",
+"kind":"published",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"Engineer Jamal Al Sayadi",
+"org":"WSSP/UWSS Sub-Sector",
+"emails":[
+"uwsspmu@gmail.com"
+],
+"phones":[
+{
+"display":"+ 967 1 425253",
+"tel":"+9671425253",
+"whatsapp":""
+},
+{
+"display":"+ 967 1 425253/4",
+"tel":"+96714252534",
+"whatsapp":""
+}
+],
+"address":"Villa, No.33-AlSermi Street,\n\nNorth Al-Dewan Restaurant,\n\nHadda,Sana’a,\n\nRepublic of Yemen,",
+"website":""
+}
+],
+"inquiry_how":"أرسلوا الاستفسار كتابةً بالإيميل لجهة التواصل واذكروا الرقم المرجعي.",
+"documents":[
+{
+"title":"خطاب إبداء الاهتمام",
+"detail":"موقّع ومختوم من المفوَّض بالتوقيع، موجّه لجهة التواصل، ويذكر اسم المهمة ورقمها المرجعي.",
+"from_notice":false
+},
+{
+"title":"الملف التعريفي للمكتب",
+"detail":"سنة التأسيس، الفروع، عدد المهندسين، التخصصات، والبرامج المستخدمة.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة",
+"detail":"آخر 10 سنوات: اسم المشروع، العميل، الدولة، القيمة، المدة، ونطاق عملكم تحديداً.",
+"from_notice":false
+},
+{
+"title":"شهادات إنجاز أو خطابات العملاء",
+"detail":"لأهم المشاريع المماثلة إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية",
+"detail":"السجل التجاري أو ترخيص المكتب الاستشاري، وشهادة القيد بنقابة المهندسين أو الهيئة المختصة.",
+"from_notice":false
+},
+{
+"title":"القدرات الفنية والإدارية",
+"detail":"الهيكل التنظيمي، عدد الفنيين، البرامج (Civil 3D، InfoWorks/SWMM، HEC-RAS، WaterGEMS، BIM)، وشهادات ISO إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"خطاب التحالف أو الاستشاري الفرعي",
+"detail":"فقط إذا ستتقدمون مع شريك: يحدد الشريك ونوع الشراكة (JV أو Sub-consultant).",
+"from_notice":false
+},
+{
+"title":"إقرار الأهلية وعدم تعارض المصالح",
+"detail":"حسب قواعد الجهة الممولة.",
+"from_notice":false
+}
+],
+"conditions":[
+"The Project Management Unit of Urban Water Supply and Sanitation Sub-Sector, the Ministry of Water and Environment now invite eligible consultants firm to indicate their interest in providing the services.",
+"Interested consultants must provide information indicating that they are qualified and havethe relevant qualifications and experience to perform the services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc.).",
+"The Shortlisting criteria are as follows:",
+"Demonstrate a successful experience as a consulting firm over the last five years in handling similarprojects (Master Plans for water and Sanitation Local Corporations).",
+"Expressions of interestmust be delivered in a written form to the address below not later than January 25, 2015.",
+"The EOI is preferred to be delivered in one original and two hard copies in addition to onesoft copy"
+],
+"doc_note":"",
+"submission_line":"طريقة التسليم كما وردت في الإعلان: «Expressions of interestmust be delivered in a written form to the address below not later than January 25, 2015» – الإيميل: uwsspmu@gmail.com",
+"steps":[
+{
+"title":"اقرأ الإعلان وطابق شروط القائمة المختصرة مع خبراتكم",
+"detail":"الشروط مذكورة في تبويب «الأوراق». لو ينقصكم شرط خبرة، فكّروا في تحالف أو استشاري فرعي.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلب الشروط المرجعية (ToR) إن لم تكن مرفقة",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قرّروا طريقة التقديم: منفردين أم بتحالف",
+"detail":"واطلبوا خطاب النوايا من الشريك مبكراً.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا أي استفسار مكتوب",
+"detail":"يُفضّل قبل الموعد النهائي بـ 10 أيام على الأقل. استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"جهّزوا ملف إبداء الاهتمام",
+"detail":"حسب قائمة «الأوراق المطلوبة».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية وتوقيع الخطاب",
+"detail":"تأكدوا من الرقم المرجعي واسم المهمة في الخطاب.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الملف قبل الموعد بيوم على الأقل",
+"detail":"طريقة التسليم كما وردت في الإعلان: «Expressions of interestmust be delivered in a written form to the address below not later than January 25, 2015» – الإيميل: uwsspmu@gmail.com. احتفظوا بإثبات الإرسال (رد آلي أو إيصال).",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"تابعوا إعلان القائمة المختصرة",
+"detail":"عند اختياركم تصلكم دعوة لتقديم العرض الفني والمالي (RFP).",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00030808"
+},
+{
+"label":"صفحة المشروع الممول",
+"url":"https://projects.worldbank.org/en/projects-operations/project-detail/P107037"
+}
+],
+"excerpt":"Republic of Yemen\nMinistry of Water and Environment\nWater Sector Support Project (WSSP)\nUrban Water Supply and Sanitation Sub-Sector\nProject Management Unite (PMU)\nGrant No.:H449-RY\nEXPRESSION OF INTEREST\n(CONSULTING SERVICES FIRMS SELECTION)\nAssignment Title:\nPreparing Master Plan for Sana'a Water Supply and Sanitation Local Corporation\nReference No .: SANMPCS-1\nThis request for expression of interest follows the General procurement Notice for this project that appeared in UNDB online on September 21, 2010.\nThe Republic of Yemen has received financing from the World Bank toward the cost of the Water Sector Support Project - Urban Water Supply and Sanitation Sub-Sector , and intends to apply part of the proceeds for consulting services.\nThe consulting services (\"the Services\") include Preparing Master Plan for Sana'a Water Supply and Sanitation Local Corporation. (The estimated assignment period is 12 months and expectedto be started in May 2015).\nThe Project Management Unit of Urban Water Supply and Sanitation Sub-Sector, the Ministry of Water and Environment now invite eligible consultants firm to indicate their interest in providing the services. Interested consultants must provide information indicating that they are qualified and havethe relevant qualifications and experience to perform the services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc.). Consultants may associate to enhance their qualifications.\nThe Shortlisting criteria are as follows:\n- Demonstrate a successful experience as a consulting firm over the last five years in handling similarprojects (Master Plans for water and Sanitation Local Corporations).\n- Evidence of relevant experience gained by consultants during the past\n10 years (experience of the firm)\n- Availability of technical expertise specific to this activity.\nA consultant will be selected in accordance with the procedures set out in the World Bank's Guidelines: Selection and Employment of Consultants by World Bank Borrowers ( May 2004 and revised in October 2006 ).\nA Consultant will be selected in accordance with the QCBS method set out in the Consultant Guidelines.\nInterested consultants may obtain further information at the address below during office hours between 9:00 am and 14:30 pm (Yemen Local Time).\nExpressions of interestmust be delivered in a written form to the address below not later than January 25, 2015.\nThe EOI is preferred to",
+"notes":[]
+},
+{
+"id":"wb-69bec5a893",
+"uid":"wb:OP00026242",
+"first_seen":"2026-11-26T13:09:49+00:00",
+"updated":"2026-11-26T13:09:49+00:00",
+"source_key":"worldbank",
+"source":"البنك الدولي",
+"kind":"eoi",
+"notice_type":"Request for Expression of Interest",
+"notice_type_ar":"طلب إبداء اهتمام (EOI)",
+"title":"Corridor Study and Pre-Feasibility Study for new highway section between Amran and Saada (border) – 290 km",
+"is_arabic":false,
+"summary":"Corridor Highway Project",
+"country":"Yemen",
+"country_ar":"اليمن",
+"flag":"🇾🇪",
+"client":"Ministry of Public Works and Highways - Saada-Aden Yemen international Corridor",
+"reference":"1CS/IDA/14",
+"published":"2014-02-26",
+"deadline":null,
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"Quality And Cost-Based Selection",
+"method_ar":"الاختيار على أساس الجودة والتكلفة (QCBS)",
+"activity":"",
+"funding":"البنك الدولي – مشروع P145361",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":11,
+"disciplines":[
+"الطرق والتصميم الهندسي"
+],
+"ids":[
+"roads"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2014-02-26",
+"date_ar":"الأربعاء 26 فبراير 2014",
+"kind":"published",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"Eng. Abdul Jabbar Saeed Salem",
+"org":"Ministry of Public Works and Highways - Saada-Aden Yemen international Corridor",
+"emails":[
+"tahp.mpwh@gmail.com"
+],
+"phones":[
+{
+"display":"00967 1 540820",
+"tel":"+9671540820",
+"whatsapp":""
+}
+],
+"address":"Nuqum, Next to Berlin Public Park - MPWH Head Offices Building, 4th Floor",
+"website":""
+}
+],
+"inquiry_how":"أرسلوا الاستفسار كتابةً بالإيميل لجهة التواصل واذكروا الرقم المرجعي.",
+"documents":[
+{
+"title":"خطاب إبداء الاهتمام",
+"detail":"موقّع ومختوم من المفوَّض بالتوقيع، موجّه لجهة التواصل، ويذكر اسم المهمة ورقمها المرجعي.",
+"from_notice":false
+},
+{
+"title":"الملف التعريفي للمكتب",
+"detail":"سنة التأسيس، الفروع، عدد المهندسين، التخصصات، والبرامج المستخدمة.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة",
+"detail":"آخر 10 سنوات: اسم المشروع، العميل، الدولة، القيمة، المدة، ونطاق عملكم تحديداً.",
+"from_notice":false
+},
+{
+"title":"شهادات إنجاز أو خطابات العملاء",
+"detail":"لأهم المشاريع المماثلة إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية",
+"detail":"السجل التجاري أو ترخيص المكتب الاستشاري، وشهادة القيد بنقابة المهندسين أو الهيئة المختصة.",
+"from_notice":false
+},
+{
+"title":"القدرات الفنية والإدارية",
+"detail":"الهيكل التنظيمي، عدد الفنيين، البرامج (Civil 3D، InfoWorks/SWMM، HEC-RAS، WaterGEMS، BIM)، وشهادات ISO إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"خطاب التحالف أو الاستشاري الفرعي",
+"detail":"فقط إذا ستتقدمون مع شريك: يحدد الشريك ونوع الشراكة (JV أو Sub-consultant).",
+"from_notice":true
+},
+{
+"title":"إقرار الأهلية وعدم تعارض المصالح",
+"detail":"حسب قواعد الجهة الممولة.",
+"from_notice":false
+}
+],
+"conditions":[
+"The Ministry of Public Works and Highways represented by Saada-Aden Yemen international Corridor Highway (SAYICH) PIU nowinvites eligible consulting firms (\"Consultants\") to indicate their interest in providing the Services.",
+"Interested Consultants should provide information demonstrating that they have the required qualifications and relevant experienceto perform the Services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc).",
+"Consultants may associate with other firms in the form of a joint venture or a sub consultancy to enhance their qualifications.",
+"Further informationcan be obtained at the address below during office hours [ 08:00 to 02:00 hours ].Expressions of interest must be delivered in a written form to the address below (in person, or by mail, or by fax, or by e-mail) by March 27 th , 2014."
+],
+"doc_note":"",
+"submission_line":"طريقة التسليم كما وردت في الإعلان: «Further informationcan be obtained at the address below during office hours [ 08:00 to 02:00 hours ].Expressions of interest must be delivered in a written form to the address below (in person, or by mail, or by fax, or by e-mail) by March 27 th , 2014» – الإيميل: tahp.mpwh@gmail.com",
+"steps":[
+{
+"title":"اقرأ الإعلان وطابق شروط القائمة المختصرة مع خبراتكم",
+"detail":"الشروط مذكورة في تبويب «الأوراق». لو ينقصكم شرط خبرة، فكّروا في تحالف أو استشاري فرعي.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلب الشروط المرجعية (ToR) إن لم تكن مرفقة",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قرّروا طريقة التقديم: منفردين أم بتحالف",
+"detail":"واطلبوا خطاب النوايا من الشريك مبكراً.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا أي استفسار مكتوب",
+"detail":"يُفضّل قبل الموعد النهائي بـ 10 أيام على الأقل. استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"جهّزوا ملف إبداء الاهتمام",
+"detail":"حسب قائمة «الأوراق المطلوبة».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية وتوقيع الخطاب",
+"detail":"تأكدوا من الرقم المرجعي واسم المهمة في الخطاب.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الملف قبل الموعد بيوم على الأقل",
+"detail":"طريقة التسليم كما وردت في الإعلان: «Further informationcan be obtained at the address below during office hours [ 08:00 to 02:00 hours ].Expressions of interest must be delivered in a written form to the address below (in person, or by mail, or by fax, or by e-mail) by March 27 th , 2014» – الإيميل: tahp.mpwh@gmail.com. احتفظوا بإثبات الإرسال (رد آلي أو إيصال).",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"تابعوا إعلان القائمة المختصرة",
+"detail":"عند اختياركم تصلكم دعوة لتقديم العرض الفني والمالي (RFP).",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00026242"
+},
+{
+"label":"صفحة المشروع الممول",
+"url":"https://projects.worldbank.org/en/projects-operations/project-detail/P145361"
+}
+],
+"excerpt":"REQUEST FOR EXPRESSIONS OF INTEREST\n(CONSULTING SERVICES FIRMS SELECTION)\nCOUNTRY: Republic Of Yemen\nPROJECT: Saada-Aden Yemen international Corridor Highway (SAYICH)\nAssignment Title: Corridor Study and Pre-Feasibility Study for new highway section\nbetween Amran and Saada (border) 290 km\nReference No .: 1CS/IDA/14\nThe Government of Yemen has applied for financing from the World Bank (International Development Association IDA) toward the cost of theYemen Corridor Highway Project. The Project is part of the multi-donor funded \"Saada-Aden Yemen International Corridor Highway\" (SAYICH) Program, which will connect the country's major cities along a new north-south axis. The design and studies for the sections between Aden in the south and Amran were completed in 2005. The proposed IDA-funded Yemen Corridor Highway Project will include funding the preparation the corridor-level studies and pre-feasibility analysis for the section between the city of Amran and the Yemen - Saudi Arabia border (north of Saada) with a length of approximately 290 km.\nThe corridor level study will consist of identifying and selecting the optimum corridor for thissection of the new Corridor Highway, including the preliminary economic feasibility analysis and the preparation of other necessary relatedstudies. It is expected that the services will start in mid-2014 and shall be executed during a period of 15 months.\nThe Ministry of Public Works and Highways represented by Saada-Aden Yemen international Corridor Highway (SAYICH) PIU nowinvites eligible consulting firms (\"Consultants\") to indicate their interest in providing the Services. Interested Consultants should provide information demonstrating that they have the required qualifications and relevant experienceto perform the Services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc).\nThe attention of interested Consultants is drawn to paragraph 1.9 ofthe World Bank's Guidelines: Selection and Employment of Consultants [under IBRD Loans and IDA Credits & Grants] by World Bank Borrowers [January 2011] (\"Consultant Guidelines\"), setting forth the World Bank's policy on conflict of interest.\nConsultants may associate with other firms in the form of a joint venture or a sub consultancy to enhance their qualifications.\nA Consultant will be selected in accordance with the Quality and Cost Based Selection method set out in the Consultant Guidelines.\nFurther",
+"notes":[]
+},
+{
+"id":"wb-67c5de9287",
+"uid":"wb:OP00024630",
+"first_seen":"2026-11-26T13:09:49+00:00",
+"updated":"2026-11-26T13:09:49+00:00",
+"source_key":"worldbank",
+"source":"البنك الدولي",
+"kind":"eoi",
+"notice_type":"Request for Expression of Interest",
+"notice_type_ar":"طلب إبداء اهتمام (EOI)",
+"title":"Consultancy Services for Highway design and feasibility studies (update) for proposed new highway between Taiz – Ibb – Dhamar – Sana’a – Amran.",
+"is_arabic":false,
+"summary":"Corridor Highway Project",
+"country":"Yemen",
+"country_ar":"اليمن",
+"flag":"🇾🇪",
+"client":"Ministry of Public Works and Highways, Saada-Aden Yemen international Corridor H",
+"reference":"4CS/IDA/13",
+"published":"2013-11-18",
+"deadline":null,
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"Consultant Qualification  Selection",
+"method_ar":"الاختيار على أساس مؤهلات الاستشاري (CQS)",
+"activity":"",
+"funding":"البنك الدولي – مشروع P145361",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":11,
+"disciplines":[
+"الطرق والتصميم الهندسي"
+],
+"ids":[
+"roads"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2013-11-18",
+"date_ar":"الاثنين 18 نوفمبر 2013",
+"kind":"published",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"Eng. Abdul Jabbar Saeed Salem",
+"org":"Ministry of Public Works and Highways, Saada-Aden Yemen international Corridor H",
+"emails":[
+"tahp.mpwh@gmail.com"
+],
+"phones":[
+{
+"display":"+ 967 1 540820",
+"tel":"+9671540820",
+"whatsapp":""
+}
+],
+"address":"Nuqum, Next to Berlin Public Park\nMPWH Head Offices Building, 4th Floor",
+"website":""
+}
+],
+"inquiry_how":"أرسلوا الاستفسار كتابةً بالإيميل لجهة التواصل واذكروا الرقم المرجعي.",
+"documents":[
+{
+"title":"خطاب إبداء الاهتمام",
+"detail":"موقّع ومختوم من المفوَّض بالتوقيع، موجّه لجهة التواصل، ويذكر اسم المهمة ورقمها المرجعي.",
+"from_notice":false
+},
+{
+"title":"الملف التعريفي للمكتب",
+"detail":"سنة التأسيس، الفروع، عدد المهندسين، التخصصات، والبرامج المستخدمة.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة",
+"detail":"آخر 10 سنوات: اسم المشروع، العميل، الدولة، القيمة، المدة، ونطاق عملكم تحديداً.",
+"from_notice":false
+},
+{
+"title":"شهادات إنجاز أو خطابات العملاء",
+"detail":"لأهم المشاريع المماثلة إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية",
+"detail":"السجل التجاري أو ترخيص المكتب الاستشاري، وشهادة القيد بنقابة المهندسين أو الهيئة المختصة.",
+"from_notice":false
+},
+{
+"title":"القدرات الفنية والإدارية",
+"detail":"الهيكل التنظيمي، عدد الفنيين، البرامج (Civil 3D، InfoWorks/SWMM، HEC-RAS، WaterGEMS، BIM)، وشهادات ISO إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"خطاب التحالف أو الاستشاري الفرعي",
+"detail":"فقط إذا ستتقدمون مع شريك: يحدد الشريك ونوع الشراكة (JV أو Sub-consultant).",
+"from_notice":true
+},
+{
+"title":"إقرار الأهلية وعدم تعارض المصالح",
+"detail":"حسب قواعد الجهة الممولة.",
+"from_notice":false
+}
+],
+"conditions":[
+"It is expected that the services will start in mid-2014and shall be executed during a period of two years.",
+"The Ministry of Public Works and Highways, represented by the Project Implementing Unit (PIU) for the multi-donor funded Saada-Aden Yemen International Corridor Highway (SAYICH), now invites eligible consulting firms (\"Consultants\") to indicate their interest in providing the Services.",
+"Interested Consultants should provide information demonstrating that they have the required qualifications and relevant experience to perform the Services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc.).",
+"Consultants may associate with other firms in the form of a joint venture or a sub consultancy to enhance their qualifications.",
+"Expressions of interest must be delivered in a written form to the address below (in person, or by mail, fax, or E-mail) by December 18 th , 2013."
+],
+"doc_note":"",
+"submission_line":"طريقة التسليم كما وردت في الإعلان: «Expressions of interest must be delivered in a written form to the address below (in person, or by mail, fax, or E-mail) by December 18 th , 2013» – الإيميل: tahp.mpwh@gmail.com",
+"steps":[
+{
+"title":"اقرأ الإعلان وطابق شروط القائمة المختصرة مع خبراتكم",
+"detail":"الشروط مذكورة في تبويب «الأوراق». لو ينقصكم شرط خبرة، فكّروا في تحالف أو استشاري فرعي.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلب الشروط المرجعية (ToR) إن لم تكن مرفقة",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قرّروا طريقة التقديم: منفردين أم بتحالف",
+"detail":"واطلبوا خطاب النوايا من الشريك مبكراً.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا أي استفسار مكتوب",
+"detail":"يُفضّل قبل الموعد النهائي بـ 10 أيام على الأقل. استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"جهّزوا ملف إبداء الاهتمام",
+"detail":"حسب قائمة «الأوراق المطلوبة».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية وتوقيع الخطاب",
+"detail":"تأكدوا من الرقم المرجعي واسم المهمة في الخطاب.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الملف قبل الموعد بيوم على الأقل",
+"detail":"طريقة التسليم كما وردت في الإعلان: «Expressions of interest must be delivered in a written form to the address below (in person, or by mail, fax, or E-mail) by December 18 th , 2013» – الإيميل: tahp.mpwh@gmail.com. احتفظوا بإثبات الإرسال (رد آلي أو إيصال).",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"تابعوا إعلان القائمة المختصرة",
+"detail":"عند اختياركم تصلكم دعوة لتقديم العرض الفني والمالي (RFP).",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00024630"
+},
+{
+"label":"صفحة المشروع الممول",
+"url":"https://projects.worldbank.org/en/projects-operations/project-detail/P145361"
+}
+],
+"excerpt":"REQUEST FOR EXPRESSIONS OF INTEREST\n(CONSULTING SERVICES – Selection of FIRMS)\nCOUNTRY: Republic of Yemen\nPROJECT: Yemen Corridor Highway Project\nASSIGNMENT TITLE: Highway design and feasibility studies(update) for proposed new highway between Taiz – Ibb – Dhamar – Sana'a – Amran.\nReference No .: 4CS/IDA/13\nThe Government of Yemen has applied for financing from the World Bank (International Development Association – IDA) toward the cost of the Yemen Corridor Highway Project. The Project is part of the multi-donor funded \"Saada-Aden Yemen International Corridor Highway\" (SAYICH) Program, which will connect the country's major cities along a new north-south axis. Feasibility and design studies were originally prepared in 2005 for highway sections between Taiz, Ibb, Dhamar, Sana'a and Amran. The proposed IDA-funded Yemen Corridor Highway Project will include the updating of these studies.\nThe services will consist of revising and delivering an updated engineering design and feasibility study for the new highway sections (i) Amran-Sana'a, approximate length 92 km, and (ii) and Sana'a – Dhamar –Ibb – Taiz, approximate length 214 km. It is expected that the services will start in mid-2014and shall be executed during a period of two years.\nThe Ministry of Public Works and Highways, represented by the Project Implementing Unit (PIU) for the multi-donor funded Saada-Aden Yemen International Corridor Highway (SAYICH), now invites eligible consulting firms (\"Consultants\") to indicate their interest in providing the Services. Interested Consultants should provide information demonstrating that they have the required qualifications and relevant experience to perform the Services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc.).\nThe attention of interested Consultants is drawn to paragraph 1.9 ofthe World Bank's Guidelines: Selection and Employment of Consultants under IBRD Loans and IDA Credits & Grants by World Bank Borrowers, version of January 2011 (\"Consultant Guidelines\"), setting forth the World Bank's policy on conflict of interest. Consultants may associate with other firms in the form of a joint venture or a sub consultancy to enhance their qualifications.\nA Consultant will be selected in accordance with the Quality and Cost Based Selection method set out in the Consultant Guidelines.\nFurther informationcan be obtained at the address below during office hours ( 08:00 to 02:0",
+"notes":[]
+},
+{
+"id":"wb-18a264be0a",
+"uid":"wb:OP00024626",
+"first_seen":"2026-11-26T13:09:49+00:00",
+"updated":"2026-11-26T13:09:49+00:00",
+"source_key":"worldbank",
+"source":"البنك الدولي",
+"kind":"eoi",
+"notice_type":"Request for Expression of Interest",
+"notice_type_ar":"طلب إبداء اهتمام (EOI)",
+"title":"Consultancy Services for Environmental and Social Impact Assessment (ESIA) and Resettlement Action Plan (RAP) for highway sections linking the cities of Taiz -  Ibb – Dhamar – Sana’a and Amran.",
+"is_arabic":false,
+"summary":"Corridor Highway Project",
+"country":"Yemen",
+"country_ar":"اليمن",
+"flag":"🇾🇪",
+"client":"Ministry of Public Works and Highways, Saada-Aden Yemen international Corridor H",
+"reference":"3CS/IDA/13",
+"published":"2013-11-18",
+"deadline":null,
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"Quality And Cost-Based Selection",
+"method_ar":"الاختيار على أساس الجودة والتكلفة (QCBS)",
+"activity":"",
+"funding":"البنك الدولي – مشروع P145361",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":11,
+"disciplines":[
+"الطرق والتصميم الهندسي"
+],
+"ids":[
+"roads"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2013-11-18",
+"date_ar":"الاثنين 18 نوفمبر 2013",
+"kind":"published",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"Eng. Abdul Jabbar Saeed Salem",
+"org":"Ministry of Public Works and Highways, Saada-Aden Yemen international Corridor H",
+"emails":[
+"tahp.mpwh@gmail.com"
+],
+"phones":[
+{
+"display":"+ 967 1 540820",
+"tel":"+9671540820",
+"whatsapp":""
+}
+],
+"address":"Nuqum, Next to Berlin Public Park\nMPWH Head Offices Building, 4th Floor",
+"website":""
+}
+],
+"inquiry_how":"أرسلوا الاستفسار كتابةً بالإيميل لجهة التواصل واذكروا الرقم المرجعي.",
+"documents":[
+{
+"title":"خطاب إبداء الاهتمام",
+"detail":"موقّع ومختوم من المفوَّض بالتوقيع، موجّه لجهة التواصل، ويذكر اسم المهمة ورقمها المرجعي.",
+"from_notice":false
+},
+{
+"title":"الملف التعريفي للمكتب",
+"detail":"سنة التأسيس، الفروع، عدد المهندسين، التخصصات، والبرامج المستخدمة.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة",
+"detail":"آخر 10 سنوات: اسم المشروع، العميل، الدولة، القيمة، المدة، ونطاق عملكم تحديداً.",
+"from_notice":false
+},
+{
+"title":"شهادات إنجاز أو خطابات العملاء",
+"detail":"لأهم المشاريع المماثلة إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية",
+"detail":"السجل التجاري أو ترخيص المكتب الاستشاري، وشهادة القيد بنقابة المهندسين أو الهيئة المختصة.",
+"from_notice":false
+},
+{
+"title":"القدرات الفنية والإدارية",
+"detail":"الهيكل التنظيمي، عدد الفنيين، البرامج (Civil 3D، InfoWorks/SWMM، HEC-RAS، WaterGEMS، BIM)، وشهادات ISO إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"خطاب التحالف أو الاستشاري الفرعي",
+"detail":"فقط إذا ستتقدمون مع شريك: يحدد الشريك ونوع الشراكة (JV أو Sub-consultant).",
+"from_notice":true
+},
+{
+"title":"إقرار الأهلية وعدم تعارض المصالح",
+"detail":"حسب قواعد الجهة الممولة.",
+"from_notice":false
+}
+],
+"conditions":[
+"The Ministry of Public Works and Highways, represented by the Project Implementing Unit (PIU) for the multi-donor funded Saada-Aden Yemen International Corridor Highway (SAYICH), now invites eligible consulting firms (\"Consultants\") to indicate their interest in providing the Services.",
+"Interested Consultants should provide information demonstrating that they have the required qualifications and relevant experience to perform the Services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc.).",
+"Consultants may associate with other firms in the form of a joint venture or a sub consultancy to enhance their qualifications.",
+"Expressions of interest must be delivered in a written form to the address below (in person, or by mail, fax, or E-mail) by December 18 th , 2013."
+],
+"doc_note":"",
+"submission_line":"طريقة التسليم كما وردت في الإعلان: «Expressions of interest must be delivered in a written form to the address below (in person, or by mail, fax, or E-mail) by December 18 th , 2013» – الإيميل: tahp.mpwh@gmail.com",
+"steps":[
+{
+"title":"اقرأ الإعلان وطابق شروط القائمة المختصرة مع خبراتكم",
+"detail":"الشروط مذكورة في تبويب «الأوراق». لو ينقصكم شرط خبرة، فكّروا في تحالف أو استشاري فرعي.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلب الشروط المرجعية (ToR) إن لم تكن مرفقة",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قرّروا طريقة التقديم: منفردين أم بتحالف",
+"detail":"واطلبوا خطاب النوايا من الشريك مبكراً.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا أي استفسار مكتوب",
+"detail":"يُفضّل قبل الموعد النهائي بـ 10 أيام على الأقل. استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"جهّزوا ملف إبداء الاهتمام",
+"detail":"حسب قائمة «الأوراق المطلوبة».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية وتوقيع الخطاب",
+"detail":"تأكدوا من الرقم المرجعي واسم المهمة في الخطاب.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الملف قبل الموعد بيوم على الأقل",
+"detail":"طريقة التسليم كما وردت في الإعلان: «Expressions of interest must be delivered in a written form to the address below (in person, or by mail, fax, or E-mail) by December 18 th , 2013» – الإيميل: tahp.mpwh@gmail.com. احتفظوا بإثبات الإرسال (رد آلي أو إيصال).",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"تابعوا إعلان القائمة المختصرة",
+"detail":"عند اختياركم تصلكم دعوة لتقديم العرض الفني والمالي (RFP).",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00024626"
+},
+{
+"label":"صفحة المشروع الممول",
+"url":"https://projects.worldbank.org/en/projects-operations/project-detail/P145361"
+}
+],
+"excerpt":"REQUEST FOR EXPRESSIONS OF INTEREST\n(CONSULTING SERVICES – Selection of FIRMS)\nCOUNTRY: Republic of Yemen\nPROJECT: Yemen Corridor Highway Project\nASSIGNMENT TITLE: Environmental and Social Impact Assessment (ESIA) and Resettlement Action Plan (RAP) for highway sections linking the cities of Taiz - Ibb – Dhamar – Sana'a and Amran.\nReference No .: 3CS/IDA/13\nThe Government of Yemen has applied for financing from the World Bank (International Development Association – IDA) toward the cost of the Yemen Corridor Highway Project and intends to apply part of the proceeds for consulting services (\"the Services\") for the preparation of an Environmental and Social Impact Assessment (ESIA), an Environmentaland Social Management Plan, and a Resettlement Action Plan (RAP) for the proposed highway sections linking the cities of Taiz - Ibb – Dhamar – Sana'a and Amran. It is expected that the services will start in mid-2014 and be completed in several phases within a period ofthree years.\nThe Ministry of Public Works and Highways, represented by the Project Implementing Unit (PIU) for the multi-donor funded Saada-Aden Yemen International Corridor Highway (SAYICH), now invites eligible consulting firms (\"Consultants\") to indicate their interest in providing the Services. Interested Consultants should provide information demonstrating that they have the required qualifications and relevant experience to perform the Services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc.).\nThe attention of interested Consultants is drawn to paragraph 1.9 ofthe World Bank's Guidelines: Selection and Employment of Consultants under IBRD Loans and IDA Credits & Grants by World Bank Borrowers, version of January 2011 (\"Consultant Guidelines\"), setting forth the World Bank's policy on conflict of interest. Consultants may associate with other firms in the form of a joint venture or a sub consultancy to enhance their qualifications.\nA Consultant will be selected in accordance with the Quality and Cost Based Selection method set out in the Consultant Guidelines.\nFurther informationcan be obtained at the address below during office hours ( 08:00 to 02:00 hours) . Expressions of interest must be delivered in a written form to the address below (in person, or by mail, fax, or E-mail) by December 18 th , 2013.\nMinistry of Public Works and Highways,\nSaada-Aden Yemen international Corridor Highway PIU\nAttn: Eng. Abdul",
+"notes":[]
+},
+{
+"id":"wb-175a1b31c8",
+"uid":"wb:OP00024629",
+"first_seen":"2026-11-26T13:09:49+00:00",
+"updated":"2026-11-26T13:09:49+00:00",
+"source_key":"worldbank",
+"source":"البنك الدولي",
+"kind":"eoi",
+"notice_type":"Request for Expression of Interest",
+"notice_type_ar":"طلب إبداء اهتمام (EOI)",
+"title":"Consultancy Services for Technical and Procurement Audits",
+"is_arabic":false,
+"summary":"Corridor Highway Project",
+"country":"Yemen",
+"country_ar":"اليمن",
+"flag":"🇾🇪",
+"client":"Ministry of Public Works and Highways, Saada-Aden Yemen international Corridor H",
+"reference":"2CS/IDA/13",
+"published":"2013-11-18",
+"deadline":null,
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"Consultant Qualification  Selection",
+"method_ar":"الاختيار على أساس مؤهلات الاستشاري (CQS)",
+"activity":"",
+"funding":"البنك الدولي – مشروع P145361",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":12,
+"disciplines":[
+"الطرق والتصميم الهندسي",
+"المرافق والبنية التحتية"
+],
+"ids":[
+"roads",
+"utilities"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2013-11-18",
+"date_ar":"الاثنين 18 نوفمبر 2013",
+"kind":"published",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"Eng. Abdul Jabbar Saeed Salem",
+"org":"Ministry of Public Works and Highways, Saada-Aden Yemen international Corridor H",
+"emails":[
+"tahp.mpwh@gmail.com"
+],
+"phones":[
+{
+"display":"+ 967 1 540820",
+"tel":"+9671540820",
+"whatsapp":""
+}
+],
+"address":"Nuqum, Next to Berlin Public Park\nMPWH Head Offices Building, 4th Floor",
+"website":""
+}
+],
+"inquiry_how":"أرسلوا الاستفسار كتابةً بالإيميل لجهة التواصل واذكروا الرقم المرجعي.",
+"documents":[
+{
+"title":"خطاب إبداء الاهتمام",
+"detail":"موقّع ومختوم من المفوَّض بالتوقيع، موجّه لجهة التواصل، ويذكر اسم المهمة ورقمها المرجعي.",
+"from_notice":false
+},
+{
+"title":"الملف التعريفي للمكتب",
+"detail":"سنة التأسيس، الفروع، عدد المهندسين، التخصصات، والبرامج المستخدمة.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة",
+"detail":"آخر 10 سنوات: اسم المشروع، العميل، الدولة، القيمة، المدة، ونطاق عملكم تحديداً.",
+"from_notice":false
+},
+{
+"title":"شهادات إنجاز أو خطابات العملاء",
+"detail":"لأهم المشاريع المماثلة إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية",
+"detail":"السجل التجاري أو ترخيص المكتب الاستشاري، وشهادة القيد بنقابة المهندسين أو الهيئة المختصة.",
+"from_notice":false
+},
+{
+"title":"القدرات الفنية والإدارية",
+"detail":"الهيكل التنظيمي، عدد الفنيين، البرامج (Civil 3D، InfoWorks/SWMM، HEC-RAS، WaterGEMS، BIM)، وشهادات ISO إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"خطاب التحالف أو الاستشاري الفرعي",
+"detail":"فقط إذا ستتقدمون مع شريك: يحدد الشريك ونوع الشراكة (JV أو Sub-consultant).",
+"from_notice":true
+},
+{
+"title":"إقرار الأهلية وعدم تعارض المصالح",
+"detail":"حسب قواعد الجهة الممولة.",
+"from_notice":false
+}
+],
+"conditions":[
+"The Ministry of Public Works and Highways, represented by the Project Implementing Unit for the Saada-Aden Yemen International Corridor Highway (SAYICH) now invites eligible consulting firms (\"Consultants\") to indicate their interest in providing the Services.",
+"Interested Consultants should provide information demonstrating that they have the required qualifications and relevant experience to perform the Services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc.).",
+"Consultants may associate with other firms in the form of a joint venture or a sub consultancy to enhance their qualifications.",
+"Expressions of interest must be delivered in a written form to the address below (in person, or by mail, fax, or E-mail) by December 18 th , 2013."
+],
+"doc_note":"",
+"submission_line":"طريقة التسليم كما وردت في الإعلان: «Expressions of interest must be delivered in a written form to the address below (in person, or by mail, fax, or E-mail) by December 18 th , 2013» – الإيميل: tahp.mpwh@gmail.com",
+"steps":[
+{
+"title":"اقرأ الإعلان وطابق شروط القائمة المختصرة مع خبراتكم",
+"detail":"الشروط مذكورة في تبويب «الأوراق». لو ينقصكم شرط خبرة، فكّروا في تحالف أو استشاري فرعي.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلب الشروط المرجعية (ToR) إن لم تكن مرفقة",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قرّروا طريقة التقديم: منفردين أم بتحالف",
+"detail":"واطلبوا خطاب النوايا من الشريك مبكراً.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا أي استفسار مكتوب",
+"detail":"يُفضّل قبل الموعد النهائي بـ 10 أيام على الأقل. استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"جهّزوا ملف إبداء الاهتمام",
+"detail":"حسب قائمة «الأوراق المطلوبة».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية وتوقيع الخطاب",
+"detail":"تأكدوا من الرقم المرجعي واسم المهمة في الخطاب.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الملف قبل الموعد بيوم على الأقل",
+"detail":"طريقة التسليم كما وردت في الإعلان: «Expressions of interest must be delivered in a written form to the address below (in person, or by mail, fax, or E-mail) by December 18 th , 2013» – الإيميل: tahp.mpwh@gmail.com. احتفظوا بإثبات الإرسال (رد آلي أو إيصال).",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"تابعوا إعلان القائمة المختصرة",
+"detail":"عند اختياركم تصلكم دعوة لتقديم العرض الفني والمالي (RFP).",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00024629"
+},
+{
+"label":"صفحة المشروع الممول",
+"url":"https://projects.worldbank.org/en/projects-operations/project-detail/P145361"
+}
+],
+"excerpt":"REQUEST FOR EXPRESSIONS OF INTEREST\n(CONSULTING SERVICES – Selection of FIRMS)\nCOUNTRY: Republic of Yemen\nPROJECT: Yemen Corridor Highway Project\nASSIGNMENT TITLE: Technical and Procurement Audits\nReference No.: 2CS/IDA/13\nThe Government of Yemen has applied for financing from the World Bank (International Development Association – IDA) toward the cost of the Yemen Corridor Highway Project and intends to apply part of the proceeds for consulting services (\"the Services\") for carrying out regular independent technicaland procurement audits of the larger multi-donor funded Saada – Aden Yemen International Corridor Highway (SAYICH) Program and also for increasing local capacity for technical auditing of road infrastructure projects in Yemen. It is expected that the services will start in mid-2014 and be performed during a period of four years.\nThe Ministry of Public Works and Highways, represented by the Project Implementing Unit for the Saada-Aden Yemen International Corridor Highway (SAYICH) now invites eligible consulting firms (\"Consultants\") to indicate their interest in providing the Services. Interested Consultants should provide information demonstrating that they have the required qualifications and relevant experience to perform the Services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc.).\nThe attention of interested Consultants is drawn to paragraph 1.9 ofthe World Bank's Guidelines: Selection and Employment of Consultants under IBRD Loans and IDA Credits & Grants by World Bank Borrowers, version of January 2011 (\"Consultant Guidelines\"), setting forth the World Bank's policy on conflict of interest.\nIn order to ensure the independence of the technical and procurement audit, and to avoid conflicts of interest, the consultant should not be involved in other types of services in Yemen's road sector (such as road design, construction supervision, etc.) during the period of execution of the contract for the Technical and Procurement Audit.\nConsultants may associate with other firms in the form of a joint venture or a sub consultancy to enhance their qualifications.\nA Consultant will be selected in accordance with the Quality and Cost Based Selection method set out in the Consultant Guidelines.\nFurther informationcan be obtained at the address below during office hours ( 08:00 to 02:00 hours) . Expressions of interest must be delivered in a written form to the addres",
+"notes":[]
+},
+{
+"id":"wb-e912a01879",
+"uid":"wb:OP00024627",
+"first_seen":"2026-11-26T13:09:49+00:00",
+"updated":"2026-11-26T13:09:49+00:00",
+"source_key":"worldbank",
+"source":"البنك الدولي",
+"kind":"eoi",
+"notice_type":"Request for Expression of Interest",
+"notice_type_ar":"طلب إبداء اهتمام (EOI)",
+"title":"Consulting Services for Construction Supervision and Related Services for the Highway section between Noubat Dokaim and Aden (55 km)",
+"is_arabic":false,
+"summary":"Corridor Highway Project",
+"country":"Yemen",
+"country_ar":"اليمن",
+"flag":"🇾🇪",
+"client":"Ministry of Public Works and Highways, Saada-Aden Yemen international Corridor H",
+"reference":"1CS/IDA/13",
+"published":"2013-11-18",
+"deadline":null,
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"Quality And Cost-Based Selection",
+"method_ar":"الاختيار على أساس الجودة والتكلفة (QCBS)",
+"activity":"",
+"funding":"البنك الدولي – مشروع P145361",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":11,
+"disciplines":[
+"الطرق والتصميم الهندسي"
+],
+"ids":[
+"roads"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2013-11-18",
+"date_ar":"الاثنين 18 نوفمبر 2013",
+"kind":"published",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"Eng. Abudl Jabbar Saeed Salem",
+"org":"Ministry of Public Works and Highways, Saada-Aden Yemen international Corridor H",
+"emails":[
+"tahp.mpwh@gmail.com"
+],
+"phones":[
+{
+"display":"+ 967 1 540820",
+"tel":"+9671540820",
+"whatsapp":""
+}
+],
+"address":"Nuqum, Next to Berlin Public Park\nMPWH Head Offices Building, 4th Floor",
+"website":""
+}
+],
+"inquiry_how":"أرسلوا الاستفسار كتابةً بالإيميل لجهة التواصل واذكروا الرقم المرجعي.",
+"documents":[
+{
+"title":"خطاب إبداء الاهتمام",
+"detail":"موقّع ومختوم من المفوَّض بالتوقيع، موجّه لجهة التواصل، ويذكر اسم المهمة ورقمها المرجعي.",
+"from_notice":false
+},
+{
+"title":"الملف التعريفي للمكتب",
+"detail":"سنة التأسيس، الفروع، عدد المهندسين، التخصصات، والبرامج المستخدمة.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة",
+"detail":"آخر 10 سنوات: اسم المشروع، العميل، الدولة، القيمة، المدة، ونطاق عملكم تحديداً.",
+"from_notice":false
+},
+{
+"title":"شهادات إنجاز أو خطابات العملاء",
+"detail":"لأهم المشاريع المماثلة إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية",
+"detail":"السجل التجاري أو ترخيص المكتب الاستشاري، وشهادة القيد بنقابة المهندسين أو الهيئة المختصة.",
+"from_notice":false
+},
+{
+"title":"القدرات الفنية والإدارية",
+"detail":"الهيكل التنظيمي، عدد الفنيين، البرامج (Civil 3D، InfoWorks/SWMM، HEC-RAS، WaterGEMS، BIM)، وشهادات ISO إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"خطاب التحالف أو الاستشاري الفرعي",
+"detail":"فقط إذا ستتقدمون مع شريك: يحدد الشريك ونوع الشراكة (JV أو Sub-consultant).",
+"from_notice":true
+},
+{
+"title":"إقرار الأهلية وعدم تعارض المصالح",
+"detail":"حسب قواعد الجهة الممولة.",
+"from_notice":false
+}
+],
+"conditions":[
+"The Ministry of Public Works and Highways represented by Saada-Aden Yemen international Corridor Highway PIU now invites eligible consulting firms (\"Consultants\") to indicate their interest in providing the Services.",
+"Interested Consultants should provide information demonstrating that they have the required qualifications and relevant experience to perform the Services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc).",
+"Consultants may associate with other firms in the form of a joint venture or a sub consultancy to enhance their qualifications.",
+"Further informationcan be obtained at the address below during office hours [ 08:00 to 02:00 hours ].Expressions of interest must be delivered in a written form to the address below (in person, or by mail, or by fax, or by e-mail) by December 18 th , 2013."
+],
+"doc_note":"",
+"submission_line":"طريقة التسليم كما وردت في الإعلان: «Further informationcan be obtained at the address below during office hours [ 08:00 to 02:00 hours ].Expressions of interest must be delivered in a written form to the address below (in person, or by mail, or by fax, or by e-mail) by December 18 th , 2013» – الإيميل: tahp.mpwh@gmail.com",
+"steps":[
+{
+"title":"اقرأ الإعلان وطابق شروط القائمة المختصرة مع خبراتكم",
+"detail":"الشروط مذكورة في تبويب «الأوراق». لو ينقصكم شرط خبرة، فكّروا في تحالف أو استشاري فرعي.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلب الشروط المرجعية (ToR) إن لم تكن مرفقة",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قرّروا طريقة التقديم: منفردين أم بتحالف",
+"detail":"واطلبوا خطاب النوايا من الشريك مبكراً.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا أي استفسار مكتوب",
+"detail":"يُفضّل قبل الموعد النهائي بـ 10 أيام على الأقل. استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"جهّزوا ملف إبداء الاهتمام",
+"detail":"حسب قائمة «الأوراق المطلوبة».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية وتوقيع الخطاب",
+"detail":"تأكدوا من الرقم المرجعي واسم المهمة في الخطاب.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الملف قبل الموعد بيوم على الأقل",
+"detail":"طريقة التسليم كما وردت في الإعلان: «Further informationcan be obtained at the address below during office hours [ 08:00 to 02:00 hours ].Expressions of interest must be delivered in a written form to the address below (in person, or by mail, or by fax, or by e-mail) by December 18 th , 2013» – الإيميل: tahp.mpwh@gmail.com. احتفظوا بإثبات الإرسال (رد آلي أو إيصال).",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"تابعوا إعلان القائمة المختصرة",
+"detail":"عند اختياركم تصلكم دعوة لتقديم العرض الفني والمالي (RFP).",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00024627"
+},
+{
+"label":"صفحة المشروع الممول",
+"url":"https://projects.worldbank.org/en/projects-operations/project-detail/P145361"
+}
+],
+"excerpt":"REQUEST FOR EXPRESSIONS OF INTEREST\n(CONSULTING SERVICES – FIRMS SELECTION)\nCOUNTRY: Republic Of Yemen\nPROJECT: Saada-Aden Yemen international Corridor Highway (SAYICH)\nAssignment Title: ConstructionSupervision and Related Services for the Highway section between Noubat Dokaim and Aden (55 km)\nReference No .: 1CS/IDA/13\nThe Government of Yemen has applied for financing from the World Bank toward the cost of the construction of Saada-Aden Yemen international Corridor Highway\nProject Sections IIIC &IIID Noubat Dokaim-Aden (CH84+300 to CH 140+682.724) and intends to apply part of the proceedsfor consulting services.\nThe consulting services (\"the Services\") include the supervision of the construction works and to help ensure that the works are implemented according to specifications, within the cost and according to the schedule. It is expected that the project will be executed in three years.\nThe Ministry of Public Works and Highways represented by Saada-Aden Yemen international Corridor Highway PIU now invites eligible consulting firms (\"Consultants\") to indicate their interest in providing the Services. Interested Consultants should provide information demonstrating that they have the required qualifications and relevant experience to perform the Services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc).\nThe attention of interested Consultants is drawn to paragraph 1.9 ofthe World Bank's Guidelines: Selection and Employment of Consultants [under IBRD Loans and IDA Credits & Grants] by World Bank Borrowers [January 2011] (\"Consultant Guidelines\"), setting forth the World Bank's policy on conflict of interest.\nConsultants may associate with other firms in the form of a joint venture or a sub consultancy to enhance their qualifications.\nA Consultant will be selected in accordance with the Quality and Cost Based Selection method set out in the Consultant Guidelines.\nFurther informationcan be obtained at the address below during office hours [ 08:00 to 02:00 hours ].Expressions of interest must be delivered in a written form to the address below (in person, or by mail, or by fax, or by e-mail) by December 18 th , 2013.\nMinistry of Public Works and Highways,\nSaada-Aden Yemen international Corridor Highway PIU\nAttn: Eng. Abudl Jabbar Saeed Salem,\nThe Project Director\nNuqum, Next to Berlin Public Park\nMPWH Head Offices Building, 4th Floor\nSana'a, Yemen\nTel : + 967 1 540820\nFax: + ",
+"notes":[]
+},
+{
+"id":"wb-34e6da4c79",
+"uid":"wb:OP00023217",
+"first_seen":"2026-11-26T13:09:49+00:00",
+"updated":"2026-11-26T13:09:49+00:00",
+"source_key":"worldbank",
+"source":"البنك الدولي",
+"kind":"eoi",
+"notice_type":"Request for Expression of Interest",
+"notice_type_ar":"طلب إبداء اهتمام (EOI)",
+"title":"Develop Tech Specs for Design and Implementation of Sanaa Traffic Command Center (TCC), ATMS and Future Coordinated Systems",
+"is_arabic":false,
+"summary":"Second Rural Access Project",
+"country":"Yemen",
+"country_ar":"اليمن",
+"flag":"🇾🇪",
+"client":"Ministry of Public Works and Highways (MPWH), Rural Access Program (RAPCMO)",
+"reference":"RFP No.140-A-13 (RFP No.139A-10)",
+"published":"2013-08-20",
+"deadline":null,
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"Quality And Cost-Based Selection",
+"method_ar":"الاختيار على أساس الجودة والتكلفة (QCBS)",
+"activity":"",
+"funding":"البنك الدولي – مشروع P085231",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":11,
+"disciplines":[
+"الطرق والتصميم الهندسي"
+],
+"ids":[
+"roads"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2013-08-20",
+"date_ar":"الثلاثاء 20 أغسطس 2013",
+"kind":"published",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"Eng. Hakim Al Aghbari",
+"org":"Ministry of Public Works and Highways (MPWH), Rural Access Program (RAPCMO)",
+"emails":[
+"rapcmo@gmail.com"
+],
+"phones":[
+{
+"display":"+9671264143",
+"tel":"+9671264143",
+"whatsapp":""
+},
+{
+"display":"00(967-1)- 264143 / 24647",
+"tel":"+967126414324647",
+"whatsapp":""
+}
+],
+"address":"Hadah St, Hadah Complex, Building No 4 \nP.O.Box: 16472",
+"website":"www.rapyemen.org"
+}
+],
+"inquiry_how":"أرسلوا الاستفسار كتابةً بالإيميل لجهة التواصل واذكروا الرقم المرجعي.",
+"documents":[
+{
+"title":"خطاب إبداء الاهتمام",
+"detail":"موقّع ومختوم من المفوَّض بالتوقيع، موجّه لجهة التواصل، ويذكر اسم المهمة ورقمها المرجعي.",
+"from_notice":false
+},
+{
+"title":"الملف التعريفي للمكتب",
+"detail":"سنة التأسيس، الفروع، عدد المهندسين، التخصصات، والبرامج المستخدمة.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة",
+"detail":"آخر 10 سنوات: اسم المشروع، العميل، الدولة، القيمة، المدة، ونطاق عملكم تحديداً.",
+"from_notice":false
+},
+{
+"title":"شهادات إنجاز أو خطابات العملاء",
+"detail":"لأهم المشاريع المماثلة إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية",
+"detail":"السجل التجاري أو ترخيص المكتب الاستشاري، وشهادة القيد بنقابة المهندسين أو الهيئة المختصة.",
+"from_notice":false
+},
+{
+"title":"القدرات الفنية والإدارية",
+"detail":"الهيكل التنظيمي، عدد الفنيين، البرامج (Civil 3D، InfoWorks/SWMM، HEC-RAS، WaterGEMS، BIM)، وشهادات ISO إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"خطاب التحالف أو الاستشاري الفرعي",
+"detail":"فقط إذا ستتقدمون مع شريك: يحدد الشريك ونوع الشراكة (JV أو Sub-consultant).",
+"from_notice":true
+},
+{
+"title":"إقرار الأهلية وعدم تعارض المصالح",
+"detail":"حسب قواعد الجهة الممولة.",
+"from_notice":false
+}
+],
+"conditions":[
+"Office - now invites eligible consulting firms (Consultants) to indicate their",
+"services performed, experience in similar conditions, availability of",
+"may associate with other firms in the form of a joint venture or a sub-consultancy",
+"Expressions of Interest must be delivered in a written form to the"
+],
+"doc_note":"",
+"submission_line":"طريقة التسليم كما وردت في الإعلان: «Expressions of Interest must be delivered in a written form to the» – الإيميل: rapcmo@gmail.com",
+"steps":[
+{
+"title":"اقرأ الإعلان وطابق شروط القائمة المختصرة مع خبراتكم",
+"detail":"الشروط مذكورة في تبويب «الأوراق». لو ينقصكم شرط خبرة، فكّروا في تحالف أو استشاري فرعي.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلب الشروط المرجعية (ToR) إن لم تكن مرفقة",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قرّروا طريقة التقديم: منفردين أم بتحالف",
+"detail":"واطلبوا خطاب النوايا من الشريك مبكراً.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا أي استفسار مكتوب",
+"detail":"يُفضّل قبل الموعد النهائي بـ 10 أيام على الأقل. استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"جهّزوا ملف إبداء الاهتمام",
+"detail":"حسب قائمة «الأوراق المطلوبة».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية وتوقيع الخطاب",
+"detail":"تأكدوا من الرقم المرجعي واسم المهمة في الخطاب.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الملف قبل الموعد بيوم على الأقل",
+"detail":"طريقة التسليم كما وردت في الإعلان: «Expressions of Interest must be delivered in a written form to the» – الإيميل: rapcmo@gmail.com. احتفظوا بإثبات الإرسال (رد آلي أو إيصال).",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"تابعوا إعلان القائمة المختصرة",
+"detail":"عند اختياركم تصلكم دعوة لتقديم العرض الفني والمالي (RFP).",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00023217"
+},
+{
+"label":"صفحة المشروع الممول",
+"url":"https://projects.worldbank.org/en/projects-operations/project-detail/P085231"
+}
+],
+"excerpt":"REQUEST FOR EXPRESSIONS OF INTEREST\nConsultants' Services\nfor Preparation of Sana'a Urban Transport Project – Firm's Selection\nCountry and Beneficiary : [Republic of Yemen –Ministry of Public Works and Highways]\nProject Name: [Second Rural Access Project]\nConsultants' Services: [ Preparation\nof Sana'a Urban Transport Project- Traffic Control Center TCC ]\nIDA's Grant No.: [RAP2 Additional\nFinancing Grant No. H543 YEM]\nThe Government\nof Yemen has received additional financing in the form of a grant from the\nInternational Development Association (IDA) in various currencies towards the\ncost of the Second Rural Access Project, and intends to apply part ofthe\nproceeds of this grant for consulting services toward Technical Assistance for\nthe capital Sana'a, Republic of Yemen that would include the following:\nProvide\nthe technical specification for the design and implementation of an Advanced\nTraffic Management System (ATMS) for the capital city of Sana'a in the Republic\nof Yemen comprising five major sub-systems as follows:\n(1)\na Traffic Command Center (TCC);\n(2)\nUpgrading of the traffic signal system;\n(3)\nCommunications system;\n(4)\nCCTV monitoring system and E-police camera enforcement system; and\n(5)\nTraffic Guidance System (including traffic flow data collection and incident\ndetection). The scope also includes\nwriting the TOR for the Implementation Schedule for the TCC and ATMS.\nThe\nMinistry of Public Works and Highways - Rural Access Program Central Management\nOffice - now invites eligible consulting firms (Consultants) to indicate their\ninterest in providing these Services. Interested Consultants must provide\ninformation demonstrating that they are qualified to perform the services\n(brochures, description of similar assignments with detailed information on the\nservices performed, experience in similar conditions, availability of\nappropriate skills among staff, etc.).\nThe\nattention of interested Consultants is drawn to paragraph 1.9 of the World\nBank's Guidelines: Selection and Employment of Consultants [under IBRD Loans\nand IDA Credits & Grants] by World Bank Borrowers issued in May 2004 and\nrevised in October 2006 and January 2011 (\"Consultant Guidelines\"), setting\nforth the World Bank's policy on conflict of interest.\nConsultants\nmay associate with other firms in the form of a joint venture or a sub-consultancy\nto enhance their qualifications\nA Consultant will be selected in accordance with the Quality and\nCost Based Selection Method set out in the Consult",
+"notes":[]
+},
+{
+"id":"wb-9b864c9193",
+"uid":"wb:OP00082148",
+"first_seen":"2026-11-26T13:09:49+00:00",
+"updated":"2026-11-26T13:09:49+00:00",
+"source_key":"worldbank",
+"source":"البنك الدولي",
+"kind":"eoi",
+"notice_type":"Request for Expression of Interest",
+"notice_type_ar":"طلب إبداء اهتمام (EOI)",
+"title":"Construction supervision for Salahaldeen contracts",
+"is_arabic":false,
+"summary":"Emergency Operation for Development",
+"country":"Iraq",
+"country_ar":"العراق",
+"flag":"🇮🇶",
+"client":"Ministry of Water Resources",
+"reference":"EODP-MOWR/C02B",
+"published":"2019-12-22",
+"deadline":null,
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"Consultant Qualification  Selection",
+"method_ar":"الاختيار على أساس مؤهلات الاستشاري (CQS)",
+"activity":"",
+"funding":"البنك الدولي – مشروع P155732",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":12,
+"disciplines":[
+"تصريف مياه الأمطار والسيول",
+"الصرف الصحي ومحطات الرفع",
+"شبكات الري"
+],
+"ids":[
+"stormwater",
+"sewer",
+"irrigation"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2019-12-22",
+"date_ar":"الأحد 22 ديسمبر 2019",
+"kind":"published",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"Hussain Abdulameer Backa",
+"org":"Ministry of Water Resources",
+"emails":[
+"deputyoffice@mowr.gov.iq",
+"contracts.dep@mowr.gov.ig"
+],
+"phones":[
+{
+"display":"009647706345853",
+"tel":"+9647706345853",
+"whatsapp":"9647706345853"
+}
+],
+"address":"Ministry of Water Resources\nPalestine Street\nBaghdad\nIraq",
+"website":""
+}
+],
+"inquiry_how":"أرسلوا الاستفسار كتابةً بالإيميل لجهة التواصل واذكروا الرقم المرجعي.",
+"documents":[
+{
+"title":"خطاب إبداء الاهتمام",
+"detail":"موقّع ومختوم من المفوَّض بالتوقيع، موجّه لجهة التواصل، ويذكر اسم المهمة ورقمها المرجعي.",
+"from_notice":false
+},
+{
+"title":"الملف التعريفي للمكتب",
+"detail":"سنة التأسيس، الفروع، عدد المهندسين، التخصصات، والبرامج المستخدمة.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة",
+"detail":"آخر 10 سنوات: اسم المشروع، العميل، الدولة، القيمة، المدة، ونطاق عملكم تحديداً.",
+"from_notice":false
+},
+{
+"title":"شهادات إنجاز أو خطابات العملاء",
+"detail":"لأهم المشاريع المماثلة إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية",
+"detail":"السجل التجاري أو ترخيص المكتب الاستشاري، وشهادة القيد بنقابة المهندسين أو الهيئة المختصة.",
+"from_notice":false
+},
+{
+"title":"القدرات الفنية والإدارية",
+"detail":"الهيكل التنظيمي، عدد الفنيين، البرامج (Civil 3D، InfoWorks/SWMM، HEC-RAS، WaterGEMS، BIM)، وشهادات ISO إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"خطاب التحالف أو الاستشاري الفرعي",
+"detail":"فقط إذا ستتقدمون مع شريك: يحدد الشريك ونوع الشراكة (JV أو Sub-consultant).",
+"from_notice":true
+},
+{
+"title":"إقرار الأهلية وعدم تعارض المصالح",
+"detail":"حسب قواعد الجهة الممولة.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"مطلوب حسب نص الإعلان.",
+"from_notice":true
+}
+],
+"conditions":[
+"The Project Management Team (PMT) of the Ministry of Water Resources (MOWR) now invites eligible consultants to indicate their interest in providing the services.",
+"Interested and eligible consultants must provide information indicating that they are qualified to perform the services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc.).",
+"Consultants may associate with other firms in the form of a joint venture or sub consultancy to enhance their qualifications.",
+"Expressions of interest must be delivered to the address below at or before 01:00 pm Baghdad local time on January 12, 2020.",
+"Hence, the Consultant is required to review and validate the Contractor’s construction program and shall carry-out the following tasks:",
+"The program shall include all major milestone activities and long-lead items such as design inputs, reviews, approvals, material delivery, inputs from subcontractors and statutory authorities;",
+"Prepare Modified design and drawings for any missing, faulty or required parts in the original design as per client instruction.",
+"The reports shall include information on progress, performance, measurements, quality control, cost data, contractual matters, materials’ submittals and approvals, resources, manpower, weather conditions, variation orders, time extensions, testing/commissioning and details of site visits."
+],
+"doc_note":"",
+"submission_line":"طريقة التسليم كما وردت في الإعلان: «Expressions of interest must be delivered to the address below at or before 01:00 pm Baghdad local time on January 12, 2020» – الإيميل: deputyoffice@mowr.gov.iq",
+"steps":[
+{
+"title":"اقرأ الإعلان وطابق شروط القائمة المختصرة مع خبراتكم",
+"detail":"الشروط مذكورة في تبويب «الأوراق». لو ينقصكم شرط خبرة، فكّروا في تحالف أو استشاري فرعي.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلب الشروط المرجعية (ToR) إن لم تكن مرفقة",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قرّروا طريقة التقديم: منفردين أم بتحالف",
+"detail":"واطلبوا خطاب النوايا من الشريك مبكراً.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا أي استفسار مكتوب",
+"detail":"يُفضّل قبل الموعد النهائي بـ 10 أيام على الأقل. استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"جهّزوا ملف إبداء الاهتمام",
+"detail":"حسب قائمة «الأوراق المطلوبة».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية وتوقيع الخطاب",
+"detail":"تأكدوا من الرقم المرجعي واسم المهمة في الخطاب.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الملف قبل الموعد بيوم على الأقل",
+"detail":"طريقة التسليم كما وردت في الإعلان: «Expressions of interest must be delivered to the address below at or before 01:00 pm Baghdad local time on January 12, 2020» – الإيميل: deputyoffice@mowr.gov.iq. احتفظوا بإثبات الإرسال (رد آلي أو إيصال).",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"تابعوا إعلان القائمة المختصرة",
+"detail":"عند اختياركم تصلكم دعوة لتقديم العرض الفني والمالي (RFP).",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00082148"
+},
+{
+"label":"صفحة المشروع الممول",
+"url":"https://projects.worldbank.org/en/projects-operations/project-detail/P155732"
+}
+],
+"excerpt":"REQUEST FOR EXPRESSIONS OF INTEREST\nFor CONSULTANT SERVICES-FIRM SELECTION\nRepublic of Iraq\nMinistry of Water Resources\nEmergency Operation for Development Project\nProject ID No.: P 155732\nConstruction Supervision for contracts in Salahdeen Governorate\n(Ref: EODP- MOWR/C02B)\nThe Republic of Iraq (hereinafter called \"Borrower\") has received financing from the International Bank for Reconstruction and Development (IBRD) (the “Bank”) in the form of a “loan”(hereinafter called “loan” toward the cost of Emergency Operation for Development Project. The Ministry of Water Resources (MoWR) in the Republic of Iraq, an implementing agency of the Borrower, intends to apply a portion of the proceeds toward the cost of the consulting services for construction supervision for the contracts in Salahdeen Governorate, such as rehabilitation and reconstruction of head & cross regulators, box culverts, siphons, vehicles & foot bridges across channels & drains, and irrigation pumping stations, as the details mentioned in the attached TOR.\nObjective of the consultancy services and scope of services:\nThe MOWR is looking to engage the services a Consulting Firm to provide construction supervision services according to international standards and to ensure that the project will be implemented in accordance with the contract conditions.\nThe Consulting firm will work under the direct supervision of the Director of the Project Management Team (PMT) of Ministry of Water Resources (MoWR) and will keep him informed of progress made and of critical issues needing his decision. The Consultant will coordinate with the local authorities and / or with MOWR local staff as needed.\nThe Project Management Team (PMT) of the Ministry of Water Resources (MOWR) now invites eligible consultants to indicate their interest in providing the services. Interested and eligible consultants must provide information indicating that they are qualified to perform the services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc.).\nConsultants may associate with other firms in the form of a joint venture or sub consultancy to enhance their qualifications. Joint ventures with national consulting firms are encouraged.\nA consultant will be selected in accordance with the procedures set out in the World Bank’s Guidelines: Selection and Employment of Consultants by World Bank Borrowers (current edition) CQS procedures.\nInterested consult",
+"notes":[]
+},
+{
+"id":"etimad-08b129766f",
+"uid":"etimad:BxqKkXjOcby9aSxOIKOBTw==",
+"first_seen":"2026-11-26T13:09:49+00:00",
+"updated":"2026-11-26T13:09:49+00:00",
+"source_key":"etimad",
+"source":"منصة اعتماد – السعودية",
+"kind":"etimad",
+"notice_type":"منافسة عامة",
+"notice_type_ar":"منافسة عامة",
+"title":"عملية معالجة الملاحظات واعتماد مخططات السلامة المعمارية ومخططات مكافحة الحريق ومخططات الإنذار ومخططات الاخلاء والطوارئ المجموعة الشرقية وتشمل (الدمام، الاحساء)",
+"is_arabic":true,
+"summary":"اعداد واعتماد مخططات السلامة ا ...عرض المزيد...",
+"country":"Saudi Arabia",
+"country_ar":"السعودية",
+"flag":"🇸🇦",
+"client":"وزارة التجارة والاستثمار - الديوان العام – ادارة المناقصات والمشتريات",
+"reference":"261139010227",
+"published":"2026-11-23",
+"deadline":"2026-12-15",
+"deadline_time":"",
+"inquiry_deadline":"2026-12-03",
+"opening_date":"2026-12-16",
+"method":"\tانشطة الاستشارات الهندسية - تصميم\t",
+"method_ar":"",
+"activity":"\tانشطة الاستشارات الهندسية - تصميم\t",
+"funding":"",
+"booklet_price":"1000.0 ريال",
+"guarantee":"ضمان إبتدائى",
+"contract_duration":"60 يوم",
+"match":{
+"level":"medium",
+"level_ar":"مناسب",
+"score":9,
+"disciplines":[
+"الصرف الصحي ومحطات الرفع"
+],
+"ids":[
+"sewer"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-23",
+"date_ar":"الاثنين 23 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للاستفسارات",
+"date":"2026-12-03",
+"date_ar":"الخميس 3 ديسمبر 2026",
+"kind":"inquiry",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-15",
+"date_ar":"الثلاثاء 15 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+},
+{
+"label":"فتح العروض",
+"date":"2026-12-16",
+"date_ar":"الأربعاء 16 ديسمبر 2026",
+"kind":"opening",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"وزارة التجارة والاستثمار - الديوان العام – ادارة المناقصات والمشتريات",
+"emails":[],
+"phones":[],
+"address":"",
+"website":"",
+"note":"الاستفسارات تُرسل من تبويب «الاستفسارات» داخل صفحة المنافسة على منصة اعتماد."
+},
+{
+"title":"الدعم الفني لمنصة اعتماد (وزارة المالية السعودية)",
+"phones":[
+{
+"display":"19990",
+"tel":"19990",
+"whatsapp":""
+}
+],
+"emails":[
+"ccc@mof.gov.sa"
+],
+"website":"https://portal.etimad.sa/ar-sa/aboutetimad/contactuscrm",
+"hours":"24 ساعة طوال أيام الأسبوع",
+"note":"للتسجيل والمشاكل التقنية فقط. أسئلة المنافسة نفسها تُرسل من تبويب «الاستفسارات» داخل صفحة المنافسة.",
+"source":"دليل استقبال الشكاوى – اعتماد، وصفحة الدعم بوزارة المالية",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات إلكترونياً من تبويب «الاستفسارات» داخل صفحة المنافسة على اعتماد. للمشاكل التقنية: 19990.",
+"documents":[
+{
+"title":"حساب المنشأة على منصة اعتماد",
+"detail":"مفعّل ومحدّث: سجل تجاري سعودي أو ترخيص فرع أجنبي من وزارة الاستثمار.",
+"from_notice":false
+},
+{
+"title":"إيصال شراء كراسة الشروط",
+"detail":"من صفحة المنافسة على المنصة.",
+"from_notice":false
+},
+{
+"title":"تصنيف المكتب الهندسي",
+"detail":"اعتماد المكتب لدى الهيئة السعودية للمهندسين.",
+"from_notice":false
+},
+{
+"title":"الشهادات السارية",
+"detail":"الزكاة والضريبة، التأمينات الاجتماعية، الغرفة التجارية، نطاقات (السعودة)، وشهادة ضريبة القيمة المضافة.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"حسب متطلبات الكراسة ومعايير التقييم.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"غالباً في ملف منفصل عن العرض الفني (نظام المظروفين).",
+"from_notice":false
+},
+{
+"title":"الضمان الابتدائي",
+"detail":"إذا نصّت عليه الكراسة — قيمته وعنوانه في تفاصيل المنافسة.",
+"from_notice":true
+}
+],
+"conditions":[],
+"doc_note":"",
+"submission_line":"عبر منصة اعتماد – ملف واحد للعرض الفني والمالي معا",
+"steps":[
+{
+"title":"تأكدوا من جاهزية حساب المنشأة على اعتماد",
+"detail":"سجل تجاري سعودي أو ترخيص فرع أجنبي، والشهادات سارية (زكاة، تأمينات، غرفة، نطاقات).",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اشتروا كراسة الشروط من صفحة المنافسة",
+"detail":"قيمة الكراسة: 1000.0 ريال.",
+"due":"2026-11-27",
+"due_ar":"الجمعة 27 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"ادرسوا الكراسة: النطاق ومعايير التقييم والمتطلبات",
+"detail":"",
+"due":"2026-11-29",
+"due_ar":"الأحد 29 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"أرسلوا استفساراتكم من تبويب «الاستفسارات» في المنافسة",
+"detail":"آخر موعد للاستفسارات: الخميس 3 ديسمبر 2026.",
+"due":"2026-12-03",
+"due_ar":"الخميس 3 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"استخرجوا الضمان الابتدائي (إن طُلب)",
+"detail":"ابدؤوا مع البنك قبل الموعد بأسبوع على الأقل.",
+"due":"2026-12-08",
+"due_ar":"الثلاثاء 8 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني",
+"detail":"",
+"due":"2026-12-10",
+"due_ar":"الخميس 10 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي",
+"detail":"",
+"due":"2026-12-11",
+"due_ar":"الجمعة 11 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"ارفعوا العرضين على المنصة",
+"detail":"لا تنتظروا آخر يوم — الضغط على المنصة يزيد قرب الموعد.",
+"due":"2026-12-14",
+"due_ar":"الاثنين 14 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"تابعوا فتح العروض والنتيجة",
+"detail":"",
+"due":"2026-12-16",
+"due_ar":"الأربعاء 16 ديسمبر 2026",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://tenders.etimad.sa/Tender/DetailsForVisitor?STenderId=BxqKkXjOcby9aSxOIKOBTw%3D%3D"
+}
+],
+"excerpt":"عملية معالجة الملاحظات واعتماد مخططات السلامة المعمارية ومخططات مكافحة الحريق ومخططات الإنذار ومخططات الاخلاء والطوارئ المجموعة الشرقية وتشمل (الدمام، الاحساء) \tانشطة الاستشارات الهندسية - تصميم\t منافسة عامة\nتفاصيل المنافسة\nclear\nمعلومات المورد\nclear\nتحميل البيانات\nmenu\nclose\nsearch\nclose\nperson\nتسجيل الدخول\nالمنافسات\nدعوات التأهيل\nالإعلانات\nاعلانات قوائم الموردين\nمشاريع المنافسات المستقبلية\nالمنافسات\nدعوات التأهيل\nالإعلانات\nاعلانات قوائم الموردين\nمشاريع المنافسات المستقبلية\nلوحة المعلومات\nجميع المنافسات\nتفاصيل المنافسة\nتفاصيل المنافسة\nassignment تفاصيل المنافسة\ndashboard\nالمعلومات الأساسية\nschedule\nالعناوين والمواعيد المتعلقة بالمنافسة\nlist\nمجال التصنيف وموقع التنفيذ والتقديم\npeople_outline\nإعلان نتائج الترسية\nhome\nآليات المحتوى المحلي\nالمعلومات الأساسية\nاسم المنافسة\nعملية معالجة الملاحظات واعتماد مخططات السلامة المعمارية ومخططات مكافحة الحريق ومخططات الإنذار ومخططات الاخلاء والطوارئ المجموعة الشرقية وتشمل (الدمام، الاحساء)\nرقم المنافسة\nلا يوجد\nالرقم المرجعي\n261139010227\nالغرض من المنافسة\nاعداد واعتماد مخططات السلامة ا ...عرض المزيد...\nاعداد واعتماد مخططات السلامة المعمارية ومخططات مكافحة الحريق ومخططات الإنذار ومخططات الاخلاء والطوارئ وتقرير يوضح خطة الاخلاء حسب الكود السعودي الحديث للدفاع المدني ...عرض الأقل...\nقيمة وثائق المنافسة\n1500.00\nحالة المنافسة\nمعتمدة\nمدة العقد\n60 يوم\nهل التأمين من متطلبات المنافسة\nلا\nنوع المنافسة\nمنافسة عامة\nالجهة الحكوميه\nوزارة التجارة والاستثمار - الديوان العام\nالوقت المتبقى\n47\nدقائق\n:\n17\nساعة\n:\n18\nيوم\nطريقة تقديم العروض\nملف واحد للعرض الفني والمالي معا\nمطلوب ضمان الإبتدائي\nضمان إبتدائى\nعنوان الضمان الإبتدائى\nالمقر الرئيسي للوزارة\nالضمان النهائي\n5.00\nالرجوع الى جميع المنافسات\nالرجوع إلى الصفحة السابقة\nالدعم و المساعدة\nتحتاج مساعدة؟ اتصل\n19990\nالبوابة الارشادية\nاتصل بنا\nتابعنا على\nحمل تطبيق اعتماد\nالدعم بلغة الإشارة\nجميع الحقوق محفوظة © 2024 - المركز الوطني لنظم الموارد الحكومية - المملكة العربية السعودية\nالإنتقال إلى نظام المنافسات القديم\nسياسة الاستخدام وإخلاء المسؤولية\nالإبلاغ عن حالات فساد\nسياسة الخصوصية\nتدعم منصة اعتماد المتصفحات التالية:\nتحت إشراف",
+"notes":[]
+},
+{
+"id":"ungm-b7804947e3",
+"uid":"ungm:323328",
+"first_seen":"2026-11-26T13:09:49+00:00",
+"updated":"2026-11-26T13:09:49+00:00",
+"source_key":"ungm",
+"source":"الأمم المتحدة – UNICEF",
+"kind":"eoi",
+"notice_type":"Request for EOI",
+"notice_type_ar":"Request for EOI",
+"title":"Design, Supply and Delivery of a Floating High-Capacity Dewatering Pumping System for Al Sheikh Redwan Stormwater Lagoon, Gaza Strip",
+"is_arabic":false,
+"summary":"You appear to be using an unsupported browser to use UNGM. It is likely that the site will not work correctly for you. We strongly recommend that you upgrade your browser to the latest version of Chrome , Firefox , Safari or Internet Explorer\nYou appear to be using an out of date browser to use UNGM. We strongly …",
+"country":"Palestine",
+"country_ar":"فلسطين",
+"flag":"🇵🇸",
+"client":"UNICEF",
+"reference":"REOI",
+"published":"2026-11-23",
+"deadline":"2026-11-30",
+"deadline_time":"00:00 (GMT 2.00)",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"low",
+"level_ar":"محتمل",
+"score":5,
+"disciplines":[
+"تصريف مياه الأمطار والسيول"
+],
+"ids":[
+"stormwater"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-23",
+"date_ar":"الاثنين 23 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-11-30",
+"date_ar":"الاثنين 30 نوفمبر 2026",
+"kind":"deadline",
+"time":"00:00 (GMT 2.00)"
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"Ibrahima",
+"org":"UNICEF",
+"emails":[
+"indiaye@unicef.org"
+],
+"phones":[],
+"address":"",
+"website":""
+},
+{
+"title":"دعم بوابة UNGM",
+"website":"https://help.ungm.org/hc/en-us",
+"note":"لا يوجد رقم هاتف؛ التواصل عبر نموذج «Contact UNGM» في مركز المساعدة. أسئلة المناقصة تُرسل لجهة التواصل في الإعلان.",
+"source":"مركز المساعدة UNGM",
+"phones":[],
+"kind":"support"
+}
+],
+"inquiry_how":"أرسلوا الاستفسار كتابةً بالإيميل لجهة التواصل واذكروا الرقم المرجعي.",
+"documents":[
+{
+"title":"خطاب إبداء الاهتمام",
+"detail":"موقّع ومختوم من المفوَّض بالتوقيع، موجّه لجهة التواصل، ويذكر اسم المهمة ورقمها المرجعي.",
+"from_notice":false
+},
+{
+"title":"الملف التعريفي للمكتب",
+"detail":"سنة التأسيس، الفروع، عدد المهندسين، التخصصات، والبرامج المستخدمة.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة",
+"detail":"آخر 10 سنوات: اسم المشروع، العميل، الدولة، القيمة، المدة، ونطاق عملكم تحديداً.",
+"from_notice":false
+},
+{
+"title":"شهادات إنجاز أو خطابات العملاء",
+"detail":"لأهم المشاريع المماثلة إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية",
+"detail":"السجل التجاري أو ترخيص المكتب الاستشاري، وشهادة القيد بنقابة المهندسين أو الهيئة المختصة.",
+"from_notice":false
+},
+{
+"title":"القدرات الفنية والإدارية",
+"detail":"الهيكل التنظيمي، عدد الفنيين، البرامج (Civil 3D، InfoWorks/SWMM، HEC-RAS، WaterGEMS، BIM)، وشهادات ISO إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"خطاب التحالف أو الاستشاري الفرعي",
+"detail":"فقط إذا ستتقدمون مع شريك: يحدد الشريك ونوع الشراكة (JV أو Sub-consultant).",
+"from_notice":false
+},
+{
+"title":"إقرار الأهلية وعدم تعارض المصالح",
+"detail":"حسب قواعد الجهة الممولة.",
+"from_notice":false
+}
+],
+"conditions":[],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وطابق شروط القائمة المختصرة مع خبراتكم",
+"detail":"الشروط مذكورة في تبويب «الأوراق». لو ينقصكم شرط خبرة، فكّروا في تحالف أو استشاري فرعي.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلب الشروط المرجعية (ToR) إن لم تكن مرفقة",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قرّروا طريقة التقديم: منفردين أم بتحالف",
+"detail":"واطلبوا خطاب النوايا من الشريك مبكراً.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"أرسلوا أي استفسار مكتوب",
+"detail":"يُفضّل قبل الموعد النهائي بـ 10 أيام على الأقل. استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا ملف إبداء الاهتمام",
+"detail":"حسب قائمة «الأوراق المطلوبة».",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية وتوقيع الخطاب",
+"detail":"تأكدوا من الرقم المرجعي واسم المهمة في الخطاب.",
+"due":"2026-11-27",
+"due_ar":"الجمعة 27 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الملف قبل الموعد بيوم على الأقل",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد). احتفظوا بإثبات الإرسال (رد آلي أو إيصال).",
+"due":"2026-11-29",
+"due_ar":"الأحد 29 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"تابعوا إعلان القائمة المختصرة",
+"detail":"عند اختياركم تصلكم دعوة لتقديم العرض الفني والمالي (RFP).",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://www.ungm.org/Public/Notice/323328"
+}
+],
+"excerpt":"Design, Supply and Delivery of a Floating High-Capacity Dewatering Pumping System for Al Sheikh Redwan Stormwater Lagoon, Gaza Strip | Request for EOI | UNICEF | Palestine, State of\nDesign, Supply and Delivery of a Floating High-Capacity Dewatering Pumping System for Al Sheikh Redwan Stormwater Lagoon, Gaza Strip\nYou appear to be using an unsupported browser to use UNGM. It is likely that the site will not work correctly for you. We strongly recommend that you upgrade your browser to the latest version of Chrome , Firefox , Safari or Internet Explorer\nYou appear to be using an out of date browser to use UNGM. We strongly recommend that you upgrade your browser to the latest version of Chrome , Firefox or Internet Explorer .\nEnglish\nFrançais\n(French)\nEspañol\n(Spanish)\nPortuguês\n(Portuguese)\n中文\n(Chinese)\nРусский\n(Russian)\nالعَرَبِيَّة‎\n(Arabic)\nHelp Center\nOpens new tab\nLog in\nRegister\nJump into the main content\nHome\nProcurement Opportunities\nContract Awards\nUNGM Pro\nNew!\nSupplier Code of Conduct\nUN Standard Products and Services Code (UNSPSC)\nHelp Center\nOpens new tab\nKnowledge Center\nNews and recent deployments\nDoing Business with UN Organizations\nThe UN System of Organizations\nThe UN Organizations\nADB\nAfDB\nCTBTO\nFAO\nIAEA\nICAO\nIFAD\nILO\nIMF\nIMO\nIOM\nITC\nITU\nOPCW\nOSCE\nPAHO\nUNAIDS\nUNDP\nUNESCO\nUNFPA\nUNFCCC\nUNICEF\nUNIDO\nUNHCR\nUNOPS\nUNPD\nUNRWA\nUN Women\nUN Tourism (previously UNWTO)\nThe World Bank\nWFP\nWIPO\nWHO\nWMO\nWMU\nUNU\nWTO\nProcurement Categories\nAudio and Visual Devices\nSamples of Specifications\nBuilding and Maintenance Services\nSamples of Specifications\nBusiness Professionals and Administrative Services\nSamples of Specifications\nComputer Hardware and Software\nSamples of Specifications\nElectoral Systems\nSamples of Specifications\nEmergency Preparedness Kits\nSamples of Specifications\nEngineering, Research and Technology Based Services\nSamples of Specifications\nFood and Beverage Products\nSamples of Specifications\nFuels, Additives and Lubricants\nSamples of Specifications\nGraphic Design\nSamples of Specifications\nHealthcare Services\nSamples of Specifications\nIT Services\nSamples of Specifications\nSDG Digital Investment Framework\nInsurance Services\nSamples of Specifications\nMedical Waste Disposal\nSamples of Specifications\nMedical Equipment and Supplies\nSamples of Specifications\nPersonal Hygiene and Sanitation Products\nSamples of Specifications\nPharmaceutical Items\nSamples of Specifications\nPublic Order, Security and Safety Services\nSamples of Specifications\nPostal, Cou",
+"notes":[]
+},
 {
 "id":"wb-2ee4178a4e",
 "uid":"wb:OP00369259",
