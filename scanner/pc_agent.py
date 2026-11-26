@@ -23,7 +23,8 @@ import json  # noqa: E402
 import platform  # noqa: E402
 import subprocess  # noqa: E402
 import time  # noqa: E402
-import urllib.error  # noqa: E402
+import urllib.error
+import urllib.parse  # noqa: E402
 import uuid  # noqa: E402
 from datetime import date  # noqa: E402
 
@@ -66,7 +67,13 @@ def curl_page(url, timeout=60):
     raise RuntimeError(f"curl exit {r.returncode}, HTTP {code or '-'} {err[:150]}")
 
 
+CURL_HOSTS = set()  # hosts whose TLS handshake only works with Windows curl
+
+
 def pc_fetch(url, data=None, headers=None, method=None, retries=1, timeout=None):
+    host = urllib.parse.urlsplit(url).hostname or ""
+    if data is None and host in CURL_HOSTS:
+        return curl_page(url, timeout=(timeout or 40) + 20)
     try:
         return http(url, data=data, headers=headers, method=method, retries=retries, timeout=timeout)
     except urllib.error.HTTPError:
@@ -74,8 +81,10 @@ def pc_fetch(url, data=None, headers=None, method=None, retries=1, timeout=None)
     except (urllib.error.URLError, OSError) as e:
         if data is not None or not os.name == "nt":
             raise
-        log(f"    Python could not connect to {url[:70]} ({str(e)[:80]}) — trying Windows curl")
-        return curl_page(url, timeout=(timeout or 40) + 20)
+        log(f"    Python could not connect to {host} ({str(e)[:80]}) — using Windows curl for this site")
+        body = curl_page(url, timeout=(timeout or 40) + 20)
+        CURL_HOSTS.add(host)
+        return body
 
 
 def load_key(home):
