@@ -1,0 +1,647 @@
+{
+ "_help": "ملف التخصصات والكلمات المفتاحية (متقدم). عدّله فقط لو أردت تغيير ما يبحث عنه الرادار.",
+ "countries": {
+  "Egypt": [
+   "egypt",
+   "مصر",
+   "egypt, arab republic of",
+   "cairo",
+   "القاهرة",
+   "alexandria",
+   "الإسكندرية",
+   "new administrative capital",
+   "العاصمة الإدارية"
+  ],
+  "Libya": [
+   "libya",
+   "ليبيا",
+   "tripoli",
+   "طرابلس",
+   "benghazi",
+   "بنغازي",
+   "derna",
+   "درنة"
+  ],
+  "Syria": [
+   "syria",
+   "syrian arab republic",
+   "سوريا",
+   "سورية",
+   "damascus",
+   "دمشق",
+   "aleppo",
+   "حلب",
+   "hasakah",
+   "الحسكة"
+  ],
+  "Jordan": [
+   "jordan",
+   "الأردن",
+   "الاردن",
+   "amman",
+   "عمان الأردن",
+   "aqaba",
+   "العقبة",
+   "zarqa",
+   "الزرقاء"
+  ],
+  "Palestine": [
+   "palestine",
+   "west bank and gaza",
+   "west bank",
+   "gaza",
+   "فلسطين",
+   "غزة",
+   "الضفة الغربية",
+   "ramallah",
+   "رام الله"
+  ],
+  "Saudi Arabia": [
+   "saudi",
+   "ksa",
+   "السعودية",
+   "المملكة العربية السعودية",
+   "riyadh",
+   "الرياض",
+   "jeddah",
+   "جدة",
+   "neom",
+   "نيوم",
+   "dammam",
+   "الدمام",
+   "makkah",
+   "مكة",
+   "madinah",
+   "المدينة المنورة",
+   "red sea global",
+   "diriyah",
+   "الدرعية"
+  ],
+  "UAE": [
+   "uae",
+   "united arab emirates",
+   "الإمارات",
+   "الامارات",
+   "abu dhabi",
+   "أبوظبي",
+   "ابوظبي",
+   "dubai",
+   "دبي",
+   "sharjah",
+   "الشارقة",
+   "ras al khaimah",
+   "رأس الخيمة",
+   "ajman",
+   "عجمان",
+   "fujairah",
+   "الفجيرة",
+   "umm al quwain",
+   "أم القيوين",
+   "al ain",
+   "العين"
+  ],
+  "Qatar": [
+   "qatar",
+   "قطر",
+   "doha",
+   "الدوحة",
+   "ashghal",
+   "أشغال"
+  ],
+  "Kuwait": [
+   "kuwait",
+   "الكويت"
+  ],
+  "Bahrain": [
+   "bahrain",
+   "البحرين",
+   "manama",
+   "المنامة"
+  ],
+  "Oman": [
+   "oman",
+   "سلطنة عمان",
+   "muscat",
+   "مسقط",
+   "duqm",
+   "الدقم",
+   "salalah",
+   "صلالة",
+   "sohar",
+   "صحار"
+  ],
+  "Yemen": [
+   "yemen",
+   "yemen, republic of",
+   "اليمن",
+   "aden",
+   "عدن",
+   "sanaa",
+   "صنعاء"
+  ],
+  "Iraq": [
+   "iraq",
+   "العراق",
+   "basra",
+   "البصرة",
+   "baghdad",
+   "بغداد",
+   "al faw",
+   "الفاو",
+   "erbil",
+   "أربيل"
+  ],
+  "MENA (Regional)": [
+   "middle east and north africa",
+   "mena",
+   "gcc",
+   "مجلس التعاون",
+   "arab world"
+  ]
+ },
+ "disciplines": [
+  {
+   "id": "stormwater",
+   "ar": "تصريف مياه الأمطار والسيول",
+   "weight": 4,
+   "keywords": [
+    "storm water",
+    "stormwater",
+    "storm-water",
+    "drainage",
+    "surface water",
+    "rainwater",
+    "flood",
+    "flash flood",
+    "culvert",
+    "مياه الأمطار",
+    "تصريف",
+    "صرف الأمطار",
+    "السيول",
+    "سيول",
+    "الفيضانات",
+    "عبارات"
+   ]
+  },
+  {
+   "id": "hydrology",
+   "ar": "الهيدرولوجيا والنمذجة الهيدروليكية",
+   "weight": 4,
+   "keywords": [
+    "hydrology",
+    "hydrological",
+    "hydraulic model",
+    "hydraulic modelling",
+    "hydraulic modeling",
+    "rainfall",
+    "catchment",
+    "watershed",
+    "wadi",
+    "هيدرولوج",
+    "هيدروليك",
+    "الأحواض",
+    "مستجمعات",
+    "الأودية",
+    "وادي"
+   ]
+  },
+  {
+   "id": "sewer",
+   "ar": "الصرف الصحي ومحطات الرفع",
+   "weight": 4,
+   "keywords": [
+    "sewer",
+    "sewerage",
+    "wastewater",
+    "waste water",
+    "sanitation",
+    "pumping station",
+    "lift station",
+    "iwts",
+    "treatment plant",
+    "stp",
+    "صرف صحي",
+    "الصرف الصحي",
+    "مياه الصرف",
+    "محطة رفع",
+    "محطات رفع",
+    "معالجة"
+   ]
+  },
+  {
+   "id": "water",
+   "ar": "شبكات مياه الشرب",
+   "weight": 3,
+   "keywords": [
+    "water supply",
+    "water network",
+    "water distribution",
+    "water transmission",
+    "water conveyance",
+    "potable water",
+    "pipeline",
+    "reservoir",
+    "مياه الشرب",
+    "شبكات المياه",
+    "شبكة مياه",
+    "خطوط المياه",
+    "نقل المياه",
+    "خزانات"
+   ]
+  },
+  {
+   "id": "irrigation",
+   "ar": "شبكات الري",
+   "weight": 3,
+   "keywords": [
+    "irrigation",
+    "tse network",
+    "treated sewage effluent",
+    "landscape irrigation",
+    "canal",
+    "الري",
+    "شبكات الري",
+    "شبكة ري",
+    "قنوات",
+    "ترع"
+   ]
+  },
+  {
+   "id": "roads",
+   "ar": "الطرق والتصميم الهندسي",
+   "weight": 4,
+   "keywords": [
+    "road",
+    "roads",
+    "highway",
+    "street",
+    "interchange",
+    "junction",
+    "access road",
+    "geometric design",
+    "signage",
+    "traffic",
+    "transport infrastructure",
+    "الطرق",
+    "طريق",
+    "الطريق",
+    "طرق",
+    "تقاطع",
+    "كباري",
+    "جسور",
+    "محاور",
+    "التصميم الهندسي"
+   ]
+  },
+  {
+   "id": "pavement",
+   "ar": "الرصف",
+   "weight": 3,
+   "keywords": [
+    "pavement",
+    "asphalt",
+    "rehabilitation of roads",
+    "الرصف",
+    "رصف",
+    "الأسفلت",
+    "سفلتة"
+   ]
+  },
+  {
+   "id": "grading",
+   "ar": "التسوية والأعمال الترابية",
+   "weight": 3,
+   "keywords": [
+    "grading",
+    "site levelling",
+    "site leveling",
+    "earthworks",
+    "earthwork",
+    "cut and fill",
+    "site formation",
+    "التسوية",
+    "تسوية",
+    "أعمال ترابية",
+    "الحفر والردم"
+   ]
+  },
+  {
+   "id": "utilities",
+   "ar": "المرافق والبنية التحتية",
+   "weight": 3,
+   "keywords": [
+    "wet utilities",
+    "utilities",
+    "utility relocation",
+    "infrastructure",
+    "industrial zone",
+    "industrial area",
+    "industrial park",
+    "master plan",
+    "masterplan",
+    "site development",
+    "microstation",
+    "substation",
+    "المرافق",
+    "البنية التحتية",
+    "بنية تحتية",
+    "منطقة صناعية",
+    "المنطقة الصناعية",
+    "مخطط عام",
+    "المخطط العام",
+    "ترحيل المرافق"
+   ]
+  },
+  {
+   "id": "bim",
+   "ar": "نمذجة BIM",
+   "weight": 2,
+   "keywords": [
+    "bim",
+    "building information model",
+    "civil 3d",
+    "digital twin",
+    "نمذجة معلومات البناء"
+   ]
+  },
+  {
+   "id": "review",
+   "ar": "مراجعة وتقييم التصميمات",
+   "weight": 2,
+   "keywords": [
+    "infrastructure assessment",
+    "design review",
+    "peer review",
+    "technical audit",
+    "condition assessment",
+    "مراجعة التصميم",
+    "تقييم البنية التحتية",
+    "مراجعة فنية"
+   ]
+  }
+ ],
+ "consultancy_terms": [
+  "consulting services",
+  "consultancy services",
+  "consultancy",
+  "consulting",
+  "consultant",
+  "consultants",
+  "consulting firm",
+  "consulting firms",
+  "engineering services",
+  "design services",
+  "design",
+  "detailed design",
+  "preliminary design",
+  "concept design",
+  "design review",
+  "design and supervision",
+  "supervision",
+  "construction supervision",
+  "feasibility study",
+  "feasibility",
+  "study",
+  "studies",
+  "technical assistance",
+  "expression of interest",
+  "expressions of interest",
+  "master plan",
+  "masterplan",
+  "modelling",
+  "modeling",
+  "assessment",
+  "engineering consultancy",
+  "استشاري",
+  "استشارية",
+  "استشارات",
+  "خدمات استشارية",
+  "الخدمات الاستشارية",
+  "مكتب استشاري",
+  "مكاتب استشارية",
+  "تصميم",
+  "التصميم",
+  "تصاميم",
+  "إشراف",
+  "الإشراف",
+  "دراسة",
+  "دراسات",
+  "إبداء اهتمام",
+  "ابداء الاهتمام",
+  "مخطط عام",
+  "المخطط العام",
+  "نمذجة",
+  "مراجعة التصميم",
+  "تقييم"
+ ],
+ "works_terms": [
+  "construction of",
+  "construction works",
+  "civil works",
+  "supply and installation",
+  "execution of",
+  "rehabilitation works",
+  "maintenance works",
+  "operation and maintenance",
+  "تنفيذ",
+  "إنشاء",
+  "انشاء",
+  "توريد وتركيب",
+  "أعمال إنشاء",
+  "مقاولة",
+  "صيانة وتشغيل",
+  "تشغيل وصيانة"
+ ],
+ "negative_terms": [
+  "supply of",
+  "supply and delivery",
+  "procurement of goods",
+  "purchase of",
+  "vehicles",
+  "laptops",
+  "computers",
+  "it equipment",
+  "software license",
+  "printing",
+  "catering",
+  "cleaning services",
+  "security guards",
+  "medical",
+  "pharmaceutical",
+  "furniture",
+  "fuel",
+  "stationery",
+  "توريد",
+  "شراء",
+  "أجهزة حاسب",
+  "سيارات",
+  "نظافة",
+  "إعاشة",
+  "حراسة",
+  "أدوية",
+  "مستلزمات طبية",
+  "أثاث",
+  "قرطاسية",
+  "طباعة",
+  "وقود"
+ ],
+ "excluded_notice_types": [
+  "contract award",
+  "award notice",
+  "cancelled",
+  "cancellation",
+  "ترسية",
+  "إلغاء",
+  "الغاء"
+ ],
+ "sources": {
+  "worldbank": {
+   "rows_per_query": 100
+  },
+  "etimad": {
+   "pages": 2,
+   "page_size": 24,
+   "prequalifications": true,
+   "keywords": [
+    "تصميم",
+    "استشاري",
+    "إشراف",
+    "دراسة",
+    "تصريف",
+    "سيول",
+    "صرف صحي",
+    "طرق",
+    "مياه",
+    "ري",
+    "بنية تحتية"
+   ],
+   "prequal_keywords": [
+    "استشاري",
+    "تصميم",
+    "إشراف",
+    "دراسة"
+   ]
+  },
+  "monaqasat": {
+   "pages": 5
+  },
+  "ungm": {
+   "page_size": 50,
+   "keywords": [
+    "drainage",
+    "road",
+    "water",
+    "sewer",
+    "wastewater",
+    "hydrology",
+    "infrastructure design",
+    "engineering design",
+    "supervision"
+   ]
+  },
+  "google_news": {
+   "max_age_days": 7,
+   "queries_ar": [
+    "مناقصة خدمات استشارية تصميم طرق",
+    "طرح مناقصة استشارية صرف صحي",
+    "مناقصة تصميم شبكات تصريف مياه الأمطار",
+    "دعوة مكاتب استشارية لتقديم عروض بنية تحتية",
+    "إبداء اهتمام خدمات استشارية مياه",
+    "مناقصة دراسة هيدرولوجية سيول",
+    "مناقصة إشراف هندسي طرق"
+   ],
+   "queries_en": [
+    "consultancy tender stormwater drainage UAE",
+    "consultancy tender infrastructure design Saudi Arabia",
+    "request for expression of interest consultancy water Egypt",
+    "design consultancy tender roads Qatar",
+    "consultancy contract tender sewerage Oman",
+    "infrastructure consultant tender Kuwait",
+    "consultancy services tender Jordan water",
+    "design consultant tender Iraq roads"
+   ]
+  },
+  "rss_feeds": {
+   "feeds": []
+  },
+  "web_pages": {
+   "pages": [
+    {
+     "name": "AfDB - Procurement (Egypt/Libya)",
+     "country": "",
+     "url": "https://www.afdb.org/en/projects-and-operations/procurement"
+    },
+    {
+     "name": "IsDB - Tenders",
+     "country": "",
+     "url": "https://www.isdb.org/project-procurement/tenders"
+    },
+    {
+     "name": "UNDP Procurement Notices",
+     "country": "",
+     "url": "https://procurement-notices.undp.org/"
+    },
+    {
+     "name": "EBRD - Procurement notices",
+     "country": "",
+     "url": "https://www.ebrd.com/work-with-us/procurement/notices.html"
+    },
+    {
+     "name": "Egypt - بوابة التعاقدات العامة",
+     "country": "Egypt",
+     "url": "https://etenders.gov.eg/Tender/Index"
+    },
+    {
+     "name": "Jordan - JONEPS",
+     "country": "Jordan",
+     "url": "https://www.joneps.gov.jo/"
+    },
+    {
+     "name": "Jordan - دائرة العطاءات الحكومية",
+     "country": "Jordan",
+     "url": "https://www.gtd.gov.jo/"
+    },
+    {
+     "name": "Palestine - بوابة الشراء العام",
+     "country": "Palestine",
+     "url": "https://www.shiraa.gov.ps/"
+    },
+    {
+     "name": "Qatar - Ashghal Tenders",
+     "country": "Qatar",
+     "url": "https://www.ashghal.gov.qa/en/Tenders/Pages/default.aspx"
+    },
+    {
+     "name": "Oman - Tender Board",
+     "country": "Oman",
+     "url": "https://etendering.tenderboard.gov.om/"
+    },
+    {
+     "name": "Bahrain - Tender Board",
+     "country": "Bahrain",
+     "url": "https://www.tenderboard.gov.bh/"
+    },
+    {
+     "name": "Kuwait - CAPT",
+     "country": "Kuwait",
+     "url": "https://capt.gov.kw/en/tenders/"
+    },
+    {
+     "name": "Abu Dhabi - ADGPG",
+     "country": "UAE",
+     "url": "https://www.adgpg.gov.ae/"
+    },
+    {
+     "name": "Dubai - eSupply",
+     "country": "UAE",
+     "url": "https://esupply.dubai.gov.ae/"
+    },
+    {
+     "name": "Libya - UNDP Libya procurement",
+     "country": "Libya",
+     "url": "https://www.undp.org/libya/procurement"
+    }
+   ]
+  }
+ }
+}

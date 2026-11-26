@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>رادار المناقصات الاستشارية</title>
+<meta name="description" content="فرص استشارية جديدة مع الأوراق المطلوبة وجهات التواصل وخطوات التقديم.">
+<meta name="theme-color" content="#142B3B">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="رادار المناقصات">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+<header class="top">
+  <div class="top__row">
+    <a class="brand" href="#all" aria-label="الصفحة الرئيسية">
+      <img src="icons/icon-192.png" alt="" width="34" height="34">
+      <span>رادار المناقصات</span>
+    </a>
+    <nav class="topnav" aria-label="القائمة">
+      <a href="#all" data-nav="list">الفرص</a>
+      <a href="#mine" data-nav="mine">متابعتي</a>
+      <a href="#prefs" data-nav="settings">الإعدادات</a>
+    </nav>
+  </div>
+  <p class="top__status" id="status" role="status" aria-live="polite">جاري التحميل…</p>
+</header>
+<div id="banner"></div>
+<main id="main" class="layout" tabindex="-1">
+  <section id="listPane" class="pane pane--list" aria-label="قائمة الفرص"></section>
+  <section id="detailPane" class="pane pane--detail" aria-label="تفاصيل الفرصة"></section>
+</main>
+<nav class="bottomnav" aria-label="التنقل">
+  <a href="#all" data-nav="list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>الفرص</span></a>
+  <a href="#mine" data-nav="mine"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg><span>متابعتي</span></a>
+  <a href="#prefs" data-nav="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg><span>الإعدادات</span></a>
+</nav>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<input type="file" id="fileRefs" accept=".xlsx,.json" hidden>
+<script src="app.js"></script>
+</body>
+</html>

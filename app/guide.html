@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>طريقة تشغيل رادار المناقصات</title>
+<meta name="theme-color" content="#142B3B">
+<link rel="icon" href="icons/favicon-64.png" type="image/png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+  body { padding-bottom: 40px; }
+  .doc { max-width: 780px; margin: 0 auto; padding: 18px 16px 40px; }
+  .doc h1 { font-size: 26px; margin: 6px 0 8px; line-height: 1.4; }
+  .doc h2 { font-size: 20px; margin: 30px 0 6px; }
+  .doc h2 + p { margin-top: 0; }
+  .doc p, .doc li { font-size: 15.5px; }
+  .lead { font-size: 16.5px; color: var(--ink-2); }
+  .route { margin-top: 14px; }
+  .station__n { cursor: default; }
+  .station__b > b { font-size: 16px; }
+  .station__b p { font-size: 14.5px; margin-top: 4px; }
+  .station__b ul { margin: 6px 0 0; padding-inline-start: 18px; font-size: 14.5px; color: var(--ink-2); }
+  code, .k { direction: ltr; unicode-bidi: isolate; background: #E3EAEC; border-radius: 4px; padding: 0 5px; font-size: 14px; font-family: inherit; }
+  .k { white-space: nowrap; }
+  .k--long { white-space: normal; }
+  code { overflow-wrap: anywhere; }
+  .k { background: var(--paper); border: 1px solid var(--rule); }
+  .two { display: grid; gap: 10px; }
+  @media (min-width: 760px) { .two { grid-template-columns: 1fr 1fr; } }
+  .faq dt { font-weight: 700; margin-top: 12px; }
+  .faq dd { margin: 2px 0 0; color: var(--ink-2); }
+  .toplink { color: #CFE0E6; text-decoration: none; font-weight: 500; }
+</style>
+</head>
+<body>
+<header class="top"><div class="top__row">
+  <a class="brand" href="./"><img src="icons/icon-192.png" alt="" width="34" height="34"><span>رادار المناقصات</span></a>
+  <a class="toplink" href="./">فتح التطبيق</a></div></header>
+<main class="doc">
+<h1>طريقة تشغيل رادار المناقصات</h1>
+<p class="lead">البرنامج جزءان: <b>الرادار</b> يفحص مصادر المناقصات كل ساعة ويرسل إشعاراً بكل فرصة مناسبة، و<b>التطبيق</b> تفتحه على الموبايل أو الكمبيوتر لترى الأوراق المطلوبة وجهات التواصل وخطوات التقديم لكل فرصة.</p>
+<p>الطريقة الموصى بها تشغيلهما مجاناً على GitHub، فيعملان 24 ساعة طوال الأسبوع حتى والكمبيوتر مغلق. الإعداد مرة واحدة، حوالي 15 دقيقة، ولا يحتاج أي برمجة.</p>
+
+<h2>التشغيل السحابي (موصى به)</h2>
+<p>أسماء الأزرار في GitHub بالإنجليزية، فكتبناها كما تظهر.</p>
+<ol class="route">
+  <li class="station"><span class="station__n">1</span><div class="station__b"><b>أنشئ حساباً مجانياً</b>
+    <p>من <a href="https://github.com/signup" target="_blank" rel="noopener">github.com/signup</a>.</p></div></li>
+  <li class="station"><span class="station__n">2</span><div class="station__b"><b>أنشئ مستودعاً جديداً</b>
+    <p>الزر <span class="k">+</span> أعلى الصفحة ← <span class="k">New repository</span> ← الاسم <code>tender-radar</code> ← اختر <span class="k">Public</span> ← <span class="k">Create repository</span>.</p>
+    <ul><li>يجب أن يكون Public لأن استضافة التطبيق مجانية للمستودعات العامة فقط. المنشور فيه إعلانات مناقصات عامة أصلاً، وسجل مشاريعكم لا يُرفع إليه (يبقى على أجهزتكم). الإيميلات وكلمات المرور تُحفظ كأسرار مخفية.</li></ul></div></li>
+  <li class="station"><span class="station__n">3</span><div class="station__b"><b>ارفع ملفات البرنامج</b>
+    <p>فك ضغط الملف ← في صفحة المستودع اضغط <span class="k">uploading an existing file</span> ← اسحب <b>كل محتويات</b> مجلد TenderRadar (بما فيها المجلد <code>.github</code>) ← <span class="k">Commit changes</span>.</p>
+    <ul><li>تأكد أن الملف <code>.github/workflows/radar.yml</code> ظهر في المستودع. لو لم يظهر: <span class="k">Add file</span> ← <span class="k">Create new file</span> ← اكتب الاسم <code>.github/workflows/radar.yml</code> ← الصق محتوى الملف من المجلد ← <span class="k">Commit changes</span>.</li></ul></div></li>
+  <li class="station"><span class="station__n">4</span><div class="station__b"><b>فعّل استضافة التطبيق</b>
+    <p><span class="k">Settings</span> ← <span class="k">Pages</span> ← في Source اختر <span class="k">GitHub Actions</span>.</p></div></li>
+  <li class="station"><span class="station__n">5</span><div class="station__b"><b>اختر اسم قناة الإشعارات واحفظه كسرّ</b>
+    <p><span class="k">Settings</span> ← <span class="k">Secrets and variables</span> ← <span class="k">Actions</span> ← <span class="k">New repository secret</span> ← Name: <code>NTFY_TOPIC</code> ← Secret: اسم صعب التخمين مثل <code>delta-radar-7k3m9q</code> ← <span class="k">Add secret</span>.</p>
+    <ul><li>احتفظ بالاسم؛ ستكتبه في الموبايل في الخطوة 9. من يعرف الاسم يستقبل الإشعارات، فلا تجعله سهلاً.</li></ul></div></li>
+  <li class="station"><span class="station__n">6</span><div class="station__b"><b>شغّل أول فحص</b>
+    <p>تبويب <span class="k">Actions</span> ← <span class="k">Tender Radar</span> ← <span class="k">Run workflow</span> ← <span class="k">Run workflow</span>. انتظر 3–5 دقائق حتى تظهر العلامة الخضراء. بعدها يعمل وحده كل ساعة.</p>
+    <ul><li>لو طلب GitHub تفعيل Actions اضغط <span class="k k--long">I understand my workflows, go ahead and enable them</span>.</li></ul></div></li>
+  <li class="station"><span class="station__n">7</span><div class="station__b"><b>افتح التطبيق</b>
+    <p>الرابط: <code>https://اسم-حسابك.github.io/tender-radar/</code> — ويظهر أيضاً في <span class="k">Settings</span> ← <span class="k">Pages</span>. أرسله لزملائك.</p></div></li>
+  <li class="station"><span class="station__n">8</span><div class="station__b"><b>ثبّت التطبيق على أجهزتكم</b>
+    <ul><li><b>آيفون:</b> افتح الرابط من Safari ← زر المشاركة ← «إضافة إلى الشاشة الرئيسية».</li>
+      <li><b>أندرويد:</b> افتح الرابط من Chrome ← القائمة ⋮ ← «تثبيت التطبيق».</li>
+      <li><b>الكمبيوتر:</b> افتح الرابط من Chrome أو Edge ← أيقونة التثبيت في آخر شريط العنوان.</li></ul></div></li>
+  <li class="station"><span class="station__n">9</span><div class="station__b"><b>فعّل الإشعارات</b>
+    <ul><li><b>الموبايل:</b> ثبّت تطبيق ntfy المجاني (<a href="https://play.google.com/store/apps/details?id=io.heckel.ntfy" target="_blank" rel="noopener">أندرويد</a> – <a href="https://apps.apple.com/app/id1625396347" target="_blank" rel="noopener">آيفون</a>) ← <span class="k">+</span> ← اكتب نفس اسم القناة ← <span class="k">Subscribe</span>.</li>
+      <li><b>الكمبيوتر:</b> افتح <a href="https://ntfy.sh/app" target="_blank" rel="noopener">ntfy.sh/app</a> ← <span class="k">Subscribe to topic</span> ← نفس الاسم ← اسمح بالإشعارات.</li>
+      <li>أو من داخل التطبيق: الإعدادات ← الإشعارات ← اكتب الاسم ← «اشترك الآن».</li>
+      <li>كل زميل يشترك بنفس الاسم تصله نفس الإشعارات.</li></ul></div></li>
+</ol>
+
+<h2>ماذا يحدث بعد ذلك</h2>
+<ul>
+  <li>أول فحص يسجل كل الفرص المفتوحة حالياً ويرسل رسالة واحدة ملخصة، حتى لا تصلك عشرات الرسائل مرة واحدة.</li>
+  <li>بعدها تصلك رسالة لكل فرصة جديدة فيها: الدولة، الجهة، آخر موعد وعدد الأيام الباقية، التخصص، وإيميل أو رقم جهة الاستفسار. الضغط على الإشعار يفتح الفرصة في التطبيق.</li>
+  <li>كل صباح الساعة 8 بتوقيت القاهرة يصل ملخص يومي بعدد الفرص المفتوحة وأقرب المواعيد، وهو أيضاً تأكيد أن الرادار يعمل.</li>
+</ul>
+
+<h2>ماذا تجد في التطبيق لكل فرصة</h2>
+<div class="two">
+  <div class="box"><h3>البيانات</h3><p>الجهة، الرقم المرجعي، نوع الإعلان، طريقة الاختيار، التمويل، قيمة الكراسة، الضمان، والمواعيد المهمة مع زر لإضافتها إلى التقويم.</p></div>
+  <div class="box"><h3>الأوراق المطلوبة</h3><p>قائمة تحددون منها ما تم تجهيزه، مع تمييز ما ذكره الإعلان نفسه، وشروط القائمة المختصرة من نص الإعلان، ومشاريعكم المشابهة من سجل المشاريع.</p></div>
+  <div class="box"><h3>التواصل</h3><p>اسم الجهة والشخص، أزرار اتصال وواتساب وإيميل، وإيميل استفسار جاهز بالعربي أو الإنجليزي، وأرقام الدعم الفني الرسمية للبوابة.</p></div>
+  <div class="box"><h3>خطوات التقديم</h3><p>الخطوات بالترتيب، وكل خطوة بتاريخها المحسوب من مواعيد الإعلان، وتحددون ما تم إنجازه.</p></div>
+</div>
+<p class="small muted">الشريط المقسّم تحت كل فرصة يمثل المدة من النشر حتى آخر موعد مثل مقياس الرسم في اللوحات: كل قطعة أسبوع، والجزء الداكن ما مضى، ويتحول للأصفر قبل الموعد بأسبوع وللأحمر قبله بثلاثة أيام.</p>
+
+<h2>التشغيل على كمبيوتر المكتب (بدون GitHub)</h2>
+<ol class="steps-mini">
+  <li>ثبّت Python من <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org</a> وفعّل خيار <span class="k">Add Python to PATH</span> أثناء التثبيت.</li>
+  <li>افتح الملف <code>scanner/settings.json</code> بالمفكرة واكتب اسم القناة بجانب <code>ntfy_topic</code>.</li>
+  <li>اضغط مرتين على <code>RUN-ON-PC.bat</code>: يفتح التطبيق على <code>http://localhost:8765</code> ويفحص كل ساعة طالما النافذة مفتوحة.</li>
+  <li>للتشغيل تلقائياً عند فتح الكمبيوتر اضغط مرتين على <code>INSTALL-AUTOSTART.bat</code>.</li>
+  <li>للتجربة ببيانات مثال بدون إنترنت: <code>TRY-DEMO.bat</code>.</li>
+</ol>
+<p class="small muted">في هذا الوضع يفتح التطبيق على هذا الكمبيوتر فقط، والموبايل يستقبل الإشعارات عبر ntfy مع رابط الإعلان الرسمي.</p>
+
+<h2>إشعارات إضافية (اختياري)</h2>
+<ul>
+  <li><b>تيليجرام:</b> أنشئ بوتاً من <code>@BotFather</code> وضع الرمز في سرّ باسم <code>TELEGRAM_BOT_TOKEN</code>. أي شخص يضغط Start على البوت يشترك تلقائياً، ويوقفها بإرسال <code>/stop</code>.</li>
+  <li><b>الإيميل:</b> أضف أسراراً بأسماء <code>SMTP_HOST</code> (مثل smtp.hostinger.com أو smtp.gmail.com) و<code>SMTP_PORT</code> (465) و<code>SMTP_USERNAME</code> و<code>SMTP_PASSWORD</code> و<code>EMAIL_TO</code> (أكثر من إيميل بينها فاصلة).</li>
+</ul>
+
+<h2>حل المشاكل</h2>
+<dl class="faq">
+  <dt>لا تصل الإشعارات</dt>
+  <dd>تأكد أن اسم القناة في سرّ NTFY_TOPIC مطابق حرفياً للاسم في تطبيق ntfy. في التطبيق: الإعدادات ← حالة الرادار ← «قنوات الإشعار المفعّلة».</dd>
+  <dt>التطبيق يقول «الفحص متأخر»</dt>
+  <dd>افتح Actions وتأكد أن آخر تشغيل نجح. قد يؤخر GitHub التشغيل المجدول قليلاً وقت الضغط، وقد يوقف الجدولة إذا توقف نشاط المستودع طويلاً؛ الرادار يحفظ نتائجه كل ساعة فلا يحدث ذلك عادةً، وإن حدث اضغط <span class="k">Enable workflow</span>.</dd>
+  <dt>مصدر يظهر «تعذر الوصول»</dt>
+  <dd>بعض البوابات الحكومية تحجب الطلبات الآلية أو تحتاج تسجيل دخول. باقي المصادر تستمر بشكل طبيعي.</dd>
+  <dt>أريد فرصاً أكثر أو أقل</dt>
+  <dd>في <code>scanner/settings.json</code> غيّر <code>min_level</code> إلى <code>high</code> (المناسب جداً فقط) أو <code>medium</code> (الافتراضي) أو <code>low</code> (فرص أكثر).</dd>
+  <dt>أريد إضافة كلمة أو تخصص أو دولة</dt>
+  <dd>في <code>scanner/profile.json</code>: التخصصات وكلماتها بالعربي والإنجليزي، والدول وأسماء مدنها.</dd>
+</dl>
+<p class="small muted" style="margin-top:24px">البيانات مأخوذة آلياً من المصادر الرسمية والأخبار المنشورة. راجعوا الإعلان الرسمي دائماً قبل التقديم.</p>
+</main>
+</body>
+</html>

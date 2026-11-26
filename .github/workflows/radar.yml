@@ -1,0 +1,74 @@
+# رادار المناقصات – يعمل مجاناً على GitHub كل ساعة، 24 ساعة × 7 أيام، والكمبيوتر مغلق.
+# 1) يفحص المصادر  2) يرسل الإشعارات  3) يحفظ النتائج  4) ينشر التطبيق على GitHub Pages
+# Secrets (Settings > Secrets and variables > Actions):
+#   NTFY_TOPIC (مطلوب للإشعارات) – اختياري: TELEGRAM_BOT_TOKEN, SMTP_HOST, SMTP_PORT, SMTP_USERNAME, SMTP_PASSWORD, SMTP_FROM, EMAIL_TO
+name: Tender Radar
+
+on:
+  schedule:
+    - cron: "17 * * * *"   # every hour at minute 17
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: tender-radar
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Read the app address
+        id: pages
+        uses: actions/configure-pages@v5
+        continue-on-error: true
+
+      - name: Scan for consulting tenders
+        env:
+          APP_URL: ${{ steps.pages.outputs.base_url || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_IDS: ${{ secrets.TELEGRAM_CHAT_IDS }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: python scanner/run.py
+
+      - name: Save results in the repository
+        run: |
+          git config user.name "tender-radar"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/data
+          if ! git diff --cached --quiet; then
+            git commit -m "تحديث الفرص $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git pull --rebase --autostash || true
+            git push
+          fi
+
+      - name: Prepare the app
+        if: steps.pages.outcome == 'success'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: app
+
+      - name: Publish the app
+        id: deploy
+        if: steps.pages.outcome == 'success'
+        uses: actions/deploy-pages@v4
