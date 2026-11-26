@@ -1,8 +1,858 @@
 {
-"generated":"2026-11-26T17:20:55+00:00",
+"generated":"2026-11-26T17:57:28+00:00",
 "office":"CEC Egypt – Delta Office – Infrastructure",
-"count":17,
+"count":21,
 "tenders":[
+{
+"id":"ungm-ea06fba5d5",
+"uid":"ungm:321232",
+"first_seen":"2026-11-26T17:57:28+00:00",
+"updated":"2026-11-26T17:57:28+00:00",
+"source_key":"ungm",
+"source":"الأمم المتحدة – IOM",
+"kind":"eoi",
+"notice_type":"Request for EOI",
+"notice_type_ar":"Request for EOI",
+"title":"Expression of Interest - WASH related works/services/goods",
+"is_arabic":false,
+"summary":"You appear to be using an unsupported browser to use UNGM. It is likely that the site will not work correctly for you. We strongly recommend that you upgrade your browser to the latest version of Chrome , Firefox , Safari or Internet Explorer\nYou appear to be using an out of date browser to use UNGM. We strongly …",
+"country":"Syria",
+"country_ar":"سوريا",
+"flag":"🇸🇾",
+"client":"IOM",
+"reference":"SCU-EOI-2026-005",
+"published":"2026-11-04",
+"deadline":"2026-11-30",
+"deadline_time":"00:00 (GMT 2.00)",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":11,
+"disciplines":[
+"الصرف الصحي ومحطات الرفع"
+],
+"ids":[
+"sewer"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-04",
+"date_ar":"الأربعاء 4 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-11-30",
+"date_ar":"الاثنين 30 نوفمبر 2026",
+"kind":"deadline",
+"time":"00:00 (GMT 2.00)"
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"Supply",
+"org":"IOM",
+"emails":[
+"syriavms@iom.int"
+],
+"phones":[],
+"address":"",
+"website":""
+},
+{
+"title":"دعم بوابة UNGM",
+"website":"https://help.ungm.org/hc/en-us",
+"note":"لا يوجد رقم هاتف؛ التواصل عبر نموذج «Contact UNGM» في مركز المساعدة. أسئلة المناقصة تُرسل لجهة التواصل في الإعلان.",
+"source":"مركز المساعدة UNGM",
+"phones":[],
+"kind":"support"
+}
+],
+"inquiry_how":"أرسلوا الاستفسار كتابةً بالإيميل لجهة التواصل واذكروا الرقم المرجعي.",
+"documents":[
+{
+"title":"خطاب إبداء الاهتمام",
+"detail":"موقّع ومختوم من المفوَّض بالتوقيع، موجّه لجهة التواصل، ويذكر اسم المهمة ورقمها المرجعي.",
+"from_notice":false
+},
+{
+"title":"الملف التعريفي للمكتب",
+"detail":"سنة التأسيس، الفروع، عدد المهندسين، التخصصات، والبرامج المستخدمة.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة",
+"detail":"آخر 10 سنوات: اسم المشروع، العميل، الدولة، القيمة، المدة، ونطاق عملكم تحديداً.",
+"from_notice":false
+},
+{
+"title":"شهادات إنجاز أو خطابات العملاء",
+"detail":"لأهم المشاريع المماثلة إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية",
+"detail":"السجل التجاري أو ترخيص المكتب الاستشاري، وشهادة القيد بنقابة المهندسين أو الهيئة المختصة.",
+"from_notice":false
+},
+{
+"title":"القدرات الفنية والإدارية",
+"detail":"الهيكل التنظيمي، عدد الفنيين، البرامج (Civil 3D، InfoWorks/SWMM، HEC-RAS، WaterGEMS، BIM)، وشهادات ISO إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"خطاب التحالف أو الاستشاري الفرعي",
+"detail":"فقط إذا ستتقدمون مع شريك: يحدد الشريك ونوع الشراكة (JV أو Sub-consultant).",
+"from_notice":false
+},
+{
+"title":"إقرار الأهلية وعدم تعارض المصالح",
+"detail":"حسب قواعد الجهة الممولة.",
+"from_notice":false
+}
+],
+"conditions":[
+"The International Organization for Migration (IOM) Syria invites interested and eligible, legally registered vendors to express interest in potential future procurement opportunities for Water, Sanitation and Hygiene (WASH) supplies, works and services across Syria."
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وطابق شروط القائمة المختصرة مع خبراتكم",
+"detail":"الشروط مذكورة في تبويب «الأوراق». لو ينقصكم شرط خبرة، فكّروا في تحالف أو استشاري فرعي.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلب الشروط المرجعية (ToR) إن لم تكن مرفقة",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قرّروا طريقة التقديم: منفردين أم بتحالف",
+"detail":"واطلبوا خطاب النوايا من الشريك مبكراً.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"أرسلوا أي استفسار مكتوب",
+"detail":"يُفضّل قبل الموعد النهائي بـ 10 أيام على الأقل. استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا ملف إبداء الاهتمام",
+"detail":"حسب قائمة «الأوراق المطلوبة».",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية وتوقيع الخطاب",
+"detail":"تأكدوا من الرقم المرجعي واسم المهمة في الخطاب.",
+"due":"2026-11-27",
+"due_ar":"الجمعة 27 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الملف قبل الموعد بيوم على الأقل",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد). احتفظوا بإثبات الإرسال (رد آلي أو إيصال).",
+"due":"2026-11-29",
+"due_ar":"الأحد 29 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"تابعوا إعلان القائمة المختصرة",
+"detail":"عند اختياركم تصلكم دعوة لتقديم العرض الفني والمالي (RFP).",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://www.ungm.org/Public/Notice/321232"
+}
+],
+"excerpt":"Expression of Interest - WASH related works/services/goods | Request for EOI | IOM | Syrian Arab Republic\nExpression of Interest - WASH related works/services/goods\nYou appear to be using an unsupported browser to use UNGM. It is likely that the site will not work correctly for you. We strongly recommend that you upgrade your browser to the latest version of Chrome , Firefox , Safari or Internet Explorer\nYou appear to be using an out of date browser to use UNGM. We strongly recommend that you upgrade your browser to the latest version of Chrome , Firefox or Internet Explorer .\nEnglish\nFrançais\n(French)\nEspañol\n(Spanish)\nPortuguês\n(Portuguese)\n中文\n(Chinese)\nРусский\n(Russian)\nالعَرَبِيَّة‎\n(Arabic)\nHelp Center\nOpens new tab\nLog in\nRegister\nJump into the main content\nHome\nProcurement Opportunities\nContract Awards\nUNGM Pro\nNew!\nSupplier Code of Conduct\nUN Standard Products and Services Code (UNSPSC)\nHelp Center\nOpens new tab\nKnowledge Center\nNews and recent deployments\nDoing Business with UN Organizations\nThe UN System of Organizations\nThe UN Organizations\nADB\nAfDB\nCTBTO\nFAO\nIAEA\nICAO\nIFAD\nILO\nIMF\nIMO\nIOM\nITC\nITU\nOPCW\nOSCE\nPAHO\nUNAIDS\nUNDP\nUNESCO\nUNFPA\nUNFCCC\nUNICEF\nUNIDO\nUNHCR\nUNOPS\nUNPD\nUNRWA\nUN Women\nUN Tourism (previously UNWTO)\nThe World Bank\nWFP\nWIPO\nWHO\nWMO\nWMU\nUNU\nWTO\nProcurement Categories\nAudio and Visual Devices\nSamples of Specifications\nBuilding and Maintenance Services\nSamples of Specifications\nBusiness Professionals and Administrative Services\nSamples of Specifications\nComputer Hardware and Software\nSamples of Specifications\nElectoral Systems\nSamples of Specifications\nEmergency Preparedness Kits\nSamples of Specifications\nEngineering, Research and Technology Based Services\nSamples of Specifications\nFood and Beverage Products\nSamples of Specifications\nFuels, Additives and Lubricants\nSamples of Specifications\nGraphic Design\nSamples of Specifications\nHealthcare Services\nSamples of Specifications\nIT Services\nSamples of Specifications\nSDG Digital Investment Framework\nInsurance Services\nSamples of Specifications\nMedical Waste Disposal\nSamples of Specifications\nMedical Equipment and Supplies\nSamples of Specifications\nPersonal Hygiene and Sanitation Products\nSamples of Specifications\nPharmaceutical Items\nSamples of Specifications\nPublic Order, Security and Safety Services\nSamples of Specifications\nPostal, Courier and Mail Services\nSamples of Specifications\nSpecialized Equipment for Agriculture\nSamples of Specifications\nTelecommunications\nSamples of Specifi",
+"notes":[]
+},
+{
+"id":"wb-bd160d10a5",
+"uid":"wb:OP00025006",
+"first_seen":"2026-11-26T17:57:28+00:00",
+"updated":"2026-11-26T17:57:28+00:00",
+"source_key":"worldbank",
+"source":"البنك الدولي",
+"kind":"eoi",
+"notice_type":"Request for Expression of Interest",
+"notice_type_ar":"طلب إبداء اهتمام (EOI)",
+"title":"Cons Engineering Design and Construction Supervision for Grid Component",
+"is_arabic":false,
+"summary":"RY-Rural Energy Access Project",
+"country":"Yemen",
+"country_ar":"اليمن",
+"flag":"🇾🇪",
+"client":"M/o Electricity& Energy (MOEE)/REAP",
+"reference":"Egineering Design Grid Component",
+"published":"2013-12-11",
+"deadline":null,
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"Quality And Cost-Based Selection",
+"method_ar":"الاختيار على أساس الجودة والتكلفة (QCBS)",
+"activity":"",
+"funding":"البنك الدولي – مشروع P092211",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"high",
+"level_ar":"مناسب جداً",
+"score":11,
+"disciplines":[
+"الطرق والتصميم الهندسي",
+"تصميم هندسي مدني عام"
+],
+"ids":[
+"roads",
+"civil_general"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2013-12-11",
+"date_ar":"الأربعاء 11 ديسمبر 2013",
+"kind":"published",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"Engineer Assad Saad Al Ashwal",
+"org":"M/o Electricity& Energy (MOEE)/REAP",
+"emails":[
+"alashwal1962@gmail.com"
+],
+"phones":[
+{
+"display":"+9671317540",
+"tel":"+9671317540",
+"whatsapp":""
+}
+],
+"address":"Amran Road, Next to TV Station, Sanaa, Yemen",
+"website":""
+}
+],
+"inquiry_how":"أرسلوا الاستفسار كتابةً بالإيميل لجهة التواصل واذكروا الرقم المرجعي.",
+"documents":[
+{
+"title":"خطاب إبداء الاهتمام",
+"detail":"موقّع ومختوم من المفوَّض بالتوقيع، موجّه لجهة التواصل، ويذكر اسم المهمة ورقمها المرجعي.",
+"from_notice":false
+},
+{
+"title":"الملف التعريفي للمكتب",
+"detail":"سنة التأسيس، الفروع، عدد المهندسين، التخصصات، والبرامج المستخدمة.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة",
+"detail":"آخر 10 سنوات: اسم المشروع، العميل، الدولة، القيمة، المدة، ونطاق عملكم تحديداً.",
+"from_notice":false
+},
+{
+"title":"شهادات إنجاز أو خطابات العملاء",
+"detail":"لأهم المشاريع المماثلة إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية",
+"detail":"السجل التجاري أو ترخيص المكتب الاستشاري، وشهادة القيد بنقابة المهندسين أو الهيئة المختصة.",
+"from_notice":false
+},
+{
+"title":"القدرات الفنية والإدارية",
+"detail":"الهيكل التنظيمي، عدد الفنيين، البرامج (Civil 3D، InfoWorks/SWMM، HEC-RAS، WaterGEMS، BIM)، وشهادات ISO إن وُجدت.",
+"from_notice":false
+},
+{
+"title":"خطاب التحالف أو الاستشاري الفرعي",
+"detail":"فقط إذا ستتقدمون مع شريك: يحدد الشريك ونوع الشراكة (JV أو Sub-consultant).",
+"from_notice":true
+},
+{
+"title":"إقرار الأهلية وعدم تعارض المصالح",
+"detail":"حسب قواعد الجهة الممولة.",
+"from_notice":false
+}
+],
+"conditions":[
+"3- The Ministry of Electricity and Energy invites eligible specialized consultancy firms to indicate their interest in providing their services.",
+"Interested consultants must provide detailed information indicating that they are qualified to perform the services as briefly explainedbelow.",
+"These detailed information should include brochures, description of similar assignments undertaken during the last ten years (the list should include details on contract data such as name of client, cost, status, experience in similar conditions, availability of appropriate skills among staff, …etc.).",
+"4- The consultant will carry out all activities required for the design, review finalization including preparation of bill of quantities, preparation of bid documents, procurement processing including bid evaluation, preparation of contract documents, contract supervision,inspection of materials at manufacturers premises, site work supervision, preparation of regular reports monthly, quarterly and annual bothin technical and financial status based on the signed financing …",
+"For IDA and AFD financed service territories , the consultant will be selected in accordance with the World Bank Guidelines on selection and employment of consultants dated May 2004 revised October 1, 2006 , and in accordance with IsDB Guidelines for the use of consultants May 2009 for service territories financed by the IsDB , all based on their experience and qualification, consultants are encouraged to submit their interests for the above assignment.",
+"10- Expression of Interest (EOI) indicating the service territories must be delivered in English to the project address (below) not later than January 4, 2014 ."
+],
+"doc_note":"",
+"submission_line":"طريقة التسليم كما وردت في الإعلان: «10- Expression of Interest (EOI) indicating the service territories must be delivered in English to the project address (below) not later than January 4, 2014 » – الإيميل: alashwal1962@gmail.com",
+"steps":[
+{
+"title":"اقرأ الإعلان وطابق شروط القائمة المختصرة مع خبراتكم",
+"detail":"الشروط مذكورة في تبويب «الأوراق». لو ينقصكم شرط خبرة، فكّروا في تحالف أو استشاري فرعي.",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلب الشروط المرجعية (ToR) إن لم تكن مرفقة",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قرّروا طريقة التقديم: منفردين أم بتحالف",
+"detail":"واطلبوا خطاب النوايا من الشريك مبكراً.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا أي استفسار مكتوب",
+"detail":"يُفضّل قبل الموعد النهائي بـ 10 أيام على الأقل. استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"جهّزوا ملف إبداء الاهتمام",
+"detail":"حسب قائمة «الأوراق المطلوبة».",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية وتوقيع الخطاب",
+"detail":"تأكدوا من الرقم المرجعي واسم المهمة في الخطاب.",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الملف قبل الموعد بيوم على الأقل",
+"detail":"طريقة التسليم كما وردت في الإعلان: «10- Expression of Interest (EOI) indicating the service territories must be delivered in English to the project address (below) not later than January 4, 2014 » – الإيميل: alashwal1962@gmail.com. احتفظوا بإثبات الإرسال (رد آلي أو إيصال).",
+"due":null,
+"due_ar":"حسب الإعلان",
+"after_deadline":false
+},
+{
+"title":"تابعوا إعلان القائمة المختصرة",
+"detail":"عند اختياركم تصلكم دعوة لتقديم العرض الفني والمالي (RFP).",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00025006"
+},
+{
+"label":"صفحة المشروع الممول",
+"url":"https://projects.worldbank.org/en/projects-operations/project-detail/P092211"
+}
+],
+"excerpt":"Republic of Yemen\nMinistry of Electricity and Energy\nGeneral Authority for Rural Electricity (GARE)\nRuralEnergy Access Project (REAP)\n(Project ID P092211)\nExpression of Interest (EOI)\nConsultancy Services for Engineering Design and Construction Supervision for Grid Component\n1- This Invitation for consultancy services follows the General Procurement Notice for this Project that appeared inDevelopment Business posted online on July 02, 2009 and in dgMarket on July 01 , 2009.\n2- The Government of Yemen has been granted finance from the International Development Association (IDA) and received loan form Islamic Development Bank (IsDB) and loan from Agence Française de Développement (AFD) toward the cost of the Rural Energy AccessProject (REAP), and intends to apply part of these finances for financing consulting services to be procured under the project.\n3- The Ministry of Electricity and Energy invites eligible specialized consultancy firms to indicate their interest in providing their services. Interested consultants must provide detailed information indicating that they are qualified to perform the services as briefly explainedbelow. These detailed information should include brochures, description of similar assignments undertaken during the last ten years (the list should include details on contract data such as name of client, cost, status, experience in similar conditions, availability of appropriate skills among staff, …etc.).\n4- The consultant will carry out all activities required for the design, review finalization including preparation of bill of quantities, preparation of bid documents, procurement processing including bid evaluation, preparation of contract documents, contract supervision,inspection of materials at manufacturers premises, site work supervision, preparation of regular reports monthly, quarterly and annual bothin technical and financial status based on the signed financing agreements requirements.\n5- The Project consist On-Grid Rural Electrification: The National RuralElectrification Strategy study has identified 27 service territories in ten governorates for rural electric service expansion and integration into the national grid. The Project will finance the first phase ofthe on-grid program implementation that would include development of selected service territories in rural areas as follows: IsDB for threeservice territories in three governorates (Addala, Al-Hodeidah andAl-Baida) ; AFD for five service territories in five govern",
+"notes":[]
+},
+{
+"id":"bh-16ea2d51c3",
+"uid":"bh:233491943",
+"first_seen":"2026-11-26T17:57:28+00:00",
+"updated":"2026-11-26T17:57:28+00:00",
+"source_key":"bahrain_tb",
+"source":"مجلس المناقصات والمزايدات – البحرين",
+"kind":"rfp",
+"notice_type":"External",
+"notice_type_ar":"External",
+"title":"PRE & POST Contract Engineering Consultancy Services For The Renovation and Refurbishment of Staff Accommodation at University of Bahrain Sakhir Campus",
+"is_arabic":false,
+"summary":"Tender Board - Kingdom of Bahrain\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating …",
+"country":"Bahrain",
+"country_ar":"البحرين",
+"flag":"🇧🇭",
+"client":"University of Bahrain",
+"reference":"UOBP/8/2026",
+"published":"2026-11-24",
+"deadline":"2026-12-20",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"low",
+"level_ar":"محتمل",
+"score":6,
+"disciplines":[
+"تصميم هندسي مدني عام"
+],
+"ids":[
+"civil_general"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-24",
+"date_ar":"الثلاثاء 24 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-20",
+"date_ar":"الأحد 20 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"University of Bahrain",
+"emails":[
+"helpdesk@tenderboard.gov.bh",
+"info@tenderboard.gov.bh"
+],
+"phones":[
+{
+"display":"+97317566666",
+"tel":"+97317566666",
+"whatsapp":""
+},
+{
+"display":"+973 1758 7855",
+"tel":"+97317587855",
+"whatsapp":""
+}
+],
+"address":"",
+"website":"https://etendering.tenderboard.gov.bh"
+},
+{
+"title":"مجلس المناقصات والمزايدات – البحرين (الدعم الفني)",
+"phones":[
+{
+"display":"+973 1756 6666",
+"tel":"+97317566666",
+"whatsapp":""
+}
+],
+"emails":[
+"helpdesk@tenderboard.gov.bh",
+"info@tenderboard.gov.bh"
+],
+"website":"https://etendering.tenderboard.gov.bh",
+"hours":"الأحد–الأربعاء 7:00–14:15، الخميس 7:00–14:00",
+"source":"بوابة المناقصات الإلكترونية – البحرين",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":true
+}
+],
+"conditions":[
+".يجب ألا تتضمن العروض الفنية السعر أو أي شيء يتعلق به، وإلا سوف يتم استبعاد العطاء",
+"Firms that do not meet these minimum requirements will be disqualified:",
+"يجب أن تكون الشركة استشارية هندسية مؤهلة مسبقاً ومرخصة من قِبل \"مجلس تنظيم مزاولة المهن الهندسية\" (CRPEP) ضمن الفئة (أ) أو (ب) أو (ج).",
+"وتُعتبر الشركة مستوفية للشروط تماماً إذا كانت حاصلة على ترخيص تأهيل مسبق ضمن الفئة المذكورة في إعلان المناقصة، على أن يكون هذا الترخيص سارياً يوم نشر المناقصة",
+"For Two-envelope tenders, bidders, are requested to attach the initial bond as stated above and it must be included within the technical bid.",
+"The initial bond should be in the form of a Certified Cheque, Bank Guarantee, Insurance Policy or Bank Transfer (or as specified in the Tender Documents) valid for the duration specified above.",
+"If the bidder chooses to submit the initial bond in the form of a Bank transfer, the guarantee amount must be provided as a fixed amount mentioned and not as a percentage of the bid value.",
+"Small and Medium Enterprises (SMEs)are eligible to obtain 10% preference in the financial evaluation stage when participating in tenders, and in auctions related to service facilities within government entities premises, however this shall not apply to tenders of a special nature."
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-12-10",
+"due_ar":"الخميس 10 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-13",
+"due_ar":"الأحد 13 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-15",
+"due_ar":"الثلاثاء 15 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-16",
+"due_ar":"الأربعاء 16 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-18",
+"due_ar":"الجمعة 18 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد).",
+"due":"2026-12-19",
+"due_ar":"السبت 19 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://www.tenderboard.gov.bh/TenderDetails/?id=589%2f2026%2fBTB+(UOBP%2f8%2f2026)"
+}
+],
+"excerpt":"PRE & POST Contract Engineering Consultancy Services For The Renovation and Refurbishment of Staff Accommodation at University of Bahrain Sakhir Campus | University of Bahrain\nTender Board - Kingdom of Bahrain\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating Partnerships Between Public and Private Sectors\nTenders Published Tenders\nTo be Opened This Week\nTender Opening Results\nLive Opening\nAwarded Tenders\nPrequalified Vendors\nProcurement Plans\nArchived Tenders\nServices Process\neForms\nTraining Courses\nStandard Electronic Request Template\nStandard Electronic Report\nMedia News\nAnnual Reports\nFAQ Supplier FAQ\nGeneral FAQ\neTendering Login\nCreate an Account in eTendering\nعربي\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating Partnerships Between Public and Private Sectors\nTenders Published Tenders\nTo be Opened This Week\nTender Opening Results\nLive Opening\nAwarded Tenders\nPrequalified Vendors\nProcurement Plans\nArchived Tenders\nServices Process\neForms\nTraining Courses\nStandard Electronic Request Template\nStandard Electronic Report\nMedia News\nAnnual Reports\nFAQ Supplier FAQ\nGeneral FAQ\nSearch\nTender Details\nHome\nTender Details\nPRE & POST Contract Engineering Consultancy Services For The Renovation and Refurbishment of Staff Accommodation at University of Bahrain Sakhir Campus\nTender Number: 589/2026/BTB (UOBP/8/2026)\nPA Ref Number: UOBP/8/2026\nTender Description\nThe University of Bahrain invites proposals for comprehensive Pre and Post Contract Engineering Consultancy Services for the major renovation and refurbishment of staff accommodation facilities at the Sakhir Campus The scope covers condition assessment detailed technical specifications Bill of Quantities tender documentation as well as fulltime construction supervision and contract administration during the execution phase\nIssued by\nUniversity of Bahrain\nInternal/External\nExternal\nInvitation Method\nPublic (LOCAL GCC)\nClassification/CPV Codes\n-->\n45000000-7 - Construction work\n-->\nInitial Bond\nBD 100\nBid Validity / Initial Bond Validity Period (Days)\n18",
+"notes":[]
+},
+{
+"id":"bh-1461737086",
+"uid":"bh:233491546",
+"first_seen":"2026-11-26T17:57:28+00:00",
+"updated":"2026-11-26T17:57:28+00:00",
+"source_key":"bahrain_tb",
+"source":"مجلس المناقصات والمزايدات – البحرين",
+"kind":"rfp",
+"notice_type":"External",
+"notice_type_ar":"External",
+"title":"Provision of Engineering Design and Drafting Services",
+"is_arabic":false,
+"summary":"Tender Board - Kingdom of Bahrain\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating …",
+"country":"Bahrain",
+"country_ar":"البحرين",
+"flag":"🇧🇭",
+"client":"Bapco Refining",
+"reference":"BE2630000506",
+"published":"2026-11-23",
+"deadline":"2027-01-06",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"low",
+"level_ar":"محتمل",
+"score":6,
+"disciplines":[
+"تصميم هندسي مدني عام"
+],
+"ids":[
+"civil_general"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-23",
+"date_ar":"الاثنين 23 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2027-01-06",
+"date_ar":"الأربعاء 6 يناير 2027",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Bapco Refining",
+"emails":[
+"helpdesk@tenderboard.gov.bh",
+"info@tenderboard.gov.bh"
+],
+"phones":[
+{
+"display":"+97317566666",
+"tel":"+97317566666",
+"whatsapp":""
+},
+{
+"display":"+973 1758 7855",
+"tel":"+97317587855",
+"whatsapp":""
+}
+],
+"address":"",
+"website":"https://etendering.tenderboard.gov.bh"
+},
+{
+"title":"مجلس المناقصات والمزايدات – البحرين (الدعم الفني)",
+"phones":[
+{
+"display":"+973 1756 6666",
+"tel":"+97317566666",
+"whatsapp":""
+}
+],
+"emails":[
+"helpdesk@tenderboard.gov.bh",
+"info@tenderboard.gov.bh"
+],
+"website":"https://etendering.tenderboard.gov.bh",
+"hours":"الأحد–الأربعاء 7:00–14:15، الخميس 7:00–14:00",
+"source":"بوابة المناقصات الإلكترونية – البحرين",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":true
+}
+],
+"conditions":[
+"The scope of services consists of the provision of Mechanical, Electrical, Civil and Structural Engineering Designer Services at Bapco Refining Offices and from the Contractor Office as and when required during the term of contract.",
+"KeyQualification and Evaluation criteria",
+"MandatoryCriteria: The Biddershall provide the following details along with documentary evidence.",
+"Only thebids complying with all Mandatory Criteria will be considered for technicaland commercial evaluation.",
+"The Bidder shall have a minimum offive (5) years of experience in providing Engineering Design & DraftingServices in Oil & Gas, Refining, Petrochemical, LNG, Power, or similarindustrial facilities.",
+"The Biddershall submit details of Engineering Design & Drafting Services executedduring the last five (5) years in Oil & Gas, Refining, Petrochemical,LNG, Power, or similar industrial facilities.",
+"The submitted information shalldemonstrate the Bidder's capability in providing Mechanical, Electrical,Civil & Structural Design & Drafting Services, SmartPlant 3D (S3D),SmartPlant P&ID (SPID), SmartPlant Electrical (SPEL), SmartPlantFoundation (SPF) support, Document Control Services, and As-BuiltDocumentation, for evaluation by the Company.",
+"TheBidder shall provide a Formal Commitment Letter confirming that the required manpower meeting thespecified qualification and experience requirements shall be made availableupon Contract Award as and when requested by the Company and/or submit details of currently available personnel in Appendix C ."
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-26",
+"due_ar":"الخميس 26 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-12-27",
+"due_ar":"الأحد 27 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-30",
+"due_ar":"الأربعاء 30 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2027-01-01",
+"due_ar":"الجمعة 1 يناير 2027",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2027-01-02",
+"due_ar":"السبت 2 يناير 2027",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2027-01-04",
+"due_ar":"الاثنين 4 يناير 2027",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد).",
+"due":"2027-01-05",
+"due_ar":"الثلاثاء 5 يناير 2027",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://www.tenderboard.gov.bh/TenderDetails/?id=580%2f2026%2fBTB+(BE2630000506)"
+}
+],
+"excerpt":"Provision of Engineering Design and Drafting Services | Bapco Refining\nTender Board - Kingdom of Bahrain\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating Partnerships Between Public and Private Sectors\nTenders Published Tenders\nTo be Opened This Week\nTender Opening Results\nLive Opening\nAwarded Tenders\nPrequalified Vendors\nProcurement Plans\nArchived Tenders\nServices Process\neForms\nTraining Courses\nStandard Electronic Request Template\nStandard Electronic Report\nMedia News\nAnnual Reports\nFAQ Supplier FAQ\nGeneral FAQ\neTendering Login\nCreate an Account in eTendering\nعربي\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating Partnerships Between Public and Private Sectors\nTenders Published Tenders\nTo be Opened This Week\nTender Opening Results\nLive Opening\nAwarded Tenders\nPrequalified Vendors\nProcurement Plans\nArchived Tenders\nServices Process\neForms\nTraining Courses\nStandard Electronic Request Template\nStandard Electronic Report\nMedia News\nAnnual Reports\nFAQ Supplier FAQ\nGeneral FAQ\nSearch\nTender Details\nHome\nTender Details\nProvision of Engineering Design and Drafting Services\nTender Number: 580/2026/BTB (BE2630000506)\nPA Ref Number: BE2630000506\nTender Description\nThe scope of services consists of the provision of Mechanical, Electrical, Civil and Structural Engineering Designer Services at Bapco Refining Offices and from the Contractor Office as and when required during the term of contract. The scope includes establishing drafting workspaces and coordination protocols between Bapco Refining and Contractors, organize drafting data sources, drawing templates and standards for Mechanical, Electrical and Civil and Structural engineering disciplines. Coordinate access to legacy drawings and documents for reference and updates. Ensure drafting software and tools are configured to meet project requirements.\nIssued by\nBapco Refining\nInternal/External\nExternal\nInvitation Method\nPublic (LOCAL GCC)\nClassification/CPV Codes\n-->\n76000000-3 - Services related to the oil and gas industry\n-->\nInitial Bond\nBD 5000\nBid Valid",
+"notes":[]
+},
 {
 "id":"bh-a329134c34",
 "uid":"bh:233491077",
