@@ -21,9 +21,7 @@ if os.name == "nt":  # QGIS/ArcGIS Python: SSL libraries live in the program's b
 
 import json  # noqa: E402
 import platform  # noqa: E402
-import shutil  # noqa: E402
 import subprocess  # noqa: E402
-import tempfile  # noqa: E402
 import time  # noqa: E402
 import urllib.error  # noqa: E402
 import uuid  # noqa: E402
@@ -33,7 +31,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
 from radar import ed25519, relay  # noqa: E402
-from radar.common import http, norm, utc_now_iso  # noqa: E402
+from radar.common import USER_AGENT, http, norm, utc_now_iso  # noqa: E402
 from radar.engine import load_json  # noqa: E402
 from radar.scoring import Matcher  # noqa: E402
 from radar.sources import COLLECTORS, fetch_detail  # noqa: E402
@@ -41,42 +39,42 @@ from radar.sources import COLLECTORS, fetch_detail  # noqa: E402
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-BROWSERS = [r"C:\Program Files\Google\Chrome\Application\chrome.exe",
-            r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
-            r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
-            r"C:\Program Files\Microsoft\Edge\Application\msedge.exe"]
+CURL = os.path.join(os.environ.get("SystemRoot", r"C:\Windows"), "System32", "curl.exe")
 
 
 def log(msg):
     print(msg, flush=True)
 
 
-def browser_page(url, timeout=90):
-    """Fallback for portals behind a browser check: let the installed Chrome/Edge render the page."""
-    exe = next((b for b in BROWSERS if os.path.exists(b)), None)
-    if not exe:
-        raise RuntimeError("no Chrome/Edge found for the browser fallback")
-    profile = tempfile.mkdtemp(prefix="tr-browser-")
-    try:
-        r = subprocess.run([exe, "--headless=new", "--disable-gpu", "--no-first-run", "--no-default-browser-check",
-                            f"--user-data-dir={profile}", "--virtual-time-budget=10000", "--dump-dom", url],
-                           capture_output=True, timeout=timeout)
-        html = r.stdout.decode("utf-8", errors="replace")
-        if len(html) < 500:
-            raise RuntimeError(f"browser returned {len(html)} bytes")
-        return html
-    finally:
-        shutil.rmtree(profile, ignore_errors=True)
+def curl_page(url, timeout=60):
+    """Windows' own curl (Schannel TLS stack) for portals whose TLS setup the Python bundled with QGIS
+    cannot negotiate (Qatar's Monaqasat closes the handshake). Certificates are still verified."""
+    if not os.path.exists(CURL):
+        raise RuntimeError("curl.exe not found")
+    base = [CURL, "-sS", "-L", "--max-time", str(timeout), "-A", USER_AGENT,
+            "-H", "Accept-Language: en-US,en;q=0.9,ar;q=0.8", "-w", "\n%{http_code}"]
+    for extra in ([], ["--ssl-revoke-best-effort"]):  # revocation servers can be unreachable from offices
+        r = subprocess.run(base + extra + [url], capture_output=True, timeout=timeout + 20)
+        out = r.stdout.decode("utf-8", errors="replace")
+        body, _, code = out.rpartition("\n")
+        if r.returncode == 0 and code.isdigit() and int(code) < 400:
+            return body
+        err = r.stderr.decode("utf-8", errors="replace").strip()
+        if "revocation" not in err.lower():
+            break
+    raise RuntimeError(f"curl exit {r.returncode}, HTTP {code or '-'} {err[:150]}")
 
 
 def pc_fetch(url, data=None, headers=None, method=None, retries=1, timeout=None):
     try:
         return http(url, data=data, headers=headers, method=method, retries=retries, timeout=timeout)
-    except urllib.error.HTTPError as e:
-        if data is None and e.code in (403, 429, 503):
-            log(f"    {e.code} from {url[:70]} — retrying through the browser")
-            return browser_page(url)
-        raise
+    except urllib.error.HTTPError:
+        raise  # the site answered (for example a bot check returned 403): respect it
+    except (urllib.error.URLError, OSError) as e:
+        if data is not None or not os.name == "nt":
+            raise
+        log(f"    Python could not connect to {url[:70]} ({str(e)[:80]}) — trying Windows curl")
+        return curl_page(url, timeout=(timeout or 40) + 20)
 
 
 def load_key(home):

@@ -155,7 +155,7 @@ def parse_date(v):
     if m:
         y, mo, d = map(int, m.groups())
         return _safe(y, mo, d) if y > 1700 else None
-    m = re.match(r"(\d{1,2})[-/ ]([A-Za-z]{3})[A-Za-z]*\.?[-/ ,]+(\d{4})", s)
+    m = re.match(r"(\d{1,2}),?[-/ ]+([A-Za-z]{3})[A-Za-z]*\.?[-/ ,]+(\d{4})", s)
     if m:
         return _safe(int(m.group(3)), _MONTHS.get(m.group(2).lower()[:3], 0), int(m.group(1)))
     m = re.match(r"([A-Za-z]{3})[A-Za-z]*\.? (\d{1,2})(?:st|nd|rd|th)?,? (\d{4})", s)

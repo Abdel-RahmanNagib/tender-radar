@@ -1,11 +1,13 @@
 """Tender sources. Every collector returns a list of raw tender dicts (see _tender)."""
+import html
+import json
 import os
 import re
 import xml.etree.ElementTree as ET
 from datetime import date, timedelta
 from urllib.parse import quote, urljoin
 
-from .common import XHR_HEADERS, Session, html_to_text, http, http_json, parse_date, pick, q
+from .common import XHR_HEADERS, Session, html_to_text, http, http_json, norm, parse_date, pick, q
 from .requirements import deadline_from_text, labeled_value
 
 SCANNER_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -351,6 +353,231 @@ def parse_capt(page, page_url):
     return out
 
 
+# ------------------------------------------------------------------ Oman – Tender Board (Esnad, public dashboard)
+OMAN = "https://etendering.tenderboard.gov.om"
+_OMAN_DASH = f"{OMAN}/product/publicDash?viewFlag=NewTenders"
+# The portal signs form fields: encparam lists the field names, hashval is SHA-256 of their values joined.
+_OMAN_CONSULT_CATS = ("المكاتب الإستشارية", "المكاتب الاستشارية", "أعمال الإستشارات", "أعمال الاستشارات")
+
+
+def _sha(s):
+    import hashlib
+    return hashlib.sha256(s.encode("utf-8")).hexdigest()
+
+
+def oman_nit_url(nit_id):
+    sig = _sha(f"public{nit_id}1RTLfixedrandomno")
+    return (f"{OMAN}/product/nitParameterView?mode=public&tenderNo={nit_id}&PublicUrl=1&CTRL_STRDIRECTION=RTL"
+            f"&encparam=mode,tenderNo,PublicUrl,CTRL_STRDIRECTION,randomno&hashval={sig}")
+
+
+def oman_tenderboard(cfg, countries, fetch=None):
+    """All tenders open for sale on the Oman Tender Board (about 50 per page, newest first)."""
+    if "Oman" not in countries:
+        return []
+    sess = fetch or Session()
+    g, out, seen = _Guard(), [], set()
+    first = g.call(sess, _OMAN_DASH)
+    if first is None:
+        return g.report()
+    m = re.search(r'name="hidMax"\s+value="(\d+)"', first)
+    last = min(int(m.group(1)) if m else 1, int(cfg.get("pages", 60)))
+    pages = [first]
+    for page in range(2, last + 1):
+        if g.down:
+            break
+        body = urllib_encode({"securityFlag": "1", "randomno": "fixedrandomno", "CTRL_STRDIRECTION": "RTL",
+                              "pageNo": str(page), "newTenderPubpageNo": str(page), "PublicUrl": "1",
+                              "viewFlag": "NewTenders", "encparam": "pageNo", "hashval": _sha(str(page))})
+        html_page = g.call(sess, _OMAN_DASH, data=body,
+                           headers={"Content-Type": "application/x-www-form-urlencoded", "Origin": OMAN,
+                                    "Referer": _OMAN_DASH})
+        if html_page:
+            pages.append(html_page)
+    for html_page in pages:
+        for t in parse_oman(html_page):
+            if t["uid"] not in seen:
+                seen.add(t["uid"])
+                out.append(t)
+    return out + g.report()
+
+
+def urllib_encode(d):
+    from urllib.parse import urlencode
+    return urlencode(d)
+
+
+def parse_oman(page):
+    """Rows: no. | tender number | name | entity | category [grades] | type [Local/International] |
+    dates (Sales EndDate / Bid Closing Date) | fee | bank guarantee | getNit(id)."""
+    out = []
+    for row in re.findall(r"<tr[^>]*>(.*?)</tr>", page, re.S | re.I):
+        nit = re.search(r"getNit\('(\d+)'\)", row)
+        if not nit:
+            continue
+        tds = re.findall(r"<td([^>]*)>(.*?)</td>", row, re.S | re.I)
+        cells = [c for _, c in tds]
+        if len(cells) < 8:
+            continue
+        number = html_to_text(cells[1]).strip()
+        tip = re.search(r"Tip\('(.*?)'\)", tds[2][0], re.S)
+        full = re.search(r'id="tendDesc\d+"[^>]*value="([^"]*)"', row)
+        title = html_to_text(tip.group(1)) if tip else html_to_text(cells[2]).rstrip(". ")
+        desc = html_to_text(full.group(1)) if full else ""
+        if desc == title:
+            desc = ""
+        entity = html_to_text(cells[3])
+        cat_full = html_to_text(cells[4])
+        category = cat_full.split("[")[0].strip()
+        ttype = re.sub(r"\s+", " ", html_to_text(cells[5])).strip()
+        dates = html_to_text(cells[6])
+        close = re.search(r"Closing Date\s*:\s*(\d{1,2}-\d{1,2}-\d{4})", dates)
+        sale = re.search(r"Sales EndDate\s*:\s*(\d{1,2}-\d{1,2}-\d{4})", dates)
+        fee = html_to_text(cells[7]).strip()
+        cat_n = norm(category).replace("ـ", "")
+        consult = any(norm(c) in cat_n for c in _OMAN_CONSULT_CATS) or "استشار" in cat_n
+        out.append(_tender(
+            uid=f"oman:{nit.group(1)}", source_key="oman_tenderboard", source="مجلس المناقصات – سلطنة عمان",
+            title=title, description=desc, country="Oman", client=entity, notice_type=ttype or "مناقصة",
+            reference=number,
+            deadline=parse_date(close.group(1)) if close else None, method=category,
+            consulting_flag=consult,
+            booklet_price=f"{fee} ريال عماني" if fee and fee.upper() != "N/A" else "",
+            url=oman_nit_url(nit.group(1)),
+            raw_text=" | ".join(x for x in [title, desc, entity, cat_full, ttype] if x),
+            extra=dict(category=cat_full, sales_end=sale.group(1) if sale else "")))
+    return out
+
+
+# ------------------------------------------------------------------ Bahrain – Tender Board (published tenders)
+BAHRAIN = "https://www.tenderboard.gov.bh"
+_BH_SVC = f"{BAHRAIN}/Templates/TenderBoardWebService.aspx"
+
+
+def _bh_query(page):
+    return ("{'tenderNumber':'','ministry':'0','category':'0', 'tendertype':'0', 'closingDate_filter':'',"
+            "'publicTenderOnly':'false','prequalificationOnly':'false','auctionOnly':'false','sortingType':'0',"
+            f"'listPage':'mainList', 'Page': '{page}','smeTendersOnly':'false','sectionName':''}}")
+
+
+def bahrain_tb(cfg, countries, fetch=http):
+    if "Bahrain" not in countries:
+        return []
+    g, out, seen = _Guard(), [], set()
+    hdr = {**XHR_HEADERS, "Content-Type": "application/json; charset=utf-8", "Accept": "application/json",
+           "Origin": BAHRAIN, "Referer": f"{BAHRAIN}/Tenders/PublicTenders/"}
+    raw = g.call(fetch, f"{_BH_SVC}/GetCurrentPublicTenderPageCount", data=_bh_query(-1), headers=hdr)
+    try:
+        total = int(json.loads(raw)["d"]) if raw else 0
+    except (ValueError, KeyError, TypeError):
+        total = 0
+    for page in range(1, min(total or 1, int(cfg.get("pages", 60))) + 1):
+        if g.down:
+            break
+        raw = g.call(fetch, f"{_BH_SVC}/GetCurrentPublicTenderByPage", data=_bh_query(page), headers=hdr)
+        if not raw:
+            continue
+        try:
+            fragment = json.loads(raw).get("d", "")
+        except ValueError:
+            continue
+        rows = parse_bahrain(fragment)
+        if not rows:
+            break
+        for t in rows:
+            if t["uid"] not in seen:
+                seen.add(t["uid"])
+                out.append(t)
+    return out + g.report()
+
+
+def parse_bahrain(fragment):
+    out = []
+    for block in re.split(r'(?=<div data-type=)', fragment)[1:]:
+        cols = dict(re.findall(r'<div class="column[^"]*" data-label="([^"]+)">(.*?)</div>(?=<div class="column|</div>|$)',
+                               block, re.S))
+        subj = cols.get("No./Tender Subject", "")
+        link = re.search(r'href="([^"]+)"', subj)
+        num = re.search(r"<span>(?:<img[^>]*>)?([^<]*)</span>", subj)
+        title = html_to_text(re.sub(r"<span>.*?</span>", " ", subj, flags=re.S))
+        if not link or not title:
+            continue
+        idx = re.search(r"data-index='(\d+)'", block)
+        out.append(_tender(
+            uid=f"bh:{idx.group(1) if idx else link.group(1)}", source_key="bahrain_tb",
+            source="مجلس المناقصات والمزايدات – البحرين", title=title, country="Bahrain",
+            client=html_to_text(cols.get("Purchasing Authority", "")),
+            notice_type=html_to_text(cols.get("Tender Type", "")) or "Public Tender",
+            reference=html_to_text(num.group(1)) if num else "",
+            published=parse_date(html_to_text(cols.get("Publish Date", ""))),
+            deadline=parse_date(html_to_text(cols.get("Closing Date", ""))),
+            url=urljoin(BAHRAIN + "/", html.unescape(link.group(1))),
+            raw_text=" | ".join(x for x in [title, html_to_text(cols.get("Purchasing Authority", ""))] if x),
+            extra=dict(purchase_before=html_to_text(cols.get("Purchase Before", "")))))
+    return out
+
+
+# ------------------------------------------------------------------ EBRD – client e-procurement portal (ECEPP)
+ECEPP = "https://ecepp.ebrd.com/delta"
+EBRD_COUNTRIES = {"Egypt": "Egypt", "Jordan": "Jordan", "West Bank And Gaza": "Palestine",
+                  "West Bank and Gaza": "Palestine", "Iraq": "Iraq", "Lebanon": "", "Morocco": "", "Tunisia": ""}
+_EBRD_OPEN_TYPES = ("invitation for expression interest", "request for proposals", "invitation for prequalification",
+                    "invitation for tenders", "general procurement notice")
+
+
+def ebrd_ecepp(cfg, countries, fetch=http):
+    """One page lists every ECEPP notice (about 4 MB); keep open ones in the target countries."""
+    g = _Guard(limit=1)
+    page = g.call(fetch, f"{ECEPP}/noticeSearchResults.html", timeout=90)
+    if page is None:
+        return g.report()
+    keep_gpn_days = int(cfg.get("general_notice_days", 60))
+    return parse_ecepp(page, countries, keep_gpn_days) + g.report()
+
+
+def parse_ecepp(page, countries, keep_gpn_days=60, today=None):
+    today = today or date.today()
+    out = []
+    for row in re.findall(r"<tr>(.*?)</tr>", page, re.S):
+        cells = re.findall(r"<td[^>]*>(.*?)</td>", row, re.S)
+        if len(cells) < 10:
+            continue
+        a = re.search(r'href="viewNotice\.html\?displayNoticeId=(\d+)"[^>]*>(.*?)</a>', cells[0], re.S)
+        if not a:
+            continue
+        title = html_to_text(a.group(2))
+        country_raw = title.split(":", 1)[0].strip()
+        country = EBRD_COUNTRIES.get(country_raw, "")
+        if not country or country not in countries:
+            continue
+        ntype = html_to_text(cells[1])
+        state = html_to_text(cells[5])
+        published = parse_date(html_to_text(cells[3]))
+        deadline = parse_date(html_to_text(cells[4]))
+        nlow = ntype.lower()
+        if not any(k in nlow for k in _EBRD_OPEN_TYPES):
+            continue
+        if "general procurement notice" in nlow:
+            if not published or (today - published).days > keep_gpn_days:
+                continue
+        elif state.lower() != "open" and not (deadline and deadline >= today):
+            continue
+        meta = [x.strip() for x in html_to_text(cells[9]).strip("[] ").split(",")]
+        kind = meta[3] if len(meta) > 3 else ""
+        out.append(_tender(
+            uid=f"ebrd:{a.group(1)}", source_key="ebrd_ecepp", source="البنك الأوروبي لإعادة الإعمار والتنمية (EBRD)",
+            title=title.split(":", 1)[-1].strip(), description=html_to_text(cells[2]),
+            country=country, client=meta[5] if len(meta) > 5 else "", notice_type=ntype,
+            published=published, deadline=deadline, method=meta[4] if len(meta) > 4 else "",
+            consulting_flag=kind.lower() == "consultancy",
+            url=f"{ECEPP}/viewNotice.html?displayNoticeId={a.group(1)}",
+            raw_text=" | ".join(x for x in [title, html_to_text(cells[2]), ", ".join(meta)] if x),
+            extra=dict(project=meta[0] if meta else "", project_id=meta[1] if len(meta) > 1 else "",
+                       procurement_type=kind, sector=meta[6] if len(meta) > 6 else "", state=state,
+                       funding="البنك الأوروبي لإعادة الإعمار والتنمية (EBRD)")))
+    return out
+
+
 # ------------------------------------------------------------------ RSS (Google News + custom feeds)
 def parse_rss(xml_text, source, source_key, max_age_days=None):
     out = []
@@ -459,7 +686,8 @@ def pc_relay(cfg, countries, fetch=http):
     return list(items.values()) + [{"_error": e} for e in errors]
 
 
-COLLECTORS = {"worldbank": worldbank, "etimad": etimad, "ungm": ungm, "monaqasat": monaqasat,
+COLLECTORS = {"worldbank": worldbank, "etimad": etimad, "ungm": ungm, "oman_tenderboard": oman_tenderboard,
+              "bahrain_tb": bahrain_tb, "ebrd_ecepp": ebrd_ecepp, "monaqasat": monaqasat,
               "kuwait_capt": kuwait_capt, "pc_relay": pc_relay, "google_news": google_news,
               "rss_feeds": rss_feeds, "web_pages": web_pages}
 

@@ -58,7 +58,8 @@ def matching():
     m_low = Matcher(profile, "low")
     w("## 1. Matching on real data")
     w(f"Date: {today} — min level in settings: `{settings.get('min_level')}`")
-    for name in ("worldbank", "etimad", "google_news", "web_pages"):
+    for name in ("worldbank", "etimad", "ungm", "oman_tenderboard", "bahrain_tb", "ebrd_ecepp", "google_news",
+                 "web_pages"):
         t0 = time.time()
         try:
             items = COLLECTORS[name](profile["sources"].get(name, {}), countries)
@@ -147,8 +148,6 @@ CHROME = {
     "Sec-Ch-Ua": '"Chromium";v="131", "Not_A Brand";v="24", "Google Chrome";v="131"',
     "Sec-Ch-Ua-Mobile": "?0", "Sec-Ch-Ua-Platform": '"Windows"',
 }
-OLD = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
-                     "Chrome/124 Safari/537.36 TenderRadar/2.0", "Accept": "*/*", "Accept-Language": "ar,en;q=0.8"}
 
 
 def ctx_default():
@@ -159,20 +158,6 @@ def ctx_tls12():
     c = ssl.create_default_context()
     c.maximum_version = ssl.TLSVersion.TLSv1_2
     return c
-
-
-def ctx_legacy():
-    c = ssl.create_default_context()
-    c.set_ciphers("DEFAULT:@SECLEVEL=1")
-    try:
-        c.options |= getattr(ssl, "OP_LEGACY_SERVER_CONNECT", 0x4)
-    except Exception:  # noqa: BLE001
-        pass
-    return c
-
-
-def ctx_noverify():  # diagnosis only: tells whether a site is up when its certificate chain is broken
-    return ssl._create_unverified_context()  # noqa: S323
 
 
 def probe(url, headers, ctx, data=None, extra=None):
@@ -203,28 +188,26 @@ def reachability():
                             "SortAscending": False, "isPicker": False, "IsSustainable": False,
                             "NoticeDisplayType": None, "NoticeSearchTotalLabelId": "noticeSearchTotal",
                             "TypeOfCompetitions": []}).encode()
+    bh = ("{'tenderNumber':'','ministry':'0','category':'0', 'tendertype':'0', 'closingDate_filter':'',"
+          "'publicTenderOnly':'false','prequalificationOnly':'false','auctionOnly':'false','sortingType':'0',"
+          "'listPage':'mainList', 'Page': '-1','smeTendersOnly':'false','sectionName':''}").encode()
     targets = [
         ("Qatar Monaqasat", "https://monaqasat.mof.gov.qa/TendersOnlineServices/SearchTenders/1", None, None),
+        ("Kuwait CAPT", "https://capt.gov.kw/en/tenders/opening-tenders/", None, None),
+        ("Oman Tender Board", "https://etendering.tenderboard.gov.om/product/publicDash?viewFlag=NewTenders", None,
+         None),
+        ("Bahrain Tender Board", "https://www.tenderboard.gov.bh/Templates/TenderBoardWebService.aspx/"
+                                 "GetCurrentPublicTenderPageCount", bh,
+         {"Content-Type": "application/json; charset=utf-8", "X-Requested-With": "XMLHttpRequest"}),
+        ("EBRD ECEPP", "https://ecepp.ebrd.com/delta/noticeSearchResults.html", None, None),
         ("UNGM page", "https://www.ungm.org/Public/Notice", None, None),
-        ("UNGM search POST", "https://www.ungm.org/Public/Notice/Search", ungm_body,
-         {"Content-Type": "application/json", "X-Requested-With": "XMLHttpRequest",
-          "Referer": "https://www.ungm.org/Public/Notice", "Origin": "https://www.ungm.org"}),
-        ("Kuwait CAPT", "https://capt.gov.kw/en/tenders/", None, None),
         ("AfDB", "https://www.afdb.org/en/projects-and-operations/procurement", None, None),
-        ("UNDP Libya", "https://www.undp.org/libya/procurement", None, None),
-        ("UNDP notices", "https://procurement-notices.undp.org/", None, None),
-        ("Egypt etenders", "https://etenders.gov.eg/Tender/Index", None, None),
-        ("Jordan GPD", "https://www.gpd.gov.jo/", None, None),
-        ("Jordan JONEPS", "https://www.joneps.gov.jo/", None, None),
-        ("Palestine shiraa", "https://www.shiraa.gov.ps/", None, None),
     ]
-    variants = [("current", OLD, ctx_default), ("chrome-headers", CHROME, ctx_default),
-                ("chrome+tls1.2", CHROME, ctx_tls12), ("chrome+legacy-tls", CHROME, ctx_legacy)]
-    w("| portal | " + " | ".join(v[0] for v in variants) + " | no-verify (diag) |")
-    w("|---|" + "---|" * (len(variants) + 1))
+    variants = [("chrome-headers", CHROME, ctx_default), ("chrome+tls1.2", CHROME, ctx_tls12)]
+    w("| portal | " + " | ".join(v[0] for v in variants) + " |")
+    w("|---|" + "---|" * len(variants))
     for name, url, data, extra in targets:
         cells = [probe(url, hdr, mk(), data, extra) for _, hdr, mk in variants]
-        cells.append(probe(url, CHROME, ctx_noverify(), data, extra))
         w(f"| {name} | " + " | ".join(cells) + " |")
 
 

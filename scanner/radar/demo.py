@@ -152,7 +152,56 @@ def fetchers(today):
                    "</p><p>For clarifications contact tenders@example.ae, Tel: +971 2 000 0000</p>"
         return ""
 
+    def oman(url, data=None, **kw):
+        if data is not None:  # pages after the first
+            return ""
+        close = (today + timedelta(days=15)).strftime("%d-%m-%Y")
+        sale = (today + timedelta(days=10)).strftime("%d-%m-%Y")
+        return f"""<input type="hidden" name="hidMax" value="1"><table><tr class="odd gradeA"><th>رقم التسلسل</th></tr>
+<tr class="even gradeA"><td align="center" class=" tbl_td">1.</td>
+<td class=" tbl_td" nowrap=""><span onmouseover="showTndDesc('tendDesc','1')">2026/88/ب م/ق م-12</span></td>
+<input type="hidden" id="tendDesc1" name="tendDesc1" value="إعداد التصاميم التفصيلية ووثائق الطرح لشبكة تصريف مياه الأمطار والطرق الداخلية بولاية بوشر (مثال)">
+<td class=" tbl_td" onmouseover="Tip('خدمات استشارية لتصميم شبكة تصريف مياه الأمطار والطرق – بوشر (مثال)')" onmouseout="UnTip()">خدمات استشارية لتصميم شبكة.....</td>
+<td>بلدية مسقط (مثال)</td>
+<td class=" tbl_td" onmouseover="Tip('المكاتب الإستــشــارية [الممتازة,الأولى]')" onmouseout="UnTip()">المكاتب الإستــشــارية [الممتازة,الأولى]</td>
+<td>عامة&nbsp;[ Local]</td><td> Sales EndDate:{sale}-Bid Closing Date:{close} </td><td>
+150</td><td>N/A</td>
+<td align="center" class="table_icon"><a href="#" onclick="javascript:getNit('103001')">x</a></td></tr>
+<tr class="odd gradeA"><td>2.</td><td><span>2026/90/و ص</span></td>
+<td onmouseover="Tip('توريد أجهزة حاسب آلي')">توريد أجهزة حاسب آلي</td><td>وزارة الصحة</td>
+<td onmouseover="Tip('التوريدات [الأولى]')">التوريدات [الأولى]</td><td>عامة</td>
+<td> Sales EndDate:{sale}-Bid Closing Date:{close} </td><td>N/A</td><td>N/A</td>
+<td><a onclick="javascript:getNit('103002')">x</a></td></tr></table>"""
+
+    def bahrain(url, data=None, **kw):
+        import json
+        if "PageCount" in url:
+            return json.dumps({"d": 1})
+        pub, buy, close = today - timedelta(days=1), today + timedelta(days=9), today + timedelta(days=20)
+        frag = ("<div data-type='External'  data-index='99001' data-status='1' class=\"rows\">"
+                "<div class=\"column\" data-label=\"index\">1</div>"
+                "<div class=\"column\" data-label=\"No./Tender Subject\"><a href=\"/TenderDetails/?id=9%2f2026%2fBTB+"
+                "(MOW%2f2026%2f101)\"><span>MOW/2026/101</span>Consultancy Services for Design and Supervision of "
+                "Sewerage Network and Pumping Station – Sitra (Example)</a></div>"
+                "<div class=\"column\" data-label=\"Tender Type\"><span>External</span></div>"
+                "<div class=\"column\" data-label=\"Purchasing Authority\">Ministry of Works (Example)</div>"
+                f"<div class=\"column\" data-label=\"Publish Date\">{pub:%d, %b,%Y}</div>"
+                f"<div class=\"column\" data-label=\"Purchase Before\"><span>{buy:%d, %b,%Y}</span></div>"
+                f"<div class=\"column\" data-label=\"Closing Date\"><span>{close:%d %b,%Y}</span></div></div>")
+        return json.dumps({"d": frag})
+
+    def ebrd(url, **kw):
+        pub = (today - timedelta(days=3)).strftime("%d/%m/%Y 09:05")
+        close = (today + timedelta(days=25)).strftime("%d/%m/%Y 10:00")
+        return f"""<table><tr><th>Title</th></tr><tr>
+<td><a href="viewNotice.html?displayNoticeId=48900001">Egypt: Detailed Design and Construction Supervision of Stormwater Drainage – New Cairo (Example)</a></td>
+<td> Invitation For Expression Interest</td><td>Design and Supervision</td>
+<td>{pub}<br><span class="instrutxt">UK Time</span></td><td>{close}<br><span class="instrutxt">UK Time</span></td>
+<td>Open</td><td>x</td><td>x</td><td></td>
+<td>[New Cairo Stormwater (Example), 59999, Egypt, Consultancy, Consultancy Two Stage Open, New Urban Communities Authority, Municipal and Environmental Infrastructure, Invitation For Expression Interest]</td></tr></table>"""
+
     return {"worldbank": wb, "etimad": etimad, "ungm": ungm, "monaqasat": monaqasat, "google_news": news,
+            "oman_tenderboard": oman, "bahrain_tb": bahrain, "ebrd_ecepp": ebrd,
             "kuwait_capt": lambda url, **kw: "<html></html>", "pc_relay": lambda url, **kw: "",
             "rss_feeds": lambda url, **kw: "", "web_pages": web, "detail": detail}
 

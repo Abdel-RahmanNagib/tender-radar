@@ -1,52 +1,55 @@
 {
- "_help": "الإعدادات البسيطة. التشغيل لا يحتاج تعديل أي شيء هنا. في التشغيل السحابي تُوضع بيانات الإشعارات في GitHub Secrets وليس هنا.",
- "office_name": "CEC Egypt – Delta Office – Infrastructure",
- "countries": [
-  "Egypt",
-  "Libya",
-  "Syria",
-  "Jordan",
-  "Palestine",
-  "Saudi Arabia",
-  "UAE",
-  "Qatar",
-  "Kuwait",
-  "Bahrain",
-  "Oman",
-  "Yemen",
-  "Iraq",
-  "MENA (Regional)"
- ],
- "min_level": "low",
- "_min_level_help": "high = المناسب جداً فقط | medium = المناسب | low = يعرض كل ما قد يناسبكم (افتراضي)، مع تمييز درجة المناسبة",
- "check_every_minutes": 60,
- "max_notifications_per_run": 15,
- "daily_summary_hour_cairo": 8,
- "sources": {
-  "worldbank": true,
-  "etimad": true,
-  "ungm": true,
-  "monaqasat": false,
-  "kuwait_capt": false,
-  "pc_relay": true,
-  "google_news": true,
-  "rss_feeds": true,
-  "web_pages": true
- },
- "notifications_for_pc_mode": {
-  "_help": "للتشغيل على الكمبيوتر فقط. اكتب اسم قناة ntfy (نفس الاسم الذي اشتركت فيه بالموبايل).",
-  "ntfy_topic": "",
-  "ntfy_server": "https://ntfy.sh",
-  "telegram_bot_token": "",
-  "telegram_chat_ids": [],
-  "email": {
-   "smtp_host": "",
-   "smtp_port": 465,
-   "username": "",
-   "password": "",
-   "from": "",
-   "to": []
-  }
- },
- "_sources_help": "monaqasat (قطر) و kuwait_capt (الكويت) تمنع السيرفرات السحابية، فيفحصها مساعد كمبيوتر المكتب ويرسلها عبر pc_relay"
+  "_help": "الإعدادات البسيطة. التشغيل لا يحتاج تعديل أي شيء هنا. في التشغيل السحابي تُوضع بيانات الإشعارات في GitHub Secrets وليس هنا.",
+  "office_name": "CEC Egypt – Delta Office – Infrastructure",
+  "countries": [
+    "Egypt",
+    "Libya",
+    "Syria",
+    "Jordan",
+    "Palestine",
+    "Saudi Arabia",
+    "UAE",
+    "Qatar",
+    "Kuwait",
+    "Bahrain",
+    "Oman",
+    "Yemen",
+    "Iraq",
+    "MENA (Regional)"
+  ],
+  "min_level": "low",
+  "_min_level_help": "high = المناسب جداً فقط | medium = المناسب | low = يعرض كل ما قد يناسبكم (افتراضي)، مع تمييز درجة المناسبة",
+  "check_every_minutes": 60,
+  "max_notifications_per_run": 15,
+  "daily_summary_hour_cairo": 8,
+  "sources": {
+    "worldbank": true,
+    "etimad": true,
+    "ungm": true,
+    "oman_tenderboard": true,
+    "bahrain_tb": true,
+    "ebrd_ecepp": true,
+    "monaqasat": false,
+    "kuwait_capt": false,
+    "pc_relay": true,
+    "google_news": true,
+    "rss_feeds": true,
+    "web_pages": true
+  },
+  "notifications_for_pc_mode": {
+    "_help": "للتشغيل على الكمبيوتر فقط. اكتب اسم قناة ntfy (نفس الاسم الذي اشتركت فيه بالموبايل).",
+    "ntfy_topic": "",
+    "ntfy_server": "https://ntfy.sh",
+    "telegram_bot_token": "",
+    "telegram_chat_ids": [],
+    "email": {
+      "smtp_host": "",
+      "smtp_port": 465,
+      "username": "",
+      "password": "",
+      "from": "",
+      "to": []
+    }
+  },
+  "_sources_help": "monaqasat (قطر) و kuwait_capt (الكويت) تمنع السيرفرات السحابية، فيفحصها مساعد كمبيوتر المكتب ويرسلها عبر pc_relay"
 }

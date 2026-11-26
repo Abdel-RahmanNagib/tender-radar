@@ -23,6 +23,10 @@ SOURCES = {
     "ungm": "بوابة مشتريات الأمم المتحدة UNGM",
     "monaqasat": "منصة مناقصات – قطر",
     "kuwait_capt": "الجهاز المركزي للمناقصات العامة – الكويت",
+    "oman_tenderboard": "مجلس المناقصات – سلطنة عمان",
+    "bahrain_tb": "مجلس المناقصات والمزايدات – البحرين",
+    "ebrd_ecepp": "البنك الأوروبي لإعادة الإعمار والتنمية (EBRD)",
+    "pc_relay": "مساعد كمبيوتر المكتب",
     "google_news": "أخبار الطروحات",
     "rss_feeds": "خلاصات RSS",
     "web_pages": "بوابات حكومية وبنوك تنمية",
@@ -72,6 +76,12 @@ SUPPORT = {
         "website": "https://help.ungm.org/hc/en-us",
         "note": "لا يوجد رقم هاتف؛ التواصل عبر نموذج «Contact UNGM» في مركز المساعدة. أسئلة المناقصة تُرسل لجهة التواصل في الإعلان.",
         "source": "مركز المساعدة UNGM",
+    },
+    "ebrd_ecepp": {
+        "title": "بوابة المشتريات الإلكترونية لعملاء EBRD (ECEPP)",
+        "website": "https://ecepp.ebrd.com",
+        "note": "التسجيل في ECEPP مجاني. الاستفسارات عن المهمة تُرسل من داخل صفحة الإعلان على ECEPP أو لجهة العميل المذكورة فيه.",
+        "source": "صفحة الإعلانات على ECEPP",
     },
     "Bahrain": {
         "title": "مجلس المناقصات والمزايدات – البحرين (الدعم الفني)",
@@ -225,8 +235,10 @@ def detect_kind(t):
         return "eoi"
     if any(k in nt for k in ("proposal", "rfp", "bid", "tender", "عطاء", "مناقص", "منافس", "quotation")):
         return "rfp"
-    if src in ("worldbank", "ungm"):
+    if src in ("worldbank", "ungm", "ebrd_ecepp"):
         return "eoi"
+    if src in ("oman_tenderboard", "bahrain_tb", "monaqasat", "kuwait_capt"):
+        return "rfp"
     return "portal"
 
 

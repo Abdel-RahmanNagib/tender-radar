@@ -21,7 +21,8 @@ const S = { data: null, status: null, profile: null, route: { view: 'list', tab:
 
 const STATUS = { '': 'لم أحدد', study: 'ندرسها', apply: 'سنقدّم', submitted: 'تم التقديم', skip: 'غير مناسبة' };
 const SOURCE_AR = { worldbank: 'البنك الدولي', etimad: 'منصة اعتماد', etimad_prequal: 'اعتماد – التأهيل المسبق', monaqasat: 'منصة مناقصات قطر', ungm: 'الأمم المتحدة UNGM',
-  kuwait_capt: 'جهاز المناقصات – الكويت', pc_relay: 'من كمبيوتر المكتب',
+  kuwait_capt: 'جهاز المناقصات – الكويت', pc_relay: 'من كمبيوتر المكتب', oman_tenderboard: 'مجلس المناقصات – عُمان',
+  bahrain_tb: 'مجلس المناقصات – البحرين', ebrd_ecepp: 'البنك الأوروبي EBRD',
   google_news: 'أخبار الطروحات', rss_feeds: 'خلاصات RSS', web_pages: 'بوابات حكومية وبنوك تنمية' };
 const EN = { stormwater: 'stormwater drainage', hydrology: 'hydrology and hydraulic modelling', sewer: 'sewerage and wastewater',
   water: 'water networks', irrigation: 'irrigation networks', roads: 'roads and highway design', pavement: 'pavement design',
@@ -538,7 +539,7 @@ function renderSettings() {
         ${pcLine}
         <p class="small" style="margin-top:10px">قنوات الإشعار المفعّلة على الخادم: ${['ntfy', 'telegram', 'email'].filter((k) => s.channels && s.channels[k]).map((k) => ({ ntfy: 'ntfy', telegram: 'تيليجرام', email: 'الإيميل' })[k]).join('، ') || '<span class="bad">لا شيء بعد — أضف NTFY_TOPIC في GitHub</span>'}</p>`
         : '<p class="muted">لا توجد بيانات حالة بعد.</p>'}</section>
-    <section class="box"><h3>عن البيانات</h3><p class="small">المصادر: البنك الدولي، منصة اعتماد، بوابة الأمم المتحدة UNGM، منصة مناقصات قطر والجهاز المركزي للمناقصات بالكويت (يفحصهما مساعد كمبيوتر المكتب لأنهما يمنعان السيرفرات السحابية)، البنك الإسلامي للتنمية، وأخبار الطروحات. الأرقام والإيميلات مأخوذة من نص الإعلان نفسه، وأرقام الدعم الفني للبوابات من مواقعها الرسمية. راجعوا الإعلان الرسمي دائماً قبل التقديم.</p></section>`;
+    <section class="box"><h3>عن البيانات</h3><p class="small">المصادر: البنك الدولي، منصة اعتماد، بوابة الأمم المتحدة UNGM، مجلس المناقصات العُماني، مجلس المناقصات بالبحرين، البنك الأوروبي لإعادة الإعمار EBRD، منصة مناقصات قطر والجهاز المركزي للمناقصات بالكويت (يفحصهما مساعد كمبيوتر المكتب لأنهما يمنعان السيرفرات السحابية)، البنك الإسلامي للتنمية، وأخبار الطروحات. الأرقام والإيميلات مأخوذة من نص الإعلان نفسه، وأرقام الدعم الفني للبوابات من مواقعها الرسمية. راجعوا الإعلان الرسمي دائماً قبل التقديم.</p></section>`;
 }
 function randomTopic() {
   const a = new Uint8Array(6); (crypto || window.msCrypto).getRandomValues(a);

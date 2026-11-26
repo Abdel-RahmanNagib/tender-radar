@@ -58,7 +58,7 @@ def test_full_run():
     r1 = run_once(settings, profile, tmp, fetchers=fx, notifier=n1, today=TODAY, log=lambda *a: None)
     titles = [r["title"] for r in r1["new"]]
     by = {r["source_key"] + ":" + r["kind"]: r for r in r1["new"]}
-    check(len(r1["new"]) == 8, f"8 suitable opportunities found (got {len(r1['new'])})")
+    check(len(r1["new"]) == 11, f"11 suitable opportunities found (got {len(r1['new'])})")
     for bad in ("vehicles", "حاسب", "سفلتة", "furniture", "road safety", "Hydrologist", "industrial area"):
         check(not any(bad in t for t in titles), f"rejected: {bad}")
     check(r1["first_run"] and not n1.tenders and len(n1.summaries) == 1, "first run sends one summary, not a flood")
@@ -95,6 +95,14 @@ def test_full_run():
     check(un["contacts"][0]["emails"] == ["procurement.gaza@example.org"], "UNGM contact read from the detail page")
     qa = by["monaqasat:rfp"]
     check(qa["contacts"][0]["emails"] == ["procurement@example.qa"], "Qatar e-mail read from tender subject")
+    om = next(r for r in r1["new"] if r["source_key"] == "oman_tenderboard")
+    check(om["country_ar"] == "عُمان" and "hashval=" in om["links"][0]["url"] and om["deadline"] == (TODAY + timedelta(days=15)).isoformat(),
+          "Oman Tender Board: consulting tender with signed notice link and closing date")
+    check(not any("حاسب" in r["title"] for r in r1["new"]), "Oman supplies tender rejected")
+    bh = next(r for r in r1["new"] if r["source_key"] == "bahrain_tb")
+    check(bh["deadline"] == (TODAY + timedelta(days=20)).isoformat() and bh["kind"] == "rfp", "Bahrain tender read with closing date")
+    eb = next(r for r in r1["new"] if r["source_key"] == "ebrd_ecepp")
+    check(eb["kind"] == "eoi" and eb["country_ar"] == "مصر", "EBRD Egypt EOI read from ECEPP")
     news = by["google_news:news"]
     check(any(link["label"] == "ابحث عن الإعلان الرسمي" for link in news["links"]), "news lead gets a search link")
 
@@ -122,7 +130,7 @@ def test_full_run():
     wbr = next(r for r in saved["tenders"] if r["uid"] == "wb:OP00999001")
     check(wbr["deadline"] == (TODAY + timedelta(days=60)).isoformat() and wbr["notes"], "deadline extension recorded")
     st = json.load(open(os.path.join(tmp, "status.json"), encoding="utf-8"))
-    check(st["open"] == 9 and all(s["ok"] for s in st["sources"]), "status file written")
+    check(st["open"] == 12 and all(s["ok"] for s in st["sources"]), "status file written")
     check(os.path.exists(os.path.join(tmp, "profile.json")), "profile for the app written")
     shutil.rmtree(tmp)
 
