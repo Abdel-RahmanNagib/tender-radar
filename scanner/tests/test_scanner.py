@@ -231,10 +231,28 @@ def test_watched_pages():
     check(len(odd) == 1 and "_error" in odd[0], "a page that does not look as expected is reported, not read link by link")
 
 
+def test_words_with_two_meanings():
+    print("words with two meanings")
+    from radar.scoring import Matcher
+    m = Matcher(load_json(os.path.join(SCANNER, "profile.json")), "low")
+
+    def found(title, desc=""):
+        return m.evaluate({"title": title, "description": desc, "country": "Oman", "raw_text": "",
+                           "consulting_flag": True}, TODAY)[0]
+
+    check(not found("توفير خدمات تصميم وتصوير للبوابة الموحدة للخدمات الحكومية",
+                    "نشر المحتوى عبر قنوات التواصل الاجتماعي"), "social-media «channels» are not irrigation canals")
+    check(not found("الخدمات الاستشارية للتقييم الإنشائي لمحطة ارسال الموجة المتوسطة بوادي المعاول"),
+          "a place named Wadi … is not hydrology work")
+    check(found("الاشراف على أعمال تنظيف الاودية من الرواسب والمخلفات بمحافظة الظاهرة"), "wadi works are still found")
+    check(found("الخدمات الاستشارية لتصميم قنوات الري في ولاية بهلاء"), "irrigation canals are still found")
+
+
 if __name__ == "__main__":
     test_contacts()
     test_full_run()
     test_notification_payloads()
     test_email_invitations()
     test_watched_pages()
+    test_words_with_two_meanings()
     print("\nALL TESTS PASSED ✔")

@@ -1,11 +1,13 @@
 /* Service worker: works offline, opens the right tender from a notification,
    and (on Android/Chrome) checks for new tenders in the background when allowed. */
-const VERSION = 'tr-v2.4.0';
+const VERSION = 'tr-v2.4.1';
 const SHELL = ['./', './index.html', './guide.html', './style.css', './app.js', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/badge-96.png', './icons/favicon-64.png'];
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(VERSION).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  // 'reload' takes the files from the server, not the browser's short-term cache, so an update shows at once
+  e.waitUntil(caches.open(VERSION).then((c) => c.addAll(SHELL.map((u) => new Request(u, { cache: 'reload' }))))
+    .then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', (e) => {
