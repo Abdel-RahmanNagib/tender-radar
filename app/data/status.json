@@ -1,10 +1,10 @@
 {
-"last_run":"2026-11-27T03:14:02+00:00",
+"last_run":"2026-11-27T04:26:03+00:00",
 "every_minutes":60,
-"collected":3487,
-"matched":40,
+"collected":3448,
+"matched":39,
 "new":2,
-"open":55,
+"open":57,
 "sources":[
 {
 "key":"worldbank",
@@ -57,21 +57,21 @@
 },
 {
 "key":"dubai_esupply",
-"count":240,
+"count":244,
 "ok":true,
 "failed_pages":0,
 "error":""
 },
 {
 "key":"abudhabi_adgpg",
-"count":92,
+"count":93,
 "ok":true,
 "failed_pages":0,
 "error":""
 },
 {
 "key":"dewa_tenders",
-"count":25,
+"count":0,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -106,10 +106,10 @@
 },
 {
 "key":"google_news",
-"count":19,
-"ok":true,
-"failed_pages":0,
-"error":""
+"count":0,
+"ok":false,
+"failed_pages":2,
+"error":"https://news.google.com/rss/search?q=%D9%85%D9%86%D8%A7%D9%82%D8%B5%D8%A9+%D8%AE%D8%AF%D9%: HTTP Error 429: Too Many Requests"
 },
 {
 "key":"rss_feeds",
@@ -126,12 +126,15 @@
 "error":""
 }
 ],
-"errors":[],
+"errors":[
+"https://news.google.com/rss/search?q=%D9%85%D9%86%D8%A7%D9%82%D8%B5%D8%A9+%D8%AE%D8%AF%D9%: HTTP Error 429: Too Many Requests",
+"https://news.google.com/rss/search?q=%D8%B7%D8%B1%D8%AD+%D9%85%D9%86%D8%A7%D9%82%D8%B5%D8%: HTTP Error 429: Too Many Requests"
+],
 "notifications_sent":2,
 "pc_helper":{
 "linked":true,
 "label":"قطر وعُمان",
-"last_seen":"2026-11-27T01:23:08+00:00",
+"last_seen":"2026-11-27T04:23:18+00:00",
 "host":"DESKTOP-OVTV5PG",
 "sources":[
 {
@@ -159,7 +162,7 @@
 "error":""
 }
 ],
-"snapshots":8
+"snapshots":10
 },
 "channels":{
 "ntfy":true,
