@@ -1,9 +1,9 @@
 {
-"last_run":"2026-11-27T21:11:51+00:00",
+"last_run":"2026-11-27T22:10:05+00:00",
 "every_minutes":60,
-"collected":3490,
-"matched":41,
-"new":2,
+"collected":3469,
+"matched":39,
+"new":0,
 "open":83,
 "sources":[
 {
@@ -36,7 +36,7 @@
 },
 {
 "key":"bahrain_tb",
-"count":220,
+"count":200,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -106,7 +106,7 @@
 },
 {
 "key":"google_news",
-"count":14,
+"count":13,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -127,11 +127,11 @@
 }
 ],
 "errors":[],
-"notifications_sent":2,
+"notifications_sent":0,
 "pc_helper":{
 "linked":true,
 "label":"قطر وعُمان",
-"last_seen":"2026-11-27T20:23:02+00:00",
+"last_seen":"2026-11-27T21:23:35+00:00",
 "host":"DESKTOP-OVTV5PG",
 "sources":[
 {
