@@ -1,17 +1,21 @@
 package com.cecegypt.tenderradar;
 
+import android.app.ActivityManager;
 import android.app.Application;
+import android.app.ApplicationExitInfo;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.os.Build;
 import android.webkit.WebView;
 
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 /**
  * Starts before any screen. If the app ever closes because of an error, the reason (Android version, phone
@@ -47,6 +51,59 @@ public class App extends Application {
         String report = prefs().getString("report", null);
         if (report != null) {
             new Thread(() -> send(report)).start();
+        }
+        if (Build.VERSION.SDK_INT >= 30) {
+            new Thread(this::reportLastExit).start();
+        }
+    }
+
+    /**
+     * Android 11+ keeps why the app last stopped. A close without a Java error (the page engine failing, the
+     * phone short of memory, a native crash) is sent too, once, so it can be fixed.
+     */
+    private void reportLastExit() {
+        try {
+            ActivityManager am = getSystemService(ActivityManager.class);
+            List<ApplicationExitInfo> exits = am == null ? null : am.getHistoricalProcessExitReasons(null, 0, 5);
+            if (exits == null || exits.isEmpty()) {
+                return;
+            }
+            long seen = prefs().getLong("exit-seen", 0);
+            StringBuilder bad = new StringBuilder();
+            for (ApplicationExitInfo x : exits) {
+                if (x.getTimestamp() <= seen) {
+                    continue;
+                }
+                String desc = String.valueOf(x.getDescription());
+                int r = x.getReason();
+                // Normal ends (closed by the user, an update, a permission change, frozen in the background) and Java
+                // errors (already sent with their full trace) are not reported again.
+                boolean expected = r == ApplicationExitInfo.REASON_USER_REQUESTED || r == ApplicationExitInfo.REASON_EXIT_SELF
+                        || r == ApplicationExitInfo.REASON_USER_STOPPED || r == ApplicationExitInfo.REASON_PERMISSION_CHANGE
+                        || r == ApplicationExitInfo.REASON_CRASH || r == 14 || r == 15 || r == 16
+                        || (r == ApplicationExitInfo.REASON_OTHER && desc.matches("(?i).*(remove task|swipe|update).*"));
+                if (expected || seen == 0 && r == ApplicationExitInfo.REASON_OTHER) {
+                    continue;
+                }
+                bad.append("\nexit ").append(x.getTimestamp()).append(" reason=").append(r).append(" status=")
+                        .append(x.getStatus()).append(" importance=").append(x.getImportance())
+                        .append(" pss=").append(x.getPss()).append("kB desc=").append(desc);
+                if (r == ApplicationExitInfo.REASON_CRASH_NATIVE || r == ApplicationExitInfo.REASON_ANR) {
+                    try (InputStream trace = x.getTraceInputStream()) {
+                        if (trace != null) {
+                            byte[] head = new byte[1500];
+                            int n = trace.read(head);
+                            bad.append("\n").append(new String(head, 0, Math.max(n, 0), StandardCharsets.UTF_8));
+                        }
+                    }
+                }
+            }
+            prefs().edit().putLong("exit-seen", exits.get(0).getTimestamp()).commit();
+            if (bad.length() > 0) {
+                send(describe() + bad);
+            }
+        } catch (Exception ignored) {
+            // no exit history on this phone
         }
     }
 
