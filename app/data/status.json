@@ -1,10 +1,10 @@
 {
-"last_run":"2026-11-27T11:06:29+00:00",
+"last_run":"2026-11-27T12:10:44+00:00",
 "every_minutes":60,
-"collected":3480,
+"collected":3483,
 "matched":40,
 "new":2,
-"open":65,
+"open":67,
 "sources":[
 {
 "key":"worldbank",
@@ -22,7 +22,7 @@
 },
 {
 "key":"ungm",
-"count":154,
+"count":156,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -57,7 +57,7 @@
 },
 {
 "key":"dubai_esupply",
-"count":232,
+"count":233,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -131,7 +131,7 @@
 "pc_helper":{
 "linked":true,
 "label":"قطر وعُمان",
-"last_seen":"2026-11-27T10:23:38+00:00",
+"last_seen":"2026-11-27T11:26:16+00:00",
 "host":"DESKTOP-OVTV5PG",
 "sources":[
 {
