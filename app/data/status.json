@@ -1,8 +1,8 @@
 {
-"last_run":"2026-11-27T22:10:05+00:00",
+"last_run":"2026-11-27T23:09:57+00:00",
 "every_minutes":60,
-"collected":3469,
-"matched":39,
+"collected":3240,
+"matched":38,
 "new":0,
 "open":83,
 "sources":[
@@ -36,7 +36,7 @@
 },
 {
 "key":"bahrain_tb",
-"count":200,
+"count":0,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -71,7 +71,7 @@
 },
 {
 "key":"dewa_tenders",
-"count":28,
+"count":0,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -106,7 +106,7 @@
 },
 {
 "key":"google_news",
-"count":13,
+"count":12,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -131,7 +131,7 @@
 "pc_helper":{
 "linked":true,
 "label":"قطر وعُمان",
-"last_seen":"2026-11-27T21:23:35+00:00",
+"last_seen":"2026-11-27T22:23:00+00:00",
 "host":"DESKTOP-OVTV5PG",
 "sources":[
 {
