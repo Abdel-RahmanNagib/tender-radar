@@ -11,12 +11,18 @@ import android.os.Bundle;
 import android.os.PowerManager;
 import android.provider.CalendarContract;
 import android.provider.Settings;
+import android.view.Gravity;
+import android.view.View;
 import android.webkit.JavascriptInterface;
+import android.webkit.RenderProcessGoneDetail;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.time.LocalDate;
 import java.time.ZoneOffset;
@@ -27,6 +33,7 @@ public class MainActivity extends Activity {
     static final String APP_URL = "https://" + HOST + "/tender-radar/";
     static final String EXTRA_TENDER = "tender";
     private static final String NOTIFY_PERMISSION = "android.permission.POST_NOTIFICATIONS";
+    private static final String WEBVIEW_PACKAGE = "com.google.android.webview";
     private static final long DAY = 24L * 60L * 60L * 1000L;
 
     /** Shown instead of the browser's error page when the phone has no internet and nothing is saved yet. */
@@ -40,25 +47,49 @@ public class MainActivity extends Activity {
             + "border-radius:10px;text-decoration:none;font-weight:bold'>إعادة المحاولة</a></body></html>";
 
     private WebView web;
+    private int pageCrashes;
 
     @Override
     protected void onCreate(Bundle saved) {
         super.onCreate(saved);
         getWindow().setStatusBarColor(Color.parseColor("#142B3B"));
-        web = new WebView(this);
-        setContentView(web);
 
-        WebSettings s = web.getSettings();
+        // Background work first: a phone that cannot show the page still gets the hourly notifications.
+        try {
+            Notifier.createChannel(this);
+            CheckJob.schedule(this);
+            if (!Feed.isInitialized(this)) {
+                new Thread(() -> Feed.checkQuietly(getApplicationContext())).start();  // remember today's list
+            }
+        } catch (RuntimeException e) {
+            // notifications are not available on this phone; the app itself still opens
+        }
+        askToNotify();
+
+        if (!showPage(saved, urlFor(getIntent()))) {
+            showProblem("هذا الموبايل لا يستطيع عرض صفحات التطبيق لأن مكوّن «Android System WebView» متوقف أو قديم.",
+                    true);
+        }
+    }
+
+    /** Creates the page view and loads the app. Returns false when the phone has no working WebView. */
+    private boolean showPage(Bundle saved, String url) {
+        WebView view;
+        try {
+            view = new WebView(this);
+        } catch (RuntimeException e) {
+            return false;
+        }
+        WebSettings s = view.getSettings();
         s.setJavaScriptEnabled(true);
         s.setDomStorageEnabled(true);
         s.setSupportMultipleWindows(false);
         // The web app reads this to know the phone app handles notifications.
-        s.setUserAgentString(s.getUserAgentString() + " TenderRadarAndroid/2");
-        web.addJavascriptInterface(new Bridge(), "TenderRadarApp");
-
-        web.setWebViewClient(new WebViewClient() {
+        s.setUserAgentString(s.getUserAgentString() + " TenderRadarAndroid/3");
+        view.addJavascriptInterface(new Bridge(), "TenderRadarApp");
+        view.setWebViewClient(new WebViewClient() {
             @Override
-            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+            public boolean shouldOverrideUrlLoading(WebView v, WebResourceRequest request) {
                 Uri u = request.getUrl();
                 if (isAppPage(u)) {
                     return false;  // pages of the app itself stay inside the app
@@ -68,26 +99,77 @@ public class MainActivity extends Activity {
             }
 
             @Override
-            public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+            public void onReceivedError(WebView v, WebResourceRequest request, WebResourceError error) {
                 if (request.isForMainFrame()) {
-                    view.loadDataWithBaseURL(APP_URL, OFFLINE_PAGE, "text/html", "utf-8", null);
+                    v.loadDataWithBaseURL(APP_URL, OFFLINE_PAGE, "text/html", "utf-8", null);
                 }
             }
+
+            @Override
+            public boolean onRenderProcessGone(WebView v, RenderProcessGoneDetail detail) {
+                // The page engine stopped (usually the phone ran short of memory). Without this the whole app
+                // closes; instead the page is rebuilt, and after repeated failures a clear message is shown.
+                if (v != web) {
+                    return true;
+                }
+                web = null;
+                setContentView(new View(MainActivity.this));
+                v.destroy();
+                pageCrashes++;
+                if (pageCrashes > 2 || !showPage(null, APP_URL)) {
+                    showProblem("توقفت صفحة التطبيق أكثر من مرة على هذا الموبايل. غالباً تحتاج تحديث «Android System WebView» "
+                            + "أو إغلاق بعض التطبيقات المفتوحة.", true);
+                }
+                return true;
+            }
         });
-        web.setDownloadListener((url, userAgent, disposition, mimeType, length) -> openOutside(Uri.parse(url)));
-
-        Notifier.createChannel(this);
-        CheckJob.schedule(this);
-        if (!Feed.isInitialized(this)) {
-            new Thread(() -> Feed.checkQuietly(getApplicationContext())).start();  // remember today's list
-        }
-        askToNotify();
-
+        view.setDownloadListener((link, userAgent, disposition, mimeType, length) -> openOutside(Uri.parse(link)));
+        web = view;
+        setContentView(view);
         if (saved != null) {
-            web.restoreState(saved);
+            view.restoreState(saved);
         } else {
-            web.loadUrl(urlFor(getIntent()));
+            view.loadUrl(url);
         }
+        return true;
+    }
+
+    /** A plain screen (no web page) with the reason and what to do: used only when the page cannot be shown. */
+    private void showProblem(String reason, boolean offerUpdate) {
+        LinearLayout box = new LinearLayout(this);
+        box.setOrientation(LinearLayout.VERTICAL);
+        box.setGravity(Gravity.CENTER);
+        box.setPadding(48, 48, 48, 48);
+        box.setBackgroundColor(Color.parseColor("#EEF2F1"));
+
+        TextView text = new TextView(this);
+        text.setText(reason + "\n\nإشعارات الفرص الجديدة تستمر في الوصول. ويمكنك فتح الرادار في المتصفح:");
+        text.setTextColor(Color.parseColor("#142B3B"));
+        text.setTextSize(17);
+        text.setGravity(Gravity.CENTER);
+        box.addView(text);
+
+        if (offerUpdate) {
+            box.addView(button("تحديث Android System WebView", v -> {
+                if (!startSafely(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + WEBVIEW_PACKAGE)))) {
+                    openOutside(Uri.parse("https://play.google.com/store/apps/details?id=" + WEBVIEW_PACKAGE));
+                }
+            }));
+        }
+        box.addView(button("فتح الرادار في المتصفح", v -> openOutside(Uri.parse(APP_URL))));
+        box.addView(button("إعادة المحاولة", v -> {
+            pageCrashes = 0;
+            recreate();
+        }));
+        setContentView(box);
+    }
+
+    private Button button(String label, View.OnClickListener action) {
+        Button b = new Button(this);
+        b.setText(label);
+        b.setAllCaps(false);
+        b.setOnClickListener(action);
+        return b;
     }
 
     static boolean isAppPage(Uri u) {
@@ -99,7 +181,7 @@ public class MainActivity extends Activity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         setIntent(intent);
-        if (intent.getStringExtra(EXTRA_TENDER) != null) {
+        if (web != null && intent.getStringExtra(EXTRA_TENDER) != null) {
             web.loadUrl(urlFor(intent));
         }
     }
@@ -107,24 +189,30 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        web.onResume();  // the page sees it is visible again and fetches the newest list
+        if (web != null) {
+            web.onResume();  // the page sees it is visible again and fetches the newest list
+        }
     }
 
     @Override
     protected void onPause() {
-        web.onPause();
+        if (web != null) {
+            web.onPause();
+        }
         super.onPause();
     }
 
     @Override
     protected void onSaveInstanceState(Bundle out) {
         super.onSaveInstanceState(out);
-        web.saveState(out);
+        if (web != null) {
+            web.saveState(out);
+        }
     }
 
     @Override
     public void onBackPressed() {
-        if (web.canGoBack()) {
+        if (web != null && web.canGoBack()) {
             web.goBack();
         } else {
             super.onBackPressed();
@@ -137,17 +225,16 @@ public class MainActivity extends Activity {
     }
 
     private void openOutside(Uri u) {
-        start(new Intent(Intent.ACTION_VIEW, u));
+        runOnUiThread(() -> startSafely(new Intent(Intent.ACTION_VIEW, u)));
     }
 
-    private void start(Intent i) {
-        runOnUiThread(() -> {
-            try {
-                startActivity(i);
-            } catch (ActivityNotFoundException e) {
-                // nothing on the phone can open this
-            }
-        });
+    private boolean startSafely(Intent i) {
+        try {
+            startActivity(i);
+            return true;
+        } catch (ActivityNotFoundException | SecurityException e) {
+            return false;  // nothing on the phone can open this
+        }
     }
 
     private void askToNotify() {
@@ -165,7 +252,7 @@ public class MainActivity extends Activity {
                     .setType("text/plain")
                     .putExtra(Intent.EXTRA_SUBJECT, title)
                     .putExtra(Intent.EXTRA_TEXT, text + "\n" + url);
-            start(Intent.createChooser(send, "مشاركة الفرصة"));
+            runOnUiThread(() -> startSafely(Intent.createChooser(send, "مشاركة الفرصة")));
         }
 
         /** Opens the phone's calendar with an all-day event on the deadline (date as yyyy-mm-dd). */
@@ -177,13 +264,14 @@ public class MainActivity extends Activity {
             } catch (RuntimeException e) {
                 return;
             }
-            start(new Intent(Intent.ACTION_INSERT)
+            Intent add = new Intent(Intent.ACTION_INSERT)
                     .setData(CalendarContract.Events.CONTENT_URI)
                     .putExtra(CalendarContract.Events.TITLE, title)
                     .putExtra(CalendarContract.Events.DESCRIPTION, notes)
                     .putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true)
                     .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, begin)
-                    .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, begin + DAY));
+                    .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, begin + DAY);
+            runOnUiThread(() -> startSafely(add));
         }
 
         @JavascriptInterface
@@ -196,15 +284,9 @@ public class MainActivity extends Activity {
         @JavascriptInterface
         public void allowBackground() {
             runOnUiThread(() -> {
-                try {
-                    startActivity(new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS,
-                            Uri.parse("package:" + getPackageName())));
-                } catch (ActivityNotFoundException e) {
-                    try {
-                        startActivity(new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS));
-                    } catch (ActivityNotFoundException ignored) {
-                        // this phone has no such setting
-                    }
+                if (!startSafely(new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS,
+                        Uri.parse("package:" + getPackageName())))) {
+                    startSafely(new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS));
                 }
             });
         }

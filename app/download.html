@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تحميل تطبيق رادار المناقصات</title>
+<meta name="theme-color" content="#142B3B">
+<link rel="icon" href="icons/favicon-64.png" type="image/png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+  body { padding-bottom: 40px; }
+  .doc { max-width: 720px; margin: 0 auto; padding: 18px 16px 40px; }
+  .doc h1 { font-size: 25px; margin: 6px 0 6px; line-height: 1.4; }
+  .doc h2 { font-size: 19px; margin: 30px 0 8px; }
+  .doc p, .doc li { font-size: 15.5px; line-height: 1.75; }
+  .get { background: var(--paper); border: 1px solid var(--rule); border-radius: 14px; padding: 18px 16px; margin-top: 14px; text-align: center; }
+  .get .btn { width: 100%; max-width: 420px; min-height: 54px; font-size: 18px; font-weight: 700; }
+  .ver { margin: 10px 0 0; font-size: 13.5px; color: var(--ink-2); }
+  .station__n { cursor: default; }
+  .station__b > b { font-size: 16px; }
+  .station__b p { font-size: 14.5px; margin-top: 4px; }
+  .note { border-inline-start: 4px solid var(--amber); background: #FFF8E6; border-radius: 8px; padding: 10px 12px; font-size: 14.5px; }
+  .qr { display: none; }
+  @media (min-width: 760px) {
+    .qr { display: flex; gap: 16px; align-items: center; margin-top: 18px; padding: 14px; background: var(--paper);
+          border: 1px solid var(--rule); border-radius: 12px; }
+    .qr img { width: 150px; height: 150px; flex: none; }
+  }
+  .toplink { color: #CFE0E6; text-decoration: none; font-weight: 500; }
+  code { direction: ltr; unicode-bidi: isolate; background: #E3EAEC; border-radius: 4px; padding: 0 5px; font-size: 14px; overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<header class="top"><div class="top__row">
+  <a class="brand" href="./"><img src="icons/icon-192.png" alt="" width="34" height="34"><span>رادار المناقصات</span></a>
+  <a class="toplink" href="./">فتح الرادار</a></div></header>
+<main class="doc">
+  <h1>تحميل تطبيق رادار المناقصات</h1>
+  <p>افتح هذه الصفحة من الموبايل: <code>abdel-rahmannagib.github.io/tender-radar/download.html</code></p>
+
+  <div class="qr">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&amp;margin=10&amp;data=https%3A%2F%2Fabdel-rahmannagib.github.io%2Ftender-radar%2Fdownload.html"
+         alt="رمز QR لصفحة التحميل">
+    <p>على الكمبيوتر الآن؟ وجّه كاميرا الموبايل لهذا الرمز لتفتح الصفحة نفسها على الموبايل.</p>
+  </div>
+
+  <h2>أندرويد</h2>
+  <div class="get">
+    <a class="btn" id="apk" href="https://github.com/Abdel-RahmanNagib/tender-radar/releases/latest/download/TenderRadar.apk">تحميل التطبيق للأندرويد</a>
+    <p class="ver" id="ver">ملف صغير (أقل من 100 كيلوبايت) – آخر إصدار دائماً.</p>
+  </div>
+
+  <ol class="route" aria-label="خطوات التثبيت">
+    <li class="station"><span class="station__n">1</span><div class="station__b"><b>حمّل الملف</b>
+      <p>اضغط «تحميل التطبيق للأندرويد». لو ظهر تحذير أن الملف قد يضر بالجهاز، اختر «تحميل على أي حال»؛ هذا التحذير يظهر لأي تطبيق من خارج متجر Google Play.</p></div></li>
+    <li class="station"><span class="station__n">2</span><div class="station__b"><b>ثبّته</b>
+      <p>افتح الملف من إشعار التحميل أو من «التنزيلات»، ثم «تثبيت». أول مرة يطلب الموبايل السماح بالتثبيت من المتصفح: «الإعدادات» ← فعّل «السماح من هذا المصدر» ← ارجع واضغط «تثبيت». لو ظهرت رسالة Play Protect اختر «التفاصيل» ثم «التثبيت على أي حال».</p></div></li>
+    <li class="station"><span class="station__n">3</span><div class="station__b"><b>افتحه واسمح بالإشعارات</b>
+      <p>افتح «رادار المناقصات» واضغط «سماح» للإشعارات. بعدها يفحص كل ساعة ويرسل إشعاراً بكل فرصة جديدة.</p></div></li>
+  </ol>
+
+  <p class="note"><b>عندك نسخة قديمة بتقفل أول ما تفتحها؟</b> ثبّت الجديدة فوقها مباشرة بنفس الخطوات. لو ظهرت رسالة «لم يتم تثبيت التطبيق»،
+    احذف القديمة أولاً (اضغط مطوّلاً على أيقونتها ← «إلغاء التثبيت») ثم ثبّت الجديدة.</p>
+
+  <h2>آيفون</h2>
+  <p>آبل لا تسمح بتثبيت تطبيقات من خارج App Store، لذلك يعمل الرادار على الآيفون من Safari كتطبيق على الشاشة الرئيسية:</p>
+  <ol class="route" aria-label="خطوات الآيفون">
+    <li class="station"><span class="station__n">1</span><div class="station__b"><b>افتح الرادار من Safari</b>
+      <p><a href="./">abdel-rahmannagib.github.io/tender-radar</a></p></div></li>
+    <li class="station"><span class="station__n">2</span><div class="station__b"><b>أضفه للشاشة الرئيسية</b>
+      <p>زر المشاركة ← «إضافة إلى الشاشة الرئيسية» ← «إضافة».</p></div></li>
+    <li class="station"><span class="station__n">3</span><div class="station__b"><b>الإشعارات</b>
+      <p>ثبّت تطبيق ntfy المجاني من App Store واشترك في قناة المكتب (من «الإعدادات» داخل الرادار).</p></div></li>
+  </ol>
+</main>
+<script>
+  // Shows which version the button downloads (from GitHub; the button works without it).
+  fetch('https://api.github.com/repos/Abdel-RahmanNagib/tender-radar/releases/latest')
+    .then((r) => (r.ok ? r.json() : null))
+    .then((rel) => {
+      if (!rel || !rel.tag_name) return;
+      const apk = (rel.assets || []).find((a) => a.name === 'TenderRadar.apk');
+      const when = new Date(rel.published_at).toLocaleDateString('ar-EG', { day: 'numeric', month: 'long', year: 'numeric' });
+      document.getElementById('ver').textContent = 'الإصدار ' + rel.tag_name.replace(/^android-v/, '') + ' – نُشر ' + when
+        + (apk ? ' – ' + Math.max(1, Math.round(apk.size / 1024)) + ' كيلوبايت' : '');
+    })
+    .catch(() => {});
+</script>
+</body>
+</html>

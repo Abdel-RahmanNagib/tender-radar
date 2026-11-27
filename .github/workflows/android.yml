@@ -1,6 +1,7 @@
 # تطبيق أندرويد لرادار المناقصات – يُبنى هنا وينزل كملف APK في Releases:
 #   https://github.com/<owner>/<repo>/releases/latest/download/TenderRadar.apk
 # التطبيق يعرض نفس صفحات الرادار، ويفحص كل ساعة ويرسل إشعاراً بكل فرصة جديدة (بدون ntfy).
+# كل نسخة تُجرَّب أولاً على محاكي أندرويد 10 و12 و14، ولا تُنشر إلا لو التطبيق اشتغل من غير ما يقفل.
 # مفتاح التوقيع يُنشأ مرة واحدة ويُحفظ في Release من نوع Draft (خاص بأصحاب المستودع فقط) حتى تُثبَّت التحديثات فوق
 # النسخة القديمة. لا تنشر هذا الـ Release.
 name: Android app
@@ -77,12 +78,66 @@ jobs:
           VERSION_NAME: 1.0.${{ github.run_number }}
         run: gradle --no-daemon --stacktrace assembleRelease
 
+      - name: Keep the APK for the phone test
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk
+          path: android/app/build/outputs/apk/release/app-release.apk
+          retention-days: 14
+
+  # Opens the app on Android emulators (as after installing, with and without notifications allowed, and the
+  # hourly check). A version that closes is not published; the reason is in the job summary.
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - api: 29
+            name: Android 10
+          - api: 31
+            name: Android 12
+          - api: 34
+            name: Android 14
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: apk
+
+      - name: Let the emulator use hardware acceleration
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Open the app on ${{ matrix.name }}
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api }}
+          target: google_apis
+          arch: x86_64
+          disable-animations: true
+          script: bash android/test-on-phone.sh app-release.apk "${{ matrix.name }} (API ${{ matrix.api }})"
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: apk
+
       - name: Publish the APK
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
-          cp android/app/build/outputs/apk/release/app-release.apk TenderRadar.apk
+          cp app-release.apk TenderRadar.apk
           tag="android-v1.0.${{ github.run_number }}"
           gh release create "$tag" TenderRadar.apk --latest \
             --title "تطبيق أندرويد – الإصدار 1.0.${{ github.run_number }}" \
