@@ -1,10 +1,10 @@
 {
-"last_run":"2026-11-27T19:13:57+00:00",
+"last_run":"2026-11-27T20:13:29+00:00",
 "every_minutes":60,
-"collected":3488,
+"collected":3492,
 "matched":41,
 "new":2,
-"open":79,
+"open":81,
 "sources":[
 {
 "key":"worldbank",
@@ -57,7 +57,7 @@
 },
 {
 "key":"dubai_esupply",
-"count":238,
+"count":241,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -106,7 +106,7 @@
 },
 {
 "key":"google_news",
-"count":14,
+"count":15,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -131,7 +131,7 @@
 "pc_helper":{
 "linked":true,
 "label":"قطر وعُمان",
-"last_seen":"2026-11-27T18:23:41+00:00",
+"last_seen":"2026-11-27T19:25:07+00:00",
 "host":"DESKTOP-OVTV5PG",
 "sources":[
 {
