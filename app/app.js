@@ -438,6 +438,10 @@ function gcal(t) {
 function fold(line) { const out = []; while (line.length > 60) { out.push(line.slice(0, 60)); line = ' ' + line.slice(60); } out.push(line); return out.join('\r\n'); }
 const icsEsc = (s) => String(s).replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;');
 function ics(t) {
+  if (native && native.calendar && t.deadline) {
+    native.calendar('آخر موعد تقديم: ' + t.title.slice(0, 70), t.deadline, t.title + '\n' + deepLink(t));
+    return;
+  }
   if (framed) { toast('نسخة العرض لا تسمح بتنزيل الملفات — استخدم زر «تقويم Google»'); return; }
   const stamp = new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z';
   const ev = (uid, date, title, alarms) => {
@@ -469,6 +473,7 @@ async function copy(text, msg) {
 }
 async function share(t) {
   const text = `${t.title}\n${t.country_ar} – ${leftLabel(left(t))}`;
+  if (native && native.share) { native.share(t.title, text, deepLink(t)); return; }
   if (navigator.share) { try { await navigator.share({ title: t.title, text, url: deepLink(t) }); return; } catch (e) { if (e.name === 'AbortError') return; } }
   copy(text + '\n' + deepLink(t), 'تم نسخ رابط الفرصة — الصقه في واتساب أو البريد');
 }
@@ -482,6 +487,7 @@ function toast(msg) {
 const isStandalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
 const isIOS = () => /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 const inApp = /TenderRadarAndroid/.test(navigator.userAgent);   // inside the Android app (it notifies by itself)
+const native = window.TenderRadarApp;   // the Android app from 1.0.2: share sheet, calendar, background permission
 const isAndroid = () => /android/i.test(navigator.userAgent);
 const APK_URL = 'https://github.com/Abdel-RahmanNagib/tender-radar/releases/latest/download/TenderRadar.apk';
 function renderSettings() {
@@ -500,7 +506,10 @@ function renderSettings() {
     <h1 class="d-title">الإعدادات</h1>
     <p><a class="btn btn--ghost btn--sm" href="guide.html">دليل التشغيل الكامل خطوة بخطوة</a></p>
     <section class="box" id="notify"><h3>الإشعارات على الموبايل والكمبيوتر</h3>
-      ${inApp ? '<p class="ok"><b>الإشعارات تعمل من تطبيق أندرويد نفسه ✓</b> — يفحص كل ساعة ويرسل إشعاراً بكل فرصة جديدة. لو لم يصلك شيء: إعدادات الموبايل ← التطبيقات ← رادار المناقصات ← الإشعارات ← مسموح.</p><p class="small muted">لا تحتاج ntfy على هذا الموبايل. ما يلي للكمبيوتر أو الآيفون.</p>' : ''}
+      ${inApp ? `<p class="ok"><b>الإشعارات تعمل من تطبيق أندرويد نفسه ✓</b> — يفحص كل ساعة ويرسل إشعاراً بكل فرصة جديدة. لو لم يصلك شيء: إعدادات الموبايل ← التطبيقات ← رادار المناقصات ← الإشعارات ← مسموح.</p>
+      ${!native ? `<p class="note">نسخة أحدث من التطبيق متاحة: المشاركة على واتساب وإضافة المواعيد للتقويم. <a href="${APK_URL}">حمّلها وثبّتها فوق الحالية</a>.</p>`
+        : native.backgroundAllowed && !native.backgroundAllowed() ? '<p class="small">لو الإشعارات بتتأخر: بعض الموبايلات توقف التطبيقات في الخلفية لتوفير البطارية.</p><p><button class="btn btn--sm" data-act="allowbg">السماح للتطبيق بالعمل في الخلفية</button></p>' : ''}
+      <details><summary class="small muted">إشعارات الآيفون والكمبيوتر (ntfy)</summary>` : ''}
       ${!inApp && isAndroid() ? `<p><a class="btn btn--sm" href="${APK_URL}">تحميل تطبيق أندرويد (APK)</a> <span class="small muted">— يصلك الإشعار مباشرة بدون ntfy.</span></p>` : ''}
       <p>ليصلك إشعار لكل فرصة جديدة حتى والتطبيق مغلق${inApp || isAndroid() ? ' على الآيفون والكمبيوتر' : ''}، نستخدم تطبيق <b>ntfy</b> المجاني (بدون حساب):</p>
       <ol class="steps-mini">
@@ -516,7 +525,7 @@ function renderSettings() {
       <hr style="border:0;border-top:1px solid var(--rule-2);margin:14px 0">
       <p class="small"><b>تنبيه من التطبيق نفسه:</b> يعرض إشعاراً بالفرص الجديدة عند فتح التطبيق (وعلى أندرويد أحياناً في الخلفية).</p>
       <button class="btn btn--ghost btn--sm" data-act="localnotify"${perm === 'unsupported' || framed ? ' disabled' : ''}>${prefs.notifyLocal && perm === 'granted' ? 'مفعّل ✓ — اضغط للإيقاف' : 'تفعيل تنبيه التطبيق'}</button>
-      ${perm === 'denied' ? '<p class="small bad">الإشعارات محظورة لهذا الموقع من إعدادات المتصفح.</p>' : ''}</section>
+      ${perm === 'denied' ? '<p class="small bad">الإشعارات محظورة لهذا الموقع من إعدادات المتصفح.</p>' : ''}${inApp ? '</details>' : ''}</section>
     <section class="box" id="install"><h3>تثبيت التطبيق على جهازك</h3>
       ${framed ? '<p class="note note--info">هذه نسخة عرض داخل صفحة أخرى، فلا يمكن تثبيتها. بعد التشغيل على GitHub افتحوا رابط تطبيقكم مباشرة وثبّتوه بالطريقة التالية.</p>' : ''}
       ${inApp ? '<p class="ok">أنت داخل تطبيق أندرويد ✓</p>' : isStandalone() ? '<p class="ok">التطبيق مثبّت على هذا الجهاز.</p>' : `
@@ -670,6 +679,7 @@ async function notifyFresh() {
   prefs.known = ids; savePrefs();
 }
 async function toggleLocalNotify() {
+  if (typeof Notification === 'undefined') { toast('هذا الجهاز لا يدعم تنبيهات المتصفح — استخدم ntfy'); return; }
   if (prefs.notifyLocal && Notification.permission === 'granted') { prefs.notifyLocal = false; savePrefs(); render(); return; }
   const p = await Notification.requestPermission();
   prefs.notifyLocal = p === 'granted'; savePrefs();
@@ -694,6 +704,10 @@ function renderBanner() {
     b.push(`<div class="banner banner--install"><span>${isAndroid() ? 'حمّل تطبيق «رادار المناقصات» لأندرويد: يفتح كبرنامج ويرسل إشعاراً بكل فرصة جديدة.' : 'ثبّت «رادار المناقصات» على جهازك ليفتح كبرنامج مستقل.'}</span>
       <span>${isAndroid() ? `<a class="btn btn--sm" href="${APK_URL}">تحميل التطبيق</a>` : S.installEvt ? '<button class="btn btn--sm" data-act="install">تثبيت</button>' : '<a class="btn btn--sm" href="#prefs">الطريقة</a>'}
       <button class="btn btn--ghost btn--sm" data-act="dismiss" data-k="install">لاحقاً</button></span></div>`);
+  }
+  if (inApp && !native && !prefs.dismiss.appUpdate) {
+    b.push(`<div class="banner banner--install"><span>نسخة أحدث من تطبيق أندرويد متاحة: شكل أوضح على الموبايل، ومشاركة على واتساب، وإضافة المواعيد للتقويم.</span>
+      <span><a class="btn btn--sm" href="${APK_URL}">تحميل التحديث</a> <button class="btn btn--ghost btn--sm" data-act="dismiss" data-k="appUpdate">لاحقاً</button></span></div>`);
   }
   $('#banner').innerHTML = b.join('');
 }
@@ -782,6 +796,7 @@ document.addEventListener('click', (e) => {
   if (act === 'savetopic') { prefs.ntfyTopic = $('#topic').value.trim().replace(/[^\w-]/g, ''); savePrefs(); renderSettings(); toast('تم حفظ اسم القناة'); return; }
   if (act === 'gentopic') { $('#topic').value = randomTopic(); toast('اسم مقترح — احفظه، وضعه نفسه في GitHub باسم NTFY_TOPIC'); return; }
   if (act === 'localnotify') { toggleLocalNotify(); return; }
+  if (act === 'allowbg' && native && native.allowBackground) { native.allowBackground(); return; }
   if (act === 'saveoffice') {
     prefs.office = { name: $('#oName').value.trim(), person: $('#oPerson').value.trim(), phone: $('#oPhone').value.trim(), email: $('#oEmail').value.trim() };
     savePrefs(); toast('تم حفظ بيانات المكتب'); return;
@@ -817,6 +832,10 @@ window.addEventListener('appinstalled', () => { S.installEvt = null; toast('تم
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') load(false); });
 setInterval(() => { if (document.visibilityState === 'visible') load(false); }, 10 * 60 * 1000);
 if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  const hadWorker = !!navigator.serviceWorker.controller;
   navigator.serviceWorker.register('sw.js').catch(() => {});
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (hadWorker && !sessionStorage.getItem('tr-updated')) { sessionStorage.setItem('tr-updated', '1'); location.reload(); }
+  });
 }
 load(true);
