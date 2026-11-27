@@ -1,10 +1,10 @@
 {
-"last_run":"2026-11-27T00:35:16+00:00",
+"last_run":"2026-11-27T01:36:14+00:00",
 "every_minutes":60,
-"collected":3486,
+"collected":3485,
 "matched":40,
-"new":0,
-"open":51,
+"new":2,
+"open":53,
 "sources":[
 {
 "key":"worldbank",
@@ -106,7 +106,7 @@
 },
 {
 "key":"google_news",
-"count":18,
+"count":17,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -127,11 +127,11 @@
 }
 ],
 "errors":[],
-"notifications_sent":0,
+"notifications_sent":2,
 "pc_helper":{
 "linked":true,
 "label":"قطر وعُمان",
-"last_seen":"2026-11-27T00:23:38+00:00",
+"last_seen":"2026-11-27T01:23:08+00:00",
 "host":"DESKTOP-OVTV5PG",
 "sources":[
 {
@@ -139,7 +139,7 @@
 "count":220,
 "ok":true,
 "failed_pages":0,
-"matched":7,
+"matched":6,
 "error":""
 },
 {
@@ -147,7 +147,7 @@
 "count":2031,
 "ok":true,
 "failed_pages":0,
-"matched":13,
+"matched":10,
 "error":""
 },
 {
@@ -159,7 +159,7 @@
 "error":""
 }
 ],
-"snapshots":7
+"snapshots":8
 },
 "channels":{
 "ntfy":true,
