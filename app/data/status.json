@@ -1,10 +1,10 @@
 {
-"last_run":"2026-11-27T18:02:08+00:00",
+"last_run":"2026-11-27T18:45:32+00:00",
 "every_minutes":60,
 "collected":3491,
 "matched":41,
 "new":2,
-"open":75,
+"open":77,
 "sources":[
 {
 "key":"worldbank",
@@ -108,7 +108,7 @@
 "key":"google_news",
 "count":14,
 "ok":true,
-"failed_pages":1,
+"failed_pages":0,
 "error":""
 },
 {
@@ -126,14 +126,12 @@
 "error":""
 }
 ],
-"errors":[
-"https://news.google.com/rss/search?q=%D8%AF%D8%B9%D9%88%D8%A9+%D9%85%D9%83%D8%A7%D8%AA%D8%: HTTP Error 429: Too Many Requests"
-],
+"errors":[],
 "notifications_sent":2,
 "pc_helper":{
 "linked":true,
 "label":"قطر وعُمان",
-"last_seen":"2026-11-27T17:25:26+00:00",
+"last_seen":"2026-11-27T18:23:41+00:00",
 "host":"DESKTOP-OVTV5PG",
 "sources":[
 {
