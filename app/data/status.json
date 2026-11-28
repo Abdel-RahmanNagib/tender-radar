@@ -1,10 +1,10 @@
 {
-"last_run":"2026-11-28T06:18:43+00:00",
+"last_run":"2026-11-28T08:21:50+00:00",
 "every_minutes":60,
-"collected":3481,
+"collected":3478,
 "matched":41,
 "new":2,
-"open":95,
+"open":97,
 "sources":[
 {
 "key":"worldbank",
@@ -15,7 +15,7 @@
 },
 {
 "key":"etimad",
-"count":206,
+"count":204,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -57,7 +57,7 @@
 },
 {
 "key":"dubai_esupply",
-"count":239,
+"count":238,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -131,7 +131,7 @@
 "pc_helper":{
 "linked":true,
 "label":"قطر وعُمان",
-"last_seen":"2026-11-28T06:22:57+00:00",
+"last_seen":"2026-11-28T08:23:21+00:00",
 "host":"DESKTOP-OVTV5PG",
 "sources":[
 {
