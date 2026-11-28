@@ -1,10 +1,10 @@
 {
-"last_run":"2026-11-28T10:04:04+00:00",
+"last_run":"2026-11-28T11:01:37+00:00",
 "every_minutes":60,
-"collected":3450,
-"matched":40,
+"collected":3477,
+"matched":41,
 "new":2,
-"open":99,
+"open":101,
 "sources":[
 {
 "key":"worldbank",
@@ -64,14 +64,14 @@
 },
 {
 "key":"abudhabi_adgpg",
-"count":95,
+"count":94,
 "ok":true,
 "failed_pages":0,
 "error":""
 },
 {
 "key":"dewa_tenders",
-"count":0,
+"count":28,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -131,7 +131,7 @@
 "pc_helper":{
 "linked":true,
 "label":"قطر وعُمان",
-"last_seen":"2026-11-28T09:23:20+00:00",
+"last_seen":"2026-11-28T10:23:47+00:00",
 "host":"DESKTOP-OVTV5PG",
 "sources":[
 {
