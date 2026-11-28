@@ -1,8 +1,470 @@
 {
-"generated":"2026-11-28T08:21:50+00:00",
+"generated":"2026-11-28T10:04:04+00:00",
 "office":"CEC Egypt – Delta Office – Infrastructure",
-"count":99,
+"count":101,
 "tenders":[
+{
+"id":"bh-34cc11dbdb",
+"uid":"bh:233817130",
+"first_seen":"2026-11-28T10:04:04+00:00",
+"updated":"2026-11-28T10:04:04+00:00",
+"source_key":"bahrain_tb",
+"source":"مجلس المناقصات والمزايدات – البحرين",
+"kind":"rfp",
+"notice_type":"External",
+"notice_type_ar":"External",
+"title":"PRE & POST Contract Engineering Consultancy Services For The Renovation and Refurbishment of Staff Accommodation at University of Bahrain Sakhir Campus",
+"is_arabic":false,
+"summary":"Tender Board - Kingdom of Bahrain\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating …",
+"country":"Bahrain",
+"country_ar":"البحرين",
+"flag":"🇧🇭",
+"client":"University of Bahrain",
+"reference":"UOBP/8/2026",
+"published":"2026-11-24",
+"deadline":"2026-12-20",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"low",
+"level_ar":"محتمل",
+"score":6,
+"disciplines":[
+"تصميم هندسي مدني عام"
+],
+"ids":[
+"civil_general"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-24",
+"date_ar":"الثلاثاء 24 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2026-12-20",
+"date_ar":"الأحد 20 ديسمبر 2026",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"University of Bahrain",
+"emails":[
+"helpdesk@tenderboard.gov.bh",
+"info@tenderboard.gov.bh"
+],
+"phones":[
+{
+"display":"+97317566666",
+"tel":"+97317566666",
+"whatsapp":""
+},
+{
+"display":"+973 1758 7855",
+"tel":"+97317587855",
+"whatsapp":""
+}
+],
+"address":"",
+"website":"https://etendering.tenderboard.gov.bh"
+},
+{
+"title":"مجلس المناقصات والمزايدات – البحرين (الدعم الفني)",
+"phones":[
+{
+"display":"+973 1756 6666",
+"tel":"+97317566666",
+"whatsapp":""
+}
+],
+"emails":[
+"helpdesk@tenderboard.gov.bh",
+"info@tenderboard.gov.bh"
+],
+"website":"https://etendering.tenderboard.gov.bh",
+"hours":"الأحد–الأربعاء 7:00–14:15، الخميس 7:00–14:00",
+"source":"بوابة المناقصات الإلكترونية – البحرين",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":true
+}
+],
+"conditions":[
+".يجب ألا تتضمن العروض الفنية السعر أو أي شيء يتعلق به، وإلا سوف يتم استبعاد العطاء",
+"Firms that do not meet these minimum requirements will be disqualified:",
+"يجب أن تكون الشركة استشارية هندسية مؤهلة مسبقاً ومرخصة من قِبل \"مجلس تنظيم مزاولة المهن الهندسية\" (CRPEP) ضمن الفئة (أ) أو (ب) أو (ج).",
+"وتُعتبر الشركة مستوفية للشروط تماماً إذا كانت حاصلة على ترخيص تأهيل مسبق ضمن الفئة المذكورة في إعلان المناقصة، على أن يكون هذا الترخيص سارياً يوم نشر المناقصة",
+"For Two-envelope tenders, bidders, are requested to attach the initial bond as stated above and it must be included within the technical bid.",
+"The initial bond should be in the form of a Certified Cheque, Bank Guarantee, Insurance Policy or Bank Transfer (or as specified in the Tender Documents) valid for the duration specified above.",
+"If the bidder chooses to submit the initial bond in the form of a Bank transfer, the guarantee amount must be provided as a fixed amount mentioned and not as a percentage of the bid value.",
+"Small and Medium Enterprises (SMEs)are eligible to obtain 10% preference in the financial evaluation stage when participating in tenders, and in auctions related to service facilities within government entities premises, however this shall not apply to tenders of a special nature."
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-30",
+"due_ar":"الاثنين 30 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-12-10",
+"due_ar":"الخميس 10 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-13",
+"due_ar":"الأحد 13 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2026-12-15",
+"due_ar":"الثلاثاء 15 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2026-12-16",
+"due_ar":"الأربعاء 16 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2026-12-18",
+"due_ar":"الجمعة 18 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد).",
+"due":"2026-12-19",
+"due_ar":"السبت 19 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://www.tenderboard.gov.bh/TenderDetails/?id=589%2f2026%2fBTB+(UOBP%2f8%2f2026)"
+}
+],
+"excerpt":"PRE & POST Contract Engineering Consultancy Services For The Renovation and Refurbishment of Staff Accommodation at University of Bahrain Sakhir Campus | University of Bahrain\nTender Board - Kingdom of Bahrain\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating Partnerships Between Public and Private Sectors\nTenders Published Tenders\nTo be Opened This Week\nTender Opening Results\nLive Opening\nAwarded Tenders\nPrequalified Vendors\nProcurement Plans\nArchived Tenders\nServices Process\neForms\nTraining Courses\nStandard Electronic Request Template\nStandard Electronic Report\nMedia News\nAnnual Reports\nFAQ Supplier FAQ\nGeneral FAQ\neTendering Login\nCreate an Account in eTendering\nعربي\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating Partnerships Between Public and Private Sectors\nTenders Published Tenders\nTo be Opened This Week\nTender Opening Results\nLive Opening\nAwarded Tenders\nPrequalified Vendors\nProcurement Plans\nArchived Tenders\nServices Process\neForms\nTraining Courses\nStandard Electronic Request Template\nStandard Electronic Report\nMedia News\nAnnual Reports\nFAQ Supplier FAQ\nGeneral FAQ\nSearch\nTender Details\nHome\nTender Details\nPRE & POST Contract Engineering Consultancy Services For The Renovation and Refurbishment of Staff Accommodation at University of Bahrain Sakhir Campus\nTender Number: 589/2026/BTB (UOBP/8/2026)\nPA Ref Number: UOBP/8/2026\nTender Description\nThe University of Bahrain invites proposals for comprehensive Pre and Post Contract Engineering Consultancy Services for the major renovation and refurbishment of staff accommodation facilities at the Sakhir Campus The scope covers condition assessment detailed technical specifications Bill of Quantities tender documentation as well as fulltime construction supervision and contract administration during the execution phase\nIssued by\nUniversity of Bahrain\nInternal/External\nExternal\nInvitation Method\nPublic (LOCAL GCC)\nClassification/CPV Codes\n-->\n45000000-7 - Construction work\n-->\nInitial Bond\nBD 100\nBid Validity / Initial Bond Validity Period (Days)\n18",
+"notes":[]
+},
+{
+"id":"bh-bd2f0ae4de",
+"uid":"bh:233816732",
+"first_seen":"2026-11-28T10:04:04+00:00",
+"updated":"2026-11-28T10:04:04+00:00",
+"source_key":"bahrain_tb",
+"source":"مجلس المناقصات والمزايدات – البحرين",
+"kind":"rfp",
+"notice_type":"External",
+"notice_type_ar":"External",
+"title":"Provision of Engineering Design and Drafting Services",
+"is_arabic":false,
+"summary":"Tender Board - Kingdom of Bahrain\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating …",
+"country":"Bahrain",
+"country_ar":"البحرين",
+"flag":"🇧🇭",
+"client":"Bapco Refining",
+"reference":"BE2630000506",
+"published":"2026-11-23",
+"deadline":"2027-01-06",
+"deadline_time":"",
+"inquiry_deadline":null,
+"opening_date":null,
+"method":"",
+"method_ar":"",
+"activity":"",
+"funding":"",
+"booklet_price":"",
+"guarantee":"",
+"contract_duration":"",
+"match":{
+"level":"low",
+"level_ar":"محتمل",
+"score":6,
+"disciplines":[
+"تصميم هندسي مدني عام"
+],
+"ids":[
+"civil_general"
+]
+},
+"dates":[
+{
+"label":"تاريخ النشر",
+"date":"2026-11-23",
+"date_ar":"الاثنين 23 نوفمبر 2026",
+"kind":"published",
+"time":""
+},
+{
+"label":"آخر موعد للتقديم",
+"date":"2027-01-06",
+"date_ar":"الأربعاء 6 يناير 2027",
+"kind":"deadline",
+"time":""
+}
+],
+"contacts":[
+{
+"title":"جهة التعاقد – للاستفسار عن المشروع",
+"name":"",
+"org":"Bapco Refining",
+"emails":[
+"helpdesk@tenderboard.gov.bh",
+"info@tenderboard.gov.bh"
+],
+"phones":[
+{
+"display":"+97317566666",
+"tel":"+97317566666",
+"whatsapp":""
+},
+{
+"display":"+973 1758 7855",
+"tel":"+97317587855",
+"whatsapp":""
+}
+],
+"address":"",
+"website":"https://etendering.tenderboard.gov.bh"
+},
+{
+"title":"مجلس المناقصات والمزايدات – البحرين (الدعم الفني)",
+"phones":[
+{
+"display":"+973 1756 6666",
+"tel":"+97317566666",
+"whatsapp":""
+}
+],
+"emails":[
+"helpdesk@tenderboard.gov.bh",
+"info@tenderboard.gov.bh"
+],
+"website":"https://etendering.tenderboard.gov.bh",
+"hours":"الأحد–الأربعاء 7:00–14:15، الخميس 7:00–14:00",
+"source":"بوابة المناقصات الإلكترونية – البحرين",
+"kind":"support"
+}
+],
+"inquiry_how":"الاستفسارات كتابةً لجهة التواصل قبل الموعد المحدد في وثائق الطرح.",
+"documents":[
+{
+"title":"وثائق الطرح (الكراسة / RFP)",
+"detail":"تنزيلها أو شراؤها من الجهة أو البوابة، والاحتفاظ بإيصال الشراء.",
+"from_notice":false
+},
+{
+"title":"العرض الفني",
+"detail":"فهم المهمة، المنهجية وخطة العمل، البرنامج الزمني، والهيكل التنظيمي للفريق.",
+"from_notice":false
+},
+{
+"title":"السير الذاتية للخبراء الرئيسيين",
+"detail":"موقّعة، مع خطابات التفرغ والالتزام.",
+"from_notice":false
+},
+{
+"title":"جدول المشاريع المماثلة وشهادات العملاء",
+"detail":"مرتبطة بنطاق المهمة.",
+"from_notice":false
+},
+{
+"title":"العرض المالي",
+"detail":"في ملف أو مظروف منفصل حسب نموذج الجهة.",
+"from_notice":false
+},
+{
+"title":"ضمان العطاء / الضمان الابتدائي",
+"detail":"إذا نصّت عليه الوثائق — ابدأ إجراءات البنك مبكراً.",
+"from_notice":false
+},
+{
+"title":"المستندات القانونية وتفويض التوقيع",
+"detail":"السجل التجاري، الترخيص، شهادة القيد، وتوكيل المفوَّض بالتوقيع.",
+"from_notice":true
+}
+],
+"conditions":[
+"The scope of services consists of the provision of Mechanical, Electrical, Civil and Structural Engineering Designer Services at Bapco Refining Offices and from the Contractor Office as and when required during the term of contract.",
+"KeyQualification and Evaluation criteria",
+"MandatoryCriteria: The Biddershall provide the following details along with documentary evidence.",
+"Only thebids complying with all Mandatory Criteria will be considered for technicaland commercial evaluation.",
+"The Bidder shall have a minimum offive (5) years of experience in providing Engineering Design & DraftingServices in Oil & Gas, Refining, Petrochemical, LNG, Power, or similarindustrial facilities.",
+"The Biddershall submit details of Engineering Design & Drafting Services executedduring the last five (5) years in Oil & Gas, Refining, Petrochemical,LNG, Power, or similar industrial facilities.",
+"The submitted information shalldemonstrate the Bidder's capability in providing Mechanical, Electrical,Civil & Structural Design & Drafting Services, SmartPlant 3D (S3D),SmartPlant P&ID (SPID), SmartPlant Electrical (SPEL), SmartPlantFoundation (SPF) support, Document Control Services, and As-BuiltDocumentation, for evaluation by the Company.",
+"TheBidder shall provide a Formal Commitment Letter confirming that the required manpower meeting thespecified qualification and experience requirements shall be made availableupon Contract Award as and when requested by the Company and/or submit details of currently available personnel in Appendix C ."
+],
+"doc_note":"",
+"submission_line":"",
+"steps":[
+{
+"title":"اقرأ الإعلان وتأكد من الأهلية",
+"detail":"",
+"due":"2026-11-28",
+"due_ar":"السبت 28 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"احصلوا على وثائق الطرح",
+"detail":"من الجهة أو البوابة المذكورة.",
+"due":"2026-11-30",
+"due_ar":"الاثنين 30 نوفمبر 2026",
+"after_deadline":false
+},
+{
+"title":"سجّلوا في الاجتماع التمهيدي أو زيارة الموقع (إن وُجدت)",
+"detail":"المواعيد في وثائق الطرح.",
+"due":null,
+"due_ar":"حسب الوثائق",
+"after_deadline":false
+},
+{
+"title":"أرسلوا الاستفسارات قبل موعدها",
+"detail":"استخدم الإيميل الجاهز في تبويب «التواصل».",
+"due":"2026-12-27",
+"due_ar":"الأحد 27 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"اطلبوا الضمان الابتدائي من البنك (إن طُلب)",
+"detail":"",
+"due":"2026-12-30",
+"due_ar":"الأربعاء 30 ديسمبر 2026",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض الفني والسير الذاتية",
+"detail":"",
+"due":"2027-01-01",
+"due_ar":"الجمعة 1 يناير 2027",
+"after_deadline":false
+},
+{
+"title":"جهّزوا العرض المالي (منفصل)",
+"detail":"",
+"due":"2027-01-02",
+"due_ar":"السبت 2 يناير 2027",
+"after_deadline":false
+},
+{
+"title":"مراجعة نهائية: التوقيعات والأختام والترقيم",
+"detail":"",
+"due":"2027-01-04",
+"due_ar":"الاثنين 4 يناير 2027",
+"after_deadline":false
+},
+{
+"title":"قدّموا العرض قبل الموعد",
+"detail":"بالطريقة المحددة في الإعلان (إيميل أو بوابة أو تسليم باليد).",
+"due":"2027-01-05",
+"due_ar":"الثلاثاء 5 يناير 2027",
+"after_deadline":false
+},
+{
+"title":"احضروا فتح المظاريف وتابعوا التقييم",
+"detail":"",
+"due":null,
+"due_ar":"بعد الموعد النهائي",
+"after_deadline":true
+}
+],
+"links":[
+{
+"label":"فتح الإعلان الرسمي",
+"url":"https://www.tenderboard.gov.bh/TenderDetails/?id=580%2f2026%2fBTB+(BE2630000506)"
+}
+],
+"excerpt":"Provision of Engineering Design and Drafting Services | Bapco Refining\nTender Board - Kingdom of Bahrain\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating Partnerships Between Public and Private Sectors\nTenders Published Tenders\nTo be Opened This Week\nTender Opening Results\nLive Opening\nAwarded Tenders\nPrequalified Vendors\nProcurement Plans\nArchived Tenders\nServices Process\neForms\nTraining Courses\nStandard Electronic Request Template\nStandard Electronic Report\nMedia News\nAnnual Reports\nFAQ Supplier FAQ\nGeneral FAQ\neTendering Login\nCreate an Account in eTendering\nعربي\nAbout Overview\nVision & Mission\nBoard Members\nSecretary General\nOrganisation Structure\nQuality Policy\nSustainable Development Goals\nDigital Transformation\nLegislation Laws\nDecisions\nCirculars\nPA Guide\nGuideline for Suppliers & Contractors in Government Procurement\nGuide Regulating Partnerships Between Public and Private Sectors\nTenders Published Tenders\nTo be Opened This Week\nTender Opening Results\nLive Opening\nAwarded Tenders\nPrequalified Vendors\nProcurement Plans\nArchived Tenders\nServices Process\neForms\nTraining Courses\nStandard Electronic Request Template\nStandard Electronic Report\nMedia News\nAnnual Reports\nFAQ Supplier FAQ\nGeneral FAQ\nSearch\nTender Details\nHome\nTender Details\nProvision of Engineering Design and Drafting Services\nTender Number: 580/2026/BTB (BE2630000506)\nPA Ref Number: BE2630000506\nTender Description\nThe scope of services consists of the provision of Mechanical, Electrical, Civil and Structural Engineering Designer Services at Bapco Refining Offices and from the Contractor Office as and when required during the term of contract. The scope includes establishing drafting workspaces and coordination protocols between Bapco Refining and Contractors, organize drafting data sources, drawing templates and standards for Mechanical, Electrical and Civil and Structural engineering disciplines. Coordinate access to legacy drawings and documents for reference and updates. Ensure drafting software and tools are configured to meet project requirements.\nIssued by\nBapco Refining\nInternal/External\nExternal\nInvitation Method\nPublic (LOCAL GCC)\nClassification/CPV Codes\n-->\n76000000-3 - Services related to the oil and gas industry\n-->\nInitial Bond\nBD 5000\nBid Valid",
+"notes":[]
+},
 {
 "id":"bh-d8c0073499",
 "uid":"bh:233809000",
