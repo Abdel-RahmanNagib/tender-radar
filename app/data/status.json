@@ -1,21 +1,21 @@
 {
-"last_run":"2026-11-28T00:02:12+00:00",
+"last_run":"2026-11-28T01:30:14+00:00",
 "every_minutes":60,
-"collected":3374,
-"matched":30,
+"collected":3488,
+"matched":41,
 "new":2,
-"open":85,
+"open":87,
 "sources":[
 {
 "key":"worldbank",
-"count":156,
+"count":269,
 "ok":true,
-"failed_pages":2,
+"failed_pages":0,
 "error":""
 },
 {
 "key":"etimad",
-"count":205,
+"count":206,
 "ok":true,
 "failed_pages":0,
 "error":""
@@ -126,15 +126,12 @@
 "error":""
 }
 ],
-"errors":[
-"https://search.worldbank.org/api/v2/procnotices?format=json&rows=50&os=0&srt=submission_da: HTTP Error 503: Service Unavailable",
-"https://search.worldbank.org/api/v2/procnotices?format=json&rows=50&os=0&srt=submission_da: HTTP Error 503: Service Unavailable"
-],
+"errors":[],
 "notifications_sent":2,
 "pc_helper":{
 "linked":true,
 "label":"قطر وعُمان",
-"last_seen":"2026-11-27T23:23:17+00:00",
+"last_seen":"2026-11-28T01:23:08+00:00",
 "host":"DESKTOP-OVTV5PG",
 "sources":[
 {
